@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellDataReportingAPIs.Standard", "ShellDataReportingAPIs.Standard/ShellDataReportingAPIs.Standard.csproj", "{b899595a-de2b-467d-9890-8d2b69769490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellDataReportingAPIs.Tests", "ShellDataReportingAPIs.Tests/ShellDataReportingAPIs.Tests.csproj", "{6bc15b6c-9509-4303-a3bf-a0a2acd96a30}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {b899595a-de2b-467d-9890-8d2b69769490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {b899595a-de2b-467d-9890-8d2b69769490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {b899595a-de2b-467d-9890-8d2b69769490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {b899595a-de2b-467d-9890-8d2b69769490}.Release|Any CPU.Build.0 = Release|Any CPU
+        {6bc15b6c-9509-4303-a3bf-a0a2acd96a30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {6bc15b6c-9509-4303-a3bf-a0a2acd96a30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {6bc15b6c-9509-4303-a3bf-a0a2acd96a30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {6bc15b6c-9509-4303-a3bf-a0a2acd96a30}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+EndGlobal
