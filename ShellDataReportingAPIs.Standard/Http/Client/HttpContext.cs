@@ -1,12 +1,12 @@
 // <copyright file="HttpContext.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using APIMatic.Core.Types.Sdk;
+using ShellDataReportingAPIs.Standard.Http.Request;
+using ShellDataReportingAPIs.Standard.Http.Response;
+
 namespace ShellDataReportingAPIs.Standard.Http.Client
 {
-    using APIMatic.Core.Types.Sdk;
-    using ShellDataReportingAPIs.Standard.Http.Request;
-    using ShellDataReportingAPIs.Standard.Http.Response;
-    
     /// <summary>
     /// Represents the contextual information of HTTP request and response.
     /// </summary>

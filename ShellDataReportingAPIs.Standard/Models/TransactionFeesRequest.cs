@@ -1,21 +1,21 @@
 // <copyright file="TransactionFeesRequest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// TransactionFeesRequest.
     /// </summary>
@@ -457,10 +457,10 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Fee items Period. This is ignored when FromDate/Todate is supplied on the request.
-        /// 1.	Last 7 Days
-        /// 2.	Last 30 Days
-        /// 3.	Last 90 Days
-        /// 4.	Last 180 Days
+        /// 1.    Last 7 Days
+        /// 2.    Last 30 Days
+        /// 3.    Last 90 Days
+        /// 4.    Last 180 Days
         /// Example : Pass 1 for Last 7 days fee items
         /// </summary>
         [JsonProperty("Period")]
@@ -500,11 +500,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Product Id
         /// Optional
         /// Example: Sample list of product ids and description.
-        /// 100	Service fee
-        /// 102	Invoice production fee
-        /// 103	Account fee
-        /// 104	Transaction fee
-        /// 105	Card membership fee
+        /// 100    Service fee
+        /// 102    Invoice production fee
+        /// 103    Account fee
+        /// 104    Transaction fee
+        /// 105    Card membership fee
         /// </summary>
         [JsonProperty("ProductId")]
         public int? ProductId
@@ -569,10 +569,10 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Allowed Sorting Options:
-        /// •	FeeDateAscending
-        /// •	FeeDateDescending
-        /// •	NetAmountAscending
-        /// •	NetAmountDescending
+        /// •    FeeDateAscending
+        /// •    FeeDateDescending
+        /// •    NetAmountAscending
+        /// •    NetAmountDescending
         /// Optional.
         /// Default: 1
         /// </summary>

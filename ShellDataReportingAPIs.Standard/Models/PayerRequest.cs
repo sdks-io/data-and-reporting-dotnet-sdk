@@ -1,21 +1,21 @@
 // <copyright file="PayerRequest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PayerRequest.
     /// </summary>
@@ -57,8 +57,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// List of Payer entity.
         /// Optional.
         /// Note:
-        /// •	Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
-        /// •	This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH changes are integrated.
+        /// •    Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
+        /// •    This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH changes are integrated.
         /// </summary>
         [JsonProperty("Payers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Models.Payers> Payers { get; set; }
@@ -92,8 +92,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Default value 50
         /// Return 250 rows only in the response if -1 is supplied as page size.
         /// Note:
-        /// •	Max page size is 250, if the user provided value is more than 250 then it will throw error.
-        /// •	This value is configurable.
+        /// •    Max page size is 250, if the user provided value is more than 250 then it will throw error.
+        /// •    This value is configurable.
         /// </summary>
         [JsonProperty("PageSize", NullValueHandling = NullValueHandling.Ignore)]
         public int? PageSize { get; set; }

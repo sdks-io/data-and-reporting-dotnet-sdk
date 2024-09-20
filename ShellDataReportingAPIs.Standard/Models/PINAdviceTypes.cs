@@ -1,21 +1,21 @@
 // <copyright file="PINAdviceTypes.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PINAdviceTypes.
     /// </summary>
@@ -57,10 +57,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Id of of PIN advice type.
         /// Possible Values:
-        /// 1.	Paper
-        /// 2.	Email
-        /// 3.	SMS
-        /// 4.	None
+        /// 1.    Paper
+        /// 2.    Email
+        /// 3.    SMS
+        /// 4.    None
         /// </summary>
         [JsonProperty("PINAdviceTypeID")]
         public int? PINAdviceTypeID

@@ -1,21 +1,21 @@
 // <copyright file="PayerDetails.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PayerDetails.
     /// </summary>
@@ -416,7 +416,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             bool? hasActiveVolBasedPricing = null,
             bool? hasActiveVolBasedBonus = null,
             bool? hasActiveVolBasedAssociationBonus = null,
-            Models.FinanceCurrency financeCurrency = null,
+            Models.FinanceCurrency2 financeCurrency = null,
             string tollsCustomerId = null,
             string tollsColcoCountryTypeId = null,
             List<Models.CustomerContract> contracts = null)
@@ -1457,10 +1457,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Billing/Invoice frequency. The frequency in which the transactions will be considered for invoicing in a bulling run
         /// E.g.:
-        /// 1	Daily (all days)
-        /// 2	Daily (only working days)
-        /// 3	Weekly - Monday
-        /// 4	Weekly – Tuesday
+        /// 1    Daily (all days)
+        /// 2    Daily (only working days)
+        /// 3    Weekly - Monday
+        /// 4    Weekly – Tuesday
         /// Etc.
         /// </summary>
         [JsonProperty("BillingFrequencyType")]
@@ -1499,10 +1499,10 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Frequency at which the billing process is triggered.E.g.:
-        /// 1	Daily (all days)
-        /// 2	Daily (only working days)
-        /// 3	Weekly - Monday
-        /// 4	Weekly – Tuesday
+        /// 1    Daily (all days)
+        /// 2    Daily (only working days)
+        /// 3    Weekly - Monday
+        /// 4    Weekly – Tuesday
         /// Etc.
         /// </summary>
         [JsonProperty("BillingRunFrequnecy")]
@@ -2543,10 +2543,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         public bool? HasActiveVolBasedAssociationBonus { get; set; }
 
         /// <summary>
-        /// This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the request is ‘false’
+        /// Gets or sets FinanceCurrency.
         /// </summary>
         [JsonProperty("FinanceCurrency", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.FinanceCurrency FinanceCurrency { get; set; }
+        public Models.FinanceCurrency2 FinanceCurrency { get; set; }
 
         /// <summary>
         /// Customer id in e-TM system
@@ -2568,7 +2568,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// String	Colco country type id in e-TM system
+        /// String    Colco country type id in e-TM system
         /// This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty.
         /// </summary>
         [JsonProperty("TollsColcoCountryTypeId")]

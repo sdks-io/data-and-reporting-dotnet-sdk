@@ -1,21 +1,21 @@
 // <copyright file="InvoiceSearchRequestFilters.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// InvoiceSearchRequestFilters.
     /// </summary>
@@ -458,9 +458,9 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Invoice date search period. Valid values –
-        /// 1.	Last 7 days – Issued in last 7 days.
-        /// 2.	Last 30 days – Issued in last 30 days.
-        /// 3.	Last 90 days – Issued in last 90 days.
+        /// 1.    Last 7 days – Issued in last 7 days.
+        /// 2.    Last 30 days – Issued in last 30 days.
+        /// 3.    Last 90 days – Issued in last 90 days.
         /// Optional.
         /// This input is a search criterion, if given.
         /// Example: 1
@@ -482,11 +482,11 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Status of the invoice. Valid values –
-        /// •	Due – Invoices due for payment and is within the due date.
-        /// •	Paid – Fully paid Invoices.
-        /// •	Overdue – Invoices due of payment and has crossed the due date.
-        /// •	CreditNote – Credit notes
-        /// •	CreditStatement
+        /// •    Due – Invoices due for payment and is within the due date.
+        /// •    Paid – Fully paid Invoices.
+        /// •    Overdue – Invoices due of payment and has crossed the due date.
+        /// •    CreditNote – Credit notes
+        /// •    CreditStatement
         /// Optional.
         /// This input is a search criterion, if given.
         /// </summary>
@@ -528,8 +528,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Whether to include the additional invoice details in the API response.
         /// Optional. Default value “False”.
         /// The parameters that are populated
-        /// •	DocumentReference
-        /// •	AdditionalDocuments
+        /// •    DocumentReference
+        /// •    AdditionalDocuments
         /// The above fields will not be present in the response when the respective data is not available in the source system.
         /// </summary>
         [JsonProperty("IncludeEInvoiceDetails")]
@@ -577,9 +577,9 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Invoice type. Allowed values –
-        /// •	Original – Original document.
-        /// •	Reversal – Reversed document.
-        /// •	Replacement – Replaced document.
+        /// •    Original – Original document.
+        /// •    Reversal – Reversed document.
+        /// •    Replacement – Replaced document.
         /// Optional. (When not passed all invoice, types are considered for search)
         /// This input is a search criterion, if given.
         /// Example: Original

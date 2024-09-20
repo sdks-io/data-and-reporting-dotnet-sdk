@@ -50,7 +50,7 @@
 | `SiteCode` | `string` | Optional | Site Code |
 | `SiteName` | `string` | Optional | Site Name |
 | `SiteCountry` | `string` | Optional | Site Country |
-| `Location` | [`ExceptionSiteLocation`](../../doc/models/exception-site-location.md) | Optional | Geography Location entity for Site Location |
+| `Location` | [`Location`](../../doc/models/location.md) | Optional | - |
 | `CardGroupName` | `string` | Optional | Card Group Name |
 | `ReceiptNumber` | `string` | Optional | Receipt Number |
 | `ProductCode` | `string` | Optional | Product Code |
@@ -100,7 +100,7 @@
 | `TransactionLine` | `string` | Optional | Transaction line item number |
 | `AllowClearing` | `string` | Optional | Is the Sales Item allowed for clearing? i.e. not written off<br>Example: “Y” or “N” |
 | `CRMNumber` | `string` | Optional | CRM Case number if the sales item is in dispute |
-| `DisputeStatus` | `string` | Optional | Sales Item Dispute Status if disputed<br>0	No Dispute<br>1	In Dispute<br>2	Re-Instated<br>3	Adjusted<br>4	Written Off by Colco<br>5	Written Off by Delco<br>6	Charged Back to Site |
+| `DisputeStatus` | `string` | Optional | Sales Item Dispute Status if disputed<br>0    No Dispute<br>1    In Dispute<br>2    Re-Instated<br>3    Adjusted<br>4    Written Off by Colco<br>5    Written Off by Delco<br>6    Charged Back to Site |
 | `RebateRate` | `double?` | Optional | Unit discount in customer currency |
 | `DelCoToColCoExchangeRate` | `double?` | Optional | Exchange rate from transaction currency to customer currency. |
 | `NetEuroAmount` | `double?` | Optional | Net euro amount. |

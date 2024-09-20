@@ -1,21 +1,21 @@
 // <copyright file="TransactionExceptionsRequest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// TransactionExceptionsRequest.
     /// </summary>
@@ -167,10 +167,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Period in which the Exceptions such as Monthly/Weekly or Daily volume, value or usage to be identified in the given transactions date range. It is only applied when the Output Type is specified as "Cards".
         /// Mandatory when Output Type is Cards
-        /// 1.	Month
-        /// 2.	Week
-        /// 3.	Day
-        /// 4.	Date Range
+        /// 1.    Month
+        /// 2.    Week
+        /// 3.    Day
+        /// 4.    Date Range
         /// </summary>
         [JsonProperty("ExceptionPeriod", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExceptionPeriod { get; set; }
@@ -179,8 +179,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Output Type for Exceptions.
         /// Mandatory.
         /// Possible values:
-        /// 1.	Transactions
-        /// 2.	Cards
+        /// 1.    Transactions
+        /// 2.    Cards
         /// </summary>
         [JsonProperty("OutputType")]
         public int OutputType { get; set; }

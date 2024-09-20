@@ -1,21 +1,21 @@
 // <copyright file="AuditResponseAuditsItems.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// AuditResponseAuditsItems.
     /// </summary>
@@ -740,23 +740,23 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// User requested operation.
         /// Possible values:
-        /// •	OrderCard
-        /// •	CreateCardGroup
-        /// •	PINReminder
-        /// •	MoveCard
-        /// •	UpdateCardStatus
-        /// •	UpdateCardGroup
-        /// •	AutoRenew
-        /// •	BulkCardOrder
-        /// •	BulkCardBlock
-        /// •	BulkCardOrderMultiAccount
-        /// •	MobilePaymentRegistration
-        /// •	UpdateCompanyInfo
-        /// •	BCOSummary
-        /// •	BCOMultiAccountSummary
-        /// •	BCBSummary
-        /// •	FundTransfer
-        /// •	DeliveryAddressUpdate
+        /// •    OrderCard
+        /// •    CreateCardGroup
+        /// •    PINReminder
+        /// •    MoveCard
+        /// •    UpdateCardStatus
+        /// •    UpdateCardGroup
+        /// •    AutoRenew
+        /// •    BulkCardOrder
+        /// •    BulkCardBlock
+        /// •    BulkCardOrderMultiAccount
+        /// •    MobilePaymentRegistration
+        /// •    UpdateCompanyInfo
+        /// •    BCOSummary
+        /// •    BCOMultiAccountSummary
+        /// •    BCBSummary
+        /// •    FundTransfer
+        /// •    DeliveryAddressUpdate
         /// </summary>
         [JsonProperty("RequestedOperation")]
         public string RequestedOperation
@@ -794,23 +794,23 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Request type initiated under the requested operation.
         /// Possible values:
-        /// •	OrderCard
-        /// •	CreateCardGroup
-        /// •	PINReminder
-        /// •	MoveCard
-        /// •	UpdateCardStatus
-        /// •	UpdateCardGroup
-        /// •	AutoRenew
-        /// •	BulkCardOrder
-        /// •	BulkCardBlock
-        /// •	BulkCardOrderMultiAccount
-        /// •	MobilePaymentRegistration
-        /// •	UpdateCompanyInfo
-        /// •	BCOSummary
-        /// •	BCOMultiAccountSummary
-        /// •	BCBSummary
-        /// •	FundTransfer
-        /// •	DeliveryAddressUpdate
+        /// •    OrderCard
+        /// •    CreateCardGroup
+        /// •    PINReminder
+        /// •    MoveCard
+        /// •    UpdateCardStatus
+        /// •    UpdateCardGroup
+        /// •    AutoRenew
+        /// •    BulkCardOrder
+        /// •    BulkCardBlock
+        /// •    BulkCardOrderMultiAccount
+        /// •    MobilePaymentRegistration
+        /// •    UpdateCompanyInfo
+        /// •    BCOSummary
+        /// •    BCOMultiAccountSummary
+        /// •    BCBSummary
+        /// •    FundTransfer
+        /// •    DeliveryAddressUpdate
         /// </summary>
         [JsonProperty("RequestType")]
         public string RequestType
@@ -830,13 +830,13 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Status of the request.
         /// Possible values:
-        /// •	Success
-        /// •	Failed
-        /// •	InProgress
-        /// •	Submitted
-        /// •	Rejected
-        /// •	PendingApproval
-        /// •	MailedToCSC
+        /// •    Success
+        /// •    Failed
+        /// •    InProgress
+        /// •    Submitted
+        /// •    Rejected
+        /// •    PendingApproval
+        /// •    MailedToCSC
         /// </summary>
         [JsonProperty("Status")]
         public string Status

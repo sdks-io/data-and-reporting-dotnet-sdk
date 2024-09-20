@@ -1,21 +1,21 @@
 // <copyright file="FeeItem.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// FeeItem.
     /// </summary>
@@ -1237,8 +1237,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Group Id
         /// Example: Sample list
-        /// 22	Card related fees
-        /// 23	Monetary Adjustment
+        /// 22    Card related fees
+        /// 23    Monetary Adjustment
         /// </summary>
         [JsonProperty("ProductGroupId")]
         public int? ProductGroupId
@@ -1258,8 +1258,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Group Name
         /// Example: Sample list
-        /// 22	Card related fees
-        /// 23	Monetary Adjustment
+        /// 22    Card related fees
+        /// 23    Monetary Adjustment
         /// </summary>
         [JsonProperty("ProductGroupName")]
         public string ProductGroupName

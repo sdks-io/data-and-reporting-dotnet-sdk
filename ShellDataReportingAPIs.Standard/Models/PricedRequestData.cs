@@ -1,21 +1,21 @@
 // <copyright file="PricedRequestData.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PricedRequestData.
     /// </summary>
@@ -83,6 +83,11 @@ namespace ShellDataReportingAPIs.Standard.Models
             { "TransactionId", false },
         };
 
+        private Dictionary<string, bool> hasPropertySetterCalledFor = new Dictionary<string, bool>
+        {
+            { "FuelOnly", false },
+        };
+
         /// <summary>
         /// Initializes a new instance of the <see cref="PricedRequestData"/> class.
         /// </summary>
@@ -93,8 +98,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="PricedRequestData"/> class.
         /// </summary>
-        /// <param name="colCoCode">ColCoCode.</param>
         /// <param name="invoiceStatus">InvoiceStatus.</param>
+        /// <param name="colCoCode">ColCoCode.</param>
         /// <param name="payerNumber">PayerNumber.</param>
         /// <param name="accountId">AccountId.</param>
         /// <param name="accountNumber">AccountNumber.</param>
@@ -131,8 +136,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="search">Search.</param>
         /// <param name="transactionId">TransactionId.</param>
         public PricedRequestData(
+            object invoiceStatus,
             string colCoCode = null,
-            Models.PricedTransactionReqV2InvoiceStatusEnum? invoiceStatus = null,
             string payerNumber = null,
             int? accountId = null,
             string accountNumber = null,
@@ -327,10 +332,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         public string ColCoCode { get; set; }
 
         /// <summary>
-        /// Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All
+        /// Gets or sets InvoiceStatus.
         /// </summary>
-        [JsonProperty("InvoiceStatus", NullValueHandling = NullValueHandling.Include)]
-        public Models.PricedTransactionReqV2InvoiceStatusEnum? InvoiceStatus { get; set; }
+        [JsonProperty("InvoiceStatus")]
+        public object InvoiceStatus { get; set; }
 
         /// <summary>
         /// Payer Number of the selected payer.
@@ -652,13 +657,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         public List<int> Cards { get; set; }
 
         /// <summary>
-        /// Allowed Sorting Options
-        /// 1.    TransactionDateAscending
-        /// 2.    TransactionDateDescending
-        /// 3.    GrossAmountDescending
-        /// 4.    GrossAmountAscending
-        /// 5.    NetAmountAscending
-        /// 6.    NetAmountDescensding
+        /// Gets or sets SortOrder.
         /// </summary>
         [JsonProperty("SortOrder", NullValueHandling = NullValueHandling.Ignore)]
         public Models.PricedTransactionReqV2SortOrderEnum? SortOrder { get; set; }
@@ -700,10 +699,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Pass below one of the value as per the required transaction period
-        /// 1. Last 7 Days
-        /// 2. Last 30 Days
-        /// 3. Last 90 Days
+        /// Gets or sets Period.
         /// </summary>
         [JsonProperty("Period", NullValueHandling = NullValueHandling.Ignore)]
         public Models.PricedTransactionReqV2PeriodEnum? Period { get; set; }
@@ -770,12 +766,19 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             get
             {
+                if (!hasPropertySetterCalledFor["FuelOnly"] &&
+                    fuelOnly == null)
+                {
+                    return false; // Default value
+                }
+
                 return this.fuelOnly;
             }
 
             set
             {
                 this.shouldSerialize["FuelOnly"] = true;
+                hasPropertySetterCalledFor["FuelOnly"] = true;
                 this.fuelOnly = value;
             }
         }
@@ -1096,6 +1099,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         public void UnsetFuelOnly()
         {
             this.shouldSerialize["FuelOnly"] = false;
+            this.hasPropertySetterCalledFor["FuelOnly"] = false;
         }
 
         /// <summary>
@@ -1465,7 +1469,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode)}");
-            toStringOutput.Add($"this.InvoiceStatus = {(this.InvoiceStatus == null ? "null" : this.InvoiceStatus.ToString())}");
+            toStringOutput.Add($"InvoiceStatus = {(this.InvoiceStatus == null ? "null" : this.InvoiceStatus.ToString())}");
             toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
             toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
             toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");

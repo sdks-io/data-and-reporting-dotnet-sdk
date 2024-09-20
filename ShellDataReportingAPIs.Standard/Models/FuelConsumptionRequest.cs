@@ -1,21 +1,21 @@
 // <copyright file="FuelConsumptionRequest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// FuelConsumptionRequest.
     /// </summary>
@@ -148,9 +148,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Transactions Period. This is ignored when FromDate is supplied on the request
         /// Allowed values :
-        /// 1.	Last 7 Days
-        /// 2.	Last 30 Days
-        /// 3.	Last 90 Days
+        /// 1.    Last 7 Days
+        /// 2.    Last 30 Days
+        /// 3.    Last 90 Days
         /// Optional - When FromDate/ToDate and Period are not provided, ‘Last 7 Days’ value is considered as default Period.
         /// </summary>
         [JsonProperty("Period", NullValueHandling = NullValueHandling.Ignore)]

@@ -1,21 +1,21 @@
 // <copyright file="LastStatementOfAccount.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// LastStatementOfAccount.
     /// </summary>
@@ -601,11 +601,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <![CDATA[
         /// Payment method description of the Payer.
         /// Example: Id & Description
-        /// •	Incoming - Direct Debit
-        /// •	Incoming - Cheque
-        /// •	Incoming - Direct Debit A
-        /// •	Incoming - Bank Transfer
-        /// •	Incoming - Cash
+        /// •    Incoming - Direct Debit
+        /// •    Incoming - Cheque
+        /// •    Incoming - Direct Debit A
+        /// •    Incoming - Bank Transfer
+        /// •    Incoming - Cash
         /// ]]>
         /// </summary>
         [JsonProperty("PaymentMethod")]
@@ -627,11 +627,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <![CDATA[
         /// Payment method Id of the Payer.
         /// Example: Id & Description
-        /// •	Incoming - Direct Debit
-        /// •	Incoming - Cheque
-        /// •	Incoming - Direct Debit A
-        /// •	Incoming - Bank Transfer
-        /// •	Incoming - Cash
+        /// •    Incoming - Direct Debit
+        /// •    Incoming - Cheque
+        /// •    Incoming - Direct Debit A
+        /// •    Incoming - Bank Transfer
+        /// •    Incoming - Cash
         /// ]]>
         /// </summary>
         [JsonProperty("PaymentMethodId")]
@@ -653,16 +653,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <![CDATA[
         /// Payment terms description of the Payer.
         /// Example: Id & Description
-        /// •	14 days after Invoice
-        /// •	15 days after Invoice
-        /// •	21 days after Invoice
-        /// •	30 days after Invoice
-        /// •	45 days after Invoice
-        /// •	0 days after invoice
-        /// •	days after invoice
-        /// •	days after invoice
-        /// •	7 days after invoice
-        /// •	10th of the following month
+        /// •    14 days after Invoice
+        /// •    15 days after Invoice
+        /// •    21 days after Invoice
+        /// •    30 days after Invoice
+        /// •    45 days after Invoice
+        /// •    0 days after invoice
+        /// •    days after invoice
+        /// •    days after invoice
+        /// •    7 days after invoice
+        /// •    10th of the following month
         /// ]]>
         /// </summary>
         [JsonProperty("PaymentTerms")]
@@ -684,16 +684,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <![CDATA[
         /// Payment terms Id of the Payer.
         /// Example: Id & Description
-        /// •	14 days after Invoice
-        /// •	15 days after Invoice
-        /// •	21 days after Invoice
-        /// •	30 days after Invoice
-        /// •	45 days after Invoice
-        /// •	0 days after invoice
-        /// •	days after invoice
-        /// •	days after invoice
-        /// •	7 days after invoice
-        /// •	10th of the following month
+        /// •    14 days after Invoice
+        /// •    15 days after Invoice
+        /// •    21 days after Invoice
+        /// •    30 days after Invoice
+        /// •    45 days after Invoice
+        /// •    0 days after invoice
+        /// •    days after invoice
+        /// •    days after invoice
+        /// •    7 days after invoice
+        /// •    10th of the following month
         /// ]]>
         /// </summary>
         [JsonProperty("PaymentTermsId")]

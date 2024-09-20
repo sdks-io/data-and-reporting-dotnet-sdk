@@ -1,21 +1,21 @@
 // <copyright file="InvoiceSearchRequest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// InvoiceSearchRequest.
     /// </summary>
@@ -67,10 +67,10 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Sort option –
-        /// 1.	InvoiceDate ASC
-        /// 2.	InvoiceDate DESC
-        /// 3.	NetAmountCustomerCurrency ASC
-        /// 4.	NetAmountCustomerCurrency DESC
+        /// 1.    InvoiceDate ASC
+        /// 2.    InvoiceDate DESC
+        /// 3.    NetAmountCustomerCurrency ASC
+        /// 4.    NetAmountCustomerCurrency DESC
         /// Optional
         /// Note:
         /// This option uses a column name with a combination of “ASC or DESC” for sorting.

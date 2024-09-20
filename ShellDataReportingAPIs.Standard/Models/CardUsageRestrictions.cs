@@ -1,21 +1,21 @@
 // <copyright file="CardUsageRestrictions.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// CardUsageRestrictions.
     /// </summary>
@@ -59,6 +59,11 @@ namespace ShellDataReportingAPIs.Standard.Models
             { "MonthlyTransactionCount", false },
             { "AnnualTransactionCount", false },
             { "LifeTimeTransactionCount", false },
+        };
+
+        private Dictionary<string, bool> hasPropertySetterCalledFor = new Dictionary<string, bool>
+        {
+            { "AnnualVolumeLimit", false },
         };
 
         /// <summary>
@@ -373,12 +378,19 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             get
             {
+                if (!hasPropertySetterCalledFor["AnnualVolumeLimit"] &&
+                    annualVolumeLimit == null)
+                {
+                    return 0; // Default value
+                }
+
                 return this.annualVolumeLimit;
             }
 
             set
             {
                 this.shouldSerialize["AnnualVolumeLimit"] = true;
+                hasPropertySetterCalledFor["AnnualVolumeLimit"] = true;
                 this.annualVolumeLimit = value;
             }
         }
@@ -622,6 +634,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         public void UnsetAnnualVolumeLimit()
         {
             this.shouldSerialize["AnnualVolumeLimit"] = false;
+            this.hasPropertySetterCalledFor["AnnualVolumeLimit"] = false;
         }
 
         /// <summary>

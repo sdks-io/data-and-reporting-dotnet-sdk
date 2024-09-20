@@ -1,21 +1,21 @@
 // <copyright file="EIDDocument.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// EIDDocument.
     /// </summary>
@@ -186,8 +186,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Document type.
         /// Possible values:
-        /// •	NAT (National)
-        /// •	INT (International)
+        /// •    NAT (National)
+        /// •    INT (International)
         /// </summary>
         [JsonProperty("DocumentType")]
         public string DocumentType
@@ -280,10 +280,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Document status.
         /// Possible values:
-        /// •	NEW
-        /// •	VIEWED
-        /// •	DOWNLOADED
-        /// •	RESTORED
+        /// •    NEW
+        /// •    VIEWED
+        /// •    DOWNLOADED
+        /// •    RESTORED
         /// </summary>
         [JsonProperty("DocumentStatus")]
         public string DocumentStatus

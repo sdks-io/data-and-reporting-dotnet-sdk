@@ -1,17 +1,17 @@
 // <copyright file="PricedTransactionReqV2PeriodEnum.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Runtime.Serialization;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PricedTransactionReqV2PeriodEnum.
     /// </summary>

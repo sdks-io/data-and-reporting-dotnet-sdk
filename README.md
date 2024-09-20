@@ -15,11 +15,11 @@ Go to the Shell Developer Portal: [https://developer.shell.com](https://develope
 If you are building with .NET CLI tools then you can also use the following command:
 
 ```bash
-dotnet add package sdksio.DataAndReportingSDK --version 1.0.0
+dotnet add package sdksio.DataAndReportingSDK --version 1.1.0
 ```
 
 You can also view the package at:
-https://www.nuget.org/packages/sdksio.DataAndReportingSDK/1.0.0
+https://www.nuget.org/packages/sdksio.DataAndReportingSDK/1.1.0
 
 ## Test the SDK
 
@@ -27,7 +27,7 @@ The generated SDK also contain one or more Tests, which are contained in the Tes
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
@@ -35,13 +35,13 @@ The following parameters are configurable for the API Client:
 |  --- | --- | --- |
 | `Environment` | `Environment` | The API environment. <br> **Default: `Environment.SIT`** |
 | `Timeout` | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(100)` |
-| `BasicAuthCredentials` | [`BasicAuthCredentials`](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/basic-authentication.md) | The Credentials Setter for Basic Authentication |
-| `BearerTokenCredentials` | [`BearerTokenCredentials`](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/oauth-2-client-credentials-grant.md) | The Credentials Setter for OAuth 2 Client Credentials Grant |
+| `BasicAuthCredentials` | [`BasicAuthCredentials`](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/auth/basic-authentication.md) | The Credentials Setter for Basic Authentication |
+| `BearerTokenCredentials` | [`BearerTokenCredentials`](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/auth/oauth-2-client-credentials-grant.md) | The Credentials Setter for OAuth 2 Client Credentials Grant |
 
 The API client can be initialized as follows:
 
 ```csharp
-ShellDataReportingAPIs.Standard.ShellDataReportingAPIsClient client = new ShellDataReportingAPIs.Standard.ShellDataReportingAPIsClient.Builder()
+ShellDataReportingAPIsClient client = new ShellDataReportingAPIsClient.Builder()
     .BasicAuthCredentials(
         new BasicAuthModel.Builder(
             "Username",
@@ -73,25 +73,24 @@ The SDK can be configured to use a different environment for making API calls. A
 
 This API uses the following authentication schemes.
 
-* [`BasicAuth (Basic Authentication)`](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/basic-authentication.md)
-* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/oauth-2-client-credentials-grant.md)
+* [`BasicAuth (Basic Authentication)`](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/auth/basic-authentication.md)
+* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/auth/oauth-2-client-credentials-grant.md)
 
 ## List of APIs
 
-* [O Auth Authorization](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/controllers/o-auth-authorization.md)
-* [Customer](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/controllers/customer.md)
-* [Transaction](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/controllers/transaction.md)
-* [Invoice](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/controllers/invoice.md)
+* [Customer](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/controllers/customer.md)
+* [Transaction](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/controllers/transaction.md)
+* [Invoice](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/controllers/invoice.md)
 
 ## Classes Documentation
 
-* [Utility Classes](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/utility-classes.md)
-* [HttpRequest](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/http-request.md)
-* [HttpResponse](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/http-response.md)
-* [HttpStringResponse](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/http-string-response.md)
-* [HttpContext](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/http-context.md)
-* [HttpClientConfiguration](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/http-client-configuration.md)
-* [HttpClientConfiguration Builder](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/http-client-configuration-builder.md)
-* [IAuthManager](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/i-auth-manager.md)
-* [ApiException](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.0.0/doc/api-exception.md)
+* [Utility Classes](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/utility-classes.md)
+* [HttpRequest](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/http-request.md)
+* [HttpResponse](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/http-response.md)
+* [HttpStringResponse](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/http-string-response.md)
+* [HttpContext](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/http-context.md)
+* [HttpClientConfiguration](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/http-client-configuration.md)
+* [HttpClientConfiguration Builder](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/http-client-configuration-builder.md)
+* [IAuthManager](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/i-auth-manager.md)
+* [ApiException](https://www.github.com/sdks-io/data-and-reporting-dotnet-sdk/tree/1.1.0/doc/api-exception.md)
 

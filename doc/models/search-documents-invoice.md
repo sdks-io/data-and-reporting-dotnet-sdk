@@ -14,7 +14,7 @@
 | `PayerName` | `string` | Optional | Customer payer name |
 | `AccountNumber` | `string` | Optional | Account Number<br>Example: GB99215176 |
 | `AccountName` | `string` | Optional | Invoice account name |
-| `DocumentType` | `string` | Optional | Document type<br>String containing one of the following values:<br>•	NAT (National)<br>•	INT (International)<br>•	SOA (Statement of Account) |
+| `DocumentType` | `string` | Optional | Document type<br>String containing one of the following values:<br>•    NAT (National)<br>•    INT (International)<br>•    SOA (Statement of Account) |
 | `GrossAmount` | `double?` | Optional | Included tax amount in the invoice |
 | `NetAmount` | `double?` | Optional | - |
 | `TaxAmount` | `double?` | Optional | - |

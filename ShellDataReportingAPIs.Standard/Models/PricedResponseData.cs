@@ -1,21 +1,21 @@
 // <copyright file="PricedResponseData.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PricedResponseData.
     /// </summary>
@@ -34,7 +34,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         private string transactionStatus;
         private string driverName;
         private int? cardExpiryPeriod;
-        private DateTime? cardExpiry;
+        private string cardExpiry;
         private int? cardGroupId;
         private string cardGroupName;
         private int? issuerCode;
@@ -81,8 +81,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         private bool? disputeStatus;
         private string fleetIdInput;
         private int? incomingProductCode;
-        private DateTime? postingDate;
-        private DateTime? postingTime;
+        private string postingDate;
+        private string postingTime;
         private int? productCode;
         private string productName;
         private int? productGroupId;
@@ -93,7 +93,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         private int? siteCode;
         private int? incomingSiteNumber;
         private string invoiceCurrencyCode;
-        private DateTime? invoiceDate;
+        private string invoiceDate;
         private double? invoiceNumber;
         private bool? fuelProduct;
         private string vATApplicable;
@@ -133,8 +133,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         private bool? isInvoiced;
         private string transactionCurrencyCode;
         private string creditDebitCode;
-        private DateTime? transactionDate;
-        private DateTime? transactionTime;
+        private string transactionDate;
+        private string transactionTime;
         private string transactionItemId;
         private string trnIdentifier;
         private string type;
@@ -153,14 +153,14 @@ namespace ShellDataReportingAPIs.Standard.Models
         private double? originalVATAmount;
         private string embossText;
         private double? originalExchangeRate;
-        private DateTime? originalTransactionItemInvoiceDate;
+        private string originalTransactionItemInvoiceDate;
         private int? feeTypeId;
         private bool? lineItemDescription;
         private string feeRuleDescription;
         private int? frequency;
         private int? feeRuleId;
-        private DateTime? systemEntryDate;
-        private DateTime? systemEntryTime;
+        private string systemEntryDate;
+        private string systemEntryTime;
         private string isManual;
         private string originalTransactionItemId;
         private int? originalTransactionItemInvoiceNumber;
@@ -178,10 +178,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         private int? eVChargePointConnectorType;
         private string eVChargePointConnectorTypeDescription;
         private string eVChargeDuration;
-        private DateTime? eVChargeStartDate;
-        private DateTime? eVChargeStartTime;
-        private DateTime? eVChargeEndDate;
-        private DateTime? eVChargeEndTime;
+        private string eVChargeStartDate;
+        private string eVChargeStartTime;
+        private string eVChargeEndDate;
+        private string eVChargeEndTime;
         private int? hostingCollectingCompanyNumber;
         private double? transactionId;
         private bool? fuelOnly;
@@ -351,6 +351,13 @@ namespace ShellDataReportingAPIs.Standard.Models
             { "HostingCollectingCompanyNumber", false },
             { "TransactionId", false },
             { "FuelOnly", false },
+        };
+
+        private Dictionary<string, bool> hasPropertySetterCalledFor = new Dictionary<string, bool>
+        {
+            { "DisputeStatus", false },
+            { "IsInvoiced", false },
+            { "LineItemDescription", false },
         };
 
         /// <summary>
@@ -545,7 +552,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string transactionStatus = null,
             string driverName = null,
             int? cardExpiryPeriod = null,
-            DateTime? cardExpiry = null,
+            string cardExpiry = null,
             int? cardGroupId = null,
             string cardGroupName = null,
             int? issuerCode = null,
@@ -595,8 +602,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             bool? isShellSite = false,
             string fleetIdInput = null,
             int? incomingProductCode = null,
-            DateTime? postingDate = null,
-            DateTime? postingTime = null,
+            string postingDate = null,
+            string postingTime = null,
             int? productCode = null,
             string productName = null,
             int? productGroupId = null,
@@ -607,7 +614,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? siteCode = null,
             int? incomingSiteNumber = null,
             string invoiceCurrencyCode = null,
-            DateTime? invoiceDate = null,
+            string invoiceDate = null,
             double? invoiceNumber = null,
             bool? fuelProduct = null,
             string vATApplicable = null,
@@ -648,8 +655,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             bool? isInvoiced = false,
             string transactionCurrencyCode = null,
             string creditDebitCode = null,
-            DateTime? transactionDate = null,
-            DateTime? transactionTime = null,
+            string transactionDate = null,
+            string transactionTime = null,
             string transactionItemId = null,
             string trnIdentifier = null,
             string type = null,
@@ -668,14 +675,14 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? originalVATAmount = null,
             string embossText = null,
             double? originalExchangeRate = null,
-            DateTime? originalTransactionItemInvoiceDate = null,
+            string originalTransactionItemInvoiceDate = null,
             int? feeTypeId = null,
             bool? lineItemDescription = false,
             string feeRuleDescription = null,
             int? frequency = null,
             int? feeRuleId = null,
-            DateTime? systemEntryDate = null,
-            DateTime? systemEntryTime = null,
+            string systemEntryDate = null,
+            string systemEntryTime = null,
             string isManual = null,
             string originalTransactionItemId = null,
             int? originalTransactionItemInvoiceNumber = null,
@@ -693,10 +700,10 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? eVChargePointConnectorType = null,
             string eVChargePointConnectorTypeDescription = null,
             string eVChargeDuration = null,
-            DateTime? eVChargeStartDate = null,
-            DateTime? eVChargeStartTime = null,
-            DateTime? eVChargeEndDate = null,
-            DateTime? eVChargeEndTime = null,
+            string eVChargeStartDate = null,
+            string eVChargeStartTime = null,
+            string eVChargeEndDate = null,
+            string eVChargeEndTime = null,
             int? hostingCollectingCompanyNumber = null,
             double? transactionId = null,
             bool? fuelOnly = null)
@@ -1752,9 +1759,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Card Expiry Date
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
         [JsonProperty("CardExpiry")]
-        public DateTime? CardExpiry
+        public string CardExpiry
         {
             get
             {
@@ -2562,12 +2568,19 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             get
             {
+                if (!hasPropertySetterCalledFor["DisputeStatus"] &&
+                    disputeStatus == null)
+                {
+                    return false; // Default value
+                }
+
                 return this.disputeStatus;
             }
 
             set
             {
                 this.shouldSerialize["DisputeStatus"] = true;
+                hasPropertySetterCalledFor["DisputeStatus"] = true;
                 this.disputeStatus = value;
             }
         }
@@ -2617,9 +2630,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Date of Posting
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
         [JsonProperty("PostingDate")]
-        public DateTime? PostingDate
+        public string PostingDate
         {
             get
             {
@@ -2636,9 +2648,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Time whern posting happened
         /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
         [JsonProperty("PostingTime")]
-        public DateTime? PostingTime
+        public string PostingTime
         {
             get
             {
@@ -2835,9 +2846,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Date on which the invoice was raised
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
         [JsonProperty("InvoiceDate")]
-        public DateTime? InvoiceDate
+        public string InvoiceDate
         {
             get
             {
@@ -3338,7 +3348,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Flag to check if there is any refund
+        /// Gets or sets RefundFlag.
         /// </summary>
         [JsonProperty("RefundFlag", NullValueHandling = NullValueHandling.Ignore)]
         public Models.PricedTransactionRespV2RefundFlagEnum? RefundFlag { get; set; }
@@ -3513,12 +3523,19 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             get
             {
+                if (!hasPropertySetterCalledFor["IsInvoiced"] &&
+                    isInvoiced == null)
+                {
+                    return false; // Default value
+                }
+
                 return this.isInvoiced;
             }
 
             set
             {
                 this.shouldSerialize["IsInvoiced"] = true;
+                hasPropertySetterCalledFor["IsInvoiced"] = true;
                 this.isInvoiced = value;
             }
         }
@@ -3562,9 +3579,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Date of transaction
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
         [JsonProperty("TransactionDate")]
-        public DateTime? TransactionDate
+        public string TransactionDate
         {
             get
             {
@@ -3581,9 +3597,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Time of transaction
         /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
         [JsonProperty("TransactionTime")]
-        public DateTime? TransactionTime
+        public string TransactionTime
         {
             get
             {
@@ -3924,9 +3939,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Original treansaction date
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
         [JsonProperty("OriginalTransactionItemInvoiceDate")]
-        public DateTime? OriginalTransactionItemInvoiceDate
+        public string OriginalTransactionItemInvoiceDate
         {
             get
             {
@@ -3966,12 +3980,19 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             get
             {
+                if (!hasPropertySetterCalledFor["LineItemDescription"] &&
+                    lineItemDescription == null)
+                {
+                    return false; // Default value
+                }
+
                 return this.lineItemDescription;
             }
 
             set
             {
                 this.shouldSerialize["LineItemDescription"] = true;
+                hasPropertySetterCalledFor["LineItemDescription"] = true;
                 this.lineItemDescription = value;
             }
         }
@@ -4033,9 +4054,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Entry date in the system
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
         [JsonProperty("SystemEntryDate")]
-        public DateTime? SystemEntryDate
+        public string SystemEntryDate
         {
             get
             {
@@ -4052,9 +4072,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Entry time in the system
         /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
         [JsonProperty("SystemEntryTime")]
-        public DateTime? SystemEntryTime
+        public string SystemEntryTime
         {
             get
             {
@@ -4377,9 +4396,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// EvCharging start Date
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
         [JsonProperty("EVChargeStartDate")]
-        public DateTime? EVChargeStartDate
+        public string EVChargeStartDate
         {
             get
             {
@@ -4396,9 +4414,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// EvCharging start time
         /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
         [JsonProperty("EVChargeStartTime")]
-        public DateTime? EVChargeStartTime
+        public string EVChargeStartTime
         {
             get
             {
@@ -4415,9 +4432,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// EvCharging End Date
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
         [JsonProperty("EVChargeEndDate")]
-        public DateTime? EVChargeEndDate
+        public string EVChargeEndDate
         {
             get
             {
@@ -4434,9 +4450,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// EvCharging End time
         /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
         [JsonProperty("EVChargeEndTime")]
-        public DateTime? EVChargeEndTime
+        public string EVChargeEndTime
         {
             get
             {
@@ -4976,6 +4991,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         public void UnsetDisputeStatus()
         {
             this.shouldSerialize["DisputeStatus"] = false;
+            this.hasPropertySetterCalledFor["DisputeStatus"] = false;
         }
 
         /// <summary>
@@ -5392,6 +5408,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         public void UnsetIsInvoiced()
         {
             this.shouldSerialize["IsInvoiced"] = false;
+            this.hasPropertySetterCalledFor["IsInvoiced"] = false;
         }
 
         /// <summary>
@@ -5592,6 +5609,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         public void UnsetLineItemDescription()
         {
             this.shouldSerialize["LineItemDescription"] = false;
+            this.hasPropertySetterCalledFor["LineItemDescription"] = false;
         }
 
         /// <summary>
@@ -7503,7 +7521,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.TransactionStatus = {(this.TransactionStatus == null ? "null" : this.TransactionStatus)}");
             toStringOutput.Add($"this.DriverName = {(this.DriverName == null ? "null" : this.DriverName)}");
             toStringOutput.Add($"this.CardExpiryPeriod = {(this.CardExpiryPeriod == null ? "null" : this.CardExpiryPeriod.ToString())}");
-            toStringOutput.Add($"this.CardExpiry = {(this.CardExpiry == null ? "null" : this.CardExpiry.ToString())}");
+            toStringOutput.Add($"this.CardExpiry = {(this.CardExpiry == null ? "null" : this.CardExpiry)}");
             toStringOutput.Add($"this.CardGroupId = {(this.CardGroupId == null ? "null" : this.CardGroupId.ToString())}");
             toStringOutput.Add($"this.CardGroupName = {(this.CardGroupName == null ? "null" : this.CardGroupName)}");
             toStringOutput.Add($"this.IssuerCode = {(this.IssuerCode == null ? "null" : this.IssuerCode.ToString())}");
@@ -7553,8 +7571,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.IsShellSite = {(this.IsShellSite == null ? "null" : this.IsShellSite.ToString())}");
             toStringOutput.Add($"this.FleetIdInput = {(this.FleetIdInput == null ? "null" : this.FleetIdInput)}");
             toStringOutput.Add($"this.IncomingProductCode = {(this.IncomingProductCode == null ? "null" : this.IncomingProductCode.ToString())}");
-            toStringOutput.Add($"this.PostingDate = {(this.PostingDate == null ? "null" : this.PostingDate.ToString())}");
-            toStringOutput.Add($"this.PostingTime = {(this.PostingTime == null ? "null" : this.PostingTime.ToString())}");
+            toStringOutput.Add($"this.PostingDate = {(this.PostingDate == null ? "null" : this.PostingDate)}");
+            toStringOutput.Add($"this.PostingTime = {(this.PostingTime == null ? "null" : this.PostingTime)}");
             toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode.ToString())}");
             toStringOutput.Add($"this.ProductName = {(this.ProductName == null ? "null" : this.ProductName)}");
             toStringOutput.Add($"this.ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
@@ -7565,7 +7583,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode.ToString())}");
             toStringOutput.Add($"this.IncomingSiteNumber = {(this.IncomingSiteNumber == null ? "null" : this.IncomingSiteNumber.ToString())}");
             toStringOutput.Add($"this.InvoiceCurrencyCode = {(this.InvoiceCurrencyCode == null ? "null" : this.InvoiceCurrencyCode)}");
-            toStringOutput.Add($"this.InvoiceDate = {(this.InvoiceDate == null ? "null" : this.InvoiceDate.ToString())}");
+            toStringOutput.Add($"this.InvoiceDate = {(this.InvoiceDate == null ? "null" : this.InvoiceDate)}");
             toStringOutput.Add($"this.InvoiceNumber = {(this.InvoiceNumber == null ? "null" : this.InvoiceNumber.ToString())}");
             toStringOutput.Add($"this.FuelProduct = {(this.FuelProduct == null ? "null" : this.FuelProduct.ToString())}");
             toStringOutput.Add($"this.VATApplicable = {(this.VATApplicable == null ? "null" : this.VATApplicable)}");
@@ -7606,8 +7624,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.IsInvoiced = {(this.IsInvoiced == null ? "null" : this.IsInvoiced.ToString())}");
             toStringOutput.Add($"this.TransactionCurrencyCode = {(this.TransactionCurrencyCode == null ? "null" : this.TransactionCurrencyCode)}");
             toStringOutput.Add($"this.CreditDebitCode = {(this.CreditDebitCode == null ? "null" : this.CreditDebitCode)}");
-            toStringOutput.Add($"this.TransactionDate = {(this.TransactionDate == null ? "null" : this.TransactionDate.ToString())}");
-            toStringOutput.Add($"this.TransactionTime = {(this.TransactionTime == null ? "null" : this.TransactionTime.ToString())}");
+            toStringOutput.Add($"this.TransactionDate = {(this.TransactionDate == null ? "null" : this.TransactionDate)}");
+            toStringOutput.Add($"this.TransactionTime = {(this.TransactionTime == null ? "null" : this.TransactionTime)}");
             toStringOutput.Add($"this.TransactionItemId = {(this.TransactionItemId == null ? "null" : this.TransactionItemId)}");
             toStringOutput.Add($"this.TrnIdentifier = {(this.TrnIdentifier == null ? "null" : this.TrnIdentifier)}");
             toStringOutput.Add($"this.Type = {(this.Type == null ? "null" : this.Type)}");
@@ -7626,14 +7644,14 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.OriginalVATAmount = {(this.OriginalVATAmount == null ? "null" : this.OriginalVATAmount.ToString())}");
             toStringOutput.Add($"this.EmbossText = {(this.EmbossText == null ? "null" : this.EmbossText)}");
             toStringOutput.Add($"this.OriginalExchangeRate = {(this.OriginalExchangeRate == null ? "null" : this.OriginalExchangeRate.ToString())}");
-            toStringOutput.Add($"this.OriginalTransactionItemInvoiceDate = {(this.OriginalTransactionItemInvoiceDate == null ? "null" : this.OriginalTransactionItemInvoiceDate.ToString())}");
+            toStringOutput.Add($"this.OriginalTransactionItemInvoiceDate = {(this.OriginalTransactionItemInvoiceDate == null ? "null" : this.OriginalTransactionItemInvoiceDate)}");
             toStringOutput.Add($"this.FeeTypeId = {(this.FeeTypeId == null ? "null" : this.FeeTypeId.ToString())}");
             toStringOutput.Add($"this.LineItemDescription = {(this.LineItemDescription == null ? "null" : this.LineItemDescription.ToString())}");
             toStringOutput.Add($"this.FeeRuleDescription = {(this.FeeRuleDescription == null ? "null" : this.FeeRuleDescription)}");
             toStringOutput.Add($"this.Frequency = {(this.Frequency == null ? "null" : this.Frequency.ToString())}");
             toStringOutput.Add($"this.FeeRuleId = {(this.FeeRuleId == null ? "null" : this.FeeRuleId.ToString())}");
-            toStringOutput.Add($"this.SystemEntryDate = {(this.SystemEntryDate == null ? "null" : this.SystemEntryDate.ToString())}");
-            toStringOutput.Add($"this.SystemEntryTime = {(this.SystemEntryTime == null ? "null" : this.SystemEntryTime.ToString())}");
+            toStringOutput.Add($"this.SystemEntryDate = {(this.SystemEntryDate == null ? "null" : this.SystemEntryDate)}");
+            toStringOutput.Add($"this.SystemEntryTime = {(this.SystemEntryTime == null ? "null" : this.SystemEntryTime)}");
             toStringOutput.Add($"this.IsManual = {(this.IsManual == null ? "null" : this.IsManual)}");
             toStringOutput.Add($"this.OriginalTransactionItemId = {(this.OriginalTransactionItemId == null ? "null" : this.OriginalTransactionItemId)}");
             toStringOutput.Add($"this.OriginalTransactionItemInvoiceNumber = {(this.OriginalTransactionItemInvoiceNumber == null ? "null" : this.OriginalTransactionItemInvoiceNumber.ToString())}");
@@ -7651,10 +7669,10 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.EVChargePointConnectorType = {(this.EVChargePointConnectorType == null ? "null" : this.EVChargePointConnectorType.ToString())}");
             toStringOutput.Add($"this.EVChargePointConnectorTypeDescription = {(this.EVChargePointConnectorTypeDescription == null ? "null" : this.EVChargePointConnectorTypeDescription)}");
             toStringOutput.Add($"this.EVChargeDuration = {(this.EVChargeDuration == null ? "null" : this.EVChargeDuration)}");
-            toStringOutput.Add($"this.EVChargeStartDate = {(this.EVChargeStartDate == null ? "null" : this.EVChargeStartDate.ToString())}");
-            toStringOutput.Add($"this.EVChargeStartTime = {(this.EVChargeStartTime == null ? "null" : this.EVChargeStartTime.ToString())}");
-            toStringOutput.Add($"this.EVChargeEndDate = {(this.EVChargeEndDate == null ? "null" : this.EVChargeEndDate.ToString())}");
-            toStringOutput.Add($"this.EVChargeEndTime = {(this.EVChargeEndTime == null ? "null" : this.EVChargeEndTime.ToString())}");
+            toStringOutput.Add($"this.EVChargeStartDate = {(this.EVChargeStartDate == null ? "null" : this.EVChargeStartDate)}");
+            toStringOutput.Add($"this.EVChargeStartTime = {(this.EVChargeStartTime == null ? "null" : this.EVChargeStartTime)}");
+            toStringOutput.Add($"this.EVChargeEndDate = {(this.EVChargeEndDate == null ? "null" : this.EVChargeEndDate)}");
+            toStringOutput.Add($"this.EVChargeEndTime = {(this.EVChargeEndTime == null ? "null" : this.EVChargeEndTime)}");
             toStringOutput.Add($"this.HostingCollectingCompanyNumber = {(this.HostingCollectingCompanyNumber == null ? "null" : this.HostingCollectingCompanyNumber.ToString())}");
             toStringOutput.Add($"this.TransactionId = {(this.TransactionId == null ? "null" : this.TransactionId.ToString())}");
             toStringOutput.Add($"this.FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");

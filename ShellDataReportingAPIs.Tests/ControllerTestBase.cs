@@ -1,21 +1,21 @@
 // <copyright file="ControllerTestBase.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Authentication;
+using ShellDataReportingAPIs.Standard.Exceptions;
+using ShellDataReportingAPIs.Standard.Http.Client;
+using ShellDataReportingAPIs.Standard.Models;
+using ShellDataReportingAPIs.Standard.Models.Containers;
+
 namespace ShellDataReportingAPIs.Tests
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Types;
-    using NUnit.Framework;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Authentication;
-    using ShellDataReportingAPIs.Standard.Exceptions;
-    using ShellDataReportingAPIs.Standard.Http.Client;
-    using ShellDataReportingAPIs.Standard.Models;
-
     /// <summary>
     /// ControllerTestBase Class.
     /// </summary>
@@ -30,7 +30,7 @@ namespace ShellDataReportingAPIs.Tests
         /// <summary>
         /// Gets HttpCallBackHandler.
         /// </summary>
-        internal HttpCallBack HttpCallBack { get; private set; } = new HttpCallBack();
+        internal HttpCallback HttpCallBack { get; private set; } = new HttpCallback();
 
         /// <summary>
         /// Gets ShellDataReportingAPIsClient Client.
@@ -45,19 +45,9 @@ namespace ShellDataReportingAPIs.Tests
         {
             ShellDataReportingAPIsClient config = ShellDataReportingAPIsClient.CreateFromEnvironment();
             this.Client = config.ToBuilder()
-                .HttpCallBack(HttpCallBack)
+                .HttpCallback(HttpCallBack)
                 .Build();
 
-            try
-            {
-                this.Client = this.Client.ToBuilder().BearerTokenCredentials(Client.BearerTokenModel.ToBuilder()
-                    .OAuthToken(this.Client.BearerTokenCredentials.FetchToken()).Build())
-                    .Build();
-            }
-            catch (ApiException) 
-            {
-                // TODO Auto-generated catch block;
-            }
         }
     }
 }

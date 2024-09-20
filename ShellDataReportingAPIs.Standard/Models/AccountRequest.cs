@@ -1,21 +1,21 @@
 // <copyright file="AccountRequest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// AccountRequest.
     /// </summary>
@@ -45,6 +45,11 @@ namespace ShellDataReportingAPIs.Standard.Models
             { "InvoicePointsOnly", true },
             { "ColCoId", false },
             { "AccountName", false },
+        };
+
+        private Dictionary<string, bool> hasPropertySetterCalledFor = new Dictionary<string, bool>
+        {
+            { "InvoicePointsOnly", false },
         };
 
         /// <summary>
@@ -151,12 +156,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Optional if StatusList is passed, else mandatory.
         /// Ignored if StatusList is passed.
         /// Allowed values:
-        /// •	ALL
-        /// •	ACTIVE
-        /// •	BLOCKED
-        /// •	CANCELLED
-        /// •	CREDITLOCK
-        /// •	DELINQUENCYLOCK
+        /// •    ALL
+        /// •    ACTIVE
+        /// •    BLOCKED
+        /// •    CANCELLED
+        /// •    CREDITLOCK
+        /// •    DELINQUENCYLOCK
         /// </summary>
         [JsonProperty("Status")]
         public string Status
@@ -324,12 +329,19 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             get
             {
+                if (!hasPropertySetterCalledFor["InvoicePointsOnly"] &&
+                    invoicePointsOnly == null)
+                {
+                    return false; // Default value
+                }
+
                 return this.invoicePointsOnly;
             }
 
             set
             {
                 this.shouldSerialize["InvoicePointsOnly"] = true;
+                hasPropertySetterCalledFor["InvoicePointsOnly"] = true;
                 this.invoicePointsOnly = value;
             }
         }
@@ -391,11 +403,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Optional
         /// Multiple statuses are allowed to be included in the search criteria.
         /// Allowed values:
-        /// •	ACTIVE
-        /// •	BLOCKED
-        /// •	CANCELLED
-        /// •	CREDITLOCK
-        /// •	DELINQUENCYLOCK
+        /// •    ACTIVE
+        /// •    BLOCKED
+        /// •    CANCELLED
+        /// •    CREDITLOCK
+        /// •    DELINQUENCYLOCK
         /// </summary>
         [JsonProperty("StatusList", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> StatusList { get; set; }
@@ -480,6 +492,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         public void UnsetInvoicePointsOnly()
         {
             this.shouldSerialize["InvoicePointsOnly"] = false;
+            this.hasPropertySetterCalledFor["InvoicePointsOnly"] = false;
         }
 
         /// <summary>

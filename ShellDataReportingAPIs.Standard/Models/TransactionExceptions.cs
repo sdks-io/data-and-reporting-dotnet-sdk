@@ -1,21 +1,21 @@
 // <copyright file="TransactionExceptions.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// TransactionExceptions.
     /// </summary>
@@ -375,7 +375,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string siteCode = null,
             string siteName = null,
             string siteCountry = null,
-            Models.ExceptionSiteLocation location = null,
+            Models.Location location = null,
             string cardGroupName = null,
             string receiptNumber = null,
             string productCode = null,
@@ -1678,10 +1678,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Geography Location entity for Site Location
+        /// Gets or sets Location.
         /// </summary>
         [JsonProperty("Location", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ExceptionSiteLocation Location { get; set; }
+        public Models.Location Location { get; set; }
 
         /// <summary>
         /// Card Group Name
@@ -2580,13 +2580,13 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Sales Item Dispute Status if disputed
-        /// 0	No Dispute
-        /// 1	In Dispute
-        /// 2	Re-Instated
-        /// 3	Adjusted
-        /// 4	Written Off by Colco
-        /// 5	Written Off by Delco
-        /// 6	Charged Back to Site
+        /// 0    No Dispute
+        /// 1    In Dispute
+        /// 2    Re-Instated
+        /// 3    Adjusted
+        /// 4    Written Off by Colco
+        /// 5    Written Off by Delco
+        /// 6    Charged Back to Site
         /// </summary>
         [JsonProperty("DisputeStatus")]
         public string DisputeStatus

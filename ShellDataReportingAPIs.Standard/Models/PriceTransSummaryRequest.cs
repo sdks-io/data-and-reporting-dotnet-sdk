@@ -1,21 +1,21 @@
 // <copyright file="PriceTransSummaryRequest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PriceTransSummaryRequest.
     /// </summary>
@@ -214,10 +214,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Id
         /// Example:
-        /// 21	Unleaded - High octane
-        /// 22	Unleaded - Medium octane
-        /// 23	Unleaded - Low octane
-        /// 24	Unleaded Environmental
+        /// 21    Unleaded - High octane
+        /// 22    Unleaded - Medium octane
+        /// 23    Unleaded - Low octane
+        /// 24    Unleaded Environmental
         /// </summary>
         [JsonProperty("ProductId", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProductId { get; set; }
@@ -227,10 +227,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Optional
         /// Max Length: 8
         /// Example:
-        /// 10	TMF Charges
-        /// 11	Tunnel/Bridges
-        /// 12	Motorway toll
-        /// 13	Ferries
+        /// 10    TMF Charges
+        /// 11    Tunnel/Bridges
+        /// 12    Motorway toll
+        /// 13    Ferries
         /// </summary>
         [JsonProperty("ProductCode", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductCode { get; set; }
@@ -270,9 +270,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Transactions Period.
         /// Possible values are:
-        /// 1.	Last 7 Days
-        /// 2.	Last 30 Days
-        /// 3.	Last 90 Days
+        /// 1.    Last 7 Days
+        /// 2.    Last 30 Days
+        /// 3.    Last 90 Days
         /// Optional - Refer introduction section of this operation for the priority and sequence of different date and invoice number filters that are conditionally applied.
         /// </summary>
         [JsonProperty("Period", NullValueHandling = NullValueHandling.Ignore)]
@@ -281,10 +281,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Site Code as configured in GFN
         /// Example:
-        /// 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
-        /// 050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755
-        /// 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761.
-        /// 050006 -	HARTSHEAD MOOR WESTBOUND MWSA.
+        /// 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
+        /// 050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755
+        /// 050005 -    HARTSHEAD MOOR EASTBOUND MWSA 0761.
+        /// 050006 -    HARTSHEAD MOOR WESTBOUND MWSA.
         /// Note: If IncludeFees is true then this filter will be ignored
         /// </summary>
         [JsonProperty("SiteCode", NullValueHandling = NullValueHandling.Ignore)]

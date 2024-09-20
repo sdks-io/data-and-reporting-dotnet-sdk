@@ -1,28 +1,28 @@
 // <copyright file="InvoiceController.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using APIMatic.Core;
+using APIMatic.Core.Types;
+using APIMatic.Core.Utilities;
+using APIMatic.Core.Utilities.Date.Xml;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Exceptions;
+using ShellDataReportingAPIs.Standard.Http.Client;
+using ShellDataReportingAPIs.Standard.Utilities;
+using System.Net.Http;
+
 namespace ShellDataReportingAPIs.Standard.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Dynamic;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using APIMatic.Core;
-    using APIMatic.Core.Types;
-    using APIMatic.Core.Utilities;
-    using APIMatic.Core.Utilities.Date.Xml;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Exceptions;
-    using ShellDataReportingAPIs.Standard.Http.Client;
-    using ShellDataReportingAPIs.Standard.Utilities;
-    using System.Net.Http;
-
     /// <summary>
     /// InvoiceController.
     /// </summary>
@@ -84,11 +84,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Search400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Search401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Search403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Search404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Search500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -140,11 +140,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Summary400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Summary401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Summary403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Summary404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Summary500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -192,11 +192,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Statementofaccount400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Statementofaccount401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Statementofaccount403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Statementofaccount404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Statementofaccount500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -230,11 +230,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Dates400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Dates401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Dates403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Dates404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Dates500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -268,11 +268,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Searchstatementofaccount400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Searchstatementofaccount401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Searchstatementofaccount403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Searchstatementofaccount404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Searchstatementofaccount500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -306,11 +306,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Searchdocuments400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Searchdocuments401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Searchdocuments403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Searchdocuments404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Searchdocuments500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -344,11 +344,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Eidsearch400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Eidsearch401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Eidsearch403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Eidsearch404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Eidsearch500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -382,11 +382,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Download400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Download401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Download403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Download404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Download500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -422,11 +422,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new InvoiceManagementV1Eiddownload400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new InvoiceManagementV1Eiddownload401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new InvoiceManagementV1Eiddownload403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new InvoiceManagementV1Eiddownload404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new InvoiceManagementV1Eiddownload500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
     }
 }

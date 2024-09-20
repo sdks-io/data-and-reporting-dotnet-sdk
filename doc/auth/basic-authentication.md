@@ -23,7 +23,7 @@ Documentation for accessing and setting credentials for BasicAuth.
 You must provide credentials in the client as shown in the following code snippet.
 
 ```csharp
-ShellDataReportingAPIs.Standard.ShellDataReportingAPIsClient client = new ShellDataReportingAPIs.Standard.ShellDataReportingAPIsClient.Builder()
+ShellDataReportingAPIsClient client = new ShellDataReportingAPIsClient.Builder()
     .BasicAuthCredentials(
         new BasicAuthModel.Builder(
             "Username",

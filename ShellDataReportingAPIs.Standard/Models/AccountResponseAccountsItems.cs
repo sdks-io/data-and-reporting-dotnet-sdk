@@ -1,21 +1,21 @@
 // <copyright file="AccountResponseAccountsItems.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// AccountResponseAccountsItems.
     /// </summary>
@@ -588,10 +588,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Billing/Invoice frequency. The frequency in which the transactions will be considered for invoicing in a bulling run
         /// E.g.:
-        /// 1	Daily (all days)
-        /// 2	Daily (only working days)
-        /// 3	Weekly - Monday
-        /// 4	Weekly – Tuesday
+        /// 1    Daily (all days)
+        /// 2    Daily (only working days)
+        /// 3    Weekly - Monday
+        /// 4    Weekly – Tuesday
         /// Etc.
         /// </summary>
         [JsonProperty("BillingFrequencyType")]
@@ -629,10 +629,10 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Frequency at which the billing process is triggered. E.g.:
-        /// 1	Daily (all days)
-        /// 2	Daily (only working days)
-        /// 3	Weekly - Monday
-        /// 4	Weekly – Tuesday
+        /// 1    Daily (all days)
+        /// 2    Daily (only working days)
+        /// 3    Weekly - Monday
+        /// 4    Weekly – Tuesday
         /// Etc.
         /// </summary>
         [JsonProperty("BillingRunFrequency")]

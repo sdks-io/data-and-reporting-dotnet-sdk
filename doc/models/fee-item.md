@@ -38,8 +38,8 @@
 | `ProductId` | `int?` | Optional | Product Id<br>Example: Sample list of product ids and description.<br>100 Service fee<br>102 Invoice production fee<br>103 Account fee<br>104 Transaction fee<br>105 Card membership fee |
 | `ProductCode` | `string` | Optional | Product Code – Global as per GFN configuration<br>Example:<br>2 Service fee<br>4 Invoice production fee<br>5 Account fee<br>6 Transaction fee<br>7 Card membership fee |
 | `ProductName` | `string` | Optional | Product Name<br>Example: Sample list of product ids and description.<br>Service fee<br>Invoice production fee |
-| `ProductGroupId` | `int?` | Optional | Product Group Id<br>Example: Sample list<br>22	Card related fees<br>23	Monetary Adjustment |
-| `ProductGroupName` | `string` | Optional | Product Group Name<br>Example: Sample list<br>22	Card related fees<br>23	Monetary Adjustment |
+| `ProductGroupId` | `int?` | Optional | Product Group Id<br>Example: Sample list<br>22    Card related fees<br>23    Monetary Adjustment |
+| `ProductGroupName` | `string` | Optional | Product Group Name<br>Example: Sample list<br>22    Card related fees<br>23    Monetary Adjustment |
 | `LineItemDescription` | `string` | Optional | Line Item Description generally the quantity as printed on Invoice or the manually keyed in description for manual fees |
 | `Quantity` | `int?` | Optional | Quantity |
 | `IsInvoiced` | `bool?` | Optional | True/False.<br>Is fee item invoiced |

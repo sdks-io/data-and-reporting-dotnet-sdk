@@ -1,21 +1,21 @@
 // <copyright file="InvoiceSearchDetails.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// InvoiceSearchDetails.
     /// </summary>
@@ -681,16 +681,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Current billing frequency of the account.
         /// A few of the possible IDs and Description are below:
-        /// 1	Daily (all days)
-        /// 2	Daily (only working days)
-        /// 3	Weekly - Monday
-        /// 4	Weekly - Tuesday
-        /// 5	Weekly - Wednesday
-        /// 6	Weekly - Thursday
-        /// 7	Weekly - Friday
-        /// 8	Weekly - Saturday
-        /// 9	Weekly - Sunday
-        /// 10	Monthly - 1st
+        /// 1    Daily (all days)
+        /// 2    Daily (only working days)
+        /// 3    Weekly - Monday
+        /// 4    Weekly - Tuesday
+        /// 5    Weekly - Wednesday
+        /// 6    Weekly - Thursday
+        /// 7    Weekly - Friday
+        /// 8    Weekly - Saturday
+        /// 9    Weekly - Sunday
+        /// 10    Monthly - 1st
         /// Example: Weekly – Wednesday
         /// </summary>
         [JsonProperty("CurrentBillingFrequency")]
@@ -711,16 +711,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Current billing frequency id of the account.
         /// A few of the possible IDs and Description are below:
-        /// 1	Daily (all days)
-        /// 2	Daily (only working days)
-        /// 3	Weekly - Monday
-        /// 4	Weekly - Tuesday
-        /// 5	Weekly - Wednesday
-        /// 6	Weekly - Thursday
-        /// 7	Weekly - Friday
-        /// 8	Weekly - Saturday
-        /// 9	Weekly - Sunday
-        /// 10	Monthly - 1st
+        /// 1    Daily (all days)
+        /// 2    Daily (only working days)
+        /// 3    Weekly - Monday
+        /// 4    Weekly - Tuesday
+        /// 5    Weekly - Wednesday
+        /// 6    Weekly - Thursday
+        /// 7    Weekly - Friday
+        /// 8    Weekly - Saturday
+        /// 9    Weekly - Sunday
+        /// 10    Monthly - 1st
         /// Example: 5
         /// </summary>
         [JsonProperty("CurrentBillingFrequencyId")]
@@ -742,13 +742,13 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <![CDATA[
         /// Current distribution method name of the account.
         /// Example : Id & Description
-        /// 1	e-mail
-        /// 2	Fax
-        /// 3	Courier to Customer
-        /// 4	Courier to Client
-        /// 5	Print
-        /// 6	FTP
-        /// 7	SMS
+        /// 1    e-mail
+        /// 2    Fax
+        /// 3    Courier to Customer
+        /// 4    Courier to Client
+        /// 5    Print
+        /// 6    FTP
+        /// 7    SMS
         /// ]]>
         /// </summary>
         [JsonProperty("CurrentDistributionMethod")]
@@ -770,13 +770,13 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <![CDATA[
         /// Current distribution method id of the account.
         /// Example : Id & Description
-        /// 1	e-mail
-        /// 2	Fax
-        /// 3	Courier to Customer
-        /// 4	Courier to Client
-        /// 5	Print
-        /// 6	FTP
-        /// 7	SMS
+        /// 1    e-mail
+        /// 2    Fax
+        /// 3    Courier to Customer
+        /// 4    Courier to Client
+        /// 5    Print
+        /// 6    FTP
+        /// 7    SMS
         /// ]]>
         /// </summary>
         [JsonProperty("CurrentDistributionMethodId")]
@@ -1188,11 +1188,11 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// A few of the possible IDs and Descriptions are below:
-        /// 1	14 days after Invoice
-        /// 2	15 days after Invoice
-        /// 3	21 days after Invoice
-        /// 4	30 days after Invoice
-        /// 5	45 days after Invoice
+        /// 1    14 days after Invoice
+        /// 2    15 days after Invoice
+        /// 3    21 days after Invoice
+        /// 4    30 days after Invoice
+        /// 5    45 days after Invoice
         /// </summary>
         [JsonProperty("PaymentTerms")]
         public string PaymentTerms
@@ -1212,11 +1212,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Payment terms id of the payment customer.
         /// A few of the possible IDs and Descriptions are below:
-        /// 1	14 days after Invoice
-        /// 2	15 days after Invoice
-        /// 3	21 days after Invoice
-        /// 4	30 days after Invoice
-        /// 5	45 days after Invoice
+        /// 1    14 days after Invoice
+        /// 2    15 days after Invoice
+        /// 3    21 days after Invoice
+        /// 4    30 days after Invoice
+        /// 5    45 days after Invoice
         /// </summary>
         [JsonProperty("PaymentTermsId")]
         public int? PaymentTermsId
@@ -1273,9 +1273,9 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Status of the document. Valid values –
-        /// •	[Empty] – For all document types except for Invoice and Statement.
-        /// •	Due – Invoices/Statements due for payment and is within the due date.
-        /// •	Paid – Fully paid Invoices/Statements.
+        /// •    [Empty] – For all document types except for Invoice and Statement.
+        /// •    Due – Invoices/Statements due for payment and is within the due date.
+        /// •    Paid – Fully paid Invoices/Statements.
         /// Overdue – Invoices/Statements due of payment and has crossed the due date.
         /// </summary>
         [JsonProperty("Status")]
@@ -1297,12 +1297,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <![CDATA[
         /// Billing type description.
         /// Example: Id & Description
-        /// -3	Guarantee History
-        /// -1	Initial Balance
-        /// 0	Standard Invoice
-        /// 1	Immediate Invoice
-        /// 2	Guarantee
-        /// 4	Advanced DD Invoice
+        /// -3    Guarantee History
+        /// -1    Initial Balance
+        /// 0    Standard Invoice
+        /// 1    Immediate Invoice
+        /// 2    Guarantee
+        /// 4    Advanced DD Invoice
         /// ]]>
         /// </summary>
         [JsonProperty("SummaryDocumentBillingType")]
@@ -1324,12 +1324,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <![CDATA[
         /// Billing type id.
         /// Example: Id & Description
-        /// -3	Guarantee History
-        /// -1	Initial Balance
-        /// 0	Standard Invoice
-        /// 1	Immediate Invoice
-        /// 2	Guarantee
-        /// 4	Advanced DD Invoice
+        /// -3    Guarantee History
+        /// -1    Initial Balance
+        /// 0    Standard Invoice
+        /// 1    Immediate Invoice
+        /// 2    Guarantee
+        /// 4    Advanced DD Invoice
         /// ]]>
         /// </summary>
         [JsonProperty("SummaryDocumentBillingTypeId")]
@@ -1555,9 +1555,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Invoice type description.
         /// A few of the possible IDs and Description are below:
-        /// 1	Original
-        /// 2	Reversal
-        /// 3	Replacement
+        /// 1    Original
+        /// 2    Reversal
+        /// 3    Replacement
         /// Example: Original
         /// </summary>
         [JsonProperty("Type")]
@@ -1578,9 +1578,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Invoice type id.
         /// A few of the possible IDs and Descriptions are below:
-        /// 1	Original
-        /// 2	Reversal
-        /// 3	Replacement
+        /// 1    Original
+        /// 2    Reversal
+        /// 3    Replacement
         /// Example: 1
         /// </summary>
         [JsonProperty("TypeId")]

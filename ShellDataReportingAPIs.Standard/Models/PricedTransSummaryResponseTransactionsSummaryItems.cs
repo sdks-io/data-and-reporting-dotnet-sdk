@@ -1,21 +1,21 @@
 // <copyright file="PricedTransSummaryResponseTransactionsSummaryItems.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PricedTransSummaryResponseTransactionsSummaryItems.
     /// </summary>
@@ -186,10 +186,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Code
         /// Examples:
-        /// 10	TMF Charges
-        /// 11	Tunnel/Bridges
-        /// 12	Motorway toll
-        /// 13	Ferries
+        /// 10    TMF Charges
+        /// 11    Tunnel/Bridges
+        /// 12    Motorway toll
+        /// 13    Ferries
         /// </summary>
         [JsonProperty("ProductCode")]
         public string ProductCode
@@ -232,12 +232,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Group Id
         /// Example:
-        /// 1	Parent Product Group
-        /// 2	All Fuels
-        /// 3	Motor gasoline
-        /// 4	2 stroke
-        /// 5	Autogas
-        /// 6	CNG
+        /// 1    Parent Product Group
+        /// 2    All Fuels
+        /// 3    Motor gasoline
+        /// 4    2 stroke
+        /// 5    Autogas
+        /// 6    CNG
         /// </summary>
         [JsonProperty("ProductGroupId")]
         public int? ProductGroupId
@@ -257,13 +257,13 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Group Name
         /// Example:
-        /// 1	Parent Product Group
-        /// 2	All Fuels
-        /// 3	Motor gasoline
-        /// 4	2 stroke
-        /// 5	Autogas
-        /// 6	CNG
-        /// 7	Automotive Gas Oil
+        /// 1    Parent Product Group
+        /// 2    All Fuels
+        /// 3    Motor gasoline
+        /// 4    2 stroke
+        /// 5    Autogas
+        /// 6    CNG
+        /// 7    Automotive Gas Oil
         /// </summary>
         [JsonProperty("ProductGroupName")]
         public string ProductGroupName

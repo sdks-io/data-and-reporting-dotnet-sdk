@@ -44,20 +44,20 @@
 | `IsInvoiced` | `bool?` | Optional | True when the transaction is already invoice, else return False |
 | `InvoiceNumber` | `string` | Optional | Invoice Number if invoiced<br>S04500493 |
 | `InvoiceDate` | `string` | Optional | Invoice Date<br>Format: yyyyMMdd HH:mm:ss |
-| `SiteCode` | `string` | Optional | Site Code<br>Example:<br>050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755<br>050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755 |
-| `SiteName` | `string` | Optional | Site Name<br>Example:<br>050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755<br>050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755 |
+| `SiteCode` | `string` | Optional | Site Code<br>Example:<br>050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755<br>050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755 |
+| `SiteName` | `string` | Optional | Site Name<br>Example:<br>050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755<br>050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755 |
 | `SiteCountry` | `string` | Optional | Site Country<br>Example: France, Germany<br>Note: - The value could be null/blank for fees item.<br>Geography Location entity for Site Location<br>Note: - The value could be null/blank for fees item. |
-| `Location` | [`List<PricedTransactionItemsLocationItems>`](../../doc/models/priced-transaction-items-location-items.md) | Optional | Geography Location entity for Site Location<br>Note: - The value could be null/blank for fees item |
+| `Location` | [`List<PricedTransactionResponseTransactionsItemsLocation>`](../../doc/models/containers/priced-transaction-response-transactions-items-location.md) | Optional | This is List of a container for one-of cases. |
 | `CardGroupName` | `string` | Optional | Card Group Name |
 | `ReceiptNumber` | `string` | Optional | Receipt Number |
-| `ProductCode` | `string` | Optional | Product Code<br>10	TMF Charges<br>11	Tunnel/Bridges<br>12	Motorway toll<br>13	Ferries |
+| `ProductCode` | `string` | Optional | Product Code<br>10    TMF Charges<br>11    Tunnel/Bridges<br>12    Motorway toll<br>13    Ferries |
 | `ProductName` | `string` | Optional | Product Name<br>Unleaded - High octane<br>Unleaded - Medium octane<br>Unleaded - Low octane<br>Unleaded Environmental |
-| `ProductGroupId` | `int?` | Optional | Product Group Id<br>Example:<br>1	Parent Product Group<br>2	All Fuels<br>3	Motor gasoline<br>4	2 stroke<br>5	Autogas<br>6	CNG |
-| `ProductGroupName` | `string` | Optional | Product Group Name<br>Example:<br>1	Parent Product Group<br>2	All Fuels<br>3	Motor gasoline<br>4	2 stroke<br>5	Autogas<br>6	CNG<br>7	Automotive Gas Oil |
+| `ProductGroupId` | `int?` | Optional | Product Group Id<br>Example:<br>1    Parent Product Group<br>2    All Fuels<br>3    Motor gasoline<br>4    2 stroke<br>5    Autogas<br>6    CNG |
+| `ProductGroupName` | `string` | Optional | Product Group Name<br>Example:<br>1    Parent Product Group<br>2    All Fuels<br>3    Motor gasoline<br>4    2 stroke<br>5    Autogas<br>6    CNG<br>7    Automotive Gas Oil |
 | `DelCoExchangeRate` | `double?` | Optional | DelCo Exchange Rate (Site exchange rate) |
 | `ColCoExchangeRate` | `double?` | Optional | ColCo Exchange Rate (Customer exchange rate) |
 | `IsShellSite` | `bool?` | Optional | True when transaction occurred at a Shell site else return False<br>Note: - The value could be null/blank for fees item. |
-| `Network` | `string` | Optional | Network as configured in GFN (Shell PH, ESSO, etc.,)<br>100013	STEINDORFER<br>100015	S.A. BELGIAN SHELL N.V.<br>100016	ESSO BE<br>Note: - The value could be null/blank for fees item |
+| `Network` | `string` | Optional | Network as configured in GFN (Shell PH, ESSO, etc.,)<br>100013    STEINDORFER<br>100015    S.A. BELGIAN SHELL N.V.<br>100016    ESSO BE<br>Note: - The value could be null/blank for fees item |
 | `SiteGroupId` | `int?` | Optional | Site Group Id<br>Example: 202<br>Note: - The value could be null/blank for fees item. |
 | `SiteGroupName` | `string` | Optional | Site Group Name<br>Example: CZ 9100 ECONOMY NETWORK |
 | `PostingDate` | `string` | Optional | Transaction Posting Date<br>Format: yyyyMMdd HHmmss |
@@ -100,7 +100,7 @@
 | `TransactionLine` | `string` | Optional | Transaction line item number |
 | `AllowClearing` | `string` | Optional | Is the Sales Item allowed for clearing? i.e. not written off<br>Example: “Y” or “N”<br>Note: - The value could be null/blank for fees item. |
 | `CRMNumber` | `string` | Optional | CRM Case number if the sales item is in dispute<br>Note: - The value could be null/blank for fees item. |
-| `DisputeStatus` | `string` | Optional | Sales Item Dispute Status if disputed<br>0	No Dispute<br>1	In Dispute<br>2	Re-Instated<br>3	Adjusted<br>4	Written Off by Colco<br>5	Written Off by Delco<br>6	Charged Back to Site<br>Note: - The value could be null/blank for fees item. |
+| `DisputeStatus` | `string` | Optional | Sales Item Dispute Status if disputed<br>0    No Dispute<br>1    In Dispute<br>2    Re-Instated<br>3    Adjusted<br>4    Written Off by Colco<br>5    Written Off by Delco<br>6    Charged Back to Site<br>Note: - The value could be null/blank for fees item. |
 | `RebateRate` | `double?` | Optional | Unit discount in customer currency.<br>Example: 28.279000<br>Note: - The value could be null/blank for fees item |
 | `DelCoToColCoExchangeRate` | `double?` | Optional | Exchange rate from transaction currency to customer currency.<br>Example: 1<br>Note: - The value could be null/blank for fees item |
 | `NetEuroAmount` | `double?` | Optional | Net euro amount.<br>Example: 37.93<br>Note: - The value could be null/blank for fees item |

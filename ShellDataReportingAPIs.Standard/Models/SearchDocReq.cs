@@ -1,21 +1,21 @@
 // <copyright file="SearchDocReq.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// SearchDocReq.
     /// </summary>
@@ -224,10 +224,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// The status of the invoices
         /// Optional
         /// One of the following values:
-        /// •	NEW
-        /// •	VIEWED
-        /// •	DOWNLOADED
-        /// •	RESTORED
+        /// •    NEW
+        /// •    VIEWED
+        /// •    DOWNLOADED
+        /// •    RESTORED
         /// </summary>
         [JsonProperty("InvoiceStatus")]
         public string InvoiceStatus
@@ -348,11 +348,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Optional
         /// This parameter will be ignored if GrossAmount parameter is not set.
         /// One of the following values:
-        /// •	LT (Less Than)
-        /// •	LE (Lesser or Equal)
-        /// •	EQ (equal)
-        /// •	GE (Greater or equal)
-        /// •	GT (Greater than)
+        /// •    LT (Less Than)
+        /// •    LE (Lesser or Equal)
+        /// •    EQ (equal)
+        /// •    GE (Greater or equal)
+        /// •    GT (Greater than)
         /// </summary>
         [JsonProperty("GrossAmountOperator")]
         public string GrossAmountOperator
@@ -373,9 +373,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Document Type
         /// Optional
         /// One of the following values:
-        /// •	NAT (National)
-        /// •	INT (International)
-        /// •	SOA (Statement of Account)
+        /// •    NAT (National)
+        /// •    INT (International)
+        /// •    SOA (Statement of Account)
         /// </summary>
         [JsonProperty("DocumentType")]
         public string DocumentType

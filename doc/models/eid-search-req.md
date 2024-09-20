@@ -15,8 +15,8 @@
 | `AccountGroupName` | `string` | Optional | Account group name<br>Optional.<br>This input is a search criterion, if given. |
 | `FromDate` | `string` | Optional | EID date searched from this date.<br>Optional. |
 | `ToDate` | `string` | Optional | Invoice date searched until this date.<br>Optional. |
-| `InvoiceType` | `string` | Optional | Invoice type.<br>Optional.<br>Possible values:<br>•	NAT (National)<br>•	INT (International) |
-| `InvoiceStatus` | `string` | Optional | Status of the document.<br>Optional.<br>Possible values:<br>•	NEW<br>•	VIEWED<br>•	DOWNLOADED<br>•	RESTORED |
+| `InvoiceType` | `string` | Optional | Invoice type.<br>Optional.<br>Possible values:<br>•    NAT (National)<br>•    INT (International) |
+| `InvoiceStatus` | `string` | Optional | Status of the document.<br>Optional.<br>Possible values:<br>•    NEW<br>•    VIEWED<br>•    DOWNLOADED<br>•    RESTORED |
 | `SortBy` | `List<string>` | Optional | Sort option –<br>•    InvoiceNumber ASC<br>•    InvoiceDate ASC<br>•    InvoiceNumber DESC<br>•    InvoiceDate DESC<br>Optional |
 
 ## Example (as JSON)

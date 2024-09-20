@@ -1,21 +1,21 @@
 // <copyright file="PricedTransactionItemsLocationItems.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PricedTransactionItemsLocationItems.
     /// </summary>
@@ -62,6 +62,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Example: 37.4224764
         /// Note: - The value could be null/blank for fees item.
         /// </summary>
+        [JsonConverter(typeof(JsonStringConverter))]
         [JsonProperty("Latitude")]
         public string Latitude
         {
@@ -82,6 +83,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Example: 122.0842499
         /// Note: - The value could be null/blank for fees item.
         /// </summary>
+        [JsonConverter(typeof(JsonStringConverter))]
         [JsonProperty("Longitude")]
         public string Longitude
         {

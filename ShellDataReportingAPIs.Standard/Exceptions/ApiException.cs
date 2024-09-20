@@ -1,13 +1,13 @@
 // <copyright file="ApiException.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using APIMatic.Core.Types.Sdk;
+using ShellDataReportingAPIs.Standard.Http.Client;
+using ShellDataReportingAPIs.Standard.Http.Request;
+using ShellDataReportingAPIs.Standard.Http.Response;
+
 namespace ShellDataReportingAPIs.Standard.Exceptions
 {
-    using APIMatic.Core.Types.Sdk;
-    using ShellDataReportingAPIs.Standard.Http.Client;
-    using ShellDataReportingAPIs.Standard.Http.Request;
-    using ShellDataReportingAPIs.Standard.Http.Response;
-
     /// <summary>
     /// This is the base class for all exceptions that represent an error response
     /// from the server.

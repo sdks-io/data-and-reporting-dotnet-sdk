@@ -1,21 +1,21 @@
 // <copyright file="SearchDocumentsInvoice.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// SearchDocumentsInvoice.
     /// </summary>
@@ -243,9 +243,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Document type
         /// String containing one of the following values:
-        /// •	NAT (National)
-        /// •	INT (International)
-        /// •	SOA (Statement of Account)
+        /// •    NAT (National)
+        /// •    INT (International)
+        /// •    SOA (Statement of Account)
         /// </summary>
         [JsonProperty("DocumentType")]
         public string DocumentType

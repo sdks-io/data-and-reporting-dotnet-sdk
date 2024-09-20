@@ -1,21 +1,21 @@
 // <copyright file="StatementOfAccountResp.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// StatementOfAccountResp.
     /// </summary>
@@ -47,7 +47,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="paymentsSinceLastSOA">PaymentsSinceLastSOA.</param>
         /// <param name="invoicesSummaries">InvoicesSummaries.</param>
         public StatementOfAccountResp(
-            Models.LastStatementOfAccount lastStatementOfAccount = null,
+            Models.LastStatementOfAccount2 lastStatementOfAccount = null,
             List<Models.MonthlyInvoiceTrend> monthlyInvoiceTrend = null,
             List<Models.PastStatementOfAccounts> pastStatementOfAccounts = null,
             List<Models.PaymentsSinceLastSOA> paymentsSinceLastSOA = null,
@@ -73,10 +73,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Latest statement of the account generated for the given Payer.
+        /// Gets or sets LastStatementOfAccount.
         /// </summary>
         [JsonProperty("LastStatementOfAccount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.LastStatementOfAccount LastStatementOfAccount { get; set; }
+        public Models.LastStatementOfAccount2 LastStatementOfAccount { get; set; }
 
         /// <summary>
         /// Gets or sets MonthlyInvoiceTrend.

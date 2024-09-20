@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Filters` | [`PricedRequestData`](../../doc/models/priced-request-data.md) | Optional | This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbilled sales items) from SFSBI. It provides a flexible search criteria and supports paging |
+| `Filters` | [`Filters`](../../doc/models/filters.md) | Optional | - |
 | `Page` | `int?` | Optional | Specify the page of results to be returned. |
 | `PageSize` | `int?` | Optional | Specify the number of records to returned; Max 1000 |
 
@@ -19,7 +19,10 @@
 {
   "Filters": {
     "ColCoCode": "ColCoCode8",
-    "InvoiceStatus": "U",
+    "InvoiceStatus": {
+      "key1": "val1",
+      "key2": "val2"
+    },
     "PayerNumber": "PayerNumber0",
     "AccountId": 108,
     "AccountNumber": "AccountNumber2",

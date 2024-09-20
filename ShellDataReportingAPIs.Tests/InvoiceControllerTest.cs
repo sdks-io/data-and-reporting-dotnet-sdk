@@ -1,23 +1,24 @@
 // <copyright file="InvoiceControllerTest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities;
+using Newtonsoft.Json.Converters;
+using NUnit.Framework;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Controllers;
+using ShellDataReportingAPIs.Standard.Exceptions;
+using ShellDataReportingAPIs.Standard.Http.Client;
+using ShellDataReportingAPIs.Standard.Http.Response;
+using ShellDataReportingAPIs.Standard.Models.Containers;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Tests
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.IO;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities;
-    using Newtonsoft.Json.Converters;
-    using NUnit.Framework;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Controllers;
-    using ShellDataReportingAPIs.Standard.Exceptions;
-    using ShellDataReportingAPIs.Standard.Http.Client;
-    using ShellDataReportingAPIs.Standard.Http.Response;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// InvoiceControllerTest.
     /// </summary>

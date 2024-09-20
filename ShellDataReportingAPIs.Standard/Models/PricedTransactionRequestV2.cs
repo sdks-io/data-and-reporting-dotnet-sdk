@@ -1,21 +1,21 @@
 // <copyright file="PricedTransactionRequestV2.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PricedTransactionRequestV2.
     /// </summary>
@@ -35,7 +35,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="page">Page.</param>
         /// <param name="pageSize">PageSize.</param>
         public PricedTransactionRequestV2(
-            Models.PricedRequestData filters = null,
+            Models.Filters filters = null,
             int? page = null,
             int? pageSize = null)
         {
@@ -45,10 +45,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbilled sales items) from SFSBI. It provides a flexible search criteria and supports paging
+        /// Gets or sets Filters.
         /// </summary>
         [JsonProperty("Filters", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.PricedRequestData Filters { get; set; }
+        public Models.Filters Filters { get; set; }
 
         /// <summary>
         /// Specify the page of results to be returned.

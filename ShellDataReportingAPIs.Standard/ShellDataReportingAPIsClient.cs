@@ -1,19 +1,18 @@
 // <copyright file="ShellDataReportingAPIsClient.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using APIMatic.Core;
+using APIMatic.Core.Authentication;
+using ShellDataReportingAPIs.Standard.Authentication;
+using ShellDataReportingAPIs.Standard.Controllers;
+using ShellDataReportingAPIs.Standard.Http.Client;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using APIMatic.Core;
-    using APIMatic.Core.Authentication;
-    using APIMatic.Core.Types;
-    using ShellDataReportingAPIs.Standard.Authentication;
-    using ShellDataReportingAPIs.Standard.Controllers;
-    using ShellDataReportingAPIs.Standard.Http.Client;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// The gateway for the SDK. This class acts as a factory for Controller and
     /// holds the configuration of the SDK.
@@ -42,7 +41,7 @@ namespace ShellDataReportingAPIs.Standard
 
         private readonly GlobalConfiguration globalConfiguration;
         private const string userAgent = "APIMATIC 3.0";
-        private readonly HttpCallBack httpCallBack;
+        private readonly HttpCallback httpCallback;
         private readonly Lazy<CustomerController> customer;
         private readonly Lazy<TransactionController> transaction;
         private readonly Lazy<InvoiceController> invoice;
@@ -52,11 +51,11 @@ namespace ShellDataReportingAPIs.Standard
             Environment environment,
             BasicAuthModel basicAuthModel,
             BearerTokenModel bearerTokenModel,
-            HttpCallBack httpCallBack,
+            HttpCallback httpCallback,
             IHttpClientConfiguration httpClientConfiguration)
         {
             this.Environment = environment;
-            this.httpCallBack = httpCallBack;
+            this.httpCallback = httpCallback;
             this.HttpClientConfiguration = httpClientConfiguration;
             BasicAuthModel = basicAuthModel;
             var basicAuthManager = new BasicAuthManager(basicAuthModel);
@@ -68,7 +67,7 @@ namespace ShellDataReportingAPIs.Standard
                     {"BasicAuth", basicAuthManager},
                     {"BearerToken", bearerTokenManager},
                 })
-                .ApiCallback(httpCallBack)
+                .ApiCallback(httpCallback)
                 .HttpConfiguration(httpClientConfiguration)
                 .ServerUrls(EnvironmentsMap[environment], Server.Shell)
                 .UserAgent(userAgent)
@@ -121,7 +120,7 @@ namespace ShellDataReportingAPIs.Standard
         /// <summary>
         /// Gets http callback.
         /// </summary>
-        internal HttpCallBack HttpCallBack => this.httpCallBack;
+        public HttpCallback HttpCallback => this.httpCallback;
 
         /// <summary>
         /// Gets the credentials to use with BasicAuth.
@@ -162,7 +161,7 @@ namespace ShellDataReportingAPIs.Standard
         {
             Builder builder = new Builder()
                 .Environment(this.Environment)
-                .HttpCallBack(httpCallBack)
+                .HttpCallback(httpCallback)
                 .HttpClientConfig(config => config.Build());
 
             if (BasicAuthModel != null)
@@ -231,7 +230,7 @@ namespace ShellDataReportingAPIs.Standard
             private BasicAuthModel basicAuthModel = new BasicAuthModel();
             private BearerTokenModel bearerTokenModel = new BearerTokenModel();
             private HttpClientConfiguration.Builder httpClientConfig = new HttpClientConfiguration.Builder();
-            private HttpCallBack httpCallBack;
+            private HttpCallback httpCallback;
 
             /// <summary>
             /// Sets credentials for BasicAuth.
@@ -293,16 +292,15 @@ namespace ShellDataReportingAPIs.Standard
             }
 
 
-           
 
             /// <summary>
-            /// Sets the HttpCallBack for the Builder.
+            /// Sets the HttpCallback for the Builder.
             /// </summary>
-            /// <param name="httpCallBack"> http callback. </param>
+            /// <param name="httpCallback"> http callback. </param>
             /// <returns>Builder.</returns>
-            internal Builder HttpCallBack(HttpCallBack httpCallBack)
+            public Builder HttpCallback(HttpCallback httpCallback)
             {
-                this.httpCallBack = httpCallBack;
+                this.httpCallback = httpCallback;
                 return this;
             }
 
@@ -324,7 +322,7 @@ namespace ShellDataReportingAPIs.Standard
                     environment,
                     basicAuthModel,
                     bearerTokenModel,
-                    httpCallBack,
+                    httpCallback,
                     httpClientConfig.Build());
             }
         }

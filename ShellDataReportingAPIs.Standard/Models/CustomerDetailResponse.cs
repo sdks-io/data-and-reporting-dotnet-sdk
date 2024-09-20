@@ -1,21 +1,21 @@
 // <copyright file="CustomerDetailResponse.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// CustomerDetailResponse.
     /// </summary>
@@ -374,8 +374,8 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Card group position at –
-        /// •	Payer – Payer level
-        /// •	Account – Account level
+        /// •    Payer – Payer level
+        /// •    Account – Account level
         /// </summary>
         [JsonProperty("CardGroupPosition")]
         public string CardGroupPosition
@@ -624,10 +624,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Default PIN AdviceType of the customer.
         /// Possible Values:
-        /// 1.	Paper
-        /// 2.	Email
-        /// 3.	SMS
-        /// 4.	None
+        /// 1.    Paper
+        /// 2.    Email
+        /// 3.    SMS
+        /// 4.    None
         /// </summary>
         [JsonProperty("DefaultPINAdviceType")]
         public int? DefaultPINAdviceType

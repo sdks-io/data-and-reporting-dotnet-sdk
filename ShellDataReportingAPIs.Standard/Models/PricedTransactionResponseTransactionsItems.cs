@@ -1,21 +1,22 @@
 // <copyright file="PricedTransactionResponseTransactionsItems.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Models.Containers;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// PricedTransactionResponseTransactionsItems.
     /// </summary>
@@ -446,7 +447,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string siteCode = null,
             string siteName = null,
             string siteCountry = null,
-            List<Models.PricedTransactionItemsLocationItems> location = null,
+            List<PricedTransactionResponseTransactionsItemsLocation> location = null,
             string cardGroupName = null,
             string receiptNumber = null,
             string productCode = null,
@@ -1807,8 +1808,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Site Code
         /// Example:
-        /// 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
-        /// 050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755
+        /// 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
+        /// 050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755
         /// </summary>
         [JsonProperty("SiteCode")]
         public string SiteCode
@@ -1828,8 +1829,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Site Name
         /// Example:
-        /// 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
-        /// 050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755
+        /// 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
+        /// 050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755
         /// </summary>
         [JsonProperty("SiteName")]
         public string SiteName
@@ -1873,7 +1874,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// Note: - The value could be null/blank for fees item
         /// </summary>
         [JsonProperty("Location", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Models.PricedTransactionItemsLocationItems> Location { get; set; }
+        public List<PricedTransactionResponseTransactionsItemsLocation> Location { get; set; }
 
         /// <summary>
         /// Card Group Name
@@ -1913,10 +1914,10 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Product Code
-        /// 10	TMF Charges
-        /// 11	Tunnel/Bridges
-        /// 12	Motorway toll
-        /// 13	Ferries
+        /// 10    TMF Charges
+        /// 11    Tunnel/Bridges
+        /// 12    Motorway toll
+        /// 13    Ferries
         /// </summary>
         [JsonProperty("ProductCode")]
         public string ProductCode
@@ -1958,12 +1959,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Group Id
         /// Example:
-        /// 1	Parent Product Group
-        /// 2	All Fuels
-        /// 3	Motor gasoline
-        /// 4	2 stroke
-        /// 5	Autogas
-        /// 6	CNG
+        /// 1    Parent Product Group
+        /// 2    All Fuels
+        /// 3    Motor gasoline
+        /// 4    2 stroke
+        /// 5    Autogas
+        /// 6    CNG
         /// </summary>
         [JsonProperty("ProductGroupId")]
         public int? ProductGroupId
@@ -1983,13 +1984,13 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Group Name
         /// Example:
-        /// 1	Parent Product Group
-        /// 2	All Fuels
-        /// 3	Motor gasoline
-        /// 4	2 stroke
-        /// 5	Autogas
-        /// 6	CNG
-        /// 7	Automotive Gas Oil
+        /// 1    Parent Product Group
+        /// 2    All Fuels
+        /// 3    Motor gasoline
+        /// 4    2 stroke
+        /// 5    Autogas
+        /// 6    CNG
+        /// 7    Automotive Gas Oil
         /// </summary>
         [JsonProperty("ProductGroupName")]
         public string ProductGroupName
@@ -2063,9 +2064,9 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Network as configured in GFN (Shell PH, ESSO, etc.,)
-        /// 100013	STEINDORFER
-        /// 100015	S.A. BELGIAN SHELL N.V.
-        /// 100016	ESSO BE
+        /// 100013    STEINDORFER
+        /// 100015    S.A. BELGIAN SHELL N.V.
+        /// 100016    ESSO BE
         /// Note: - The value could be null/blank for fees item
         /// </summary>
         [JsonProperty("Network")]
@@ -2875,13 +2876,13 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Sales Item Dispute Status if disputed
-        /// 0	No Dispute
-        /// 1	In Dispute
-        /// 2	Re-Instated
-        /// 3	Adjusted
-        /// 4	Written Off by Colco
-        /// 5	Written Off by Delco
-        /// 6	Charged Back to Site
+        /// 0    No Dispute
+        /// 1    In Dispute
+        /// 2    Re-Instated
+        /// 3    Adjusted
+        /// 4    Written Off by Colco
+        /// 5    Written Off by Delco
+        /// 6    Charged Back to Site
         /// Note: - The value could be null/blank for fees item.
         /// </summary>
         [JsonProperty("DisputeStatus")]
@@ -5803,7 +5804,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode)}");
             toStringOutput.Add($"this.SiteName = {(this.SiteName == null ? "null" : this.SiteName)}");
             toStringOutput.Add($"this.SiteCountry = {(this.SiteCountry == null ? "null" : this.SiteCountry)}");
-            toStringOutput.Add($"this.Location = {(this.Location == null ? "null" : $"[{string.Join(", ", this.Location)} ]")}");
+            toStringOutput.Add($"Location = {(this.Location == null ? "null" : this.Location.ToString())}");
             toStringOutput.Add($"this.CardGroupName = {(this.CardGroupName == null ? "null" : this.CardGroupName)}");
             toStringOutput.Add($"this.ReceiptNumber = {(this.ReceiptNumber == null ? "null" : this.ReceiptNumber)}");
             toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");

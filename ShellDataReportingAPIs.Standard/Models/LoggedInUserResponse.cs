@@ -1,21 +1,21 @@
 // <copyright file="LoggedInUserResponse.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// LoggedInUserResponse.
     /// </summary>
@@ -412,8 +412,8 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// List of payers which the user has access to.
-        /// •	It will return 250 payers only and it is configurable. If the user has more than that, the remaining will be ignored.
-        /// •	The payer which is marked as default will be the first item in the output.
+        /// •    It will return 250 payers only and it is configurable. If the user has more than that, the remaining will be ignored.
+        /// •    The payer which is marked as default will be the first item in the output.
         /// Note: This list will be empty for users mapped with roles which has either IsShellAdmin or IsServiceAccount set to true as their access level is controlled at ColCo level only.
         /// </summary>
         [JsonProperty("Payers", NullValueHandling = NullValueHandling.Ignore)]

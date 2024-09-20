@@ -1,21 +1,21 @@
 // <copyright file="DefaultErrorFault.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// DefaultErrorFault.
     /// </summary>
@@ -35,7 +35,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="detail">detail.</param>
         public DefaultErrorFault(
             string faultstring = null,
-            Models.DefaultErrorFaultDetail detail = null)
+            Models.Detail detail = null)
         {
             this.Faultstring = faultstring;
             this.Detail = detail;
@@ -48,10 +48,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         public string Faultstring { get; set; }
 
         /// <summary>
-        /// Details about the error
+        /// Gets or sets Detail.
         /// </summary>
         [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.DefaultErrorFaultDetail Detail { get; set; }
+        public Models.Detail Detail { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()

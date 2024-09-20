@@ -1,21 +1,21 @@
 // <copyright file="SearchStatementOfAccount.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// SearchStatementOfAccount.
     /// </summary>
@@ -332,8 +332,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Due date for payment. Format: yyyyMMdd
         /// Note:
-        /// •	Clients to convert this to appropriate DateTime type.
-        /// •	SoA due date is considered as the latest due date of the invoices within the SoA
+        /// •    Clients to convert this to appropriate DateTime type.
+        /// •    SoA due date is considered as the latest due date of the invoices within the SoA
         /// </summary>
         [JsonProperty("DueDate")]
         public string DueDate
@@ -371,9 +371,9 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Status of the document. Valid values –
-        /// 1.	Paid – Fully paid all Invoices with in the SOA.
-        /// 2.	Overdue – At least one invoice payment due date is less than current date with in the SOA.
-        /// 3.	Due – At least one invoice is due for payment and is within the due date. There is no invoice overdue for payment.
+        /// 1.    Paid – Fully paid all Invoices with in the SOA.
+        /// 2.    Overdue – At least one invoice payment due date is less than current date with in the SOA.
+        /// 3.    Due – At least one invoice is due for payment and is within the due date. There is no invoice overdue for payment.
         /// </summary>
         [JsonProperty("Status")]
         public string Status

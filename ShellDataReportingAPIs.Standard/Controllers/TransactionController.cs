@@ -1,28 +1,28 @@
 // <copyright file="TransactionController.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using APIMatic.Core;
+using APIMatic.Core.Types;
+using APIMatic.Core.Utilities;
+using APIMatic.Core.Utilities.Date.Xml;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Exceptions;
+using ShellDataReportingAPIs.Standard.Http.Client;
+using ShellDataReportingAPIs.Standard.Utilities;
+using System.Net.Http;
+
 namespace ShellDataReportingAPIs.Standard.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Dynamic;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using APIMatic.Core;
-    using APIMatic.Core.Types;
-    using APIMatic.Core.Utilities;
-    using APIMatic.Core.Utilities.Date.Xml;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Exceptions;
-    using ShellDataReportingAPIs.Standard.Http.Client;
-    using ShellDataReportingAPIs.Standard.Utilities;
-    using System.Net.Http;
-
     /// <summary>
     /// TransactionController.
     /// </summary>
@@ -53,12 +53,12 @@ namespace ShellDataReportingAPIs.Standard.Controllers
         ///     * Search by product.
         ///   .
         ///  This API fetches transactions for a period based on the below parameters and priority order:.
-        /// 1.	InvoiceNumber.
-        ///  2.	InvoiceDate.
-        ///  3.	FromDate, ToDate.
-        /// 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
-        ///  5.	InvoiceDateFrom, InvoiceDateTo.
-        ///  6.	Period.
+        /// 1.    InvoiceNumber.
+        ///  2.    InvoiceDate.
+        ///  3.    FromDate, ToDate.
+        /// 4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
+        ///  5.    InvoiceDateFrom, InvoiceDateTo.
+        ///  6.    Period.
         ///  This API considers only one of the above set of parameters at a time. For example, if InvoiceNumber and Period are provided in the input then Period is ignored and transactions associated to the given invoice number are returned.
         /// If none of the above parameters are provided then last 7 days transactions will be fetched.
         /// This operation can fetch transactions that are old up to 24 (configurable) months. However, the date range between any of the ‘From’ and ‘To’ dates in the above combination cannot be more than 210 (configurable) days.
@@ -93,12 +93,12 @@ namespace ShellDataReportingAPIs.Standard.Controllers
         ///     * Search by product.
         ///   .
         ///  This API fetches transactions for a period based on the below parameters and priority order:.
-        /// 1.	InvoiceNumber.
-        ///  2.	InvoiceDate.
-        ///  3.	FromDate, ToDate.
-        /// 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
-        ///  5.	InvoiceDateFrom, InvoiceDateTo.
-        ///  6.	Period.
+        /// 1.    InvoiceNumber.
+        ///  2.    InvoiceDate.
+        ///  3.    FromDate, ToDate.
+        /// 4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
+        ///  5.    InvoiceDateFrom, InvoiceDateTo.
+        ///  6.    Period.
         ///  This API considers only one of the above set of parameters at a time. For example, if InvoiceNumber and Period are provided in the input then Period is ignored and transactions associated to the given invoice number are returned.
         /// If none of the above parameters are provided then last 7 days transactions will be fetched.
         /// This operation can fetch transactions that are old up to 24 (configurable) months. However, the date range between any of the ‘From’ and ‘To’ dates in the above combination cannot be more than 210 (configurable) days.
@@ -123,11 +123,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactions400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactions401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactions403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactions404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactions500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -151,12 +151,12 @@ namespace ShellDataReportingAPIs.Standard.Controllers
         ///     * Search by product.
         ///   .
         ///  This API fetches transactions for a period based on the below parameters and priority order:.
-        ///  1.	InvoiceNumber.
-        ///  2.	InvoiceDate.
-        ///  3.	FromDate, ToDate.
-        ///  4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
-        ///  5.	InvoiceDateFrom, InvoiceDateTo.
-        ///  6.	Period.
+        ///  1.    InvoiceNumber.
+        ///  2.    InvoiceDate.
+        ///  3.    FromDate, ToDate.
+        ///  4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
+        ///  5.    InvoiceDateFrom, InvoiceDateTo.
+        ///  6.    Period.
         ///  This API considers only one of the above set of parameters at a time. For example, if InvoiceNumber and Period are provided in the input then Period is ignored and transactions associated to the given invoice number are returned.
         /// If none of the above parameters are provided then last 7 days transactions will be fetched.
         /// </summary>
@@ -191,12 +191,12 @@ namespace ShellDataReportingAPIs.Standard.Controllers
         ///     * Search by product.
         ///   .
         ///  This API fetches transactions for a period based on the below parameters and priority order:.
-        ///  1.	InvoiceNumber.
-        ///  2.	InvoiceDate.
-        ///  3.	FromDate, ToDate.
-        ///  4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
-        ///  5.	InvoiceDateFrom, InvoiceDateTo.
-        ///  6.	Period.
+        ///  1.    InvoiceNumber.
+        ///  2.    InvoiceDate.
+        ///  3.    FromDate, ToDate.
+        ///  4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
+        ///  5.    InvoiceDateFrom, InvoiceDateTo.
+        ///  6.    Period.
         ///  This API considers only one of the above set of parameters at a time. For example, if InvoiceNumber and Period are provided in the input then Period is ignored and transactions associated to the given invoice number are returned.
         /// If none of the above parameters are provided then last 7 days transactions will be fetched.
         /// </summary>
@@ -220,11 +220,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactionssummary400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactionssummary401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactionssummary403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactionssummary404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionPricedtransactionssummary500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -243,12 +243,12 @@ namespace ShellDataReportingAPIs.Standard.Controllers
         ///     * Search by fuel only transactions.
         ///  .
         ///  This API fetches transactions for a period based on the below parameters and priority order:.
-        ///  1.	InvoiceNumber.
-        ///  2.	InvoiceDate.
-        ///  3.	FromDate, ToDate.
-        ///  4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
-        ///  5.	InvoiceDateFrom, InvoiceDateTo.
-        ///  6.	Period.
+        ///  1.    InvoiceNumber.
+        ///  2.    InvoiceDate.
+        ///  3.    FromDate, ToDate.
+        ///  4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
+        ///  5.    InvoiceDateFrom, InvoiceDateTo.
+        ///  6.    Period.
         ///  This API considers only one of the above set of parameters at a time. For example, if InvoiceNumber and Period are provided in the input then Period is ignored and transactions associated to the given invoice number are returned.
         /// If none of the above parameters are provided then last 7 days transactions will be fetched.
         /// </summary>
@@ -278,12 +278,12 @@ namespace ShellDataReportingAPIs.Standard.Controllers
         ///     * Search by fuel only transactions.
         ///  .
         ///  This API fetches transactions for a period based on the below parameters and priority order:.
-        ///  1.	InvoiceNumber.
-        ///  2.	InvoiceDate.
-        ///  3.	FromDate, ToDate.
-        ///  4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
-        ///  5.	InvoiceDateFrom, InvoiceDateTo.
-        ///  6.	Period.
+        ///  1.    InvoiceNumber.
+        ///  2.    InvoiceDate.
+        ///  3.    FromDate, ToDate.
+        ///  4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false).
+        ///  5.    InvoiceDateFrom, InvoiceDateTo.
+        ///  6.    Period.
         ///  This API considers only one of the above set of parameters at a time. For example, if InvoiceNumber and Period are provided in the input then Period is ignored and transactions associated to the given invoice number are returned.
         /// If none of the above parameters are provided then last 7 days transactions will be fetched.
         /// </summary>
@@ -307,11 +307,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionMultipayerspricedtransactions400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionMultipayerspricedtransactions401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionMultipayerspricedtransactions403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionMultipayerspricedtransactions404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionMultipayerspricedtransactions500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -356,11 +356,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionCardusagesummary400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionCardusagesummary401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionCardusagesummary403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionCardusagesummary404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionCardusagesummary500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -401,11 +401,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedbonus400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedbonus401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedbonus403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedbonus404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedbonus500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -446,11 +446,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedpricing400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedpricing401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedpricing403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedpricing404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionVolumebasedpricing500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -509,11 +509,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionFees400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionFees401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionFees403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionFees404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionFees500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -572,11 +572,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionFeessummary400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionFeessummary401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionFeessummary403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionFeessummary404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionFeessummary500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -621,11 +621,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionFuelconsumption400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionFuelconsumption401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionFuelconsumption403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionFuelconsumption404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionFuelconsumption500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -666,11 +666,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionUpdateodometer400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionUpdateodometer401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionUpdateodometer403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionUpdateodometer404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionUpdateodometer500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -711,11 +711,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.\r\n", (_reason, _context) => new ErrorUserAccessError1Exception(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n", (_reason, _context) => new DefaultErrorException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).", (_reason, _context) => new FleetmanagementV1TransactionExceptions400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new FleetmanagementV1TransactionExceptions401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("The server understood the request but refuses to authorize it.", (_reason, _context) => new FleetmanagementV1TransactionExceptions403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new FleetmanagementV1TransactionExceptions404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition the prevented it from fulfilling the request.", (_reason, _context) => new FleetmanagementV1TransactionExceptions500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -767,11 +767,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new TransactionDataV1Recent400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new TransactionDataV1Recent401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new TransactionDataV1Recent403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new TransactionDataV1Recent404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new TransactionDataV1Recent500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -861,11 +861,11 @@ namespace ShellDataReportingAPIs.Standard.Controllers
                       .Header(_header => _header.Setup("RequestId", requestId))
                       .Header(_header => _header.Setup("Content-Type", "application/json"))))
               .ResponseHandler(_responseHandler => _responseHandler
-                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n", (_reason, _context) => new ErrorObjectException(_reason, _context)))
-                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.\n", (_reason, _context) => new ErrorObjectException(_reason, _context))))
+                  .ErrorCase("400", CreateErrorCase("The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).", (_reason, _context) => new TransactionDataV1Priced400ErrorException(_reason, _context)))
+                  .ErrorCase("401", CreateErrorCase("The request has not been applied because it lacks valid  authentication credentials for the target resource.", (_reason, _context) => new TransactionDataV1Priced401ErrorException(_reason, _context)))
+                  .ErrorCase("403", CreateErrorCase("Forbidden", (_reason, _context) => new TransactionDataV1Priced403ErrorException(_reason, _context)))
+                  .ErrorCase("404", CreateErrorCase("The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.", (_reason, _context) => new TransactionDataV1Priced404ErrorException(_reason, _context)))
+                  .ErrorCase("500", CreateErrorCase("The server encountered an unexpected condition that  prevented it from fulfilling the request.", (_reason, _context) => new TransactionDataV1Priced500ErrorException(_reason, _context))))
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
     }
 }

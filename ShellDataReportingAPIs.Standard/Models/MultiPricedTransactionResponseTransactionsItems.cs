@@ -1,21 +1,21 @@
 // <copyright file="MultiPricedTransactionResponseTransactionsItems.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// MultiPricedTransactionResponseTransactionsItems.
     /// </summary>
@@ -1814,7 +1814,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Site Code
         /// Example:
-        /// 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+        /// 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
         /// </summary>
         [JsonProperty("SiteCode")]
         public string SiteCode
@@ -1834,7 +1834,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Site Name
         /// Example:
-        /// 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+        /// 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
         /// </summary>
         [JsonProperty("SiteName")]
         public string SiteName
@@ -1914,9 +1914,9 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Product Code
-        /// 10	TMF Charges
-        /// 11	Tunnel/Bridges
-        /// 12	Motorway toll
+        /// 10    TMF Charges
+        /// 11    Tunnel/Bridges
+        /// 12    Motorway toll
         /// </summary>
         [JsonProperty("ProductCode")]
         public string ProductCode
@@ -1959,11 +1959,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Group Id
         /// Example:
-        /// 1	Parent Product Group
-        /// 2	All Fuels
-        /// 3	Motor gasoline
-        /// 4	2 stroke
-        /// 5	Autogas
+        /// 1    Parent Product Group
+        /// 2    All Fuels
+        /// 3    Motor gasoline
+        /// 4    2 stroke
+        /// 5    Autogas
         /// </summary>
         [JsonProperty("ProductGroupId")]
         public int? ProductGroupId
@@ -1983,11 +1983,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <summary>
         /// Product Group Name
         /// Example:
-        /// 1	Parent Product Group
-        /// 2	All Fuels
-        /// 3	Motor gasoline
-        /// 4	2 stroke
-        /// 5	Autogas
+        /// 1    Parent Product Group
+        /// 2    All Fuels
+        /// 3    Motor gasoline
+        /// 4    2 stroke
+        /// 5    Autogas
         /// </summary>
         [JsonProperty("ProductGroupName")]
         public string ProductGroupName
@@ -2062,9 +2062,9 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Network  (Shell PH, ESSO, etc.,)
-        /// 100013	STEINDORFER
-        /// 100015	S.A. BELGIAN SHELL N.V.
-        /// 100016	ESSO BE
+        /// 100013    STEINDORFER
+        /// 100015    S.A. BELGIAN SHELL N.V.
+        /// 100016    ESSO BE
         /// Note: - The value could be null/blank for fees item.
         /// </summary>
         [JsonProperty("Network")]
@@ -2887,13 +2887,13 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Sales Item Dispute Status if disputed
-        /// 0	No Dispute
-        /// 1	In Dispute
-        /// 2	Re-Instated
-        /// 3	Adjusted
-        /// 4	Written Off by Colco
-        /// 5	Written Off by Delco
-        /// 6	Charged Back to Site
+        /// 0    No Dispute
+        /// 1    In Dispute
+        /// 2    Re-Instated
+        /// 3    Adjusted
+        /// 4    Written Off by Colco
+        /// 5    Written Off by Delco
+        /// 6    Charged Back to Site
         /// </summary>
         [JsonProperty("DisputeStatus")]
         public string DisputeStatus

@@ -1,21 +1,21 @@
 // <copyright file="AuditRequest.cs" company="APIMatic">
 // Copyright (c) APIMatic. All rights reserved.
 // </copyright>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using APIMatic.Core.Utilities.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Utilities;
+
 namespace ShellDataReportingAPIs.Standard.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using APIMatic.Core.Utilities.Converters;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using ShellDataReportingAPIs.Standard;
-    using ShellDataReportingAPIs.Standard.Utilities;
-
     /// <summary>
     /// AuditRequest.
     /// </summary>
@@ -143,14 +143,14 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Status of requests to be fetched.
-        /// •	Success
-        /// •	Failed
-        /// •	InProgress
-        /// •	Submitted
-        /// •	Rejected
-        /// •	PendingApproval
-        /// •	All
-        /// •	MailedToCSC
+        /// •    Success
+        /// •    Failed
+        /// •    InProgress
+        /// •    Submitted
+        /// •    Rejected
+        /// •    PendingApproval
+        /// •    All
+        /// •    MailedToCSC
         /// Optional
         /// If not passed “All” will be considered as the default value.
         /// </summary>
@@ -284,10 +284,10 @@ namespace ShellDataReportingAPIs.Standard.Models
 
         /// <summary>
         /// Allowed Sorting Options:
-        /// 1.	SubmittedDateDescending
-        /// 2.	SubmittedDateAscending
-        /// 3.	AccountNumberAscending
-        /// 4.	AccountNumberDescending
+        /// 1.    SubmittedDateDescending
+        /// 2.    SubmittedDateAscending
+        /// 3.    AccountNumberAscending
+        /// 4.    AccountNumberDescending
         /// Optional: Default value is 1
         /// Example value to be passed: 1,3
         /// </summary>
