@@ -57,6 +57,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string feesRuleDescription = null,
             double? totalVolume = null)
         {
+
             if (fromDate != null)
             {
                 this.FromDate = fromDate;
@@ -81,7 +82,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.TotalVolume = totalVolume;
             }
-
         }
 
         /// <summary>
@@ -181,14 +181,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PricingHistory : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFromDate()
         {
@@ -196,7 +194,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetToDate()
         {
@@ -204,7 +202,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeesRuleID()
         {
@@ -212,7 +210,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeesRuleDescription()
         {
@@ -220,7 +218,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalVolume()
         {
@@ -275,32 +273,32 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PricingHistory other &&                ((this.FromDate == null && other.FromDate == null) || (this.FromDate?.Equals(other.FromDate) == true)) &&
-                ((this.ToDate == null && other.ToDate == null) || (this.ToDate?.Equals(other.ToDate) == true)) &&
-                ((this.FeesRuleID == null && other.FeesRuleID == null) || (this.FeesRuleID?.Equals(other.FeesRuleID) == true)) &&
-                ((this.FeesRuleDescription == null && other.FeesRuleDescription == null) || (this.FeesRuleDescription?.Equals(other.FeesRuleDescription) == true)) &&
-                ((this.TotalVolume == null && other.TotalVolume == null) || (this.TotalVolume?.Equals(other.TotalVolume) == true));
+            return obj is PricingHistory other &&
+                (this.FromDate == null && other.FromDate == null ||
+                 this.FromDate?.Equals(other.FromDate) == true) &&
+                (this.ToDate == null && other.ToDate == null ||
+                 this.ToDate?.Equals(other.ToDate) == true) &&
+                (this.FeesRuleID == null && other.FeesRuleID == null ||
+                 this.FeesRuleID?.Equals(other.FeesRuleID) == true) &&
+                (this.FeesRuleDescription == null && other.FeesRuleDescription == null ||
+                 this.FeesRuleDescription?.Equals(other.FeesRuleDescription) == true) &&
+                (this.TotalVolume == null && other.TotalVolume == null ||
+                 this.TotalVolume?.Equals(other.TotalVolume) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.FromDate = {(this.FromDate == null ? "null" : this.FromDate)}");
-            toStringOutput.Add($"this.ToDate = {(this.ToDate == null ? "null" : this.ToDate)}");
+            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
             toStringOutput.Add($"this.FeesRuleID = {(this.FeesRuleID == null ? "null" : this.FeesRuleID.ToString())}");
-            toStringOutput.Add($"this.FeesRuleDescription = {(this.FeesRuleDescription == null ? "null" : this.FeesRuleDescription)}");
+            toStringOutput.Add($"this.FeesRuleDescription = {this.FeesRuleDescription ?? "null"}");
             toStringOutput.Add($"this.TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
         }
     }

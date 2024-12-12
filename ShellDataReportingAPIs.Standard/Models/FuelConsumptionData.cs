@@ -117,6 +117,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? cO2Produced = null,
             double? transactionCount = null)
         {
+
             if (accountName != null)
             {
                 this.AccountName = accountName;
@@ -216,7 +217,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.TransactionCount = transactionCount;
             }
-
         }
 
         /// <summary>
@@ -583,14 +583,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"FuelConsumptionData : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountName()
         {
@@ -598,7 +596,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountNumber()
         {
@@ -606,7 +604,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerName()
         {
@@ -614,7 +612,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerNumber()
         {
@@ -622,7 +620,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardNumber()
         {
@@ -630,7 +628,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardGroupId()
         {
@@ -638,7 +636,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardGroupName()
         {
@@ -646,7 +644,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDriverName()
         {
@@ -654,7 +652,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLicenseNumber()
         {
@@ -662,7 +660,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInitialOdometer()
         {
@@ -670,7 +668,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLastOdometer()
         {
@@ -678,7 +676,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDistance()
         {
@@ -686,7 +684,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelConsumption()
         {
@@ -694,7 +692,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelNetAmount()
         {
@@ -702,7 +700,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDiscount()
         {
@@ -710,7 +708,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelTax()
         {
@@ -718,7 +716,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelVolume()
         {
@@ -726,7 +724,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetGrossNonFuelExpenses()
         {
@@ -734,7 +732,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCO2Produced()
         {
@@ -742,7 +740,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionCount()
         {
@@ -932,52 +930,67 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is FuelConsumptionData other &&                ((this.AccountName == null && other.AccountName == null) || (this.AccountName?.Equals(other.AccountName) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.PayerName == null && other.PayerName == null) || (this.PayerName?.Equals(other.PayerName) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.CardNumber == null && other.CardNumber == null) || (this.CardNumber?.Equals(other.CardNumber) == true)) &&
-                ((this.CardGroupId == null && other.CardGroupId == null) || (this.CardGroupId?.Equals(other.CardGroupId) == true)) &&
-                ((this.CardGroupName == null && other.CardGroupName == null) || (this.CardGroupName?.Equals(other.CardGroupName) == true)) &&
-                ((this.DriverName == null && other.DriverName == null) || (this.DriverName?.Equals(other.DriverName) == true)) &&
-                ((this.LicenseNumber == null && other.LicenseNumber == null) || (this.LicenseNumber?.Equals(other.LicenseNumber) == true)) &&
-                ((this.InitialOdometer == null && other.InitialOdometer == null) || (this.InitialOdometer?.Equals(other.InitialOdometer) == true)) &&
-                ((this.LastOdometer == null && other.LastOdometer == null) || (this.LastOdometer?.Equals(other.LastOdometer) == true)) &&
-                ((this.Distance == null && other.Distance == null) || (this.Distance?.Equals(other.Distance) == true)) &&
-                ((this.FuelConsumption == null && other.FuelConsumption == null) || (this.FuelConsumption?.Equals(other.FuelConsumption) == true)) &&
-                ((this.FuelNetAmount == null && other.FuelNetAmount == null) || (this.FuelNetAmount?.Equals(other.FuelNetAmount) == true)) &&
-                ((this.Discount == null && other.Discount == null) || (this.Discount?.Equals(other.Discount) == true)) &&
-                ((this.FuelTax == null && other.FuelTax == null) || (this.FuelTax?.Equals(other.FuelTax) == true)) &&
-                ((this.FuelVolume == null && other.FuelVolume == null) || (this.FuelVolume?.Equals(other.FuelVolume) == true)) &&
-                ((this.GrossNonFuelExpenses == null && other.GrossNonFuelExpenses == null) || (this.GrossNonFuelExpenses?.Equals(other.GrossNonFuelExpenses) == true)) &&
-                ((this.CO2Produced == null && other.CO2Produced == null) || (this.CO2Produced?.Equals(other.CO2Produced) == true)) &&
-                ((this.TransactionCount == null && other.TransactionCount == null) || (this.TransactionCount?.Equals(other.TransactionCount) == true));
+            return obj is FuelConsumptionData other &&
+                (this.AccountName == null && other.AccountName == null ||
+                 this.AccountName?.Equals(other.AccountName) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.PayerName == null && other.PayerName == null ||
+                 this.PayerName?.Equals(other.PayerName) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.CardNumber == null && other.CardNumber == null ||
+                 this.CardNumber?.Equals(other.CardNumber) == true) &&
+                (this.CardGroupId == null && other.CardGroupId == null ||
+                 this.CardGroupId?.Equals(other.CardGroupId) == true) &&
+                (this.CardGroupName == null && other.CardGroupName == null ||
+                 this.CardGroupName?.Equals(other.CardGroupName) == true) &&
+                (this.DriverName == null && other.DriverName == null ||
+                 this.DriverName?.Equals(other.DriverName) == true) &&
+                (this.LicenseNumber == null && other.LicenseNumber == null ||
+                 this.LicenseNumber?.Equals(other.LicenseNumber) == true) &&
+                (this.InitialOdometer == null && other.InitialOdometer == null ||
+                 this.InitialOdometer?.Equals(other.InitialOdometer) == true) &&
+                (this.LastOdometer == null && other.LastOdometer == null ||
+                 this.LastOdometer?.Equals(other.LastOdometer) == true) &&
+                (this.Distance == null && other.Distance == null ||
+                 this.Distance?.Equals(other.Distance) == true) &&
+                (this.FuelConsumption == null && other.FuelConsumption == null ||
+                 this.FuelConsumption?.Equals(other.FuelConsumption) == true) &&
+                (this.FuelNetAmount == null && other.FuelNetAmount == null ||
+                 this.FuelNetAmount?.Equals(other.FuelNetAmount) == true) &&
+                (this.Discount == null && other.Discount == null ||
+                 this.Discount?.Equals(other.Discount) == true) &&
+                (this.FuelTax == null && other.FuelTax == null ||
+                 this.FuelTax?.Equals(other.FuelTax) == true) &&
+                (this.FuelVolume == null && other.FuelVolume == null ||
+                 this.FuelVolume?.Equals(other.FuelVolume) == true) &&
+                (this.GrossNonFuelExpenses == null && other.GrossNonFuelExpenses == null ||
+                 this.GrossNonFuelExpenses?.Equals(other.GrossNonFuelExpenses) == true) &&
+                (this.CO2Produced == null && other.CO2Produced == null ||
+                 this.CO2Produced?.Equals(other.CO2Produced) == true) &&
+                (this.TransactionCount == null && other.TransactionCount == null ||
+                 this.TransactionCount?.Equals(other.TransactionCount) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.AccountName = {(this.AccountName == null ? "null" : this.AccountName)}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
-            toStringOutput.Add($"this.PayerName = {(this.PayerName == null ? "null" : this.PayerName)}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
-            toStringOutput.Add($"this.CardNumber = {(this.CardNumber == null ? "null" : this.CardNumber)}");
+            toStringOutput.Add($"this.AccountName = {this.AccountName ?? "null"}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"this.PayerName = {this.PayerName ?? "null"}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"this.CardNumber = {this.CardNumber ?? "null"}");
             toStringOutput.Add($"this.CardGroupId = {(this.CardGroupId == null ? "null" : this.CardGroupId.ToString())}");
-            toStringOutput.Add($"this.CardGroupName = {(this.CardGroupName == null ? "null" : this.CardGroupName)}");
-            toStringOutput.Add($"this.DriverName = {(this.DriverName == null ? "null" : this.DriverName)}");
-            toStringOutput.Add($"this.LicenseNumber = {(this.LicenseNumber == null ? "null" : this.LicenseNumber)}");
+            toStringOutput.Add($"this.CardGroupName = {this.CardGroupName ?? "null"}");
+            toStringOutput.Add($"this.DriverName = {this.DriverName ?? "null"}");
+            toStringOutput.Add($"this.LicenseNumber = {this.LicenseNumber ?? "null"}");
             toStringOutput.Add($"this.InitialOdometer = {(this.InitialOdometer == null ? "null" : this.InitialOdometer.ToString())}");
             toStringOutput.Add($"this.LastOdometer = {(this.LastOdometer == null ? "null" : this.LastOdometer.ToString())}");
             toStringOutput.Add($"this.Distance = {(this.Distance == null ? "null" : this.Distance.ToString())}");

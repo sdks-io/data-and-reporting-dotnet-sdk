@@ -57,7 +57,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         public int? Page { get; set; }
 
         /// <summary>
-        /// Specify the number of records to returned; Max 1000
+        /// Specify the number of records to returned; Max 100
         /// </summary>
         [JsonProperty("PageSize", NullValueHandling = NullValueHandling.Ignore)]
         public int? PageSize { get; set; }
@@ -66,29 +66,25 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"EIDSearchRequest : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is EIDSearchRequest other &&                ((this.Filters == null && other.Filters == null) || (this.Filters?.Equals(other.Filters) == true)) &&
-                ((this.Page == null && other.Page == null) || (this.Page?.Equals(other.Page) == true)) &&
-                ((this.PageSize == null && other.PageSize == null) || (this.PageSize?.Equals(other.PageSize) == true));
+            return obj is EIDSearchRequest other &&
+                (this.Filters == null && other.Filters == null ||
+                 this.Filters?.Equals(other.Filters) == true) &&
+                (this.Page == null && other.Page == null ||
+                 this.Page?.Equals(other.Page) == true) &&
+                (this.PageSize == null && other.PageSize == null ||
+                 this.PageSize?.Equals(other.PageSize) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

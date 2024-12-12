@@ -93,6 +93,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? customerRetailValueTotalNet = null,
             double? customerRetailValueTotalGross = null)
         {
+
             if (productId != null)
             {
                 this.ProductId = productId;
@@ -162,7 +163,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.CustomerRetailValueTotalGross = customerRetailValueTotalGross;
             }
-
         }
 
         /// <summary>
@@ -450,14 +450,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PricedTransSummaryResponseTransactionsSummaryItems : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductId()
         {
@@ -465,7 +463,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductCode()
         {
@@ -473,7 +471,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductName()
         {
@@ -481,7 +479,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupId()
         {
@@ -489,7 +487,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupName()
         {
@@ -497,7 +495,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupId()
         {
@@ -505,7 +503,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupName()
         {
@@ -513,7 +511,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalFuelQuantity()
         {
@@ -521,7 +519,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalNetAmount()
         {
@@ -529,7 +527,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalGrossAmount()
         {
@@ -537,7 +535,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceCurrencyCode()
         {
@@ -545,7 +543,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceCurrencySymbol()
         {
@@ -553,7 +551,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerRetailValueTotalNet()
         {
@@ -561,7 +559,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerRetailValueTotalGross()
         {
@@ -697,31 +695,40 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PricedTransSummaryResponseTransactionsSummaryItems other &&                ((this.ProductId == null && other.ProductId == null) || (this.ProductId?.Equals(other.ProductId) == true)) &&
-                ((this.ProductCode == null && other.ProductCode == null) || (this.ProductCode?.Equals(other.ProductCode) == true)) &&
-                ((this.ProductName == null && other.ProductName == null) || (this.ProductName?.Equals(other.ProductName) == true)) &&
-                ((this.ProductGroupId == null && other.ProductGroupId == null) || (this.ProductGroupId?.Equals(other.ProductGroupId) == true)) &&
-                ((this.ProductGroupName == null && other.ProductGroupName == null) || (this.ProductGroupName?.Equals(other.ProductGroupName) == true)) &&
-                ((this.SiteGroupId == null && other.SiteGroupId == null) || (this.SiteGroupId?.Equals(other.SiteGroupId) == true)) &&
-                ((this.SiteGroupName == null && other.SiteGroupName == null) || (this.SiteGroupName?.Equals(other.SiteGroupName) == true)) &&
-                ((this.TotalFuelQuantity == null && other.TotalFuelQuantity == null) || (this.TotalFuelQuantity?.Equals(other.TotalFuelQuantity) == true)) &&
-                ((this.TotalNetAmount == null && other.TotalNetAmount == null) || (this.TotalNetAmount?.Equals(other.TotalNetAmount) == true)) &&
-                ((this.TotalGrossAmount == null && other.TotalGrossAmount == null) || (this.TotalGrossAmount?.Equals(other.TotalGrossAmount) == true)) &&
-                ((this.InvoiceCurrencyCode == null && other.InvoiceCurrencyCode == null) || (this.InvoiceCurrencyCode?.Equals(other.InvoiceCurrencyCode) == true)) &&
-                ((this.InvoiceCurrencySymbol == null && other.InvoiceCurrencySymbol == null) || (this.InvoiceCurrencySymbol?.Equals(other.InvoiceCurrencySymbol) == true)) &&
-                ((this.CustomerRetailValueTotalNet == null && other.CustomerRetailValueTotalNet == null) || (this.CustomerRetailValueTotalNet?.Equals(other.CustomerRetailValueTotalNet) == true)) &&
-                ((this.CustomerRetailValueTotalGross == null && other.CustomerRetailValueTotalGross == null) || (this.CustomerRetailValueTotalGross?.Equals(other.CustomerRetailValueTotalGross) == true));
+            return obj is PricedTransSummaryResponseTransactionsSummaryItems other &&
+                (this.ProductId == null && other.ProductId == null ||
+                 this.ProductId?.Equals(other.ProductId) == true) &&
+                (this.ProductCode == null && other.ProductCode == null ||
+                 this.ProductCode?.Equals(other.ProductCode) == true) &&
+                (this.ProductName == null && other.ProductName == null ||
+                 this.ProductName?.Equals(other.ProductName) == true) &&
+                (this.ProductGroupId == null && other.ProductGroupId == null ||
+                 this.ProductGroupId?.Equals(other.ProductGroupId) == true) &&
+                (this.ProductGroupName == null && other.ProductGroupName == null ||
+                 this.ProductGroupName?.Equals(other.ProductGroupName) == true) &&
+                (this.SiteGroupId == null && other.SiteGroupId == null ||
+                 this.SiteGroupId?.Equals(other.SiteGroupId) == true) &&
+                (this.SiteGroupName == null && other.SiteGroupName == null ||
+                 this.SiteGroupName?.Equals(other.SiteGroupName) == true) &&
+                (this.TotalFuelQuantity == null && other.TotalFuelQuantity == null ||
+                 this.TotalFuelQuantity?.Equals(other.TotalFuelQuantity) == true) &&
+                (this.TotalNetAmount == null && other.TotalNetAmount == null ||
+                 this.TotalNetAmount?.Equals(other.TotalNetAmount) == true) &&
+                (this.TotalGrossAmount == null && other.TotalGrossAmount == null ||
+                 this.TotalGrossAmount?.Equals(other.TotalGrossAmount) == true) &&
+                (this.InvoiceCurrencyCode == null && other.InvoiceCurrencyCode == null ||
+                 this.InvoiceCurrencyCode?.Equals(other.InvoiceCurrencyCode) == true) &&
+                (this.InvoiceCurrencySymbol == null && other.InvoiceCurrencySymbol == null ||
+                 this.InvoiceCurrencySymbol?.Equals(other.InvoiceCurrencySymbol) == true) &&
+                (this.CustomerRetailValueTotalNet == null && other.CustomerRetailValueTotalNet == null ||
+                 this.CustomerRetailValueTotalNet?.Equals(other.CustomerRetailValueTotalNet) == true) &&
+                (this.CustomerRetailValueTotalGross == null && other.CustomerRetailValueTotalGross == null ||
+                 this.CustomerRetailValueTotalGross?.Equals(other.CustomerRetailValueTotalGross) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -729,17 +736,17 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");
-            toStringOutput.Add($"this.ProductName = {(this.ProductName == null ? "null" : this.ProductName)}");
+            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
             toStringOutput.Add($"this.ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {(this.ProductGroupName == null ? "null" : this.ProductGroupName)}");
+            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
             toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {(this.SiteGroupName == null ? "null" : this.SiteGroupName)}");
+            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
             toStringOutput.Add($"this.TotalFuelQuantity = {(this.TotalFuelQuantity == null ? "null" : this.TotalFuelQuantity.ToString())}");
             toStringOutput.Add($"this.TotalNetAmount = {(this.TotalNetAmount == null ? "null" : this.TotalNetAmount.ToString())}");
             toStringOutput.Add($"this.TotalGrossAmount = {(this.TotalGrossAmount == null ? "null" : this.TotalGrossAmount.ToString())}");
-            toStringOutput.Add($"this.InvoiceCurrencyCode = {(this.InvoiceCurrencyCode == null ? "null" : this.InvoiceCurrencyCode)}");
-            toStringOutput.Add($"this.InvoiceCurrencySymbol = {(this.InvoiceCurrencySymbol == null ? "null" : this.InvoiceCurrencySymbol)}");
+            toStringOutput.Add($"this.InvoiceCurrencyCode = {this.InvoiceCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.InvoiceCurrencySymbol = {this.InvoiceCurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.CustomerRetailValueTotalNet = {(this.CustomerRetailValueTotalNet == null ? "null" : this.CustomerRetailValueTotalNet.ToString())}");
             toStringOutput.Add($"this.CustomerRetailValueTotalGross = {(this.CustomerRetailValueTotalGross == null ? "null" : this.CustomerRetailValueTotalGross.ToString())}");
         }

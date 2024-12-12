@@ -45,6 +45,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string partnerId = null,
             string partnerName = null)
         {
+
             if (partnerId != null)
             {
                 this.PartnerId = partnerId;
@@ -54,7 +55,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.PartnerName = partnerName;
             }
-
         }
 
         /// <summary>
@@ -97,14 +97,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"CustomerContract : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPartnerId()
         {
@@ -112,7 +110,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPartnerName()
         {
@@ -140,27 +138,24 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is CustomerContract other &&                ((this.PartnerId == null && other.PartnerId == null) || (this.PartnerId?.Equals(other.PartnerId) == true)) &&
-                ((this.PartnerName == null && other.PartnerName == null) || (this.PartnerName?.Equals(other.PartnerName) == true));
+            return obj is CustomerContract other &&
+                (this.PartnerId == null && other.PartnerId == null ||
+                 this.PartnerId?.Equals(other.PartnerId) == true) &&
+                (this.PartnerName == null && other.PartnerName == null ||
+                 this.PartnerName?.Equals(other.PartnerName) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.PartnerId = {(this.PartnerId == null ? "null" : this.PartnerId)}");
-            toStringOutput.Add($"this.PartnerName = {(this.PartnerName == null ? "null" : this.PartnerName)}");
+            toStringOutput.Add($"this.PartnerId = {this.PartnerId ?? "null"}");
+            toStringOutput.Add($"this.PartnerName = {this.PartnerName ?? "null"}");
         }
     }
 }

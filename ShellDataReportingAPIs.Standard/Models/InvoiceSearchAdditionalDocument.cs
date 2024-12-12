@@ -49,6 +49,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string type = null,
             string isApplicable = null)
         {
+
             if (reference != null)
             {
                 this.Reference = reference;
@@ -63,7 +64,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.IsApplicable = isApplicable;
             }
-
         }
 
         /// <summary>
@@ -127,14 +127,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"InvoiceSearchAdditionalDocument : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetReference()
         {
@@ -142,7 +140,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetType()
         {
@@ -150,7 +148,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIsApplicable()
         {
@@ -187,29 +185,27 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is InvoiceSearchAdditionalDocument other &&                ((this.Reference == null && other.Reference == null) || (this.Reference?.Equals(other.Reference) == true)) &&
-                ((this.Type == null && other.Type == null) || (this.Type?.Equals(other.Type) == true)) &&
-                ((this.IsApplicable == null && other.IsApplicable == null) || (this.IsApplicable?.Equals(other.IsApplicable) == true));
+            return obj is InvoiceSearchAdditionalDocument other &&
+                (this.Reference == null && other.Reference == null ||
+                 this.Reference?.Equals(other.Reference) == true) &&
+                (this.Type == null && other.Type == null ||
+                 this.Type?.Equals(other.Type) == true) &&
+                (this.IsApplicable == null && other.IsApplicable == null ||
+                 this.IsApplicable?.Equals(other.IsApplicable) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Reference = {(this.Reference == null ? "null" : this.Reference)}");
-            toStringOutput.Add($"this.Type = {(this.Type == null ? "null" : this.Type)}");
-            toStringOutput.Add($"this.IsApplicable = {(this.IsApplicable == null ? "null" : this.IsApplicable)}");
+            toStringOutput.Add($"this.Reference = {this.Reference ?? "null"}");
+            toStringOutput.Add($"this.Type = {this.Type ?? "null"}");
+            toStringOutput.Add($"this.IsApplicable = {this.IsApplicable ?? "null"}");
         }
     }
 }

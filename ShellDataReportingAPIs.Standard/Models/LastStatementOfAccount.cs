@@ -145,6 +145,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? totalSummaryBillingDocuments = null,
             int? unallocatedPayment = null)
         {
+
             if (amountDue != null)
             {
                 this.AmountDue = amountDue;
@@ -279,7 +280,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.UnallocatedPayment = unallocatedPayment;
             }
-
         }
 
         /// <summary>
@@ -826,14 +826,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"LastStatementOfAccount : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountDue()
         {
@@ -841,7 +839,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountNotOverdue()
         {
@@ -849,7 +847,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountOverdue()
         {
@@ -857,7 +855,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCreditLimit()
         {
@@ -865,7 +863,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCreditLimitCurrencyCode()
         {
@@ -873,7 +871,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCreditLimitCurrencySymbol()
         {
@@ -881,7 +879,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCreditLimitInCustomerCurrency()
         {
@@ -889,7 +887,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencyCode()
         {
@@ -897,7 +895,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencySymbol()
         {
@@ -905,7 +903,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLastPaymentCurrencyCode()
         {
@@ -913,7 +911,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLastPaymentCurrencySymbol()
         {
@@ -921,7 +919,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLastPaymentDate()
         {
@@ -929,7 +927,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLastPaymentValue()
         {
@@ -937,7 +935,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetOutstandingBalance()
         {
@@ -945,7 +943,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerId()
         {
@@ -953,7 +951,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerNumber()
         {
@@ -961,7 +959,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentDueDate()
         {
@@ -969,7 +967,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentMethod()
         {
@@ -977,7 +975,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentMethodId()
         {
@@ -985,7 +983,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentTerms()
         {
@@ -993,7 +991,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentTermsId()
         {
@@ -1001,7 +999,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSoAReferenceNumber()
         {
@@ -1009,7 +1007,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetStatementDate()
         {
@@ -1017,7 +1015,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetStatementOfAccountId()
         {
@@ -1025,7 +1023,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalBillingDocuments()
         {
@@ -1033,7 +1031,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalSummaryBillingDocuments()
         {
@@ -1041,7 +1039,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUnallocatedPayment()
         {
@@ -1294,44 +1292,66 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is LastStatementOfAccount other &&                ((this.AmountDue == null && other.AmountDue == null) || (this.AmountDue?.Equals(other.AmountDue) == true)) &&
-                ((this.AmountNotOverdue == null && other.AmountNotOverdue == null) || (this.AmountNotOverdue?.Equals(other.AmountNotOverdue) == true)) &&
-                ((this.AmountOverdue == null && other.AmountOverdue == null) || (this.AmountOverdue?.Equals(other.AmountOverdue) == true)) &&
-                ((this.CreditLimit == null && other.CreditLimit == null) || (this.CreditLimit?.Equals(other.CreditLimit) == true)) &&
-                ((this.CreditLimitCurrencyCode == null && other.CreditLimitCurrencyCode == null) || (this.CreditLimitCurrencyCode?.Equals(other.CreditLimitCurrencyCode) == true)) &&
-                ((this.CreditLimitCurrencySymbol == null && other.CreditLimitCurrencySymbol == null) || (this.CreditLimitCurrencySymbol?.Equals(other.CreditLimitCurrencySymbol) == true)) &&
-                ((this.CreditLimitInCustomerCurrency == null && other.CreditLimitInCustomerCurrency == null) || (this.CreditLimitInCustomerCurrency?.Equals(other.CreditLimitInCustomerCurrency) == true)) &&
-                ((this.CurrencyCode == null && other.CurrencyCode == null) || (this.CurrencyCode?.Equals(other.CurrencyCode) == true)) &&
-                ((this.CurrencySymbol == null && other.CurrencySymbol == null) || (this.CurrencySymbol?.Equals(other.CurrencySymbol) == true)) &&
-                ((this.LastPaymentCurrencyCode == null && other.LastPaymentCurrencyCode == null) || (this.LastPaymentCurrencyCode?.Equals(other.LastPaymentCurrencyCode) == true)) &&
-                ((this.LastPaymentCurrencySymbol == null && other.LastPaymentCurrencySymbol == null) || (this.LastPaymentCurrencySymbol?.Equals(other.LastPaymentCurrencySymbol) == true)) &&
-                ((this.LastPaymentDate == null && other.LastPaymentDate == null) || (this.LastPaymentDate?.Equals(other.LastPaymentDate) == true)) &&
-                ((this.LastPaymentValue == null && other.LastPaymentValue == null) || (this.LastPaymentValue?.Equals(other.LastPaymentValue) == true)) &&
-                ((this.OutstandingBalance == null && other.OutstandingBalance == null) || (this.OutstandingBalance?.Equals(other.OutstandingBalance) == true)) &&
-                ((this.PayerId == null && other.PayerId == null) || (this.PayerId?.Equals(other.PayerId) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.PaymentDueDate == null && other.PaymentDueDate == null) || (this.PaymentDueDate?.Equals(other.PaymentDueDate) == true)) &&
-                ((this.PaymentMethod == null && other.PaymentMethod == null) || (this.PaymentMethod?.Equals(other.PaymentMethod) == true)) &&
-                ((this.PaymentMethodId == null && other.PaymentMethodId == null) || (this.PaymentMethodId?.Equals(other.PaymentMethodId) == true)) &&
-                ((this.PaymentTerms == null && other.PaymentTerms == null) || (this.PaymentTerms?.Equals(other.PaymentTerms) == true)) &&
-                ((this.PaymentTermsId == null && other.PaymentTermsId == null) || (this.PaymentTermsId?.Equals(other.PaymentTermsId) == true)) &&
-                ((this.SoAReferenceNumber == null && other.SoAReferenceNumber == null) || (this.SoAReferenceNumber?.Equals(other.SoAReferenceNumber) == true)) &&
-                ((this.StatementDate == null && other.StatementDate == null) || (this.StatementDate?.Equals(other.StatementDate) == true)) &&
-                ((this.StatementOfAccountId == null && other.StatementOfAccountId == null) || (this.StatementOfAccountId?.Equals(other.StatementOfAccountId) == true)) &&
-                ((this.TotalBillingDocuments == null && other.TotalBillingDocuments == null) || (this.TotalBillingDocuments?.Equals(other.TotalBillingDocuments) == true)) &&
-                ((this.TotalSummaryBillingDocuments == null && other.TotalSummaryBillingDocuments == null) || (this.TotalSummaryBillingDocuments?.Equals(other.TotalSummaryBillingDocuments) == true)) &&
-                ((this.UnallocatedPayment == null && other.UnallocatedPayment == null) || (this.UnallocatedPayment?.Equals(other.UnallocatedPayment) == true));
+            return obj is LastStatementOfAccount other &&
+                (this.AmountDue == null && other.AmountDue == null ||
+                 this.AmountDue?.Equals(other.AmountDue) == true) &&
+                (this.AmountNotOverdue == null && other.AmountNotOverdue == null ||
+                 this.AmountNotOverdue?.Equals(other.AmountNotOverdue) == true) &&
+                (this.AmountOverdue == null && other.AmountOverdue == null ||
+                 this.AmountOverdue?.Equals(other.AmountOverdue) == true) &&
+                (this.CreditLimit == null && other.CreditLimit == null ||
+                 this.CreditLimit?.Equals(other.CreditLimit) == true) &&
+                (this.CreditLimitCurrencyCode == null && other.CreditLimitCurrencyCode == null ||
+                 this.CreditLimitCurrencyCode?.Equals(other.CreditLimitCurrencyCode) == true) &&
+                (this.CreditLimitCurrencySymbol == null && other.CreditLimitCurrencySymbol == null ||
+                 this.CreditLimitCurrencySymbol?.Equals(other.CreditLimitCurrencySymbol) == true) &&
+                (this.CreditLimitInCustomerCurrency == null && other.CreditLimitInCustomerCurrency == null ||
+                 this.CreditLimitInCustomerCurrency?.Equals(other.CreditLimitInCustomerCurrency) == true) &&
+                (this.CurrencyCode == null && other.CurrencyCode == null ||
+                 this.CurrencyCode?.Equals(other.CurrencyCode) == true) &&
+                (this.CurrencySymbol == null && other.CurrencySymbol == null ||
+                 this.CurrencySymbol?.Equals(other.CurrencySymbol) == true) &&
+                (this.LastPaymentCurrencyCode == null && other.LastPaymentCurrencyCode == null ||
+                 this.LastPaymentCurrencyCode?.Equals(other.LastPaymentCurrencyCode) == true) &&
+                (this.LastPaymentCurrencySymbol == null && other.LastPaymentCurrencySymbol == null ||
+                 this.LastPaymentCurrencySymbol?.Equals(other.LastPaymentCurrencySymbol) == true) &&
+                (this.LastPaymentDate == null && other.LastPaymentDate == null ||
+                 this.LastPaymentDate?.Equals(other.LastPaymentDate) == true) &&
+                (this.LastPaymentValue == null && other.LastPaymentValue == null ||
+                 this.LastPaymentValue?.Equals(other.LastPaymentValue) == true) &&
+                (this.OutstandingBalance == null && other.OutstandingBalance == null ||
+                 this.OutstandingBalance?.Equals(other.OutstandingBalance) == true) &&
+                (this.PayerId == null && other.PayerId == null ||
+                 this.PayerId?.Equals(other.PayerId) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.PaymentDueDate == null && other.PaymentDueDate == null ||
+                 this.PaymentDueDate?.Equals(other.PaymentDueDate) == true) &&
+                (this.PaymentMethod == null && other.PaymentMethod == null ||
+                 this.PaymentMethod?.Equals(other.PaymentMethod) == true) &&
+                (this.PaymentMethodId == null && other.PaymentMethodId == null ||
+                 this.PaymentMethodId?.Equals(other.PaymentMethodId) == true) &&
+                (this.PaymentTerms == null && other.PaymentTerms == null ||
+                 this.PaymentTerms?.Equals(other.PaymentTerms) == true) &&
+                (this.PaymentTermsId == null && other.PaymentTermsId == null ||
+                 this.PaymentTermsId?.Equals(other.PaymentTermsId) == true) &&
+                (this.SoAReferenceNumber == null && other.SoAReferenceNumber == null ||
+                 this.SoAReferenceNumber?.Equals(other.SoAReferenceNumber) == true) &&
+                (this.StatementDate == null && other.StatementDate == null ||
+                 this.StatementDate?.Equals(other.StatementDate) == true) &&
+                (this.StatementOfAccountId == null && other.StatementOfAccountId == null ||
+                 this.StatementOfAccountId?.Equals(other.StatementOfAccountId) == true) &&
+                (this.TotalBillingDocuments == null && other.TotalBillingDocuments == null ||
+                 this.TotalBillingDocuments?.Equals(other.TotalBillingDocuments) == true) &&
+                (this.TotalSummaryBillingDocuments == null && other.TotalSummaryBillingDocuments == null ||
+                 this.TotalSummaryBillingDocuments?.Equals(other.TotalSummaryBillingDocuments) == true) &&
+                (this.UnallocatedPayment == null && other.UnallocatedPayment == null ||
+                 this.UnallocatedPayment?.Equals(other.UnallocatedPayment) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -1342,25 +1362,25 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.AmountNotOverdue = {(this.AmountNotOverdue == null ? "null" : this.AmountNotOverdue.ToString())}");
             toStringOutput.Add($"this.AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
             toStringOutput.Add($"this.CreditLimit = {(this.CreditLimit == null ? "null" : this.CreditLimit.ToString())}");
-            toStringOutput.Add($"this.CreditLimitCurrencyCode = {(this.CreditLimitCurrencyCode == null ? "null" : this.CreditLimitCurrencyCode)}");
-            toStringOutput.Add($"this.CreditLimitCurrencySymbol = {(this.CreditLimitCurrencySymbol == null ? "null" : this.CreditLimitCurrencySymbol)}");
+            toStringOutput.Add($"this.CreditLimitCurrencyCode = {this.CreditLimitCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CreditLimitCurrencySymbol = {this.CreditLimitCurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.CreditLimitInCustomerCurrency = {(this.CreditLimitInCustomerCurrency == null ? "null" : this.CreditLimitInCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {(this.CurrencyCode == null ? "null" : this.CurrencyCode)}");
-            toStringOutput.Add($"this.CurrencySymbol = {(this.CurrencySymbol == null ? "null" : this.CurrencySymbol)}");
-            toStringOutput.Add($"this.LastPaymentCurrencyCode = {(this.LastPaymentCurrencyCode == null ? "null" : this.LastPaymentCurrencyCode)}");
-            toStringOutput.Add($"this.LastPaymentCurrencySymbol = {(this.LastPaymentCurrencySymbol == null ? "null" : this.LastPaymentCurrencySymbol)}");
-            toStringOutput.Add($"this.LastPaymentDate = {(this.LastPaymentDate == null ? "null" : this.LastPaymentDate)}");
+            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"this.LastPaymentCurrencyCode = {this.LastPaymentCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.LastPaymentCurrencySymbol = {this.LastPaymentCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"this.LastPaymentDate = {this.LastPaymentDate ?? "null"}");
             toStringOutput.Add($"this.LastPaymentValue = {(this.LastPaymentValue == null ? "null" : this.LastPaymentValue.ToString())}");
             toStringOutput.Add($"this.OutstandingBalance = {(this.OutstandingBalance == null ? "null" : this.OutstandingBalance.ToString())}");
             toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
-            toStringOutput.Add($"this.PaymentDueDate = {(this.PaymentDueDate == null ? "null" : this.PaymentDueDate)}");
-            toStringOutput.Add($"this.PaymentMethod = {(this.PaymentMethod == null ? "null" : this.PaymentMethod)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"this.PaymentDueDate = {this.PaymentDueDate ?? "null"}");
+            toStringOutput.Add($"this.PaymentMethod = {this.PaymentMethod ?? "null"}");
             toStringOutput.Add($"this.PaymentMethodId = {(this.PaymentMethodId == null ? "null" : this.PaymentMethodId.ToString())}");
-            toStringOutput.Add($"this.PaymentTerms = {(this.PaymentTerms == null ? "null" : this.PaymentTerms)}");
+            toStringOutput.Add($"this.PaymentTerms = {this.PaymentTerms ?? "null"}");
             toStringOutput.Add($"this.PaymentTermsId = {(this.PaymentTermsId == null ? "null" : this.PaymentTermsId.ToString())}");
-            toStringOutput.Add($"this.SoAReferenceNumber = {(this.SoAReferenceNumber == null ? "null" : this.SoAReferenceNumber)}");
-            toStringOutput.Add($"this.StatementDate = {(this.StatementDate == null ? "null" : this.StatementDate)}");
+            toStringOutput.Add($"this.SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
+            toStringOutput.Add($"this.StatementDate = {this.StatementDate ?? "null"}");
             toStringOutput.Add($"this.StatementOfAccountId = {(this.StatementOfAccountId == null ? "null" : this.StatementOfAccountId.ToString())}");
             toStringOutput.Add($"this.TotalBillingDocuments = {(this.TotalBillingDocuments == null ? "null" : this.TotalBillingDocuments.ToString())}");
             toStringOutput.Add($"this.TotalSummaryBillingDocuments = {(this.TotalSummaryBillingDocuments == null ? "null" : this.TotalSummaryBillingDocuments.ToString())}");

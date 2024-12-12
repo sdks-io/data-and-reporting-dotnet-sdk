@@ -117,6 +117,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? week = null,
             int? year = null)
         {
+
             if (accountId != null)
             {
                 this.AccountId = accountId;
@@ -216,7 +217,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.Year = year;
             }
-
         }
 
         /// <summary>
@@ -583,14 +583,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"CardExceptions : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountId()
         {
@@ -598,7 +596,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountNumber()
         {
@@ -606,7 +604,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountShortName()
         {
@@ -614,7 +612,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardId()
         {
@@ -622,7 +620,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencyCode()
         {
@@ -630,7 +628,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencySymbol()
         {
@@ -638,7 +636,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDay()
         {
@@ -646,7 +644,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDriverName()
         {
@@ -654,7 +652,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetMonth()
         {
@@ -662,7 +660,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPAN()
         {
@@ -670,7 +668,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerId()
         {
@@ -678,7 +676,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerNumber()
         {
@@ -686,7 +684,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerShortName()
         {
@@ -694,7 +692,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalAmount()
         {
@@ -702,7 +700,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalQuantity()
         {
@@ -710,7 +708,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalSalesItems()
         {
@@ -718,7 +716,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalTransactions()
         {
@@ -726,7 +724,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVRN()
         {
@@ -734,7 +732,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetWeek()
         {
@@ -742,7 +740,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetYear()
         {
@@ -932,37 +930,52 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is CardExceptions other &&                ((this.AccountId == null && other.AccountId == null) || (this.AccountId?.Equals(other.AccountId) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.AccountShortName == null && other.AccountShortName == null) || (this.AccountShortName?.Equals(other.AccountShortName) == true)) &&
-                ((this.CardId == null && other.CardId == null) || (this.CardId?.Equals(other.CardId) == true)) &&
-                ((this.CurrencyCode == null && other.CurrencyCode == null) || (this.CurrencyCode?.Equals(other.CurrencyCode) == true)) &&
-                ((this.CurrencySymbol == null && other.CurrencySymbol == null) || (this.CurrencySymbol?.Equals(other.CurrencySymbol) == true)) &&
-                ((this.Day == null && other.Day == null) || (this.Day?.Equals(other.Day) == true)) &&
-                ((this.DriverName == null && other.DriverName == null) || (this.DriverName?.Equals(other.DriverName) == true)) &&
-                ((this.Month == null && other.Month == null) || (this.Month?.Equals(other.Month) == true)) &&
-                ((this.PAN == null && other.PAN == null) || (this.PAN?.Equals(other.PAN) == true)) &&
-                ((this.PayerId == null && other.PayerId == null) || (this.PayerId?.Equals(other.PayerId) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.PayerShortName == null && other.PayerShortName == null) || (this.PayerShortName?.Equals(other.PayerShortName) == true)) &&
-                ((this.TotalAmount == null && other.TotalAmount == null) || (this.TotalAmount?.Equals(other.TotalAmount) == true)) &&
-                ((this.TotalQuantity == null && other.TotalQuantity == null) || (this.TotalQuantity?.Equals(other.TotalQuantity) == true)) &&
-                ((this.TotalSalesItems == null && other.TotalSalesItems == null) || (this.TotalSalesItems?.Equals(other.TotalSalesItems) == true)) &&
-                ((this.TotalTransactions == null && other.TotalTransactions == null) || (this.TotalTransactions?.Equals(other.TotalTransactions) == true)) &&
-                ((this.VRN == null && other.VRN == null) || (this.VRN?.Equals(other.VRN) == true)) &&
-                ((this.Week == null && other.Week == null) || (this.Week?.Equals(other.Week) == true)) &&
-                ((this.Year == null && other.Year == null) || (this.Year?.Equals(other.Year) == true));
+            return obj is CardExceptions other &&
+                (this.AccountId == null && other.AccountId == null ||
+                 this.AccountId?.Equals(other.AccountId) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.AccountShortName == null && other.AccountShortName == null ||
+                 this.AccountShortName?.Equals(other.AccountShortName) == true) &&
+                (this.CardId == null && other.CardId == null ||
+                 this.CardId?.Equals(other.CardId) == true) &&
+                (this.CurrencyCode == null && other.CurrencyCode == null ||
+                 this.CurrencyCode?.Equals(other.CurrencyCode) == true) &&
+                (this.CurrencySymbol == null && other.CurrencySymbol == null ||
+                 this.CurrencySymbol?.Equals(other.CurrencySymbol) == true) &&
+                (this.Day == null && other.Day == null ||
+                 this.Day?.Equals(other.Day) == true) &&
+                (this.DriverName == null && other.DriverName == null ||
+                 this.DriverName?.Equals(other.DriverName) == true) &&
+                (this.Month == null && other.Month == null ||
+                 this.Month?.Equals(other.Month) == true) &&
+                (this.PAN == null && other.PAN == null ||
+                 this.PAN?.Equals(other.PAN) == true) &&
+                (this.PayerId == null && other.PayerId == null ||
+                 this.PayerId?.Equals(other.PayerId) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.PayerShortName == null && other.PayerShortName == null ||
+                 this.PayerShortName?.Equals(other.PayerShortName) == true) &&
+                (this.TotalAmount == null && other.TotalAmount == null ||
+                 this.TotalAmount?.Equals(other.TotalAmount) == true) &&
+                (this.TotalQuantity == null && other.TotalQuantity == null ||
+                 this.TotalQuantity?.Equals(other.TotalQuantity) == true) &&
+                (this.TotalSalesItems == null && other.TotalSalesItems == null ||
+                 this.TotalSalesItems?.Equals(other.TotalSalesItems) == true) &&
+                (this.TotalTransactions == null && other.TotalTransactions == null ||
+                 this.TotalTransactions?.Equals(other.TotalTransactions) == true) &&
+                (this.VRN == null && other.VRN == null ||
+                 this.VRN?.Equals(other.VRN) == true) &&
+                (this.Week == null && other.Week == null ||
+                 this.Week?.Equals(other.Week) == true) &&
+                (this.Year == null && other.Year == null ||
+                 this.Year?.Equals(other.Year) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -970,23 +983,23 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
-            toStringOutput.Add($"this.AccountShortName = {(this.AccountShortName == null ? "null" : this.AccountShortName)}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"this.AccountShortName = {this.AccountShortName ?? "null"}");
             toStringOutput.Add($"this.CardId = {(this.CardId == null ? "null" : this.CardId.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {(this.CurrencyCode == null ? "null" : this.CurrencyCode)}");
-            toStringOutput.Add($"this.CurrencySymbol = {(this.CurrencySymbol == null ? "null" : this.CurrencySymbol)}");
+            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.Day = {(this.Day == null ? "null" : this.Day.ToString())}");
-            toStringOutput.Add($"this.DriverName = {(this.DriverName == null ? "null" : this.DriverName)}");
+            toStringOutput.Add($"this.DriverName = {this.DriverName ?? "null"}");
             toStringOutput.Add($"this.Month = {(this.Month == null ? "null" : this.Month.ToString())}");
-            toStringOutput.Add($"this.PAN = {(this.PAN == null ? "null" : this.PAN)}");
+            toStringOutput.Add($"this.PAN = {this.PAN ?? "null"}");
             toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
-            toStringOutput.Add($"this.PayerShortName = {(this.PayerShortName == null ? "null" : this.PayerShortName)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"this.PayerShortName = {this.PayerShortName ?? "null"}");
             toStringOutput.Add($"this.TotalAmount = {(this.TotalAmount == null ? "null" : this.TotalAmount.ToString())}");
             toStringOutput.Add($"this.TotalQuantity = {(this.TotalQuantity == null ? "null" : this.TotalQuantity.ToString())}");
             toStringOutput.Add($"this.TotalSalesItems = {(this.TotalSalesItems == null ? "null" : this.TotalSalesItems.ToString())}");
             toStringOutput.Add($"this.TotalTransactions = {(this.TotalTransactions == null ? "null" : this.TotalTransactions.ToString())}");
-            toStringOutput.Add($"this.VRN = {(this.VRN == null ? "null" : this.VRN)}");
+            toStringOutput.Add($"this.VRN = {this.VRN ?? "null"}");
             toStringOutput.Add($"this.Week = {(this.Week == null ? "null" : this.Week.ToString())}");
             toStringOutput.Add($"this.Year = {(this.Year == null ? "null" : this.Year.ToString())}");
         }

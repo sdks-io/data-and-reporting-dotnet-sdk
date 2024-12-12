@@ -93,6 +93,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? productGroupID = null,
             string productGroupName = null)
         {
+
             if (date != null)
             {
                 this.Date = date;
@@ -162,7 +163,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.ProductGroupName = productGroupName;
             }
-
         }
 
         /// <summary>
@@ -423,14 +423,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"UsageSummary : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDate()
         {
@@ -438,7 +436,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductId()
         {
@@ -446,7 +444,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductCode()
         {
@@ -454,7 +452,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductName()
         {
@@ -462,7 +460,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIsFuelProduct()
         {
@@ -470,7 +468,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupId()
         {
@@ -478,7 +476,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupName()
         {
@@ -486,7 +484,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalVolume()
         {
@@ -494,7 +492,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalGross()
         {
@@ -502,7 +500,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalNet()
         {
@@ -510,7 +508,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencyCode()
         {
@@ -518,7 +516,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencySymbol()
         {
@@ -526,7 +524,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupID()
         {
@@ -534,7 +532,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupName()
         {
@@ -670,51 +668,60 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is UsageSummary other &&                ((this.Date == null && other.Date == null) || (this.Date?.Equals(other.Date) == true)) &&
-                ((this.ProductId == null && other.ProductId == null) || (this.ProductId?.Equals(other.ProductId) == true)) &&
-                ((this.ProductCode == null && other.ProductCode == null) || (this.ProductCode?.Equals(other.ProductCode) == true)) &&
-                ((this.ProductName == null && other.ProductName == null) || (this.ProductName?.Equals(other.ProductName) == true)) &&
-                ((this.IsFuelProduct == null && other.IsFuelProduct == null) || (this.IsFuelProduct?.Equals(other.IsFuelProduct) == true)) &&
-                ((this.SiteGroupId == null && other.SiteGroupId == null) || (this.SiteGroupId?.Equals(other.SiteGroupId) == true)) &&
-                ((this.SiteGroupName == null && other.SiteGroupName == null) || (this.SiteGroupName?.Equals(other.SiteGroupName) == true)) &&
-                ((this.TotalVolume == null && other.TotalVolume == null) || (this.TotalVolume?.Equals(other.TotalVolume) == true)) &&
-                ((this.TotalGross == null && other.TotalGross == null) || (this.TotalGross?.Equals(other.TotalGross) == true)) &&
-                ((this.TotalNet == null && other.TotalNet == null) || (this.TotalNet?.Equals(other.TotalNet) == true)) &&
-                ((this.CurrencyCode == null && other.CurrencyCode == null) || (this.CurrencyCode?.Equals(other.CurrencyCode) == true)) &&
-                ((this.CurrencySymbol == null && other.CurrencySymbol == null) || (this.CurrencySymbol?.Equals(other.CurrencySymbol) == true)) &&
-                ((this.ProductGroupID == null && other.ProductGroupID == null) || (this.ProductGroupID?.Equals(other.ProductGroupID) == true)) &&
-                ((this.ProductGroupName == null && other.ProductGroupName == null) || (this.ProductGroupName?.Equals(other.ProductGroupName) == true));
+            return obj is UsageSummary other &&
+                (this.Date == null && other.Date == null ||
+                 this.Date?.Equals(other.Date) == true) &&
+                (this.ProductId == null && other.ProductId == null ||
+                 this.ProductId?.Equals(other.ProductId) == true) &&
+                (this.ProductCode == null && other.ProductCode == null ||
+                 this.ProductCode?.Equals(other.ProductCode) == true) &&
+                (this.ProductName == null && other.ProductName == null ||
+                 this.ProductName?.Equals(other.ProductName) == true) &&
+                (this.IsFuelProduct == null && other.IsFuelProduct == null ||
+                 this.IsFuelProduct?.Equals(other.IsFuelProduct) == true) &&
+                (this.SiteGroupId == null && other.SiteGroupId == null ||
+                 this.SiteGroupId?.Equals(other.SiteGroupId) == true) &&
+                (this.SiteGroupName == null && other.SiteGroupName == null ||
+                 this.SiteGroupName?.Equals(other.SiteGroupName) == true) &&
+                (this.TotalVolume == null && other.TotalVolume == null ||
+                 this.TotalVolume?.Equals(other.TotalVolume) == true) &&
+                (this.TotalGross == null && other.TotalGross == null ||
+                 this.TotalGross?.Equals(other.TotalGross) == true) &&
+                (this.TotalNet == null && other.TotalNet == null ||
+                 this.TotalNet?.Equals(other.TotalNet) == true) &&
+                (this.CurrencyCode == null && other.CurrencyCode == null ||
+                 this.CurrencyCode?.Equals(other.CurrencyCode) == true) &&
+                (this.CurrencySymbol == null && other.CurrencySymbol == null ||
+                 this.CurrencySymbol?.Equals(other.CurrencySymbol) == true) &&
+                (this.ProductGroupID == null && other.ProductGroupID == null ||
+                 this.ProductGroupID?.Equals(other.ProductGroupID) == true) &&
+                (this.ProductGroupName == null && other.ProductGroupName == null ||
+                 this.ProductGroupName?.Equals(other.ProductGroupName) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Date = {(this.Date == null ? "null" : this.Date)}");
+            toStringOutput.Add($"this.Date = {this.Date ?? "null"}");
             toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");
-            toStringOutput.Add($"this.ProductName = {(this.ProductName == null ? "null" : this.ProductName)}");
+            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
             toStringOutput.Add($"this.IsFuelProduct = {(this.IsFuelProduct == null ? "null" : this.IsFuelProduct.ToString())}");
             toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {(this.SiteGroupName == null ? "null" : this.SiteGroupName)}");
+            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
             toStringOutput.Add($"this.TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
             toStringOutput.Add($"this.TotalGross = {(this.TotalGross == null ? "null" : this.TotalGross.ToString())}");
             toStringOutput.Add($"this.TotalNet = {(this.TotalNet == null ? "null" : this.TotalNet.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {(this.CurrencyCode == null ? "null" : this.CurrencyCode)}");
-            toStringOutput.Add($"this.CurrencySymbol = {(this.CurrencySymbol == null ? "null" : this.CurrencySymbol)}");
+            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.ProductGroupID = {(this.ProductGroupID == null ? "null" : this.ProductGroupID.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {(this.ProductGroupName == null ? "null" : this.ProductGroupName)}");
+            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
         }
     }
 }

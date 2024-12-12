@@ -77,30 +77,27 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"EIDDownloadReq : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is EIDDownloadReq other &&                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.EIDList == null && other.EIDList == null) || (this.EIDList?.Equals(other.EIDList) == true)) &&
-                ((this.AccountGroupCountry == null && other.AccountGroupCountry == null) || (this.AccountGroupCountry?.Equals(other.AccountGroupCountry) == true)) &&
-                ((this.AccountGroupIdList == null && other.AccountGroupIdList == null) || (this.AccountGroupIdList?.Equals(other.AccountGroupIdList) == true));
+            return obj is EIDDownloadReq other &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.EIDList == null && other.EIDList == null ||
+                 this.EIDList?.Equals(other.EIDList) == true) &&
+                (this.AccountGroupCountry == null && other.AccountGroupCountry == null ||
+                 this.AccountGroupCountry?.Equals(other.AccountGroupCountry) == true) &&
+                (this.AccountGroupIdList == null && other.AccountGroupIdList == null ||
+                 this.AccountGroupIdList?.Equals(other.AccountGroupIdList) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

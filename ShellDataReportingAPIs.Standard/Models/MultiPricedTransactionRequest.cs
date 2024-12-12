@@ -304,46 +304,58 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"MultiPricedTransactionRequest : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is MultiPricedTransactionRequest other &&                ((this.ColCoId == null && other.ColCoId == null) || (this.ColCoId?.Equals(other.ColCoId) == true)) &&
-                this.ColCoCode.Equals(other.ColCoCode) &&
-                ((this.Accounts == null && other.Accounts == null) || (this.Accounts?.Equals(other.Accounts) == true)) &&
-                ((this.InvoiceStatus == null && other.InvoiceStatus == null) || (this.InvoiceStatus?.Equals(other.InvoiceStatus) == true)) &&
-                ((this.PurchasedInCountry == null && other.PurchasedInCountry == null) || (this.PurchasedInCountry?.Equals(other.PurchasedInCountry) == true)) &&
-                ((this.FromDate == null && other.FromDate == null) || (this.FromDate?.Equals(other.FromDate) == true)) &&
-                ((this.ToDate == null && other.ToDate == null) || (this.ToDate?.Equals(other.ToDate) == true)) &&
-                ((this.Period == null && other.Period == null) || (this.Period?.Equals(other.Period) == true)) &&
-                ((this.PostingDateFrom == null && other.PostingDateFrom == null) || (this.PostingDateFrom?.Equals(other.PostingDateFrom) == true)) &&
-                ((this.PostingDateTo == null && other.PostingDateTo == null) || (this.PostingDateTo?.Equals(other.PostingDateTo) == true)) &&
-                ((this.InvoiceDate == null && other.InvoiceDate == null) || (this.InvoiceDate?.Equals(other.InvoiceDate) == true)) &&
-                ((this.InvoiceNumber == null && other.InvoiceNumber == null) || (this.InvoiceNumber?.Equals(other.InvoiceNumber) == true)) &&
-                ((this.ValidInvoiceDateOnly == null && other.ValidInvoiceDateOnly == null) || (this.ValidInvoiceDateOnly?.Equals(other.ValidInvoiceDateOnly) == true)) &&
-                ((this.InvoiceFromDate == null && other.InvoiceFromDate == null) || (this.InvoiceFromDate?.Equals(other.InvoiceFromDate) == true)) &&
-                ((this.InvoiceToDate == null && other.InvoiceToDate == null) || (this.InvoiceToDate?.Equals(other.InvoiceToDate) == true)) &&
-                ((this.FuelOnly == null && other.FuelOnly == null) || (this.FuelOnly?.Equals(other.FuelOnly) == true)) &&
-                ((this.IncludeFees == null && other.IncludeFees == null) || (this.IncludeFees?.Equals(other.IncludeFees) == true)) &&
-                ((this.SortOrder == null && other.SortOrder == null) || (this.SortOrder?.Equals(other.SortOrder) == true)) &&
-                ((this.CurrentPage == null && other.CurrentPage == null) || (this.CurrentPage?.Equals(other.CurrentPage) == true)) &&
-                ((this.PageSize == null && other.PageSize == null) || (this.PageSize?.Equals(other.PageSize) == true));
+            return obj is MultiPricedTransactionRequest other &&
+                (this.ColCoId == null && other.ColCoId == null ||
+                 this.ColCoId?.Equals(other.ColCoId) == true) &&
+                (this.ColCoCode.Equals(other.ColCoCode)) &&
+                (this.Accounts == null && other.Accounts == null ||
+                 this.Accounts?.Equals(other.Accounts) == true) &&
+                (this.InvoiceStatus == null && other.InvoiceStatus == null ||
+                 this.InvoiceStatus?.Equals(other.InvoiceStatus) == true) &&
+                (this.PurchasedInCountry == null && other.PurchasedInCountry == null ||
+                 this.PurchasedInCountry?.Equals(other.PurchasedInCountry) == true) &&
+                (this.FromDate == null && other.FromDate == null ||
+                 this.FromDate?.Equals(other.FromDate) == true) &&
+                (this.ToDate == null && other.ToDate == null ||
+                 this.ToDate?.Equals(other.ToDate) == true) &&
+                (this.Period == null && other.Period == null ||
+                 this.Period?.Equals(other.Period) == true) &&
+                (this.PostingDateFrom == null && other.PostingDateFrom == null ||
+                 this.PostingDateFrom?.Equals(other.PostingDateFrom) == true) &&
+                (this.PostingDateTo == null && other.PostingDateTo == null ||
+                 this.PostingDateTo?.Equals(other.PostingDateTo) == true) &&
+                (this.InvoiceDate == null && other.InvoiceDate == null ||
+                 this.InvoiceDate?.Equals(other.InvoiceDate) == true) &&
+                (this.InvoiceNumber == null && other.InvoiceNumber == null ||
+                 this.InvoiceNumber?.Equals(other.InvoiceNumber) == true) &&
+                (this.ValidInvoiceDateOnly == null && other.ValidInvoiceDateOnly == null ||
+                 this.ValidInvoiceDateOnly?.Equals(other.ValidInvoiceDateOnly) == true) &&
+                (this.InvoiceFromDate == null && other.InvoiceFromDate == null ||
+                 this.InvoiceFromDate?.Equals(other.InvoiceFromDate) == true) &&
+                (this.InvoiceToDate == null && other.InvoiceToDate == null ||
+                 this.InvoiceToDate?.Equals(other.InvoiceToDate) == true) &&
+                (this.FuelOnly == null && other.FuelOnly == null ||
+                 this.FuelOnly?.Equals(other.FuelOnly) == true) &&
+                (this.IncludeFees == null && other.IncludeFees == null ||
+                 this.IncludeFees?.Equals(other.IncludeFees) == true) &&
+                (this.SortOrder == null && other.SortOrder == null ||
+                 this.SortOrder?.Equals(other.SortOrder) == true) &&
+                (this.CurrentPage == null && other.CurrentPage == null ||
+                 this.CurrentPage?.Equals(other.CurrentPage) == true) &&
+                (this.PageSize == null && other.PageSize == null ||
+                 this.PageSize?.Equals(other.PageSize) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -353,21 +365,21 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
             toStringOutput.Add($"this.ColCoCode = {this.ColCoCode}");
             toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
-            toStringOutput.Add($"this.InvoiceStatus = {(this.InvoiceStatus == null ? "null" : this.InvoiceStatus)}");
-            toStringOutput.Add($"this.PurchasedInCountry = {(this.PurchasedInCountry == null ? "null" : this.PurchasedInCountry)}");
-            toStringOutput.Add($"this.FromDate = {(this.FromDate == null ? "null" : this.FromDate)}");
-            toStringOutput.Add($"this.ToDate = {(this.ToDate == null ? "null" : this.ToDate)}");
+            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"this.PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
+            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
             toStringOutput.Add($"this.Period = {(this.Period == null ? "null" : this.Period.ToString())}");
-            toStringOutput.Add($"this.PostingDateFrom = {(this.PostingDateFrom == null ? "null" : this.PostingDateFrom)}");
-            toStringOutput.Add($"this.PostingDateTo = {(this.PostingDateTo == null ? "null" : this.PostingDateTo)}");
-            toStringOutput.Add($"this.InvoiceDate = {(this.InvoiceDate == null ? "null" : this.InvoiceDate)}");
-            toStringOutput.Add($"this.InvoiceNumber = {(this.InvoiceNumber == null ? "null" : this.InvoiceNumber)}");
+            toStringOutput.Add($"this.PostingDateFrom = {this.PostingDateFrom ?? "null"}");
+            toStringOutput.Add($"this.PostingDateTo = {this.PostingDateTo ?? "null"}");
+            toStringOutput.Add($"this.InvoiceDate = {this.InvoiceDate ?? "null"}");
+            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
             toStringOutput.Add($"this.ValidInvoiceDateOnly = {(this.ValidInvoiceDateOnly == null ? "null" : this.ValidInvoiceDateOnly.ToString())}");
-            toStringOutput.Add($"this.InvoiceFromDate = {(this.InvoiceFromDate == null ? "null" : this.InvoiceFromDate)}");
-            toStringOutput.Add($"this.InvoiceToDate = {(this.InvoiceToDate == null ? "null" : this.InvoiceToDate)}");
+            toStringOutput.Add($"this.InvoiceFromDate = {this.InvoiceFromDate ?? "null"}");
+            toStringOutput.Add($"this.InvoiceToDate = {this.InvoiceToDate ?? "null"}");
             toStringOutput.Add($"this.FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");
             toStringOutput.Add($"this.IncludeFees = {(this.IncludeFees == null ? "null" : this.IncludeFees.ToString())}");
-            toStringOutput.Add($"this.SortOrder = {(this.SortOrder == null ? "null" : this.SortOrder)}");
+            toStringOutput.Add($"this.SortOrder = {this.SortOrder ?? "null"}");
             toStringOutput.Add($"this.CurrentPage = {(this.CurrentPage == null ? "null" : this.CurrentPage.ToString())}");
             toStringOutput.Add($"this.PageSize = {(this.PageSize == null ? "null" : this.PageSize.ToString())}");
         }

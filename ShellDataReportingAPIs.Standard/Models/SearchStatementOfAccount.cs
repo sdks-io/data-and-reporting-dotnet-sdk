@@ -93,6 +93,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? grossAmountCustomerCurrency = null,
             string documentReferenceNumber = null)
         {
+
             if (statementOfAccountId != null)
             {
                 this.StatementOfAccountId = statementOfAccountId;
@@ -162,7 +163,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.DocumentReferenceNumber = documentReferenceNumber;
             }
-
         }
 
         /// <summary>
@@ -430,14 +430,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"SearchStatementOfAccount : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetStatementOfAccountId()
         {
@@ -445,7 +443,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSoAReferenceNumber()
         {
@@ -453,7 +451,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetStatementDate()
         {
@@ -461,7 +459,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerId()
         {
@@ -469,7 +467,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerNumber()
         {
@@ -477,7 +475,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountDue()
         {
@@ -485,7 +483,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountOverdue()
         {
@@ -493,7 +491,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencyCode()
         {
@@ -501,7 +499,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencySymbol()
         {
@@ -509,7 +507,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDueDate()
         {
@@ -517,7 +515,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoicedOnBehalfOf()
         {
@@ -525,7 +523,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetStatus()
         {
@@ -533,7 +531,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetGrossAmountCustomerCurrency()
         {
@@ -541,7 +539,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDocumentReferenceNumber()
         {
@@ -677,31 +675,40 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is SearchStatementOfAccount other &&                ((this.StatementOfAccountId == null && other.StatementOfAccountId == null) || (this.StatementOfAccountId?.Equals(other.StatementOfAccountId) == true)) &&
-                ((this.SoAReferenceNumber == null && other.SoAReferenceNumber == null) || (this.SoAReferenceNumber?.Equals(other.SoAReferenceNumber) == true)) &&
-                ((this.StatementDate == null && other.StatementDate == null) || (this.StatementDate?.Equals(other.StatementDate) == true)) &&
-                ((this.PayerId == null && other.PayerId == null) || (this.PayerId?.Equals(other.PayerId) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.AmountDue == null && other.AmountDue == null) || (this.AmountDue?.Equals(other.AmountDue) == true)) &&
-                ((this.AmountOverdue == null && other.AmountOverdue == null) || (this.AmountOverdue?.Equals(other.AmountOverdue) == true)) &&
-                ((this.CurrencyCode == null && other.CurrencyCode == null) || (this.CurrencyCode?.Equals(other.CurrencyCode) == true)) &&
-                ((this.CurrencySymbol == null && other.CurrencySymbol == null) || (this.CurrencySymbol?.Equals(other.CurrencySymbol) == true)) &&
-                ((this.DueDate == null && other.DueDate == null) || (this.DueDate?.Equals(other.DueDate) == true)) &&
-                ((this.InvoicedOnBehalfOf == null && other.InvoicedOnBehalfOf == null) || (this.InvoicedOnBehalfOf?.Equals(other.InvoicedOnBehalfOf) == true)) &&
-                ((this.Status == null && other.Status == null) || (this.Status?.Equals(other.Status) == true)) &&
-                ((this.GrossAmountCustomerCurrency == null && other.GrossAmountCustomerCurrency == null) || (this.GrossAmountCustomerCurrency?.Equals(other.GrossAmountCustomerCurrency) == true)) &&
-                ((this.DocumentReferenceNumber == null && other.DocumentReferenceNumber == null) || (this.DocumentReferenceNumber?.Equals(other.DocumentReferenceNumber) == true));
+            return obj is SearchStatementOfAccount other &&
+                (this.StatementOfAccountId == null && other.StatementOfAccountId == null ||
+                 this.StatementOfAccountId?.Equals(other.StatementOfAccountId) == true) &&
+                (this.SoAReferenceNumber == null && other.SoAReferenceNumber == null ||
+                 this.SoAReferenceNumber?.Equals(other.SoAReferenceNumber) == true) &&
+                (this.StatementDate == null && other.StatementDate == null ||
+                 this.StatementDate?.Equals(other.StatementDate) == true) &&
+                (this.PayerId == null && other.PayerId == null ||
+                 this.PayerId?.Equals(other.PayerId) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.AmountDue == null && other.AmountDue == null ||
+                 this.AmountDue?.Equals(other.AmountDue) == true) &&
+                (this.AmountOverdue == null && other.AmountOverdue == null ||
+                 this.AmountOverdue?.Equals(other.AmountOverdue) == true) &&
+                (this.CurrencyCode == null && other.CurrencyCode == null ||
+                 this.CurrencyCode?.Equals(other.CurrencyCode) == true) &&
+                (this.CurrencySymbol == null && other.CurrencySymbol == null ||
+                 this.CurrencySymbol?.Equals(other.CurrencySymbol) == true) &&
+                (this.DueDate == null && other.DueDate == null ||
+                 this.DueDate?.Equals(other.DueDate) == true) &&
+                (this.InvoicedOnBehalfOf == null && other.InvoicedOnBehalfOf == null ||
+                 this.InvoicedOnBehalfOf?.Equals(other.InvoicedOnBehalfOf) == true) &&
+                (this.Status == null && other.Status == null ||
+                 this.Status?.Equals(other.Status) == true) &&
+                (this.GrossAmountCustomerCurrency == null && other.GrossAmountCustomerCurrency == null ||
+                 this.GrossAmountCustomerCurrency?.Equals(other.GrossAmountCustomerCurrency) == true) &&
+                (this.DocumentReferenceNumber == null && other.DocumentReferenceNumber == null ||
+                 this.DocumentReferenceNumber?.Equals(other.DocumentReferenceNumber) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -709,19 +716,19 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.StatementOfAccountId = {(this.StatementOfAccountId == null ? "null" : this.StatementOfAccountId.ToString())}");
-            toStringOutput.Add($"this.SoAReferenceNumber = {(this.SoAReferenceNumber == null ? "null" : this.SoAReferenceNumber)}");
-            toStringOutput.Add($"this.StatementDate = {(this.StatementDate == null ? "null" : this.StatementDate)}");
+            toStringOutput.Add($"this.SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
+            toStringOutput.Add($"this.StatementDate = {this.StatementDate ?? "null"}");
             toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
             toStringOutput.Add($"this.AmountDue = {(this.AmountDue == null ? "null" : this.AmountDue.ToString())}");
             toStringOutput.Add($"this.AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {(this.CurrencyCode == null ? "null" : this.CurrencyCode)}");
-            toStringOutput.Add($"this.CurrencySymbol = {(this.CurrencySymbol == null ? "null" : this.CurrencySymbol)}");
-            toStringOutput.Add($"this.DueDate = {(this.DueDate == null ? "null" : this.DueDate)}");
-            toStringOutput.Add($"this.InvoicedOnBehalfOf = {(this.InvoicedOnBehalfOf == null ? "null" : this.InvoicedOnBehalfOf)}");
-            toStringOutput.Add($"this.Status = {(this.Status == null ? "null" : this.Status)}");
+            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"this.DueDate = {this.DueDate ?? "null"}");
+            toStringOutput.Add($"this.InvoicedOnBehalfOf = {this.InvoicedOnBehalfOf ?? "null"}");
+            toStringOutput.Add($"this.Status = {this.Status ?? "null"}");
             toStringOutput.Add($"this.GrossAmountCustomerCurrency = {(this.GrossAmountCustomerCurrency == null ? "null" : this.GrossAmountCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.DocumentReferenceNumber = {(this.DocumentReferenceNumber == null ? "null" : this.DocumentReferenceNumber)}");
+            toStringOutput.Add($"this.DocumentReferenceNumber = {this.DocumentReferenceNumber ?? "null"}");
         }
     }
 }

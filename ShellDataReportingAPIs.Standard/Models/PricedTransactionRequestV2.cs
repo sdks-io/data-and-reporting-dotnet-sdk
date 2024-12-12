@@ -35,7 +35,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="page">Page.</param>
         /// <param name="pageSize">PageSize.</param>
         public PricedTransactionRequestV2(
-            Models.Filters filters = null,
+            Models.PricedRequestData filters = null,
             int? page = null,
             int? pageSize = null)
         {
@@ -45,10 +45,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Gets or sets Filters.
+        /// This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbilled sales items) from SFSBI. It provides a flexible search criteria and supports paging
         /// </summary>
         [JsonProperty("Filters", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Filters Filters { get; set; }
+        public Models.PricedRequestData Filters { get; set; }
 
         /// <summary>
         /// Specify the page of results to be returned.
@@ -66,29 +66,25 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PricedTransactionRequestV2 : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PricedTransactionRequestV2 other &&                ((this.Filters == null && other.Filters == null) || (this.Filters?.Equals(other.Filters) == true)) &&
-                ((this.Page == null && other.Page == null) || (this.Page?.Equals(other.Page) == true)) &&
-                ((this.PageSize == null && other.PageSize == null) || (this.PageSize?.Equals(other.PageSize) == true));
+            return obj is PricedTransactionRequestV2 other &&
+                (this.Filters == null && other.Filters == null ||
+                 this.Filters?.Equals(other.Filters) == true) &&
+                (this.Page == null && other.Page == null ||
+                 this.Page?.Equals(other.Page) == true) &&
+                (this.PageSize == null && other.PageSize == null ||
+                 this.PageSize?.Equals(other.PageSize) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

@@ -35,7 +35,7 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | `SortOrder` | [`PricedTransactionReqV2SortOrderEnum?`](../../doc/models/priced-transaction-req-v2-sort-order-enum.md) | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `FromDate` | `string` | Optional | From transaction delivery date<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `ToDate` | `string` | Optional | To transaction delivery date<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
-| `Period` | [`PricedTransactionReqV2PeriodEnum?`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | - |
+| `Period` | [`PricedTransactionReqV2PeriodEnum?`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | Pass below one of the value as per the required transaction period<br><br>1. Last 7 Days<br>2. Last 30 Days<br>3. Last 90 Days |
 | `PostingDateFrom` | `string` | Optional | Transaction posting start date and time<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `PostingDateTo` | `string` | Optional | Transaction posting end date and time<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `TransactionItemId` | `string` | Optional | Unique id of the transaction that may include one or more salesitems |
@@ -77,6 +77,7 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
   "LineItemDescription": "ABC3",
   "FromDate": "2022-01-01 00:00:00",
   "ToDate": "2022-01-01 00:00:00",
+  "Period": 3,
   "PostingDateFrom": "2022-01-01 00:00:00",
   "PostingDateTo": "2022-01-01 00:00:00",
   "TransactionItemId": "io9KVXk1UkW57XWKyeaHHg",

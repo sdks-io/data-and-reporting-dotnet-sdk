@@ -57,6 +57,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string year = null,
             double? totalVolume = null)
         {
+
             if (feeRuleId != null)
             {
                 this.FeeRuleId = feeRuleId;
@@ -81,7 +82,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.TotalVolume = totalVolume;
             }
-
         }
 
         /// <summary>
@@ -178,14 +178,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"CurrentVolume : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleId()
         {
@@ -193,7 +191,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleDescription()
         {
@@ -201,7 +199,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetMonth()
         {
@@ -209,7 +207,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetYear()
         {
@@ -217,7 +215,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalVolume()
         {
@@ -272,22 +270,22 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is CurrentVolume other &&                ((this.FeeRuleId == null && other.FeeRuleId == null) || (this.FeeRuleId?.Equals(other.FeeRuleId) == true)) &&
-                ((this.FeeRuleDescription == null && other.FeeRuleDescription == null) || (this.FeeRuleDescription?.Equals(other.FeeRuleDescription) == true)) &&
-                ((this.Month == null && other.Month == null) || (this.Month?.Equals(other.Month) == true)) &&
-                ((this.Year == null && other.Year == null) || (this.Year?.Equals(other.Year) == true)) &&
-                ((this.TotalVolume == null && other.TotalVolume == null) || (this.TotalVolume?.Equals(other.TotalVolume) == true));
+            return obj is CurrentVolume other &&
+                (this.FeeRuleId == null && other.FeeRuleId == null ||
+                 this.FeeRuleId?.Equals(other.FeeRuleId) == true) &&
+                (this.FeeRuleDescription == null && other.FeeRuleDescription == null ||
+                 this.FeeRuleDescription?.Equals(other.FeeRuleDescription) == true) &&
+                (this.Month == null && other.Month == null ||
+                 this.Month?.Equals(other.Month) == true) &&
+                (this.Year == null && other.Year == null ||
+                 this.Year?.Equals(other.Year) == true) &&
+                (this.TotalVolume == null && other.TotalVolume == null ||
+                 this.TotalVolume?.Equals(other.TotalVolume) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -295,9 +293,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.FeeRuleId = {(this.FeeRuleId == null ? "null" : this.FeeRuleId.ToString())}");
-            toStringOutput.Add($"this.FeeRuleDescription = {(this.FeeRuleDescription == null ? "null" : this.FeeRuleDescription)}");
+            toStringOutput.Add($"this.FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
             toStringOutput.Add($"this.Month = {(this.Month == null ? "null" : this.Month.ToString())}");
-            toStringOutput.Add($"this.Year = {(this.Year == null ? "null" : this.Year)}");
+            toStringOutput.Add($"this.Year = {this.Year ?? "null"}");
             toStringOutput.Add($"this.TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
         }
     }

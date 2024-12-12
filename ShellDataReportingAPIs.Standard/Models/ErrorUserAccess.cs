@@ -48,27 +48,21 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"ErrorUserAccess : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is ErrorUserAccess other &&                ((this.Error == null && other.Error == null) || (this.Error?.Equals(other.Error) == true));
+            return obj is ErrorUserAccess other &&
+                (this.Error == null && other.Error == null ||
+                 this.Error?.Equals(other.Error) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

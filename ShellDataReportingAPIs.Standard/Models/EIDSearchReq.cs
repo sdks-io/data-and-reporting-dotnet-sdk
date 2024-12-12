@@ -68,6 +68,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             this.ColCoCode = colCoCode;
             this.AccountGroupCountry = accountGroupCountry;
             this.AccountGroupId = accountGroupId;
+
             if (accountGroupName != null)
             {
                 this.AccountGroupName = accountGroupName;
@@ -92,7 +93,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.InvoiceStatus = invoiceStatus;
             }
-
             this.SortBy = sortBy;
         }
 
@@ -236,14 +236,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"EIDSearchReq : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountGroupName()
         {
@@ -251,7 +249,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFromDate()
         {
@@ -259,7 +257,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetToDate()
         {
@@ -267,7 +265,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceType()
         {
@@ -275,7 +273,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceStatus()
         {
@@ -330,26 +328,30 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is EIDSearchReq other &&                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.AccountGroupCountry == null && other.AccountGroupCountry == null) || (this.AccountGroupCountry?.Equals(other.AccountGroupCountry) == true)) &&
-                ((this.AccountGroupId == null && other.AccountGroupId == null) || (this.AccountGroupId?.Equals(other.AccountGroupId) == true)) &&
-                ((this.AccountGroupName == null && other.AccountGroupName == null) || (this.AccountGroupName?.Equals(other.AccountGroupName) == true)) &&
-                ((this.FromDate == null && other.FromDate == null) || (this.FromDate?.Equals(other.FromDate) == true)) &&
-                ((this.ToDate == null && other.ToDate == null) || (this.ToDate?.Equals(other.ToDate) == true)) &&
-                ((this.InvoiceType == null && other.InvoiceType == null) || (this.InvoiceType?.Equals(other.InvoiceType) == true)) &&
-                ((this.InvoiceStatus == null && other.InvoiceStatus == null) || (this.InvoiceStatus?.Equals(other.InvoiceStatus) == true)) &&
-                ((this.SortBy == null && other.SortBy == null) || (this.SortBy?.Equals(other.SortBy) == true));
+            return obj is EIDSearchReq other &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.AccountGroupCountry == null && other.AccountGroupCountry == null ||
+                 this.AccountGroupCountry?.Equals(other.AccountGroupCountry) == true) &&
+                (this.AccountGroupId == null && other.AccountGroupId == null ||
+                 this.AccountGroupId?.Equals(other.AccountGroupId) == true) &&
+                (this.AccountGroupName == null && other.AccountGroupName == null ||
+                 this.AccountGroupName?.Equals(other.AccountGroupName) == true) &&
+                (this.FromDate == null && other.FromDate == null ||
+                 this.FromDate?.Equals(other.FromDate) == true) &&
+                (this.ToDate == null && other.ToDate == null ||
+                 this.ToDate?.Equals(other.ToDate) == true) &&
+                (this.InvoiceType == null && other.InvoiceType == null ||
+                 this.InvoiceType?.Equals(other.InvoiceType) == true) &&
+                (this.InvoiceStatus == null && other.InvoiceStatus == null ||
+                 this.InvoiceStatus?.Equals(other.InvoiceStatus) == true) &&
+                (this.SortBy == null && other.SortBy == null ||
+                 this.SortBy?.Equals(other.SortBy) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -359,11 +361,11 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
             toStringOutput.Add($"this.AccountGroupCountry = {(this.AccountGroupCountry == null ? "null" : this.AccountGroupCountry.ToString())}");
             toStringOutput.Add($"this.AccountGroupId = {(this.AccountGroupId == null ? "null" : $"[{string.Join(", ", this.AccountGroupId)} ]")}");
-            toStringOutput.Add($"this.AccountGroupName = {(this.AccountGroupName == null ? "null" : this.AccountGroupName)}");
-            toStringOutput.Add($"this.FromDate = {(this.FromDate == null ? "null" : this.FromDate)}");
-            toStringOutput.Add($"this.ToDate = {(this.ToDate == null ? "null" : this.ToDate)}");
-            toStringOutput.Add($"this.InvoiceType = {(this.InvoiceType == null ? "null" : this.InvoiceType)}");
-            toStringOutput.Add($"this.InvoiceStatus = {(this.InvoiceStatus == null ? "null" : this.InvoiceStatus)}");
+            toStringOutput.Add($"this.AccountGroupName = {this.AccountGroupName ?? "null"}");
+            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
+            toStringOutput.Add($"this.InvoiceType = {this.InvoiceType ?? "null"}");
+            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
             toStringOutput.Add($"this.SortBy = {(this.SortBy == null ? "null" : $"[{string.Join(", ", this.SortBy)} ]")}");
         }
     }

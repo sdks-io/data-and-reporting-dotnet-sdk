@@ -61,6 +61,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? totalVolume = null,
             string nextFeeCreationDate = null)
         {
+
             if (feeRuleId != null)
             {
                 this.FeeRuleId = feeRuleId;
@@ -90,7 +91,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.NextFeeCreationDate = nextFeeCreationDate;
             }
-
         }
 
         /// <summary>
@@ -206,14 +206,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PricingCurrentVolume : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleId()
         {
@@ -221,7 +219,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleDescription()
         {
@@ -229,7 +227,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleID()
         {
@@ -237,7 +235,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleDescription()
         {
@@ -245,7 +243,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalVolume()
         {
@@ -253,7 +251,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNextFeeCreationDate()
         {
@@ -317,23 +315,24 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PricingCurrentVolume other &&                ((this.FeeRuleId == null && other.FeeRuleId == null) || (this.FeeRuleId?.Equals(other.FeeRuleId) == true)) &&
-                ((this.FeeRuleDescription == null && other.FeeRuleDescription == null) || (this.FeeRuleDescription?.Equals(other.FeeRuleDescription) == true)) &&
-                ((this.PriceRuleID == null && other.PriceRuleID == null) || (this.PriceRuleID?.Equals(other.PriceRuleID) == true)) &&
-                ((this.PriceRuleDescription == null && other.PriceRuleDescription == null) || (this.PriceRuleDescription?.Equals(other.PriceRuleDescription) == true)) &&
-                ((this.TotalVolume == null && other.TotalVolume == null) || (this.TotalVolume?.Equals(other.TotalVolume) == true)) &&
-                ((this.NextFeeCreationDate == null && other.NextFeeCreationDate == null) || (this.NextFeeCreationDate?.Equals(other.NextFeeCreationDate) == true));
+            return obj is PricingCurrentVolume other &&
+                (this.FeeRuleId == null && other.FeeRuleId == null ||
+                 this.FeeRuleId?.Equals(other.FeeRuleId) == true) &&
+                (this.FeeRuleDescription == null && other.FeeRuleDescription == null ||
+                 this.FeeRuleDescription?.Equals(other.FeeRuleDescription) == true) &&
+                (this.PriceRuleID == null && other.PriceRuleID == null ||
+                 this.PriceRuleID?.Equals(other.PriceRuleID) == true) &&
+                (this.PriceRuleDescription == null && other.PriceRuleDescription == null ||
+                 this.PriceRuleDescription?.Equals(other.PriceRuleDescription) == true) &&
+                (this.TotalVolume == null && other.TotalVolume == null ||
+                 this.TotalVolume?.Equals(other.TotalVolume) == true) &&
+                (this.NextFeeCreationDate == null && other.NextFeeCreationDate == null ||
+                 this.NextFeeCreationDate?.Equals(other.NextFeeCreationDate) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -341,11 +340,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.FeeRuleId = {(this.FeeRuleId == null ? "null" : this.FeeRuleId.ToString())}");
-            toStringOutput.Add($"this.FeeRuleDescription = {(this.FeeRuleDescription == null ? "null" : this.FeeRuleDescription)}");
+            toStringOutput.Add($"this.FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
             toStringOutput.Add($"this.PriceRuleID = {(this.PriceRuleID == null ? "null" : this.PriceRuleID.ToString())}");
-            toStringOutput.Add($"this.PriceRuleDescription = {(this.PriceRuleDescription == null ? "null" : this.PriceRuleDescription)}");
+            toStringOutput.Add($"this.PriceRuleDescription = {this.PriceRuleDescription ?? "null"}");
             toStringOutput.Add($"this.TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
-            toStringOutput.Add($"this.NextFeeCreationDate = {(this.NextFeeCreationDate == null ? "null" : this.NextFeeCreationDate)}");
+            toStringOutput.Add($"this.NextFeeCreationDate = {this.NextFeeCreationDate ?? "null"}");
         }
     }
 }

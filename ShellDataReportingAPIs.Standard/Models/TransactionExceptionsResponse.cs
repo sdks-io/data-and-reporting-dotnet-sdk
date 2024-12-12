@@ -48,11 +48,11 @@ namespace ShellDataReportingAPIs.Standard.Models
             string requestId = null)
         {
             this.CardExceptions = cardExceptions;
+
             if (transactionExceptions != null)
             {
                 this.TransactionExceptions = transactionExceptions;
             }
-
             this.Error = error;
             this.RequestId = requestId;
         }
@@ -97,14 +97,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"TransactionExceptionsResponse : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionExceptions()
         {
@@ -123,21 +121,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is TransactionExceptionsResponse other &&                ((this.CardExceptions == null && other.CardExceptions == null) || (this.CardExceptions?.Equals(other.CardExceptions) == true)) &&
-                ((this.TransactionExceptions == null && other.TransactionExceptions == null) || (this.TransactionExceptions?.Equals(other.TransactionExceptions) == true)) &&
-                ((this.Error == null && other.Error == null) || (this.Error?.Equals(other.Error) == true)) &&
-                ((this.RequestId == null && other.RequestId == null) || (this.RequestId?.Equals(other.RequestId) == true));
+            return obj is TransactionExceptionsResponse other &&
+                (this.CardExceptions == null && other.CardExceptions == null ||
+                 this.CardExceptions?.Equals(other.CardExceptions) == true) &&
+                (this.TransactionExceptions == null && other.TransactionExceptions == null ||
+                 this.TransactionExceptions?.Equals(other.TransactionExceptions) == true) &&
+                (this.Error == null && other.Error == null ||
+                 this.Error?.Equals(other.Error) == true) &&
+                (this.RequestId == null && other.RequestId == null ||
+                 this.RequestId?.Equals(other.RequestId) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -147,7 +144,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.CardExceptions = {(this.CardExceptions == null ? "null" : $"[{string.Join(", ", this.CardExceptions)} ]")}");
             toStringOutput.Add($"this.TransactionExceptions = {(this.TransactionExceptions == null ? "null" : $"[{string.Join(", ", this.TransactionExceptions)} ]")}");
             toStringOutput.Add($"this.Error = {(this.Error == null ? "null" : this.Error.ToString())}");
-            toStringOutput.Add($"this.RequestId = {(this.RequestId == null ? "null" : this.RequestId)}");
+            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
         }
     }
 }

@@ -81,6 +81,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string toDate = null,
             bool? includePumpPriceDiscounts = null)
         {
+
             if (colCoId != null)
             {
                 this.ColCoId = colCoId;
@@ -125,14 +126,13 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.DelCoId = delCoId;
             }
-
             this.FromDate = fromDate;
             this.ToDate = toDate;
+
             if (includePumpPriceDiscounts != null)
             {
                 this.IncludePumpPriceDiscounts = includePumpPriceDiscounts;
             }
-
         }
 
         /// <summary>
@@ -349,14 +349,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"CustomerPriceListRequest : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetColCoId()
         {
@@ -364,7 +362,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetColCoCode()
         {
@@ -372,7 +370,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerId()
         {
@@ -380,7 +378,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerNumber()
         {
@@ -388,7 +386,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountId()
         {
@@ -396,7 +394,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountNumber()
         {
@@ -404,7 +402,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerSpecificList()
         {
@@ -412,7 +410,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceListType()
         {
@@ -420,7 +418,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDelCoId()
         {
@@ -428,7 +426,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIncludePumpPriceDiscounts()
         {
@@ -528,29 +526,36 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is CustomerPriceListRequest other &&                ((this.ColCoId == null && other.ColCoId == null) || (this.ColCoId?.Equals(other.ColCoId) == true)) &&
-                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.PayerId == null && other.PayerId == null) || (this.PayerId?.Equals(other.PayerId) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.AccountId == null && other.AccountId == null) || (this.AccountId?.Equals(other.AccountId) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.CustomerSpecificList == null && other.CustomerSpecificList == null) || (this.CustomerSpecificList?.Equals(other.CustomerSpecificList) == true)) &&
-                ((this.PriceListType == null && other.PriceListType == null) || (this.PriceListType?.Equals(other.PriceListType) == true)) &&
-                ((this.DelCoId == null && other.DelCoId == null) || (this.DelCoId?.Equals(other.DelCoId) == true)) &&
-                ((this.FromDate == null && other.FromDate == null) || (this.FromDate?.Equals(other.FromDate) == true)) &&
-                ((this.ToDate == null && other.ToDate == null) || (this.ToDate?.Equals(other.ToDate) == true)) &&
-                ((this.IncludePumpPriceDiscounts == null && other.IncludePumpPriceDiscounts == null) || (this.IncludePumpPriceDiscounts?.Equals(other.IncludePumpPriceDiscounts) == true));
+            return obj is CustomerPriceListRequest other &&
+                (this.ColCoId == null && other.ColCoId == null ||
+                 this.ColCoId?.Equals(other.ColCoId) == true) &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.PayerId == null && other.PayerId == null ||
+                 this.PayerId?.Equals(other.PayerId) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.AccountId == null && other.AccountId == null ||
+                 this.AccountId?.Equals(other.AccountId) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.CustomerSpecificList == null && other.CustomerSpecificList == null ||
+                 this.CustomerSpecificList?.Equals(other.CustomerSpecificList) == true) &&
+                (this.PriceListType == null && other.PriceListType == null ||
+                 this.PriceListType?.Equals(other.PriceListType) == true) &&
+                (this.DelCoId == null && other.DelCoId == null ||
+                 this.DelCoId?.Equals(other.DelCoId) == true) &&
+                (this.FromDate == null && other.FromDate == null ||
+                 this.FromDate?.Equals(other.FromDate) == true) &&
+                (this.ToDate == null && other.ToDate == null ||
+                 this.ToDate?.Equals(other.ToDate) == true) &&
+                (this.IncludePumpPriceDiscounts == null && other.IncludePumpPriceDiscounts == null ||
+                 this.IncludePumpPriceDiscounts?.Equals(other.IncludePumpPriceDiscounts) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -560,14 +565,14 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
             toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
             toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
             toStringOutput.Add($"this.CustomerSpecificList = {(this.CustomerSpecificList == null ? "null" : this.CustomerSpecificList.ToString())}");
             toStringOutput.Add($"this.PriceListType = {(this.PriceListType == null ? "null" : this.PriceListType.ToString())}");
             toStringOutput.Add($"this.DelCoId = {(this.DelCoId == null ? "null" : this.DelCoId.ToString())}");
-            toStringOutput.Add($"this.FromDate = {(this.FromDate == null ? "null" : this.FromDate)}");
-            toStringOutput.Add($"this.ToDate = {(this.ToDate == null ? "null" : this.ToDate)}");
+            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
             toStringOutput.Add($"this.IncludePumpPriceDiscounts = {(this.IncludePumpPriceDiscounts == null ? "null" : this.IncludePumpPriceDiscounts.ToString())}");
         }
     }

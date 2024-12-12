@@ -179,6 +179,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? priceRuleCategoryId = null,
             List<Models.Tier> tiers = null)
         {
+
             if (date != null)
             {
                 this.Date = date;
@@ -353,7 +354,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.PriceRuleCategoryId = priceRuleCategoryId;
             }
-
             this.Tiers = tiers;
         }
 
@@ -1020,14 +1020,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PriceList : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDate()
         {
@@ -1035,7 +1033,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDay()
         {
@@ -1043,7 +1041,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetType()
         {
@@ -1051,7 +1049,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceListId()
         {
@@ -1059,7 +1057,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceListDescription()
         {
@@ -1067,7 +1065,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleId()
         {
@@ -1075,7 +1073,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleName()
         {
@@ -1083,7 +1081,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDelCoId()
         {
@@ -1091,7 +1089,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCountryCode()
         {
@@ -1099,7 +1097,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCountry()
         {
@@ -1107,7 +1105,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupId()
         {
@@ -1115,7 +1113,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupName()
         {
@@ -1123,7 +1121,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductCode()
         {
@@ -1131,7 +1129,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductId()
         {
@@ -1139,7 +1137,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductName()
         {
@@ -1147,7 +1145,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPricePerUnit()
         {
@@ -1155,7 +1153,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencyCode()
         {
@@ -1163,7 +1161,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencySymbol()
         {
@@ -1171,7 +1169,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceType()
         {
@@ -1179,7 +1177,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupId()
         {
@@ -1187,7 +1185,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupName()
         {
@@ -1195,7 +1193,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteCode()
         {
@@ -1203,7 +1201,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteId()
         {
@@ -1211,7 +1209,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteName()
         {
@@ -1219,7 +1217,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelNetworkId()
         {
@@ -1227,7 +1225,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNetworkName()
         {
@@ -1235,7 +1233,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleDelcoId()
         {
@@ -1243,7 +1241,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleDelcoName()
         {
@@ -1251,7 +1249,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleCountry()
         {
@@ -1259,7 +1257,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleCountryCode()
         {
@@ -1267,7 +1265,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleBasisId()
         {
@@ -1275,7 +1273,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDiscountValue()
         {
@@ -1283,7 +1281,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPricePerUnitAfterDiscount()
         {
@@ -1291,7 +1289,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVATPercentage()
         {
@@ -1299,7 +1297,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceRuleCategoryId()
         {
@@ -1624,89 +1622,120 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PriceList other &&                ((this.Date == null && other.Date == null) || (this.Date?.Equals(other.Date) == true)) &&
-                ((this.Day == null && other.Day == null) || (this.Day?.Equals(other.Day) == true)) &&
-                ((this.Type == null && other.Type == null) || (this.Type?.Equals(other.Type) == true)) &&
-                ((this.PriceListId == null && other.PriceListId == null) || (this.PriceListId?.Equals(other.PriceListId) == true)) &&
-                ((this.PriceListDescription == null && other.PriceListDescription == null) || (this.PriceListDescription?.Equals(other.PriceListDescription) == true)) &&
-                ((this.PriceRuleId == null && other.PriceRuleId == null) || (this.PriceRuleId?.Equals(other.PriceRuleId) == true)) &&
-                ((this.PriceRuleName == null && other.PriceRuleName == null) || (this.PriceRuleName?.Equals(other.PriceRuleName) == true)) &&
-                ((this.DelCoId == null && other.DelCoId == null) || (this.DelCoId?.Equals(other.DelCoId) == true)) &&
-                ((this.CountryCode == null && other.CountryCode == null) || (this.CountryCode?.Equals(other.CountryCode) == true)) &&
-                ((this.Country == null && other.Country == null) || (this.Country?.Equals(other.Country) == true)) &&
-                ((this.ProductGroupId == null && other.ProductGroupId == null) || (this.ProductGroupId?.Equals(other.ProductGroupId) == true)) &&
-                ((this.ProductGroupName == null && other.ProductGroupName == null) || (this.ProductGroupName?.Equals(other.ProductGroupName) == true)) &&
-                ((this.ProductCode == null && other.ProductCode == null) || (this.ProductCode?.Equals(other.ProductCode) == true)) &&
-                ((this.ProductId == null && other.ProductId == null) || (this.ProductId?.Equals(other.ProductId) == true)) &&
-                ((this.ProductName == null && other.ProductName == null) || (this.ProductName?.Equals(other.ProductName) == true)) &&
-                ((this.PricePerUnit == null && other.PricePerUnit == null) || (this.PricePerUnit?.Equals(other.PricePerUnit) == true)) &&
-                ((this.CurrencyCode == null && other.CurrencyCode == null) || (this.CurrencyCode?.Equals(other.CurrencyCode) == true)) &&
-                ((this.CurrencySymbol == null && other.CurrencySymbol == null) || (this.CurrencySymbol?.Equals(other.CurrencySymbol) == true)) &&
-                ((this.PriceType == null && other.PriceType == null) || (this.PriceType?.Equals(other.PriceType) == true)) &&
-                ((this.SiteGroupId == null && other.SiteGroupId == null) || (this.SiteGroupId?.Equals(other.SiteGroupId) == true)) &&
-                ((this.SiteGroupName == null && other.SiteGroupName == null) || (this.SiteGroupName?.Equals(other.SiteGroupName) == true)) &&
-                ((this.SiteCode == null && other.SiteCode == null) || (this.SiteCode?.Equals(other.SiteCode) == true)) &&
-                ((this.SiteId == null && other.SiteId == null) || (this.SiteId?.Equals(other.SiteId) == true)) &&
-                ((this.SiteName == null && other.SiteName == null) || (this.SiteName?.Equals(other.SiteName) == true)) &&
-                ((this.FuelNetworkId == null && other.FuelNetworkId == null) || (this.FuelNetworkId?.Equals(other.FuelNetworkId) == true)) &&
-                ((this.NetworkName == null && other.NetworkName == null) || (this.NetworkName?.Equals(other.NetworkName) == true)) &&
-                ((this.PriceRuleDelcoId == null && other.PriceRuleDelcoId == null) || (this.PriceRuleDelcoId?.Equals(other.PriceRuleDelcoId) == true)) &&
-                ((this.PriceRuleDelcoName == null && other.PriceRuleDelcoName == null) || (this.PriceRuleDelcoName?.Equals(other.PriceRuleDelcoName) == true)) &&
-                ((this.PriceRuleCountry == null && other.PriceRuleCountry == null) || (this.PriceRuleCountry?.Equals(other.PriceRuleCountry) == true)) &&
-                ((this.PriceRuleCountryCode == null && other.PriceRuleCountryCode == null) || (this.PriceRuleCountryCode?.Equals(other.PriceRuleCountryCode) == true)) &&
-                ((this.PriceRuleBasisId == null && other.PriceRuleBasisId == null) || (this.PriceRuleBasisId?.Equals(other.PriceRuleBasisId) == true)) &&
-                ((this.DiscountValue == null && other.DiscountValue == null) || (this.DiscountValue?.Equals(other.DiscountValue) == true)) &&
-                ((this.PricePerUnitAfterDiscount == null && other.PricePerUnitAfterDiscount == null) || (this.PricePerUnitAfterDiscount?.Equals(other.PricePerUnitAfterDiscount) == true)) &&
-                ((this.VATPercentage == null && other.VATPercentage == null) || (this.VATPercentage?.Equals(other.VATPercentage) == true)) &&
-                ((this.PriceRuleCategoryId == null && other.PriceRuleCategoryId == null) || (this.PriceRuleCategoryId?.Equals(other.PriceRuleCategoryId) == true)) &&
-                ((this.Tiers == null && other.Tiers == null) || (this.Tiers?.Equals(other.Tiers) == true));
+            return obj is PriceList other &&
+                (this.Date == null && other.Date == null ||
+                 this.Date?.Equals(other.Date) == true) &&
+                (this.Day == null && other.Day == null ||
+                 this.Day?.Equals(other.Day) == true) &&
+                (this.Type == null && other.Type == null ||
+                 this.Type?.Equals(other.Type) == true) &&
+                (this.PriceListId == null && other.PriceListId == null ||
+                 this.PriceListId?.Equals(other.PriceListId) == true) &&
+                (this.PriceListDescription == null && other.PriceListDescription == null ||
+                 this.PriceListDescription?.Equals(other.PriceListDescription) == true) &&
+                (this.PriceRuleId == null && other.PriceRuleId == null ||
+                 this.PriceRuleId?.Equals(other.PriceRuleId) == true) &&
+                (this.PriceRuleName == null && other.PriceRuleName == null ||
+                 this.PriceRuleName?.Equals(other.PriceRuleName) == true) &&
+                (this.DelCoId == null && other.DelCoId == null ||
+                 this.DelCoId?.Equals(other.DelCoId) == true) &&
+                (this.CountryCode == null && other.CountryCode == null ||
+                 this.CountryCode?.Equals(other.CountryCode) == true) &&
+                (this.Country == null && other.Country == null ||
+                 this.Country?.Equals(other.Country) == true) &&
+                (this.ProductGroupId == null && other.ProductGroupId == null ||
+                 this.ProductGroupId?.Equals(other.ProductGroupId) == true) &&
+                (this.ProductGroupName == null && other.ProductGroupName == null ||
+                 this.ProductGroupName?.Equals(other.ProductGroupName) == true) &&
+                (this.ProductCode == null && other.ProductCode == null ||
+                 this.ProductCode?.Equals(other.ProductCode) == true) &&
+                (this.ProductId == null && other.ProductId == null ||
+                 this.ProductId?.Equals(other.ProductId) == true) &&
+                (this.ProductName == null && other.ProductName == null ||
+                 this.ProductName?.Equals(other.ProductName) == true) &&
+                (this.PricePerUnit == null && other.PricePerUnit == null ||
+                 this.PricePerUnit?.Equals(other.PricePerUnit) == true) &&
+                (this.CurrencyCode == null && other.CurrencyCode == null ||
+                 this.CurrencyCode?.Equals(other.CurrencyCode) == true) &&
+                (this.CurrencySymbol == null && other.CurrencySymbol == null ||
+                 this.CurrencySymbol?.Equals(other.CurrencySymbol) == true) &&
+                (this.PriceType == null && other.PriceType == null ||
+                 this.PriceType?.Equals(other.PriceType) == true) &&
+                (this.SiteGroupId == null && other.SiteGroupId == null ||
+                 this.SiteGroupId?.Equals(other.SiteGroupId) == true) &&
+                (this.SiteGroupName == null && other.SiteGroupName == null ||
+                 this.SiteGroupName?.Equals(other.SiteGroupName) == true) &&
+                (this.SiteCode == null && other.SiteCode == null ||
+                 this.SiteCode?.Equals(other.SiteCode) == true) &&
+                (this.SiteId == null && other.SiteId == null ||
+                 this.SiteId?.Equals(other.SiteId) == true) &&
+                (this.SiteName == null && other.SiteName == null ||
+                 this.SiteName?.Equals(other.SiteName) == true) &&
+                (this.FuelNetworkId == null && other.FuelNetworkId == null ||
+                 this.FuelNetworkId?.Equals(other.FuelNetworkId) == true) &&
+                (this.NetworkName == null && other.NetworkName == null ||
+                 this.NetworkName?.Equals(other.NetworkName) == true) &&
+                (this.PriceRuleDelcoId == null && other.PriceRuleDelcoId == null ||
+                 this.PriceRuleDelcoId?.Equals(other.PriceRuleDelcoId) == true) &&
+                (this.PriceRuleDelcoName == null && other.PriceRuleDelcoName == null ||
+                 this.PriceRuleDelcoName?.Equals(other.PriceRuleDelcoName) == true) &&
+                (this.PriceRuleCountry == null && other.PriceRuleCountry == null ||
+                 this.PriceRuleCountry?.Equals(other.PriceRuleCountry) == true) &&
+                (this.PriceRuleCountryCode == null && other.PriceRuleCountryCode == null ||
+                 this.PriceRuleCountryCode?.Equals(other.PriceRuleCountryCode) == true) &&
+                (this.PriceRuleBasisId == null && other.PriceRuleBasisId == null ||
+                 this.PriceRuleBasisId?.Equals(other.PriceRuleBasisId) == true) &&
+                (this.DiscountValue == null && other.DiscountValue == null ||
+                 this.DiscountValue?.Equals(other.DiscountValue) == true) &&
+                (this.PricePerUnitAfterDiscount == null && other.PricePerUnitAfterDiscount == null ||
+                 this.PricePerUnitAfterDiscount?.Equals(other.PricePerUnitAfterDiscount) == true) &&
+                (this.VATPercentage == null && other.VATPercentage == null ||
+                 this.VATPercentage?.Equals(other.VATPercentage) == true) &&
+                (this.PriceRuleCategoryId == null && other.PriceRuleCategoryId == null ||
+                 this.PriceRuleCategoryId?.Equals(other.PriceRuleCategoryId) == true) &&
+                (this.Tiers == null && other.Tiers == null ||
+                 this.Tiers?.Equals(other.Tiers) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Date = {(this.Date == null ? "null" : this.Date)}");
-            toStringOutput.Add($"this.Day = {(this.Day == null ? "null" : this.Day)}");
-            toStringOutput.Add($"this.Type = {(this.Type == null ? "null" : this.Type)}");
+            toStringOutput.Add($"this.Date = {this.Date ?? "null"}");
+            toStringOutput.Add($"this.Day = {this.Day ?? "null"}");
+            toStringOutput.Add($"this.Type = {this.Type ?? "null"}");
             toStringOutput.Add($"this.PriceListId = {(this.PriceListId == null ? "null" : this.PriceListId.ToString())}");
-            toStringOutput.Add($"this.PriceListDescription = {(this.PriceListDescription == null ? "null" : this.PriceListDescription)}");
+            toStringOutput.Add($"this.PriceListDescription = {this.PriceListDescription ?? "null"}");
             toStringOutput.Add($"this.PriceRuleId = {(this.PriceRuleId == null ? "null" : this.PriceRuleId.ToString())}");
-            toStringOutput.Add($"this.PriceRuleName = {(this.PriceRuleName == null ? "null" : this.PriceRuleName)}");
+            toStringOutput.Add($"this.PriceRuleName = {this.PriceRuleName ?? "null"}");
             toStringOutput.Add($"this.DelCoId = {(this.DelCoId == null ? "null" : this.DelCoId.ToString())}");
-            toStringOutput.Add($"this.CountryCode = {(this.CountryCode == null ? "null" : this.CountryCode)}");
-            toStringOutput.Add($"this.Country = {(this.Country == null ? "null" : this.Country)}");
+            toStringOutput.Add($"this.CountryCode = {this.CountryCode ?? "null"}");
+            toStringOutput.Add($"this.Country = {this.Country ?? "null"}");
             toStringOutput.Add($"this.ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {(this.ProductGroupName == null ? "null" : this.ProductGroupName)}");
-            toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");
+            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
+            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
             toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductName = {(this.ProductName == null ? "null" : this.ProductName)}");
+            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
             toStringOutput.Add($"this.PricePerUnit = {(this.PricePerUnit == null ? "null" : this.PricePerUnit.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {(this.CurrencyCode == null ? "null" : this.CurrencyCode)}");
-            toStringOutput.Add($"this.CurrencySymbol = {(this.CurrencySymbol == null ? "null" : this.CurrencySymbol)}");
-            toStringOutput.Add($"this.PriceType = {(this.PriceType == null ? "null" : this.PriceType)}");
+            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"this.PriceType = {this.PriceType ?? "null"}");
             toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {(this.SiteGroupName == null ? "null" : this.SiteGroupName)}");
+            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
             toStringOutput.Add($"this.SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode.ToString())}");
             toStringOutput.Add($"this.SiteId = {(this.SiteId == null ? "null" : this.SiteId.ToString())}");
-            toStringOutput.Add($"this.SiteName = {(this.SiteName == null ? "null" : this.SiteName)}");
+            toStringOutput.Add($"this.SiteName = {this.SiteName ?? "null"}");
             toStringOutput.Add($"this.FuelNetworkId = {(this.FuelNetworkId == null ? "null" : this.FuelNetworkId.ToString())}");
-            toStringOutput.Add($"this.NetworkName = {(this.NetworkName == null ? "null" : this.NetworkName)}");
+            toStringOutput.Add($"this.NetworkName = {this.NetworkName ?? "null"}");
             toStringOutput.Add($"this.PriceRuleDelcoId = {(this.PriceRuleDelcoId == null ? "null" : this.PriceRuleDelcoId.ToString())}");
-            toStringOutput.Add($"this.PriceRuleDelcoName = {(this.PriceRuleDelcoName == null ? "null" : this.PriceRuleDelcoName)}");
-            toStringOutput.Add($"this.PriceRuleCountry = {(this.PriceRuleCountry == null ? "null" : this.PriceRuleCountry)}");
-            toStringOutput.Add($"this.PriceRuleCountryCode = {(this.PriceRuleCountryCode == null ? "null" : this.PriceRuleCountryCode)}");
+            toStringOutput.Add($"this.PriceRuleDelcoName = {this.PriceRuleDelcoName ?? "null"}");
+            toStringOutput.Add($"this.PriceRuleCountry = {this.PriceRuleCountry ?? "null"}");
+            toStringOutput.Add($"this.PriceRuleCountryCode = {this.PriceRuleCountryCode ?? "null"}");
             toStringOutput.Add($"this.PriceRuleBasisId = {(this.PriceRuleBasisId == null ? "null" : this.PriceRuleBasisId.ToString())}");
             toStringOutput.Add($"this.DiscountValue = {(this.DiscountValue == null ? "null" : this.DiscountValue.ToString())}");
             toStringOutput.Add($"this.PricePerUnitAfterDiscount = {(this.PricePerUnitAfterDiscount == null ? "null" : this.PricePerUnitAfterDiscount.ToString())}");

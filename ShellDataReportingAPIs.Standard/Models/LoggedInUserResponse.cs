@@ -117,6 +117,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             Models.ErrorStatus error = null,
             string requestId = null)
         {
+
             if (userName != null)
             {
                 this.UserName = userName;
@@ -136,8 +137,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.PreferredLanguage = preferredLanguage;
             }
-
             this.IsSuperAdmin = isSuperAdmin;
+
             if (dateFormat != null)
             {
                 this.DateFormat = dateFormat;
@@ -152,8 +153,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.WeekBegins = weekBegins;
             }
-
             this.DisplayWeek = displayWeek;
+
             if (cSVSeparator != null)
             {
                 this.CSVSeparator = cSVSeparator;
@@ -168,13 +169,13 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.ReportFormat = reportFormat;
             }
-
             this.HasAPIAccess = hasAPIAccess;
             this.Roles = roles;
             this.Payers = payers;
             this.Accounts = accounts;
             this.CollectingCompanies = collectingCompanies;
             this.EIDAccessDetails = eIDAccessDetails;
+
             if (userClassificationBySystem != null)
             {
                 this.UserClassificationBySystem = userClassificationBySystem;
@@ -199,7 +200,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.CardCount = cardCount;
             }
-
             this.Error = error;
             this.RequestId = requestId;
         }
@@ -552,14 +552,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"LoggedInUserResponse : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUserName()
         {
@@ -567,7 +565,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDisplayName()
         {
@@ -575,7 +573,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIdMSSOID()
         {
@@ -583,7 +581,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPreferredLanguage()
         {
@@ -591,7 +589,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDateFormat()
         {
@@ -599,7 +597,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTimeFormat()
         {
@@ -607,7 +605,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetWeekBegins()
         {
@@ -615,7 +613,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCSVSeparator()
         {
@@ -623,7 +621,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDecimalSeparator()
         {
@@ -631,7 +629,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetReportFormat()
         {
@@ -639,7 +637,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUserClassificationBySystem()
         {
@@ -647,7 +645,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUserClassificationByShell()
         {
@@ -655,7 +653,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerCount()
         {
@@ -663,7 +661,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountCount()
         {
@@ -671,7 +669,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardCount()
         {
@@ -816,73 +814,93 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is LoggedInUserResponse other &&                ((this.UserName == null && other.UserName == null) || (this.UserName?.Equals(other.UserName) == true)) &&
-                ((this.DisplayName == null && other.DisplayName == null) || (this.DisplayName?.Equals(other.DisplayName) == true)) &&
-                ((this.IdMSSOID == null && other.IdMSSOID == null) || (this.IdMSSOID?.Equals(other.IdMSSOID) == true)) &&
-                ((this.PreferredLanguage == null && other.PreferredLanguage == null) || (this.PreferredLanguage?.Equals(other.PreferredLanguage) == true)) &&
-                ((this.IsSuperAdmin == null && other.IsSuperAdmin == null) || (this.IsSuperAdmin?.Equals(other.IsSuperAdmin) == true)) &&
-                ((this.DateFormat == null && other.DateFormat == null) || (this.DateFormat?.Equals(other.DateFormat) == true)) &&
-                ((this.TimeFormat == null && other.TimeFormat == null) || (this.TimeFormat?.Equals(other.TimeFormat) == true)) &&
-                ((this.WeekBegins == null && other.WeekBegins == null) || (this.WeekBegins?.Equals(other.WeekBegins) == true)) &&
-                ((this.DisplayWeek == null && other.DisplayWeek == null) || (this.DisplayWeek?.Equals(other.DisplayWeek) == true)) &&
-                ((this.CSVSeparator == null && other.CSVSeparator == null) || (this.CSVSeparator?.Equals(other.CSVSeparator) == true)) &&
-                ((this.DecimalSeparator == null && other.DecimalSeparator == null) || (this.DecimalSeparator?.Equals(other.DecimalSeparator) == true)) &&
-                ((this.ReportFormat == null && other.ReportFormat == null) || (this.ReportFormat?.Equals(other.ReportFormat) == true)) &&
-                ((this.HasAPIAccess == null && other.HasAPIAccess == null) || (this.HasAPIAccess?.Equals(other.HasAPIAccess) == true)) &&
-                ((this.Roles == null && other.Roles == null) || (this.Roles?.Equals(other.Roles) == true)) &&
-                ((this.Payers == null && other.Payers == null) || (this.Payers?.Equals(other.Payers) == true)) &&
-                ((this.Accounts == null && other.Accounts == null) || (this.Accounts?.Equals(other.Accounts) == true)) &&
-                ((this.CollectingCompanies == null && other.CollectingCompanies == null) || (this.CollectingCompanies?.Equals(other.CollectingCompanies) == true)) &&
-                ((this.EIDAccessDetails == null && other.EIDAccessDetails == null) || (this.EIDAccessDetails?.Equals(other.EIDAccessDetails) == true)) &&
-                ((this.UserClassificationBySystem == null && other.UserClassificationBySystem == null) || (this.UserClassificationBySystem?.Equals(other.UserClassificationBySystem) == true)) &&
-                ((this.UserClassificationByShell == null && other.UserClassificationByShell == null) || (this.UserClassificationByShell?.Equals(other.UserClassificationByShell) == true)) &&
-                ((this.PayerCount == null && other.PayerCount == null) || (this.PayerCount?.Equals(other.PayerCount) == true)) &&
-                ((this.AccountCount == null && other.AccountCount == null) || (this.AccountCount?.Equals(other.AccountCount) == true)) &&
-                ((this.CardCount == null && other.CardCount == null) || (this.CardCount?.Equals(other.CardCount) == true)) &&
-                ((this.Error == null && other.Error == null) || (this.Error?.Equals(other.Error) == true)) &&
-                ((this.RequestId == null && other.RequestId == null) || (this.RequestId?.Equals(other.RequestId) == true));
+            return obj is LoggedInUserResponse other &&
+                (this.UserName == null && other.UserName == null ||
+                 this.UserName?.Equals(other.UserName) == true) &&
+                (this.DisplayName == null && other.DisplayName == null ||
+                 this.DisplayName?.Equals(other.DisplayName) == true) &&
+                (this.IdMSSOID == null && other.IdMSSOID == null ||
+                 this.IdMSSOID?.Equals(other.IdMSSOID) == true) &&
+                (this.PreferredLanguage == null && other.PreferredLanguage == null ||
+                 this.PreferredLanguage?.Equals(other.PreferredLanguage) == true) &&
+                (this.IsSuperAdmin == null && other.IsSuperAdmin == null ||
+                 this.IsSuperAdmin?.Equals(other.IsSuperAdmin) == true) &&
+                (this.DateFormat == null && other.DateFormat == null ||
+                 this.DateFormat?.Equals(other.DateFormat) == true) &&
+                (this.TimeFormat == null && other.TimeFormat == null ||
+                 this.TimeFormat?.Equals(other.TimeFormat) == true) &&
+                (this.WeekBegins == null && other.WeekBegins == null ||
+                 this.WeekBegins?.Equals(other.WeekBegins) == true) &&
+                (this.DisplayWeek == null && other.DisplayWeek == null ||
+                 this.DisplayWeek?.Equals(other.DisplayWeek) == true) &&
+                (this.CSVSeparator == null && other.CSVSeparator == null ||
+                 this.CSVSeparator?.Equals(other.CSVSeparator) == true) &&
+                (this.DecimalSeparator == null && other.DecimalSeparator == null ||
+                 this.DecimalSeparator?.Equals(other.DecimalSeparator) == true) &&
+                (this.ReportFormat == null && other.ReportFormat == null ||
+                 this.ReportFormat?.Equals(other.ReportFormat) == true) &&
+                (this.HasAPIAccess == null && other.HasAPIAccess == null ||
+                 this.HasAPIAccess?.Equals(other.HasAPIAccess) == true) &&
+                (this.Roles == null && other.Roles == null ||
+                 this.Roles?.Equals(other.Roles) == true) &&
+                (this.Payers == null && other.Payers == null ||
+                 this.Payers?.Equals(other.Payers) == true) &&
+                (this.Accounts == null && other.Accounts == null ||
+                 this.Accounts?.Equals(other.Accounts) == true) &&
+                (this.CollectingCompanies == null && other.CollectingCompanies == null ||
+                 this.CollectingCompanies?.Equals(other.CollectingCompanies) == true) &&
+                (this.EIDAccessDetails == null && other.EIDAccessDetails == null ||
+                 this.EIDAccessDetails?.Equals(other.EIDAccessDetails) == true) &&
+                (this.UserClassificationBySystem == null && other.UserClassificationBySystem == null ||
+                 this.UserClassificationBySystem?.Equals(other.UserClassificationBySystem) == true) &&
+                (this.UserClassificationByShell == null && other.UserClassificationByShell == null ||
+                 this.UserClassificationByShell?.Equals(other.UserClassificationByShell) == true) &&
+                (this.PayerCount == null && other.PayerCount == null ||
+                 this.PayerCount?.Equals(other.PayerCount) == true) &&
+                (this.AccountCount == null && other.AccountCount == null ||
+                 this.AccountCount?.Equals(other.AccountCount) == true) &&
+                (this.CardCount == null && other.CardCount == null ||
+                 this.CardCount?.Equals(other.CardCount) == true) &&
+                (this.Error == null && other.Error == null ||
+                 this.Error?.Equals(other.Error) == true) &&
+                (this.RequestId == null && other.RequestId == null ||
+                 this.RequestId?.Equals(other.RequestId) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.UserName = {(this.UserName == null ? "null" : this.UserName)}");
-            toStringOutput.Add($"this.DisplayName = {(this.DisplayName == null ? "null" : this.DisplayName)}");
-            toStringOutput.Add($"this.IdMSSOID = {(this.IdMSSOID == null ? "null" : this.IdMSSOID)}");
-            toStringOutput.Add($"this.PreferredLanguage = {(this.PreferredLanguage == null ? "null" : this.PreferredLanguage)}");
+            toStringOutput.Add($"this.UserName = {this.UserName ?? "null"}");
+            toStringOutput.Add($"this.DisplayName = {this.DisplayName ?? "null"}");
+            toStringOutput.Add($"this.IdMSSOID = {this.IdMSSOID ?? "null"}");
+            toStringOutput.Add($"this.PreferredLanguage = {this.PreferredLanguage ?? "null"}");
             toStringOutput.Add($"this.IsSuperAdmin = {(this.IsSuperAdmin == null ? "null" : this.IsSuperAdmin.ToString())}");
-            toStringOutput.Add($"this.DateFormat = {(this.DateFormat == null ? "null" : this.DateFormat)}");
-            toStringOutput.Add($"this.TimeFormat = {(this.TimeFormat == null ? "null" : this.TimeFormat)}");
+            toStringOutput.Add($"this.DateFormat = {this.DateFormat ?? "null"}");
+            toStringOutput.Add($"this.TimeFormat = {this.TimeFormat ?? "null"}");
             toStringOutput.Add($"this.WeekBegins = {(this.WeekBegins == null ? "null" : this.WeekBegins.ToString())}");
             toStringOutput.Add($"this.DisplayWeek = {(this.DisplayWeek == null ? "null" : this.DisplayWeek.ToString())}");
-            toStringOutput.Add($"this.CSVSeparator = {(this.CSVSeparator == null ? "null" : this.CSVSeparator)}");
-            toStringOutput.Add($"this.DecimalSeparator = {(this.DecimalSeparator == null ? "null" : this.DecimalSeparator)}");
-            toStringOutput.Add($"this.ReportFormat = {(this.ReportFormat == null ? "null" : this.ReportFormat)}");
+            toStringOutput.Add($"this.CSVSeparator = {this.CSVSeparator ?? "null"}");
+            toStringOutput.Add($"this.DecimalSeparator = {this.DecimalSeparator ?? "null"}");
+            toStringOutput.Add($"this.ReportFormat = {this.ReportFormat ?? "null"}");
             toStringOutput.Add($"this.HasAPIAccess = {(this.HasAPIAccess == null ? "null" : this.HasAPIAccess.ToString())}");
             toStringOutput.Add($"this.Roles = {(this.Roles == null ? "null" : $"[{string.Join(", ", this.Roles)} ]")}");
             toStringOutput.Add($"this.Payers = {(this.Payers == null ? "null" : $"[{string.Join(", ", this.Payers)} ]")}");
             toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
             toStringOutput.Add($"this.CollectingCompanies = {(this.CollectingCompanies == null ? "null" : $"[{string.Join(", ", this.CollectingCompanies)} ]")}");
             toStringOutput.Add($"this.EIDAccessDetails = {(this.EIDAccessDetails == null ? "null" : $"[{string.Join(", ", this.EIDAccessDetails)} ]")}");
-            toStringOutput.Add($"this.UserClassificationBySystem = {(this.UserClassificationBySystem == null ? "null" : this.UserClassificationBySystem)}");
-            toStringOutput.Add($"this.UserClassificationByShell = {(this.UserClassificationByShell == null ? "null" : this.UserClassificationByShell)}");
+            toStringOutput.Add($"this.UserClassificationBySystem = {this.UserClassificationBySystem ?? "null"}");
+            toStringOutput.Add($"this.UserClassificationByShell = {this.UserClassificationByShell ?? "null"}");
             toStringOutput.Add($"this.PayerCount = {(this.PayerCount == null ? "null" : this.PayerCount.ToString())}");
             toStringOutput.Add($"this.AccountCount = {(this.AccountCount == null ? "null" : this.AccountCount.ToString())}");
             toStringOutput.Add($"this.CardCount = {(this.CardCount == null ? "null" : this.CardCount.ToString())}");
             toStringOutput.Add($"this.Error = {(this.Error == null ? "null" : this.Error.ToString())}");
-            toStringOutput.Add($"this.RequestId = {(this.RequestId == null ? "null" : this.RequestId)}");
+            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
         }
     }
 }

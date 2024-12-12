@@ -69,29 +69,25 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"FuelConsumptionCard : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is FuelConsumptionCard other &&                ((this.CardId == null && other.CardId == null) || (this.CardId?.Equals(other.CardId) == true)) &&
-                ((this.PAN == null && other.PAN == null) || (this.PAN?.Equals(other.PAN) == true)) &&
-                ((this.ExpiryDate == null && other.ExpiryDate == null) || (this.ExpiryDate?.Equals(other.ExpiryDate) == true));
+            return obj is FuelConsumptionCard other &&
+                (this.CardId == null && other.CardId == null ||
+                 this.CardId?.Equals(other.CardId) == true) &&
+                (this.PAN == null && other.PAN == null ||
+                 this.PAN?.Equals(other.PAN) == true) &&
+                (this.ExpiryDate == null && other.ExpiryDate == null ||
+                 this.ExpiryDate?.Equals(other.ExpiryDate) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -99,8 +95,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.CardId = {(this.CardId == null ? "null" : this.CardId.ToString())}");
-            toStringOutput.Add($"this.PAN = {(this.PAN == null ? "null" : this.PAN)}");
-            toStringOutput.Add($"this.ExpiryDate = {(this.ExpiryDate == null ? "null" : this.ExpiryDate)}");
+            toStringOutput.Add($"this.PAN = {this.PAN ?? "null"}");
+            toStringOutput.Add($"this.ExpiryDate = {this.ExpiryDate ?? "null"}");
         }
     }
 }

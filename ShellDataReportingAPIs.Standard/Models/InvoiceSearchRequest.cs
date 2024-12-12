@@ -85,30 +85,27 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"InvoiceSearchRequest : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is InvoiceSearchRequest other &&                ((this.Filters == null && other.Filters == null) || (this.Filters?.Equals(other.Filters) == true)) &&
-                ((this.PageSize == null && other.PageSize == null) || (this.PageSize?.Equals(other.PageSize) == true)) &&
-                ((this.Page == null && other.Page == null) || (this.Page?.Equals(other.Page) == true)) &&
-                ((this.SortBy == null && other.SortBy == null) || (this.SortBy?.Equals(other.SortBy) == true));
+            return obj is InvoiceSearchRequest other &&
+                (this.Filters == null && other.Filters == null ||
+                 this.Filters?.Equals(other.Filters) == true) &&
+                (this.PageSize == null && other.PageSize == null ||
+                 this.PageSize?.Equals(other.PageSize) == true) &&
+                (this.Page == null && other.Page == null ||
+                 this.Page?.Equals(other.Page) == true) &&
+                (this.SortBy == null && other.SortBy == null ||
+                 this.SortBy?.Equals(other.SortBy) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

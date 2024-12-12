@@ -53,11 +53,11 @@ namespace ShellDataReportingAPIs.Standard.Models
             this.PayerNumber = payerNumber;
             this.AccountNumber = accountNumber;
             this.DocumentReference = documentReference;
+
             if (invoiceOrSOANumber != null)
             {
                 this.InvoiceOrSOANumber = invoiceOrSOANumber;
             }
-
         }
 
         /// <summary>
@@ -111,14 +111,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"InvoiceDownloadReq : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceOrSOANumber()
         {
@@ -137,22 +135,22 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is InvoiceDownloadReq other &&                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.DocumentReference == null && other.DocumentReference == null) || (this.DocumentReference?.Equals(other.DocumentReference) == true)) &&
-                ((this.InvoiceOrSOANumber == null && other.InvoiceOrSOANumber == null) || (this.InvoiceOrSOANumber?.Equals(other.InvoiceOrSOANumber) == true));
+            return obj is InvoiceDownloadReq other &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.DocumentReference == null && other.DocumentReference == null ||
+                 this.DocumentReference?.Equals(other.DocumentReference) == true) &&
+                (this.InvoiceOrSOANumber == null && other.InvoiceOrSOANumber == null ||
+                 this.InvoiceOrSOANumber?.Equals(other.InvoiceOrSOANumber) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -160,10 +158,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
             toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : $"[{string.Join(", ", this.AccountNumber)} ]")}");
             toStringOutput.Add($"this.DocumentReference = {(this.DocumentReference == null ? "null" : $"[{string.Join(", ", this.DocumentReference)} ]")}");
-            toStringOutput.Add($"this.InvoiceOrSOANumber = {(this.InvoiceOrSOANumber == null ? "null" : this.InvoiceOrSOANumber)}");
+            toStringOutput.Add($"this.InvoiceOrSOANumber = {this.InvoiceOrSOANumber ?? "null"}");
         }
     }
 }

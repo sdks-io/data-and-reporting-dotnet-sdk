@@ -375,7 +375,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string siteCode = null,
             string siteName = null,
             string siteCountry = null,
-            Models.Location location = null,
+            Models.ExceptionSiteLocation location = null,
             string cardGroupName = null,
             string receiptNumber = null,
             string productCode = null,
@@ -435,6 +435,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? vATonNetAmount = null,
             string vATCountry = null)
         {
+
             if (salesItemId != null)
             {
                 this.SalesItemId = salesItemId;
@@ -639,8 +640,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.SiteCountry = siteCountry;
             }
-
             this.Location = location;
+
             if (cardGroupName != null)
             {
                 this.CardGroupName = cardGroupName;
@@ -930,7 +931,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.VATCountry = vATCountry;
             }
-
         }
 
         /// <summary>
@@ -1678,10 +1678,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Gets or sets Location.
+        /// Geography Location entity for Site Location
         /// </summary>
         [JsonProperty("Location", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Location Location { get; set; }
+        public Models.ExceptionSiteLocation Location { get; set; }
 
         /// <summary>
         /// Card Group Name
@@ -2751,14 +2751,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"TransactionExceptions : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSalesItemId()
         {
@@ -2766,7 +2764,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardId()
         {
@@ -2774,7 +2772,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductId()
         {
@@ -2782,7 +2780,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionGUID()
         {
@@ -2790,7 +2788,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionDate()
         {
@@ -2798,7 +2796,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerInvoiceValueTotalGross()
         {
@@ -2806,7 +2804,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardPAN()
         {
@@ -2814,7 +2812,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardExpiry()
         {
@@ -2822,7 +2820,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionTime()
         {
@@ -2830,7 +2828,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUTCOffset()
         {
@@ -2838,7 +2836,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFleetIdInput()
         {
@@ -2846,7 +2844,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetOdometerInput()
         {
@@ -2854,7 +2852,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDriverName()
         {
@@ -2862,7 +2860,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVehicleRegistration()
         {
@@ -2870,7 +2868,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceCurrencyCode()
         {
@@ -2878,7 +2876,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceCurrencySymbol()
         {
@@ -2886,7 +2884,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionCurrencyCode()
         {
@@ -2894,7 +2892,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionCurrencySymbol()
         {
@@ -2902,7 +2900,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionNetAmount()
         {
@@ -2910,7 +2908,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionTax()
         {
@@ -2918,7 +2916,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionGrossAmount()
         {
@@ -2926,7 +2924,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceNetAmount()
         {
@@ -2934,7 +2932,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceTax()
         {
@@ -2942,7 +2940,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceGrossAmount()
         {
@@ -2950,7 +2948,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPurchasedInCountry()
         {
@@ -2958,7 +2956,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountId()
         {
@@ -2966,7 +2964,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountNumber()
         {
@@ -2974,7 +2972,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountName()
         {
@@ -2982,7 +2980,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountShortName()
         {
@@ -2990,7 +2988,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetQuantity()
         {
@@ -2998,7 +2996,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelProduct()
         {
@@ -3006,7 +3004,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUnitPriceInTransactionCurrency()
         {
@@ -3014,7 +3012,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUnitPriceInInvoiceCurrency()
         {
@@ -3022,7 +3020,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUnitDiscountTransactionCurrency()
         {
@@ -3030,7 +3028,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUnitDiscountInvoiceCurrency()
         {
@@ -3038,7 +3036,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIsInvoiced()
         {
@@ -3046,7 +3044,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceNumber()
         {
@@ -3054,7 +3052,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceDate()
         {
@@ -3062,7 +3060,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteCode()
         {
@@ -3070,7 +3068,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteName()
         {
@@ -3078,7 +3076,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteCountry()
         {
@@ -3086,7 +3084,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardGroupName()
         {
@@ -3094,7 +3092,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetReceiptNumber()
         {
@@ -3102,7 +3100,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductCode()
         {
@@ -3110,7 +3108,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductName()
         {
@@ -3118,7 +3116,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupId()
         {
@@ -3126,7 +3124,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupName()
         {
@@ -3134,7 +3132,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDelCoExchangeRate()
         {
@@ -3142,7 +3140,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetColCoExchangeRate()
         {
@@ -3150,7 +3148,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIsShellSite()
         {
@@ -3158,7 +3156,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNetwork()
         {
@@ -3166,7 +3164,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupId()
         {
@@ -3174,7 +3172,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupName()
         {
@@ -3182,7 +3180,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPostingDate()
         {
@@ -3190,7 +3188,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIssuerCode()
         {
@@ -3198,7 +3196,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPurchasedInCountryCode()
         {
@@ -3206,7 +3204,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerCountryCode()
         {
@@ -3214,7 +3212,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerCountry()
         {
@@ -3222,7 +3220,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetReleaseCode()
         {
@@ -3230,7 +3228,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardGroupId()
         {
@@ -3238,7 +3236,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardSequenceNumber()
         {
@@ -3246,7 +3244,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCheckDigit()
         {
@@ -3254,7 +3252,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFleetIDDescription()
         {
@@ -3262,7 +3260,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVATRate()
         {
@@ -3270,7 +3268,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVATCategory()
         {
@@ -3278,7 +3276,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetEffectiveDiscountInTrxCurrency()
         {
@@ -3286,7 +3284,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionType()
         {
@@ -3294,7 +3292,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPINIndicator()
         {
@@ -3302,7 +3300,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVATApplicable()
         {
@@ -3310,7 +3308,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNetInvoiceIndicator()
         {
@@ -3318,7 +3316,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerCurrencyCode()
         {
@@ -3326,7 +3324,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerCurrencySymbol()
         {
@@ -3334,7 +3332,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetEffectiveUnitDiscountInCustomerCurrency()
         {
@@ -3342,7 +3340,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetEffectiveDiscountInCustomerCurrency()
         {
@@ -3350,7 +3348,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVATonNetAmountInCustomerCurrency()
         {
@@ -3358,7 +3356,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDiscountType()
         {
@@ -3366,7 +3364,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionStatus()
         {
@@ -3374,7 +3372,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerGroup()
         {
@@ -3382,7 +3380,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetRefundFlag()
         {
@@ -3390,7 +3388,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetOriginalSalesItemId()
         {
@@ -3398,7 +3396,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDelcoName()
         {
@@ -3406,7 +3404,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDelcoCode()
         {
@@ -3414,7 +3412,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerNumber()
         {
@@ -3422,7 +3420,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerName()
         {
@@ -3430,7 +3428,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardExpiryPeriod()
         {
@@ -3438,7 +3436,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAuthorisationCode()
         {
@@ -3446,7 +3444,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionId()
         {
@@ -3454,7 +3452,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionLine()
         {
@@ -3462,7 +3460,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAllowClearing()
         {
@@ -3470,7 +3468,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCRMNumber()
         {
@@ -3478,7 +3476,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDisputeStatus()
         {
@@ -3486,7 +3484,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetRebateRate()
         {
@@ -3494,7 +3492,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDelCoToColCoExchangeRate()
         {
@@ -3502,7 +3500,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNetEuroAmount()
         {
@@ -3510,7 +3508,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetEuroRebateAmount()
         {
@@ -3518,7 +3516,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetEuroVATAmount()
         {
@@ -3526,7 +3524,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetParentCustomerNumber()
         {
@@ -3534,7 +3532,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVATonNetAmount()
         {
@@ -3542,7 +3540,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVATCountry()
         {
@@ -4443,117 +4441,212 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is TransactionExceptions other &&                ((this.SalesItemId == null && other.SalesItemId == null) || (this.SalesItemId?.Equals(other.SalesItemId) == true)) &&
-                ((this.CardId == null && other.CardId == null) || (this.CardId?.Equals(other.CardId) == true)) &&
-                ((this.ProductId == null && other.ProductId == null) || (this.ProductId?.Equals(other.ProductId) == true)) &&
-                ((this.TransactionGUID == null && other.TransactionGUID == null) || (this.TransactionGUID?.Equals(other.TransactionGUID) == true)) &&
-                ((this.TransactionDate == null && other.TransactionDate == null) || (this.TransactionDate?.Equals(other.TransactionDate) == true)) &&
-                ((this.CustomerInvoiceValueTotalGross == null && other.CustomerInvoiceValueTotalGross == null) || (this.CustomerInvoiceValueTotalGross?.Equals(other.CustomerInvoiceValueTotalGross) == true)) &&
-                ((this.CardPAN == null && other.CardPAN == null) || (this.CardPAN?.Equals(other.CardPAN) == true)) &&
-                ((this.CardExpiry == null && other.CardExpiry == null) || (this.CardExpiry?.Equals(other.CardExpiry) == true)) &&
-                ((this.TransactionTime == null && other.TransactionTime == null) || (this.TransactionTime?.Equals(other.TransactionTime) == true)) &&
-                ((this.UTCOffset == null && other.UTCOffset == null) || (this.UTCOffset?.Equals(other.UTCOffset) == true)) &&
-                ((this.FleetIdInput == null && other.FleetIdInput == null) || (this.FleetIdInput?.Equals(other.FleetIdInput) == true)) &&
-                ((this.OdometerInput == null && other.OdometerInput == null) || (this.OdometerInput?.Equals(other.OdometerInput) == true)) &&
-                ((this.DriverName == null && other.DriverName == null) || (this.DriverName?.Equals(other.DriverName) == true)) &&
-                ((this.VehicleRegistration == null && other.VehicleRegistration == null) || (this.VehicleRegistration?.Equals(other.VehicleRegistration) == true)) &&
-                ((this.InvoiceCurrencyCode == null && other.InvoiceCurrencyCode == null) || (this.InvoiceCurrencyCode?.Equals(other.InvoiceCurrencyCode) == true)) &&
-                ((this.InvoiceCurrencySymbol == null && other.InvoiceCurrencySymbol == null) || (this.InvoiceCurrencySymbol?.Equals(other.InvoiceCurrencySymbol) == true)) &&
-                ((this.TransactionCurrencyCode == null && other.TransactionCurrencyCode == null) || (this.TransactionCurrencyCode?.Equals(other.TransactionCurrencyCode) == true)) &&
-                ((this.TransactionCurrencySymbol == null && other.TransactionCurrencySymbol == null) || (this.TransactionCurrencySymbol?.Equals(other.TransactionCurrencySymbol) == true)) &&
-                ((this.TransactionNetAmount == null && other.TransactionNetAmount == null) || (this.TransactionNetAmount?.Equals(other.TransactionNetAmount) == true)) &&
-                ((this.TransactionTax == null && other.TransactionTax == null) || (this.TransactionTax?.Equals(other.TransactionTax) == true)) &&
-                ((this.TransactionGrossAmount == null && other.TransactionGrossAmount == null) || (this.TransactionGrossAmount?.Equals(other.TransactionGrossAmount) == true)) &&
-                ((this.InvoiceNetAmount == null && other.InvoiceNetAmount == null) || (this.InvoiceNetAmount?.Equals(other.InvoiceNetAmount) == true)) &&
-                ((this.InvoiceTax == null && other.InvoiceTax == null) || (this.InvoiceTax?.Equals(other.InvoiceTax) == true)) &&
-                ((this.InvoiceGrossAmount == null && other.InvoiceGrossAmount == null) || (this.InvoiceGrossAmount?.Equals(other.InvoiceGrossAmount) == true)) &&
-                ((this.PurchasedInCountry == null && other.PurchasedInCountry == null) || (this.PurchasedInCountry?.Equals(other.PurchasedInCountry) == true)) &&
-                ((this.AccountId == null && other.AccountId == null) || (this.AccountId?.Equals(other.AccountId) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.AccountName == null && other.AccountName == null) || (this.AccountName?.Equals(other.AccountName) == true)) &&
-                ((this.AccountShortName == null && other.AccountShortName == null) || (this.AccountShortName?.Equals(other.AccountShortName) == true)) &&
-                ((this.Quantity == null && other.Quantity == null) || (this.Quantity?.Equals(other.Quantity) == true)) &&
-                ((this.FuelProduct == null && other.FuelProduct == null) || (this.FuelProduct?.Equals(other.FuelProduct) == true)) &&
-                ((this.UnitPriceInTransactionCurrency == null && other.UnitPriceInTransactionCurrency == null) || (this.UnitPriceInTransactionCurrency?.Equals(other.UnitPriceInTransactionCurrency) == true)) &&
-                ((this.UnitPriceInInvoiceCurrency == null && other.UnitPriceInInvoiceCurrency == null) || (this.UnitPriceInInvoiceCurrency?.Equals(other.UnitPriceInInvoiceCurrency) == true)) &&
-                ((this.UnitDiscountTransactionCurrency == null && other.UnitDiscountTransactionCurrency == null) || (this.UnitDiscountTransactionCurrency?.Equals(other.UnitDiscountTransactionCurrency) == true)) &&
-                ((this.UnitDiscountInvoiceCurrency == null && other.UnitDiscountInvoiceCurrency == null) || (this.UnitDiscountInvoiceCurrency?.Equals(other.UnitDiscountInvoiceCurrency) == true)) &&
-                ((this.IsInvoiced == null && other.IsInvoiced == null) || (this.IsInvoiced?.Equals(other.IsInvoiced) == true)) &&
-                ((this.InvoiceNumber == null && other.InvoiceNumber == null) || (this.InvoiceNumber?.Equals(other.InvoiceNumber) == true)) &&
-                ((this.InvoiceDate == null && other.InvoiceDate == null) || (this.InvoiceDate?.Equals(other.InvoiceDate) == true)) &&
-                ((this.SiteCode == null && other.SiteCode == null) || (this.SiteCode?.Equals(other.SiteCode) == true)) &&
-                ((this.SiteName == null && other.SiteName == null) || (this.SiteName?.Equals(other.SiteName) == true)) &&
-                ((this.SiteCountry == null && other.SiteCountry == null) || (this.SiteCountry?.Equals(other.SiteCountry) == true)) &&
-                ((this.Location == null && other.Location == null) || (this.Location?.Equals(other.Location) == true)) &&
-                ((this.CardGroupName == null && other.CardGroupName == null) || (this.CardGroupName?.Equals(other.CardGroupName) == true)) &&
-                ((this.ReceiptNumber == null && other.ReceiptNumber == null) || (this.ReceiptNumber?.Equals(other.ReceiptNumber) == true)) &&
-                ((this.ProductCode == null && other.ProductCode == null) || (this.ProductCode?.Equals(other.ProductCode) == true)) &&
-                ((this.ProductName == null && other.ProductName == null) || (this.ProductName?.Equals(other.ProductName) == true)) &&
-                ((this.ProductGroupId == null && other.ProductGroupId == null) || (this.ProductGroupId?.Equals(other.ProductGroupId) == true)) &&
-                ((this.ProductGroupName == null && other.ProductGroupName == null) || (this.ProductGroupName?.Equals(other.ProductGroupName) == true)) &&
-                ((this.DelCoExchangeRate == null && other.DelCoExchangeRate == null) || (this.DelCoExchangeRate?.Equals(other.DelCoExchangeRate) == true)) &&
-                ((this.ColCoExchangeRate == null && other.ColCoExchangeRate == null) || (this.ColCoExchangeRate?.Equals(other.ColCoExchangeRate) == true)) &&
-                ((this.IsShellSite == null && other.IsShellSite == null) || (this.IsShellSite?.Equals(other.IsShellSite) == true)) &&
-                ((this.Network == null && other.Network == null) || (this.Network?.Equals(other.Network) == true)) &&
-                ((this.SiteGroupId == null && other.SiteGroupId == null) || (this.SiteGroupId?.Equals(other.SiteGroupId) == true)) &&
-                ((this.SiteGroupName == null && other.SiteGroupName == null) || (this.SiteGroupName?.Equals(other.SiteGroupName) == true)) &&
-                ((this.PostingDate == null && other.PostingDate == null) || (this.PostingDate?.Equals(other.PostingDate) == true)) &&
-                ((this.IssuerCode == null && other.IssuerCode == null) || (this.IssuerCode?.Equals(other.IssuerCode) == true)) &&
-                ((this.PurchasedInCountryCode == null && other.PurchasedInCountryCode == null) || (this.PurchasedInCountryCode?.Equals(other.PurchasedInCountryCode) == true)) &&
-                ((this.CustomerCountryCode == null && other.CustomerCountryCode == null) || (this.CustomerCountryCode?.Equals(other.CustomerCountryCode) == true)) &&
-                ((this.CustomerCountry == null && other.CustomerCountry == null) || (this.CustomerCountry?.Equals(other.CustomerCountry) == true)) &&
-                ((this.ReleaseCode == null && other.ReleaseCode == null) || (this.ReleaseCode?.Equals(other.ReleaseCode) == true)) &&
-                ((this.CardGroupId == null && other.CardGroupId == null) || (this.CardGroupId?.Equals(other.CardGroupId) == true)) &&
-                ((this.CardSequenceNumber == null && other.CardSequenceNumber == null) || (this.CardSequenceNumber?.Equals(other.CardSequenceNumber) == true)) &&
-                ((this.CheckDigit == null && other.CheckDigit == null) || (this.CheckDigit?.Equals(other.CheckDigit) == true)) &&
-                ((this.FleetIDDescription == null && other.FleetIDDescription == null) || (this.FleetIDDescription?.Equals(other.FleetIDDescription) == true)) &&
-                ((this.VATRate == null && other.VATRate == null) || (this.VATRate?.Equals(other.VATRate) == true)) &&
-                ((this.VATCategory == null && other.VATCategory == null) || (this.VATCategory?.Equals(other.VATCategory) == true)) &&
-                ((this.EffectiveDiscountInTrxCurrency == null && other.EffectiveDiscountInTrxCurrency == null) || (this.EffectiveDiscountInTrxCurrency?.Equals(other.EffectiveDiscountInTrxCurrency) == true)) &&
-                ((this.TransactionType == null && other.TransactionType == null) || (this.TransactionType?.Equals(other.TransactionType) == true)) &&
-                ((this.PINIndicator == null && other.PINIndicator == null) || (this.PINIndicator?.Equals(other.PINIndicator) == true)) &&
-                ((this.VATApplicable == null && other.VATApplicable == null) || (this.VATApplicable?.Equals(other.VATApplicable) == true)) &&
-                ((this.NetInvoiceIndicator == null && other.NetInvoiceIndicator == null) || (this.NetInvoiceIndicator?.Equals(other.NetInvoiceIndicator) == true)) &&
-                ((this.CustomerCurrencyCode == null && other.CustomerCurrencyCode == null) || (this.CustomerCurrencyCode?.Equals(other.CustomerCurrencyCode) == true)) &&
-                ((this.CustomerCurrencySymbol == null && other.CustomerCurrencySymbol == null) || (this.CustomerCurrencySymbol?.Equals(other.CustomerCurrencySymbol) == true)) &&
-                ((this.EffectiveUnitDiscountInCustomerCurrency == null && other.EffectiveUnitDiscountInCustomerCurrency == null) || (this.EffectiveUnitDiscountInCustomerCurrency?.Equals(other.EffectiveUnitDiscountInCustomerCurrency) == true)) &&
-                ((this.EffectiveDiscountInCustomerCurrency == null && other.EffectiveDiscountInCustomerCurrency == null) || (this.EffectiveDiscountInCustomerCurrency?.Equals(other.EffectiveDiscountInCustomerCurrency) == true)) &&
-                ((this.VATonNetAmountInCustomerCurrency == null && other.VATonNetAmountInCustomerCurrency == null) || (this.VATonNetAmountInCustomerCurrency?.Equals(other.VATonNetAmountInCustomerCurrency) == true)) &&
-                ((this.DiscountType == null && other.DiscountType == null) || (this.DiscountType?.Equals(other.DiscountType) == true)) &&
-                ((this.TransactionStatus == null && other.TransactionStatus == null) || (this.TransactionStatus?.Equals(other.TransactionStatus) == true)) &&
-                ((this.PayerGroup == null && other.PayerGroup == null) || (this.PayerGroup?.Equals(other.PayerGroup) == true)) &&
-                ((this.RefundFlag == null && other.RefundFlag == null) || (this.RefundFlag?.Equals(other.RefundFlag) == true)) &&
-                ((this.OriginalSalesItemId == null && other.OriginalSalesItemId == null) || (this.OriginalSalesItemId?.Equals(other.OriginalSalesItemId) == true)) &&
-                ((this.DelcoName == null && other.DelcoName == null) || (this.DelcoName?.Equals(other.DelcoName) == true)) &&
-                ((this.DelcoCode == null && other.DelcoCode == null) || (this.DelcoCode?.Equals(other.DelcoCode) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.PayerName == null && other.PayerName == null) || (this.PayerName?.Equals(other.PayerName) == true)) &&
-                ((this.CardExpiryPeriod == null && other.CardExpiryPeriod == null) || (this.CardExpiryPeriod?.Equals(other.CardExpiryPeriod) == true)) &&
-                ((this.AuthorisationCode == null && other.AuthorisationCode == null) || (this.AuthorisationCode?.Equals(other.AuthorisationCode) == true)) &&
-                ((this.TransactionId == null && other.TransactionId == null) || (this.TransactionId?.Equals(other.TransactionId) == true)) &&
-                ((this.TransactionLine == null && other.TransactionLine == null) || (this.TransactionLine?.Equals(other.TransactionLine) == true)) &&
-                ((this.AllowClearing == null && other.AllowClearing == null) || (this.AllowClearing?.Equals(other.AllowClearing) == true)) &&
-                ((this.CRMNumber == null && other.CRMNumber == null) || (this.CRMNumber?.Equals(other.CRMNumber) == true)) &&
-                ((this.DisputeStatus == null && other.DisputeStatus == null) || (this.DisputeStatus?.Equals(other.DisputeStatus) == true)) &&
-                ((this.RebateRate == null && other.RebateRate == null) || (this.RebateRate?.Equals(other.RebateRate) == true)) &&
-                ((this.DelCoToColCoExchangeRate == null && other.DelCoToColCoExchangeRate == null) || (this.DelCoToColCoExchangeRate?.Equals(other.DelCoToColCoExchangeRate) == true)) &&
-                ((this.NetEuroAmount == null && other.NetEuroAmount == null) || (this.NetEuroAmount?.Equals(other.NetEuroAmount) == true)) &&
-                ((this.EuroRebateAmount == null && other.EuroRebateAmount == null) || (this.EuroRebateAmount?.Equals(other.EuroRebateAmount) == true)) &&
-                ((this.EuroVATAmount == null && other.EuroVATAmount == null) || (this.EuroVATAmount?.Equals(other.EuroVATAmount) == true)) &&
-                ((this.ParentCustomerNumber == null && other.ParentCustomerNumber == null) || (this.ParentCustomerNumber?.Equals(other.ParentCustomerNumber) == true)) &&
-                ((this.VATonNetAmount == null && other.VATonNetAmount == null) || (this.VATonNetAmount?.Equals(other.VATonNetAmount) == true)) &&
-                ((this.VATCountry == null && other.VATCountry == null) || (this.VATCountry?.Equals(other.VATCountry) == true));
+            return obj is TransactionExceptions other &&
+                (this.SalesItemId == null && other.SalesItemId == null ||
+                 this.SalesItemId?.Equals(other.SalesItemId) == true) &&
+                (this.CardId == null && other.CardId == null ||
+                 this.CardId?.Equals(other.CardId) == true) &&
+                (this.ProductId == null && other.ProductId == null ||
+                 this.ProductId?.Equals(other.ProductId) == true) &&
+                (this.TransactionGUID == null && other.TransactionGUID == null ||
+                 this.TransactionGUID?.Equals(other.TransactionGUID) == true) &&
+                (this.TransactionDate == null && other.TransactionDate == null ||
+                 this.TransactionDate?.Equals(other.TransactionDate) == true) &&
+                (this.CustomerInvoiceValueTotalGross == null && other.CustomerInvoiceValueTotalGross == null ||
+                 this.CustomerInvoiceValueTotalGross?.Equals(other.CustomerInvoiceValueTotalGross) == true) &&
+                (this.CardPAN == null && other.CardPAN == null ||
+                 this.CardPAN?.Equals(other.CardPAN) == true) &&
+                (this.CardExpiry == null && other.CardExpiry == null ||
+                 this.CardExpiry?.Equals(other.CardExpiry) == true) &&
+                (this.TransactionTime == null && other.TransactionTime == null ||
+                 this.TransactionTime?.Equals(other.TransactionTime) == true) &&
+                (this.UTCOffset == null && other.UTCOffset == null ||
+                 this.UTCOffset?.Equals(other.UTCOffset) == true) &&
+                (this.FleetIdInput == null && other.FleetIdInput == null ||
+                 this.FleetIdInput?.Equals(other.FleetIdInput) == true) &&
+                (this.OdometerInput == null && other.OdometerInput == null ||
+                 this.OdometerInput?.Equals(other.OdometerInput) == true) &&
+                (this.DriverName == null && other.DriverName == null ||
+                 this.DriverName?.Equals(other.DriverName) == true) &&
+                (this.VehicleRegistration == null && other.VehicleRegistration == null ||
+                 this.VehicleRegistration?.Equals(other.VehicleRegistration) == true) &&
+                (this.InvoiceCurrencyCode == null && other.InvoiceCurrencyCode == null ||
+                 this.InvoiceCurrencyCode?.Equals(other.InvoiceCurrencyCode) == true) &&
+                (this.InvoiceCurrencySymbol == null && other.InvoiceCurrencySymbol == null ||
+                 this.InvoiceCurrencySymbol?.Equals(other.InvoiceCurrencySymbol) == true) &&
+                (this.TransactionCurrencyCode == null && other.TransactionCurrencyCode == null ||
+                 this.TransactionCurrencyCode?.Equals(other.TransactionCurrencyCode) == true) &&
+                (this.TransactionCurrencySymbol == null && other.TransactionCurrencySymbol == null ||
+                 this.TransactionCurrencySymbol?.Equals(other.TransactionCurrencySymbol) == true) &&
+                (this.TransactionNetAmount == null && other.TransactionNetAmount == null ||
+                 this.TransactionNetAmount?.Equals(other.TransactionNetAmount) == true) &&
+                (this.TransactionTax == null && other.TransactionTax == null ||
+                 this.TransactionTax?.Equals(other.TransactionTax) == true) &&
+                (this.TransactionGrossAmount == null && other.TransactionGrossAmount == null ||
+                 this.TransactionGrossAmount?.Equals(other.TransactionGrossAmount) == true) &&
+                (this.InvoiceNetAmount == null && other.InvoiceNetAmount == null ||
+                 this.InvoiceNetAmount?.Equals(other.InvoiceNetAmount) == true) &&
+                (this.InvoiceTax == null && other.InvoiceTax == null ||
+                 this.InvoiceTax?.Equals(other.InvoiceTax) == true) &&
+                (this.InvoiceGrossAmount == null && other.InvoiceGrossAmount == null ||
+                 this.InvoiceGrossAmount?.Equals(other.InvoiceGrossAmount) == true) &&
+                (this.PurchasedInCountry == null && other.PurchasedInCountry == null ||
+                 this.PurchasedInCountry?.Equals(other.PurchasedInCountry) == true) &&
+                (this.AccountId == null && other.AccountId == null ||
+                 this.AccountId?.Equals(other.AccountId) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.AccountName == null && other.AccountName == null ||
+                 this.AccountName?.Equals(other.AccountName) == true) &&
+                (this.AccountShortName == null && other.AccountShortName == null ||
+                 this.AccountShortName?.Equals(other.AccountShortName) == true) &&
+                (this.Quantity == null && other.Quantity == null ||
+                 this.Quantity?.Equals(other.Quantity) == true) &&
+                (this.FuelProduct == null && other.FuelProduct == null ||
+                 this.FuelProduct?.Equals(other.FuelProduct) == true) &&
+                (this.UnitPriceInTransactionCurrency == null && other.UnitPriceInTransactionCurrency == null ||
+                 this.UnitPriceInTransactionCurrency?.Equals(other.UnitPriceInTransactionCurrency) == true) &&
+                (this.UnitPriceInInvoiceCurrency == null && other.UnitPriceInInvoiceCurrency == null ||
+                 this.UnitPriceInInvoiceCurrency?.Equals(other.UnitPriceInInvoiceCurrency) == true) &&
+                (this.UnitDiscountTransactionCurrency == null && other.UnitDiscountTransactionCurrency == null ||
+                 this.UnitDiscountTransactionCurrency?.Equals(other.UnitDiscountTransactionCurrency) == true) &&
+                (this.UnitDiscountInvoiceCurrency == null && other.UnitDiscountInvoiceCurrency == null ||
+                 this.UnitDiscountInvoiceCurrency?.Equals(other.UnitDiscountInvoiceCurrency) == true) &&
+                (this.IsInvoiced == null && other.IsInvoiced == null ||
+                 this.IsInvoiced?.Equals(other.IsInvoiced) == true) &&
+                (this.InvoiceNumber == null && other.InvoiceNumber == null ||
+                 this.InvoiceNumber?.Equals(other.InvoiceNumber) == true) &&
+                (this.InvoiceDate == null && other.InvoiceDate == null ||
+                 this.InvoiceDate?.Equals(other.InvoiceDate) == true) &&
+                (this.SiteCode == null && other.SiteCode == null ||
+                 this.SiteCode?.Equals(other.SiteCode) == true) &&
+                (this.SiteName == null && other.SiteName == null ||
+                 this.SiteName?.Equals(other.SiteName) == true) &&
+                (this.SiteCountry == null && other.SiteCountry == null ||
+                 this.SiteCountry?.Equals(other.SiteCountry) == true) &&
+                (this.Location == null && other.Location == null ||
+                 this.Location?.Equals(other.Location) == true) &&
+                (this.CardGroupName == null && other.CardGroupName == null ||
+                 this.CardGroupName?.Equals(other.CardGroupName) == true) &&
+                (this.ReceiptNumber == null && other.ReceiptNumber == null ||
+                 this.ReceiptNumber?.Equals(other.ReceiptNumber) == true) &&
+                (this.ProductCode == null && other.ProductCode == null ||
+                 this.ProductCode?.Equals(other.ProductCode) == true) &&
+                (this.ProductName == null && other.ProductName == null ||
+                 this.ProductName?.Equals(other.ProductName) == true) &&
+                (this.ProductGroupId == null && other.ProductGroupId == null ||
+                 this.ProductGroupId?.Equals(other.ProductGroupId) == true) &&
+                (this.ProductGroupName == null && other.ProductGroupName == null ||
+                 this.ProductGroupName?.Equals(other.ProductGroupName) == true) &&
+                (this.DelCoExchangeRate == null && other.DelCoExchangeRate == null ||
+                 this.DelCoExchangeRate?.Equals(other.DelCoExchangeRate) == true) &&
+                (this.ColCoExchangeRate == null && other.ColCoExchangeRate == null ||
+                 this.ColCoExchangeRate?.Equals(other.ColCoExchangeRate) == true) &&
+                (this.IsShellSite == null && other.IsShellSite == null ||
+                 this.IsShellSite?.Equals(other.IsShellSite) == true) &&
+                (this.Network == null && other.Network == null ||
+                 this.Network?.Equals(other.Network) == true) &&
+                (this.SiteGroupId == null && other.SiteGroupId == null ||
+                 this.SiteGroupId?.Equals(other.SiteGroupId) == true) &&
+                (this.SiteGroupName == null && other.SiteGroupName == null ||
+                 this.SiteGroupName?.Equals(other.SiteGroupName) == true) &&
+                (this.PostingDate == null && other.PostingDate == null ||
+                 this.PostingDate?.Equals(other.PostingDate) == true) &&
+                (this.IssuerCode == null && other.IssuerCode == null ||
+                 this.IssuerCode?.Equals(other.IssuerCode) == true) &&
+                (this.PurchasedInCountryCode == null && other.PurchasedInCountryCode == null ||
+                 this.PurchasedInCountryCode?.Equals(other.PurchasedInCountryCode) == true) &&
+                (this.CustomerCountryCode == null && other.CustomerCountryCode == null ||
+                 this.CustomerCountryCode?.Equals(other.CustomerCountryCode) == true) &&
+                (this.CustomerCountry == null && other.CustomerCountry == null ||
+                 this.CustomerCountry?.Equals(other.CustomerCountry) == true) &&
+                (this.ReleaseCode == null && other.ReleaseCode == null ||
+                 this.ReleaseCode?.Equals(other.ReleaseCode) == true) &&
+                (this.CardGroupId == null && other.CardGroupId == null ||
+                 this.CardGroupId?.Equals(other.CardGroupId) == true) &&
+                (this.CardSequenceNumber == null && other.CardSequenceNumber == null ||
+                 this.CardSequenceNumber?.Equals(other.CardSequenceNumber) == true) &&
+                (this.CheckDigit == null && other.CheckDigit == null ||
+                 this.CheckDigit?.Equals(other.CheckDigit) == true) &&
+                (this.FleetIDDescription == null && other.FleetIDDescription == null ||
+                 this.FleetIDDescription?.Equals(other.FleetIDDescription) == true) &&
+                (this.VATRate == null && other.VATRate == null ||
+                 this.VATRate?.Equals(other.VATRate) == true) &&
+                (this.VATCategory == null && other.VATCategory == null ||
+                 this.VATCategory?.Equals(other.VATCategory) == true) &&
+                (this.EffectiveDiscountInTrxCurrency == null && other.EffectiveDiscountInTrxCurrency == null ||
+                 this.EffectiveDiscountInTrxCurrency?.Equals(other.EffectiveDiscountInTrxCurrency) == true) &&
+                (this.TransactionType == null && other.TransactionType == null ||
+                 this.TransactionType?.Equals(other.TransactionType) == true) &&
+                (this.PINIndicator == null && other.PINIndicator == null ||
+                 this.PINIndicator?.Equals(other.PINIndicator) == true) &&
+                (this.VATApplicable == null && other.VATApplicable == null ||
+                 this.VATApplicable?.Equals(other.VATApplicable) == true) &&
+                (this.NetInvoiceIndicator == null && other.NetInvoiceIndicator == null ||
+                 this.NetInvoiceIndicator?.Equals(other.NetInvoiceIndicator) == true) &&
+                (this.CustomerCurrencyCode == null && other.CustomerCurrencyCode == null ||
+                 this.CustomerCurrencyCode?.Equals(other.CustomerCurrencyCode) == true) &&
+                (this.CustomerCurrencySymbol == null && other.CustomerCurrencySymbol == null ||
+                 this.CustomerCurrencySymbol?.Equals(other.CustomerCurrencySymbol) == true) &&
+                (this.EffectiveUnitDiscountInCustomerCurrency == null && other.EffectiveUnitDiscountInCustomerCurrency == null ||
+                 this.EffectiveUnitDiscountInCustomerCurrency?.Equals(other.EffectiveUnitDiscountInCustomerCurrency) == true) &&
+                (this.EffectiveDiscountInCustomerCurrency == null && other.EffectiveDiscountInCustomerCurrency == null ||
+                 this.EffectiveDiscountInCustomerCurrency?.Equals(other.EffectiveDiscountInCustomerCurrency) == true) &&
+                (this.VATonNetAmountInCustomerCurrency == null && other.VATonNetAmountInCustomerCurrency == null ||
+                 this.VATonNetAmountInCustomerCurrency?.Equals(other.VATonNetAmountInCustomerCurrency) == true) &&
+                (this.DiscountType == null && other.DiscountType == null ||
+                 this.DiscountType?.Equals(other.DiscountType) == true) &&
+                (this.TransactionStatus == null && other.TransactionStatus == null ||
+                 this.TransactionStatus?.Equals(other.TransactionStatus) == true) &&
+                (this.PayerGroup == null && other.PayerGroup == null ||
+                 this.PayerGroup?.Equals(other.PayerGroup) == true) &&
+                (this.RefundFlag == null && other.RefundFlag == null ||
+                 this.RefundFlag?.Equals(other.RefundFlag) == true) &&
+                (this.OriginalSalesItemId == null && other.OriginalSalesItemId == null ||
+                 this.OriginalSalesItemId?.Equals(other.OriginalSalesItemId) == true) &&
+                (this.DelcoName == null && other.DelcoName == null ||
+                 this.DelcoName?.Equals(other.DelcoName) == true) &&
+                (this.DelcoCode == null && other.DelcoCode == null ||
+                 this.DelcoCode?.Equals(other.DelcoCode) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.PayerName == null && other.PayerName == null ||
+                 this.PayerName?.Equals(other.PayerName) == true) &&
+                (this.CardExpiryPeriod == null && other.CardExpiryPeriod == null ||
+                 this.CardExpiryPeriod?.Equals(other.CardExpiryPeriod) == true) &&
+                (this.AuthorisationCode == null && other.AuthorisationCode == null ||
+                 this.AuthorisationCode?.Equals(other.AuthorisationCode) == true) &&
+                (this.TransactionId == null && other.TransactionId == null ||
+                 this.TransactionId?.Equals(other.TransactionId) == true) &&
+                (this.TransactionLine == null && other.TransactionLine == null ||
+                 this.TransactionLine?.Equals(other.TransactionLine) == true) &&
+                (this.AllowClearing == null && other.AllowClearing == null ||
+                 this.AllowClearing?.Equals(other.AllowClearing) == true) &&
+                (this.CRMNumber == null && other.CRMNumber == null ||
+                 this.CRMNumber?.Equals(other.CRMNumber) == true) &&
+                (this.DisputeStatus == null && other.DisputeStatus == null ||
+                 this.DisputeStatus?.Equals(other.DisputeStatus) == true) &&
+                (this.RebateRate == null && other.RebateRate == null ||
+                 this.RebateRate?.Equals(other.RebateRate) == true) &&
+                (this.DelCoToColCoExchangeRate == null && other.DelCoToColCoExchangeRate == null ||
+                 this.DelCoToColCoExchangeRate?.Equals(other.DelCoToColCoExchangeRate) == true) &&
+                (this.NetEuroAmount == null && other.NetEuroAmount == null ||
+                 this.NetEuroAmount?.Equals(other.NetEuroAmount) == true) &&
+                (this.EuroRebateAmount == null && other.EuroRebateAmount == null ||
+                 this.EuroRebateAmount?.Equals(other.EuroRebateAmount) == true) &&
+                (this.EuroVATAmount == null && other.EuroVATAmount == null ||
+                 this.EuroVATAmount?.Equals(other.EuroVATAmount) == true) &&
+                (this.ParentCustomerNumber == null && other.ParentCustomerNumber == null ||
+                 this.ParentCustomerNumber?.Equals(other.ParentCustomerNumber) == true) &&
+                (this.VATonNetAmount == null && other.VATonNetAmount == null ||
+                 this.VATonNetAmount?.Equals(other.VATonNetAmount) == true) &&
+                (this.VATCountry == null && other.VATCountry == null ||
+                 this.VATCountry?.Equals(other.VATCountry) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -4563,32 +4656,32 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.SalesItemId = {(this.SalesItemId == null ? "null" : this.SalesItemId.ToString())}");
             toStringOutput.Add($"this.CardId = {(this.CardId == null ? "null" : this.CardId.ToString())}");
             toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.TransactionGUID = {(this.TransactionGUID == null ? "null" : this.TransactionGUID)}");
-            toStringOutput.Add($"this.TransactionDate = {(this.TransactionDate == null ? "null" : this.TransactionDate)}");
+            toStringOutput.Add($"this.TransactionGUID = {this.TransactionGUID ?? "null"}");
+            toStringOutput.Add($"this.TransactionDate = {this.TransactionDate ?? "null"}");
             toStringOutput.Add($"this.CustomerInvoiceValueTotalGross = {(this.CustomerInvoiceValueTotalGross == null ? "null" : this.CustomerInvoiceValueTotalGross.ToString())}");
-            toStringOutput.Add($"this.CardPAN = {(this.CardPAN == null ? "null" : this.CardPAN)}");
-            toStringOutput.Add($"this.CardExpiry = {(this.CardExpiry == null ? "null" : this.CardExpiry)}");
-            toStringOutput.Add($"this.TransactionTime = {(this.TransactionTime == null ? "null" : this.TransactionTime)}");
-            toStringOutput.Add($"this.UTCOffset = {(this.UTCOffset == null ? "null" : this.UTCOffset)}");
-            toStringOutput.Add($"this.FleetIdInput = {(this.FleetIdInput == null ? "null" : this.FleetIdInput)}");
+            toStringOutput.Add($"this.CardPAN = {this.CardPAN ?? "null"}");
+            toStringOutput.Add($"this.CardExpiry = {this.CardExpiry ?? "null"}");
+            toStringOutput.Add($"this.TransactionTime = {this.TransactionTime ?? "null"}");
+            toStringOutput.Add($"this.UTCOffset = {this.UTCOffset ?? "null"}");
+            toStringOutput.Add($"this.FleetIdInput = {this.FleetIdInput ?? "null"}");
             toStringOutput.Add($"this.OdometerInput = {(this.OdometerInput == null ? "null" : this.OdometerInput.ToString())}");
-            toStringOutput.Add($"this.DriverName = {(this.DriverName == null ? "null" : this.DriverName)}");
-            toStringOutput.Add($"this.VehicleRegistration = {(this.VehicleRegistration == null ? "null" : this.VehicleRegistration)}");
-            toStringOutput.Add($"this.InvoiceCurrencyCode = {(this.InvoiceCurrencyCode == null ? "null" : this.InvoiceCurrencyCode)}");
-            toStringOutput.Add($"this.InvoiceCurrencySymbol = {(this.InvoiceCurrencySymbol == null ? "null" : this.InvoiceCurrencySymbol)}");
-            toStringOutput.Add($"this.TransactionCurrencyCode = {(this.TransactionCurrencyCode == null ? "null" : this.TransactionCurrencyCode)}");
-            toStringOutput.Add($"this.TransactionCurrencySymbol = {(this.TransactionCurrencySymbol == null ? "null" : this.TransactionCurrencySymbol)}");
+            toStringOutput.Add($"this.DriverName = {this.DriverName ?? "null"}");
+            toStringOutput.Add($"this.VehicleRegistration = {this.VehicleRegistration ?? "null"}");
+            toStringOutput.Add($"this.InvoiceCurrencyCode = {this.InvoiceCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.InvoiceCurrencySymbol = {this.InvoiceCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"this.TransactionCurrencyCode = {this.TransactionCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.TransactionCurrencySymbol = {this.TransactionCurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.TransactionNetAmount = {(this.TransactionNetAmount == null ? "null" : this.TransactionNetAmount.ToString())}");
             toStringOutput.Add($"this.TransactionTax = {(this.TransactionTax == null ? "null" : this.TransactionTax.ToString())}");
             toStringOutput.Add($"this.TransactionGrossAmount = {(this.TransactionGrossAmount == null ? "null" : this.TransactionGrossAmount.ToString())}");
             toStringOutput.Add($"this.InvoiceNetAmount = {(this.InvoiceNetAmount == null ? "null" : this.InvoiceNetAmount.ToString())}");
             toStringOutput.Add($"this.InvoiceTax = {(this.InvoiceTax == null ? "null" : this.InvoiceTax.ToString())}");
             toStringOutput.Add($"this.InvoiceGrossAmount = {(this.InvoiceGrossAmount == null ? "null" : this.InvoiceGrossAmount.ToString())}");
-            toStringOutput.Add($"this.PurchasedInCountry = {(this.PurchasedInCountry == null ? "null" : this.PurchasedInCountry)}");
+            toStringOutput.Add($"this.PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
             toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
-            toStringOutput.Add($"this.AccountName = {(this.AccountName == null ? "null" : this.AccountName)}");
-            toStringOutput.Add($"this.AccountShortName = {(this.AccountShortName == null ? "null" : this.AccountShortName)}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"this.AccountName = {this.AccountName ?? "null"}");
+            toStringOutput.Add($"this.AccountShortName = {this.AccountShortName ?? "null"}");
             toStringOutput.Add($"this.Quantity = {(this.Quantity == null ? "null" : this.Quantity.ToString())}");
             toStringOutput.Add($"this.FuelProduct = {(this.FuelProduct == null ? "null" : this.FuelProduct.ToString())}");
             toStringOutput.Add($"this.UnitPriceInTransactionCurrency = {(this.UnitPriceInTransactionCurrency == null ? "null" : this.UnitPriceInTransactionCurrency.ToString())}");
@@ -4596,70 +4689,70 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.UnitDiscountTransactionCurrency = {(this.UnitDiscountTransactionCurrency == null ? "null" : this.UnitDiscountTransactionCurrency.ToString())}");
             toStringOutput.Add($"this.UnitDiscountInvoiceCurrency = {(this.UnitDiscountInvoiceCurrency == null ? "null" : this.UnitDiscountInvoiceCurrency.ToString())}");
             toStringOutput.Add($"this.IsInvoiced = {(this.IsInvoiced == null ? "null" : this.IsInvoiced.ToString())}");
-            toStringOutput.Add($"this.InvoiceNumber = {(this.InvoiceNumber == null ? "null" : this.InvoiceNumber)}");
-            toStringOutput.Add($"this.InvoiceDate = {(this.InvoiceDate == null ? "null" : this.InvoiceDate)}");
-            toStringOutput.Add($"this.SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode)}");
-            toStringOutput.Add($"this.SiteName = {(this.SiteName == null ? "null" : this.SiteName)}");
-            toStringOutput.Add($"this.SiteCountry = {(this.SiteCountry == null ? "null" : this.SiteCountry)}");
+            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
+            toStringOutput.Add($"this.InvoiceDate = {this.InvoiceDate ?? "null"}");
+            toStringOutput.Add($"this.SiteCode = {this.SiteCode ?? "null"}");
+            toStringOutput.Add($"this.SiteName = {this.SiteName ?? "null"}");
+            toStringOutput.Add($"this.SiteCountry = {this.SiteCountry ?? "null"}");
             toStringOutput.Add($"this.Location = {(this.Location == null ? "null" : this.Location.ToString())}");
-            toStringOutput.Add($"this.CardGroupName = {(this.CardGroupName == null ? "null" : this.CardGroupName)}");
-            toStringOutput.Add($"this.ReceiptNumber = {(this.ReceiptNumber == null ? "null" : this.ReceiptNumber)}");
-            toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");
-            toStringOutput.Add($"this.ProductName = {(this.ProductName == null ? "null" : this.ProductName)}");
+            toStringOutput.Add($"this.CardGroupName = {this.CardGroupName ?? "null"}");
+            toStringOutput.Add($"this.ReceiptNumber = {this.ReceiptNumber ?? "null"}");
+            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
             toStringOutput.Add($"this.ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {(this.ProductGroupName == null ? "null" : this.ProductGroupName)}");
+            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
             toStringOutput.Add($"this.DelCoExchangeRate = {(this.DelCoExchangeRate == null ? "null" : this.DelCoExchangeRate.ToString())}");
             toStringOutput.Add($"this.ColCoExchangeRate = {(this.ColCoExchangeRate == null ? "null" : this.ColCoExchangeRate.ToString())}");
             toStringOutput.Add($"this.IsShellSite = {(this.IsShellSite == null ? "null" : this.IsShellSite.ToString())}");
-            toStringOutput.Add($"this.Network = {(this.Network == null ? "null" : this.Network)}");
+            toStringOutput.Add($"this.Network = {this.Network ?? "null"}");
             toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {(this.SiteGroupName == null ? "null" : this.SiteGroupName)}");
-            toStringOutput.Add($"this.PostingDate = {(this.PostingDate == null ? "null" : this.PostingDate)}");
-            toStringOutput.Add($"this.IssuerCode = {(this.IssuerCode == null ? "null" : this.IssuerCode)}");
-            toStringOutput.Add($"this.PurchasedInCountryCode = {(this.PurchasedInCountryCode == null ? "null" : this.PurchasedInCountryCode)}");
-            toStringOutput.Add($"this.CustomerCountryCode = {(this.CustomerCountryCode == null ? "null" : this.CustomerCountryCode)}");
-            toStringOutput.Add($"this.CustomerCountry = {(this.CustomerCountry == null ? "null" : this.CustomerCountry)}");
-            toStringOutput.Add($"this.ReleaseCode = {(this.ReleaseCode == null ? "null" : this.ReleaseCode)}");
-            toStringOutput.Add($"this.CardGroupId = {(this.CardGroupId == null ? "null" : this.CardGroupId)}");
-            toStringOutput.Add($"this.CardSequenceNumber = {(this.CardSequenceNumber == null ? "null" : this.CardSequenceNumber)}");
-            toStringOutput.Add($"this.CheckDigit = {(this.CheckDigit == null ? "null" : this.CheckDigit)}");
-            toStringOutput.Add($"this.FleetIDDescription = {(this.FleetIDDescription == null ? "null" : this.FleetIDDescription)}");
+            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
+            toStringOutput.Add($"this.PostingDate = {this.PostingDate ?? "null"}");
+            toStringOutput.Add($"this.IssuerCode = {this.IssuerCode ?? "null"}");
+            toStringOutput.Add($"this.PurchasedInCountryCode = {this.PurchasedInCountryCode ?? "null"}");
+            toStringOutput.Add($"this.CustomerCountryCode = {this.CustomerCountryCode ?? "null"}");
+            toStringOutput.Add($"this.CustomerCountry = {this.CustomerCountry ?? "null"}");
+            toStringOutput.Add($"this.ReleaseCode = {this.ReleaseCode ?? "null"}");
+            toStringOutput.Add($"this.CardGroupId = {this.CardGroupId ?? "null"}");
+            toStringOutput.Add($"this.CardSequenceNumber = {this.CardSequenceNumber ?? "null"}");
+            toStringOutput.Add($"this.CheckDigit = {this.CheckDigit ?? "null"}");
+            toStringOutput.Add($"this.FleetIDDescription = {this.FleetIDDescription ?? "null"}");
             toStringOutput.Add($"this.VATRate = {(this.VATRate == null ? "null" : this.VATRate.ToString())}");
-            toStringOutput.Add($"this.VATCategory = {(this.VATCategory == null ? "null" : this.VATCategory)}");
-            toStringOutput.Add($"this.EffectiveDiscountInTrxCurrency = {(this.EffectiveDiscountInTrxCurrency == null ? "null" : this.EffectiveDiscountInTrxCurrency)}");
-            toStringOutput.Add($"this.TransactionType = {(this.TransactionType == null ? "null" : this.TransactionType)}");
-            toStringOutput.Add($"this.PINIndicator = {(this.PINIndicator == null ? "null" : this.PINIndicator)}");
-            toStringOutput.Add($"this.VATApplicable = {(this.VATApplicable == null ? "null" : this.VATApplicable)}");
-            toStringOutput.Add($"this.NetInvoiceIndicator = {(this.NetInvoiceIndicator == null ? "null" : this.NetInvoiceIndicator)}");
-            toStringOutput.Add($"this.CustomerCurrencyCode = {(this.CustomerCurrencyCode == null ? "null" : this.CustomerCurrencyCode)}");
-            toStringOutput.Add($"this.CustomerCurrencySymbol = {(this.CustomerCurrencySymbol == null ? "null" : this.CustomerCurrencySymbol)}");
+            toStringOutput.Add($"this.VATCategory = {this.VATCategory ?? "null"}");
+            toStringOutput.Add($"this.EffectiveDiscountInTrxCurrency = {this.EffectiveDiscountInTrxCurrency ?? "null"}");
+            toStringOutput.Add($"this.TransactionType = {this.TransactionType ?? "null"}");
+            toStringOutput.Add($"this.PINIndicator = {this.PINIndicator ?? "null"}");
+            toStringOutput.Add($"this.VATApplicable = {this.VATApplicable ?? "null"}");
+            toStringOutput.Add($"this.NetInvoiceIndicator = {this.NetInvoiceIndicator ?? "null"}");
+            toStringOutput.Add($"this.CustomerCurrencyCode = {this.CustomerCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CustomerCurrencySymbol = {this.CustomerCurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.EffectiveUnitDiscountInCustomerCurrency = {(this.EffectiveUnitDiscountInCustomerCurrency == null ? "null" : this.EffectiveUnitDiscountInCustomerCurrency.ToString())}");
             toStringOutput.Add($"this.EffectiveDiscountInCustomerCurrency = {(this.EffectiveDiscountInCustomerCurrency == null ? "null" : this.EffectiveDiscountInCustomerCurrency.ToString())}");
             toStringOutput.Add($"this.VATonNetAmountInCustomerCurrency = {(this.VATonNetAmountInCustomerCurrency == null ? "null" : this.VATonNetAmountInCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.DiscountType = {(this.DiscountType == null ? "null" : this.DiscountType)}");
-            toStringOutput.Add($"this.TransactionStatus = {(this.TransactionStatus == null ? "null" : this.TransactionStatus)}");
-            toStringOutput.Add($"this.PayerGroup = {(this.PayerGroup == null ? "null" : this.PayerGroup)}");
-            toStringOutput.Add($"this.RefundFlag = {(this.RefundFlag == null ? "null" : this.RefundFlag)}");
+            toStringOutput.Add($"this.DiscountType = {this.DiscountType ?? "null"}");
+            toStringOutput.Add($"this.TransactionStatus = {this.TransactionStatus ?? "null"}");
+            toStringOutput.Add($"this.PayerGroup = {this.PayerGroup ?? "null"}");
+            toStringOutput.Add($"this.RefundFlag = {this.RefundFlag ?? "null"}");
             toStringOutput.Add($"this.OriginalSalesItemId = {(this.OriginalSalesItemId == null ? "null" : this.OriginalSalesItemId.ToString())}");
-            toStringOutput.Add($"this.DelcoName = {(this.DelcoName == null ? "null" : this.DelcoName)}");
-            toStringOutput.Add($"this.DelcoCode = {(this.DelcoCode == null ? "null" : this.DelcoCode)}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
-            toStringOutput.Add($"this.PayerName = {(this.PayerName == null ? "null" : this.PayerName)}");
-            toStringOutput.Add($"this.CardExpiryPeriod = {(this.CardExpiryPeriod == null ? "null" : this.CardExpiryPeriod)}");
-            toStringOutput.Add($"this.AuthorisationCode = {(this.AuthorisationCode == null ? "null" : this.AuthorisationCode)}");
-            toStringOutput.Add($"this.TransactionId = {(this.TransactionId == null ? "null" : this.TransactionId)}");
-            toStringOutput.Add($"this.TransactionLine = {(this.TransactionLine == null ? "null" : this.TransactionLine)}");
-            toStringOutput.Add($"this.AllowClearing = {(this.AllowClearing == null ? "null" : this.AllowClearing)}");
-            toStringOutput.Add($"this.CRMNumber = {(this.CRMNumber == null ? "null" : this.CRMNumber)}");
-            toStringOutput.Add($"this.DisputeStatus = {(this.DisputeStatus == null ? "null" : this.DisputeStatus)}");
+            toStringOutput.Add($"this.DelcoName = {this.DelcoName ?? "null"}");
+            toStringOutput.Add($"this.DelcoCode = {this.DelcoCode ?? "null"}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"this.PayerName = {this.PayerName ?? "null"}");
+            toStringOutput.Add($"this.CardExpiryPeriod = {this.CardExpiryPeriod ?? "null"}");
+            toStringOutput.Add($"this.AuthorisationCode = {this.AuthorisationCode ?? "null"}");
+            toStringOutput.Add($"this.TransactionId = {this.TransactionId ?? "null"}");
+            toStringOutput.Add($"this.TransactionLine = {this.TransactionLine ?? "null"}");
+            toStringOutput.Add($"this.AllowClearing = {this.AllowClearing ?? "null"}");
+            toStringOutput.Add($"this.CRMNumber = {this.CRMNumber ?? "null"}");
+            toStringOutput.Add($"this.DisputeStatus = {this.DisputeStatus ?? "null"}");
             toStringOutput.Add($"this.RebateRate = {(this.RebateRate == null ? "null" : this.RebateRate.ToString())}");
             toStringOutput.Add($"this.DelCoToColCoExchangeRate = {(this.DelCoToColCoExchangeRate == null ? "null" : this.DelCoToColCoExchangeRate.ToString())}");
             toStringOutput.Add($"this.NetEuroAmount = {(this.NetEuroAmount == null ? "null" : this.NetEuroAmount.ToString())}");
             toStringOutput.Add($"this.EuroRebateAmount = {(this.EuroRebateAmount == null ? "null" : this.EuroRebateAmount.ToString())}");
             toStringOutput.Add($"this.EuroVATAmount = {(this.EuroVATAmount == null ? "null" : this.EuroVATAmount.ToString())}");
-            toStringOutput.Add($"this.ParentCustomerNumber = {(this.ParentCustomerNumber == null ? "null" : this.ParentCustomerNumber)}");
+            toStringOutput.Add($"this.ParentCustomerNumber = {this.ParentCustomerNumber ?? "null"}");
             toStringOutput.Add($"this.VATonNetAmount = {(this.VATonNetAmount == null ? "null" : this.VATonNetAmount.ToString())}");
-            toStringOutput.Add($"this.VATCountry = {(this.VATCountry == null ? "null" : this.VATCountry)}");
+            toStringOutput.Add($"this.VATCountry = {this.VATCountry ?? "null"}");
         }
     }
 }

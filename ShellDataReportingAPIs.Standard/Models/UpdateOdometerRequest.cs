@@ -123,34 +123,35 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"UpdateOdometerRequest : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is UpdateOdometerRequest other &&                ((this.ColCoId == null && other.ColCoId == null) || (this.ColCoId?.Equals(other.ColCoId) == true)) &&
-                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.PayerId == null && other.PayerId == null) || (this.PayerId?.Equals(other.PayerId) == true)) &&
-                ((this.AccountId == null && other.AccountId == null) || (this.AccountId?.Equals(other.AccountId) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.UpdateOdometers == null && other.UpdateOdometers == null) || (this.UpdateOdometers?.Equals(other.UpdateOdometers) == true)) &&
-                ((this.NotifyCaller == null && other.NotifyCaller == null) || (this.NotifyCaller?.Equals(other.NotifyCaller) == true)) &&
-                ((this.Caller == null && other.Caller == null) || (this.Caller?.Equals(other.Caller) == true));
+            return obj is UpdateOdometerRequest other &&
+                (this.ColCoId == null && other.ColCoId == null ||
+                 this.ColCoId?.Equals(other.ColCoId) == true) &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.PayerId == null && other.PayerId == null ||
+                 this.PayerId?.Equals(other.PayerId) == true) &&
+                (this.AccountId == null && other.AccountId == null ||
+                 this.AccountId?.Equals(other.AccountId) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.UpdateOdometers == null && other.UpdateOdometers == null ||
+                 this.UpdateOdometers?.Equals(other.UpdateOdometers) == true) &&
+                (this.NotifyCaller == null && other.NotifyCaller == null ||
+                 this.NotifyCaller?.Equals(other.NotifyCaller) == true) &&
+                (this.Caller == null && other.Caller == null ||
+                 this.Caller?.Equals(other.Caller) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -161,10 +162,10 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
             toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
             toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
             toStringOutput.Add($"this.UpdateOdometers = {(this.UpdateOdometers == null ? "null" : $"[{string.Join(", ", this.UpdateOdometers)} ]")}");
             toStringOutput.Add($"this.NotifyCaller = {(this.NotifyCaller == null ? "null" : this.NotifyCaller.ToString())}");
-            toStringOutput.Add($"this.Caller = {(this.Caller == null ? "null" : this.Caller)}");
+            toStringOutput.Add($"this.Caller = {this.Caller ?? "null"}");
         }
     }
 }

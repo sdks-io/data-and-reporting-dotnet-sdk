@@ -45,6 +45,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string lat = null,
             string lng = null)
         {
+
             if (lat != null)
             {
                 this.Lat = lat;
@@ -54,7 +55,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.Lng = lng;
             }
-
         }
 
         /// <summary>
@@ -97,14 +97,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"ExceptionSiteLocation : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLat()
         {
@@ -112,7 +110,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLng()
         {
@@ -140,27 +138,24 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is ExceptionSiteLocation other &&                ((this.Lat == null && other.Lat == null) || (this.Lat?.Equals(other.Lat) == true)) &&
-                ((this.Lng == null && other.Lng == null) || (this.Lng?.Equals(other.Lng) == true));
+            return obj is ExceptionSiteLocation other &&
+                (this.Lat == null && other.Lat == null ||
+                 this.Lat?.Equals(other.Lat) == true) &&
+                (this.Lng == null && other.Lng == null ||
+                 this.Lng?.Equals(other.Lng) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Lat = {(this.Lat == null ? "null" : this.Lat)}");
-            toStringOutput.Add($"this.Lng = {(this.Lng == null ? "null" : this.Lng)}");
+            toStringOutput.Add($"this.Lat = {this.Lat ?? "null"}");
+            toStringOutput.Add($"this.Lng = {this.Lng ?? "null"}");
         }
     }
 }

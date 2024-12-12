@@ -93,6 +93,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             this.ColCoCode = colCoCode;
             this.PayerNumber = payerNumber;
+
             if (accountNumber != null)
             {
                 this.AccountNumber = accountNumber;
@@ -152,7 +153,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.CardIssuerName = cardIssuerName;
             }
-
             this.ColumnList = columnList;
         }
 
@@ -395,14 +395,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"RecentTransactionReq : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountNumber()
         {
@@ -410,7 +408,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductCode()
         {
@@ -418,7 +416,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPurchasedInCountry()
         {
@@ -426,7 +424,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardPAN()
         {
@@ -434,7 +432,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFromDateTime()
         {
@@ -442,7 +440,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetToDateTime()
         {
@@ -450,7 +448,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionStatus()
         {
@@ -458,7 +456,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelOnly()
         {
@@ -466,7 +464,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupName()
         {
@@ -474,7 +472,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVehicleRegistrationNumber()
         {
@@ -482,7 +480,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIncludeDeclines()
         {
@@ -490,7 +488,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardIssuerName()
         {
@@ -608,32 +606,42 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is RecentTransactionReq other &&                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.ProductCode == null && other.ProductCode == null) || (this.ProductCode?.Equals(other.ProductCode) == true)) &&
-                ((this.PurchasedInCountry == null && other.PurchasedInCountry == null) || (this.PurchasedInCountry?.Equals(other.PurchasedInCountry) == true)) &&
-                ((this.CardPAN == null && other.CardPAN == null) || (this.CardPAN?.Equals(other.CardPAN) == true)) &&
-                ((this.FromDateTime == null && other.FromDateTime == null) || (this.FromDateTime?.Equals(other.FromDateTime) == true)) &&
-                ((this.ToDateTime == null && other.ToDateTime == null) || (this.ToDateTime?.Equals(other.ToDateTime) == true)) &&
-                ((this.TransactionStatus == null && other.TransactionStatus == null) || (this.TransactionStatus?.Equals(other.TransactionStatus) == true)) &&
-                ((this.FuelOnly == null && other.FuelOnly == null) || (this.FuelOnly?.Equals(other.FuelOnly) == true)) &&
-                ((this.ProductGroupName == null && other.ProductGroupName == null) || (this.ProductGroupName?.Equals(other.ProductGroupName) == true)) &&
-                ((this.VehicleRegistrationNumber == null && other.VehicleRegistrationNumber == null) || (this.VehicleRegistrationNumber?.Equals(other.VehicleRegistrationNumber) == true)) &&
-                ((this.IncludeDeclines == null && other.IncludeDeclines == null) || (this.IncludeDeclines?.Equals(other.IncludeDeclines) == true)) &&
-                ((this.CardIssuerName == null && other.CardIssuerName == null) || (this.CardIssuerName?.Equals(other.CardIssuerName) == true)) &&
-                ((this.ColumnList == null && other.ColumnList == null) || (this.ColumnList?.Equals(other.ColumnList) == true));
+            return obj is RecentTransactionReq other &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.ProductCode == null && other.ProductCode == null ||
+                 this.ProductCode?.Equals(other.ProductCode) == true) &&
+                (this.PurchasedInCountry == null && other.PurchasedInCountry == null ||
+                 this.PurchasedInCountry?.Equals(other.PurchasedInCountry) == true) &&
+                (this.CardPAN == null && other.CardPAN == null ||
+                 this.CardPAN?.Equals(other.CardPAN) == true) &&
+                (this.FromDateTime == null && other.FromDateTime == null ||
+                 this.FromDateTime?.Equals(other.FromDateTime) == true) &&
+                (this.ToDateTime == null && other.ToDateTime == null ||
+                 this.ToDateTime?.Equals(other.ToDateTime) == true) &&
+                (this.TransactionStatus == null && other.TransactionStatus == null ||
+                 this.TransactionStatus?.Equals(other.TransactionStatus) == true) &&
+                (this.FuelOnly == null && other.FuelOnly == null ||
+                 this.FuelOnly?.Equals(other.FuelOnly) == true) &&
+                (this.ProductGroupName == null && other.ProductGroupName == null ||
+                 this.ProductGroupName?.Equals(other.ProductGroupName) == true) &&
+                (this.VehicleRegistrationNumber == null && other.VehicleRegistrationNumber == null ||
+                 this.VehicleRegistrationNumber?.Equals(other.VehicleRegistrationNumber) == true) &&
+                (this.IncludeDeclines == null && other.IncludeDeclines == null ||
+                 this.IncludeDeclines?.Equals(other.IncludeDeclines) == true) &&
+                (this.CardIssuerName == null && other.CardIssuerName == null ||
+                 this.CardIssuerName?.Equals(other.CardIssuerName) == true) &&
+                (this.ColumnList == null && other.ColumnList == null ||
+                 this.ColumnList?.Equals(other.ColumnList) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -641,20 +649,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
-            toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");
-            toStringOutput.Add($"this.PurchasedInCountry = {(this.PurchasedInCountry == null ? "null" : this.PurchasedInCountry)}");
-            toStringOutput.Add($"this.CardPAN = {(this.CardPAN == null ? "null" : this.CardPAN)}");
-            toStringOutput.Add($"this.FromDateTime = {(this.FromDateTime == null ? "null" : this.FromDateTime)}");
-            toStringOutput.Add($"this.ToDateTime = {(this.ToDateTime == null ? "null" : this.ToDateTime)}");
-            toStringOutput.Add($"this.TransactionStatus = {(this.TransactionStatus == null ? "null" : this.TransactionStatus)}");
-            toStringOutput.Add($"this.FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly)}");
-            toStringOutput.Add($"this.ProductGroupName = {(this.ProductGroupName == null ? "null" : this.ProductGroupName)}");
-            toStringOutput.Add($"this.VehicleRegistrationNumber = {(this.VehicleRegistrationNumber == null ? "null" : this.VehicleRegistrationNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"this.PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
+            toStringOutput.Add($"this.CardPAN = {this.CardPAN ?? "null"}");
+            toStringOutput.Add($"this.FromDateTime = {this.FromDateTime ?? "null"}");
+            toStringOutput.Add($"this.ToDateTime = {this.ToDateTime ?? "null"}");
+            toStringOutput.Add($"this.TransactionStatus = {this.TransactionStatus ?? "null"}");
+            toStringOutput.Add($"this.FuelOnly = {this.FuelOnly ?? "null"}");
+            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
+            toStringOutput.Add($"this.VehicleRegistrationNumber = {this.VehicleRegistrationNumber ?? "null"}");
             toStringOutput.Add($"this.IncludeDeclines = {(this.IncludeDeclines == null ? "null" : this.IncludeDeclines.ToString())}");
-            toStringOutput.Add($"this.CardIssuerName = {(this.CardIssuerName == null ? "null" : this.CardIssuerName)}");
-            toStringOutput.Add($"this.ColumnList = {(this.ColumnList == null ? "null" : this.ColumnList)}");
+            toStringOutput.Add($"this.CardIssuerName = {this.CardIssuerName ?? "null"}");
+            toStringOutput.Add($"this.ColumnList = {this.ColumnList ?? "null"}");
         }
     }
 }

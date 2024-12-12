@@ -66,29 +66,25 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"SearchDocumentsRequest : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is SearchDocumentsRequest other &&                ((this.Filters == null && other.Filters == null) || (this.Filters?.Equals(other.Filters) == true)) &&
-                ((this.Page == null && other.Page == null) || (this.Page?.Equals(other.Page) == true)) &&
-                ((this.PageSize == null && other.PageSize == null) || (this.PageSize?.Equals(other.PageSize) == true));
+            return obj is SearchDocumentsRequest other &&
+                (this.Filters == null && other.Filters == null ||
+                 this.Filters?.Equals(other.Filters) == true) &&
+                (this.Page == null && other.Page == null ||
+                 this.Page?.Equals(other.Page) == true) &&
+                (this.PageSize == null && other.PageSize == null ||
+                 this.PageSize?.Equals(other.PageSize) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -96,8 +92,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.Filters = {(this.Filters == null ? "null" : this.Filters.ToString())}");
-            toStringOutput.Add($"this.Page = {(this.Page == null ? "null" : this.Page)}");
-            toStringOutput.Add($"this.PageSize = {(this.PageSize == null ? "null" : this.PageSize)}");
+            toStringOutput.Add($"this.Page = {this.Page ?? "null"}");
+            toStringOutput.Add($"this.PageSize = {this.PageSize ?? "null"}");
         }
     }
 }

@@ -102,41 +102,41 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"SearchDocumentsResponse : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is SearchDocumentsResponse other &&                ((this.RequestId == null && other.RequestId == null) || (this.RequestId?.Equals(other.RequestId) == true)) &&
-                ((this.Status == null && other.Status == null) || (this.Status?.Equals(other.Status) == true)) &&
-                ((this.Data == null && other.Data == null) || (this.Data?.Equals(other.Data) == true)) &&
-                ((this.TotalRecords == null && other.TotalRecords == null) || (this.TotalRecords?.Equals(other.TotalRecords) == true)) &&
-                ((this.TotalRecordsOnPage == null && other.TotalRecordsOnPage == null) || (this.TotalRecordsOnPage?.Equals(other.TotalRecordsOnPage) == true)) &&
-                ((this.IsFirstPage == null && other.IsFirstPage == null) || (this.IsFirstPage?.Equals(other.IsFirstPage) == true)) &&
-                ((this.IsLastPage == null && other.IsLastPage == null) || (this.IsLastPage?.Equals(other.IsLastPage) == true));
+            return obj is SearchDocumentsResponse other &&
+                (this.RequestId == null && other.RequestId == null ||
+                 this.RequestId?.Equals(other.RequestId) == true) &&
+                (this.Status == null && other.Status == null ||
+                 this.Status?.Equals(other.Status) == true) &&
+                (this.Data == null && other.Data == null ||
+                 this.Data?.Equals(other.Data) == true) &&
+                (this.TotalRecords == null && other.TotalRecords == null ||
+                 this.TotalRecords?.Equals(other.TotalRecords) == true) &&
+                (this.TotalRecordsOnPage == null && other.TotalRecordsOnPage == null ||
+                 this.TotalRecordsOnPage?.Equals(other.TotalRecordsOnPage) == true) &&
+                (this.IsFirstPage == null && other.IsFirstPage == null ||
+                 this.IsFirstPage?.Equals(other.IsFirstPage) == true) &&
+                (this.IsLastPage == null && other.IsLastPage == null ||
+                 this.IsLastPage?.Equals(other.IsLastPage) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.RequestId = {(this.RequestId == null ? "null" : this.RequestId)}");
-            toStringOutput.Add($"this.Status = {(this.Status == null ? "null" : this.Status)}");
+            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
+            toStringOutput.Add($"this.Status = {this.Status ?? "null"}");
             toStringOutput.Add($"this.Data = {(this.Data == null ? "null" : $"[{string.Join(", ", this.Data)} ]")}");
             toStringOutput.Add($"this.TotalRecords = {(this.TotalRecords == null ? "null" : this.TotalRecords.ToString())}");
             toStringOutput.Add($"this.TotalRecordsOnPage = {(this.TotalRecordsOnPage == null ? "null" : this.TotalRecordsOnPage.ToString())}");

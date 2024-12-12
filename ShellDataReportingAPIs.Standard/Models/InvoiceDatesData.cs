@@ -58,28 +58,23 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"InvoiceDatesData : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is InvoiceDatesData other &&                ((this.InvoiceNumbers == null && other.InvoiceNumbers == null) || (this.InvoiceNumbers?.Equals(other.InvoiceNumbers) == true)) &&
-                ((this.InvoiceDates == null && other.InvoiceDates == null) || (this.InvoiceDates?.Equals(other.InvoiceDates) == true));
+            return obj is InvoiceDatesData other &&
+                (this.InvoiceNumbers == null && other.InvoiceNumbers == null ||
+                 this.InvoiceNumbers?.Equals(other.InvoiceNumbers) == true) &&
+                (this.InvoiceDates == null && other.InvoiceDates == null ||
+                 this.InvoiceDates?.Equals(other.InvoiceDates) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

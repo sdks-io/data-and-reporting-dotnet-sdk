@@ -49,6 +49,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? mValue = null,
             int? tierMaximum = null)
         {
+
             if (tierMinimum != null)
             {
                 this.TierMinimum = tierMinimum;
@@ -63,7 +64,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.TierMaximum = tierMaximum;
             }
-
         }
 
         /// <summary>
@@ -124,14 +124,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"FeeRuleTier : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTierMinimum()
         {
@@ -139,7 +137,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetMValue()
         {
@@ -147,7 +145,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTierMaximum()
         {
@@ -184,20 +182,18 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is FeeRuleTier other &&                ((this.TierMinimum == null && other.TierMinimum == null) || (this.TierMinimum?.Equals(other.TierMinimum) == true)) &&
-                ((this.MValue == null && other.MValue == null) || (this.MValue?.Equals(other.MValue) == true)) &&
-                ((this.TierMaximum == null && other.TierMaximum == null) || (this.TierMaximum?.Equals(other.TierMaximum) == true));
+            return obj is FeeRuleTier other &&
+                (this.TierMinimum == null && other.TierMinimum == null ||
+                 this.TierMinimum?.Equals(other.TierMinimum) == true) &&
+                (this.MValue == null && other.MValue == null ||
+                 this.MValue?.Equals(other.MValue) == true) &&
+                (this.TierMaximum == null && other.TierMaximum == null ||
+                 this.TierMaximum?.Equals(other.TierMaximum) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

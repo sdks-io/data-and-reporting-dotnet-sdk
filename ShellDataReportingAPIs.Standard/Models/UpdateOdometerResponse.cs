@@ -75,30 +75,27 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"UpdateOdometerResponse : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is UpdateOdometerResponse other &&                ((this.ServiceReference == null && other.ServiceReference == null) || (this.ServiceReference?.Equals(other.ServiceReference) == true)) &&
-                ((this.UpdateOdometerReferences == null && other.UpdateOdometerReferences == null) || (this.UpdateOdometerReferences?.Equals(other.UpdateOdometerReferences) == true)) &&
-                ((this.Error == null && other.Error == null) || (this.Error?.Equals(other.Error) == true)) &&
-                ((this.RequestId == null && other.RequestId == null) || (this.RequestId?.Equals(other.RequestId) == true));
+            return obj is UpdateOdometerResponse other &&
+                (this.ServiceReference == null && other.ServiceReference == null ||
+                 this.ServiceReference?.Equals(other.ServiceReference) == true) &&
+                (this.UpdateOdometerReferences == null && other.UpdateOdometerReferences == null ||
+                 this.UpdateOdometerReferences?.Equals(other.UpdateOdometerReferences) == true) &&
+                (this.Error == null && other.Error == null ||
+                 this.Error?.Equals(other.Error) == true) &&
+                (this.RequestId == null && other.RequestId == null ||
+                 this.RequestId?.Equals(other.RequestId) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -108,7 +105,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.ServiceReference = {(this.ServiceReference == null ? "null" : this.ServiceReference.ToString())}");
             toStringOutput.Add($"this.UpdateOdometerReferences = {(this.UpdateOdometerReferences == null ? "null" : $"[{string.Join(", ", this.UpdateOdometerReferences)} ]")}");
             toStringOutput.Add($"this.Error = {(this.Error == null ? "null" : this.Error.ToString())}");
-            toStringOutput.Add($"this.RequestId = {(this.RequestId == null ? "null" : this.RequestId)}");
+            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
         }
     }
 }

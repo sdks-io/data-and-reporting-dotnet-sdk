@@ -116,6 +116,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? lifeTimeTransactionCount = null,
             bool? isVelocityCeiling = null)
         {
+
             if (level != null)
             {
                 this.Level = level;
@@ -160,8 +161,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.MonthlyVolumeLimit = monthlyVolumeLimit;
             }
-
             this.AnnualVolumeLimit = annualVolumeLimit;
+
             if (lifeTimeVolumeLimit != null)
             {
                 this.LifeTimeVolumeLimit = lifeTimeVolumeLimit;
@@ -201,7 +202,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.LifeTimeTransactionCount = lifeTimeTransactionCount;
             }
-
             this.IsVelocityCeiling = isVelocityCeiling;
         }
 
@@ -550,14 +550,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"CardUsageRestrictions : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLevel()
         {
@@ -565,7 +563,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDailySpendLimit()
         {
@@ -573,7 +571,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetWeeklySpendLimit()
         {
@@ -581,7 +579,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetMonthlySpendLimit()
         {
@@ -589,7 +587,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAnnualSpendLimit()
         {
@@ -597,7 +595,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLifeTimeSpendLimit()
         {
@@ -605,7 +603,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDailyVolumeLimit()
         {
@@ -613,7 +611,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetWeeklyVolumeLimit()
         {
@@ -621,7 +619,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetMonthlyVolumeLimit()
         {
@@ -629,7 +627,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAnnualVolumeLimit()
         {
@@ -638,7 +636,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLifeTimeVolumeLimit()
         {
@@ -646,7 +644,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionSpendLimit()
         {
@@ -654,7 +652,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionVolumeLimit()
         {
@@ -662,7 +660,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDailyTransactionCount()
         {
@@ -670,7 +668,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetWeeklyTransactionCount()
         {
@@ -678,7 +676,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetMonthlyTransactionCount()
         {
@@ -686,7 +684,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAnnualTransactionCount()
         {
@@ -694,7 +692,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLifeTimeTransactionCount()
         {
@@ -866,43 +864,57 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is CardUsageRestrictions other &&                ((this.Level == null && other.Level == null) || (this.Level?.Equals(other.Level) == true)) &&
-                ((this.DailySpendLimit == null && other.DailySpendLimit == null) || (this.DailySpendLimit?.Equals(other.DailySpendLimit) == true)) &&
-                ((this.WeeklySpendLimit == null && other.WeeklySpendLimit == null) || (this.WeeklySpendLimit?.Equals(other.WeeklySpendLimit) == true)) &&
-                ((this.MonthlySpendLimit == null && other.MonthlySpendLimit == null) || (this.MonthlySpendLimit?.Equals(other.MonthlySpendLimit) == true)) &&
-                ((this.AnnualSpendLimit == null && other.AnnualSpendLimit == null) || (this.AnnualSpendLimit?.Equals(other.AnnualSpendLimit) == true)) &&
-                ((this.LifeTimeSpendLimit == null && other.LifeTimeSpendLimit == null) || (this.LifeTimeSpendLimit?.Equals(other.LifeTimeSpendLimit) == true)) &&
-                ((this.DailyVolumeLimit == null && other.DailyVolumeLimit == null) || (this.DailyVolumeLimit?.Equals(other.DailyVolumeLimit) == true)) &&
-                ((this.WeeklyVolumeLimit == null && other.WeeklyVolumeLimit == null) || (this.WeeklyVolumeLimit?.Equals(other.WeeklyVolumeLimit) == true)) &&
-                ((this.MonthlyVolumeLimit == null && other.MonthlyVolumeLimit == null) || (this.MonthlyVolumeLimit?.Equals(other.MonthlyVolumeLimit) == true)) &&
-                ((this.AnnualVolumeLimit == null && other.AnnualVolumeLimit == null) || (this.AnnualVolumeLimit?.Equals(other.AnnualVolumeLimit) == true)) &&
-                ((this.LifeTimeVolumeLimit == null && other.LifeTimeVolumeLimit == null) || (this.LifeTimeVolumeLimit?.Equals(other.LifeTimeVolumeLimit) == true)) &&
-                ((this.TransactionSpendLimit == null && other.TransactionSpendLimit == null) || (this.TransactionSpendLimit?.Equals(other.TransactionSpendLimit) == true)) &&
-                ((this.TransactionVolumeLimit == null && other.TransactionVolumeLimit == null) || (this.TransactionVolumeLimit?.Equals(other.TransactionVolumeLimit) == true)) &&
-                ((this.DailyTransactionCount == null && other.DailyTransactionCount == null) || (this.DailyTransactionCount?.Equals(other.DailyTransactionCount) == true)) &&
-                ((this.WeeklyTransactionCount == null && other.WeeklyTransactionCount == null) || (this.WeeklyTransactionCount?.Equals(other.WeeklyTransactionCount) == true)) &&
-                ((this.MonthlyTransactionCount == null && other.MonthlyTransactionCount == null) || (this.MonthlyTransactionCount?.Equals(other.MonthlyTransactionCount) == true)) &&
-                ((this.AnnualTransactionCount == null && other.AnnualTransactionCount == null) || (this.AnnualTransactionCount?.Equals(other.AnnualTransactionCount) == true)) &&
-                ((this.LifeTimeTransactionCount == null && other.LifeTimeTransactionCount == null) || (this.LifeTimeTransactionCount?.Equals(other.LifeTimeTransactionCount) == true)) &&
-                ((this.IsVelocityCeiling == null && other.IsVelocityCeiling == null) || (this.IsVelocityCeiling?.Equals(other.IsVelocityCeiling) == true));
+            return obj is CardUsageRestrictions other &&
+                (this.Level == null && other.Level == null ||
+                 this.Level?.Equals(other.Level) == true) &&
+                (this.DailySpendLimit == null && other.DailySpendLimit == null ||
+                 this.DailySpendLimit?.Equals(other.DailySpendLimit) == true) &&
+                (this.WeeklySpendLimit == null && other.WeeklySpendLimit == null ||
+                 this.WeeklySpendLimit?.Equals(other.WeeklySpendLimit) == true) &&
+                (this.MonthlySpendLimit == null && other.MonthlySpendLimit == null ||
+                 this.MonthlySpendLimit?.Equals(other.MonthlySpendLimit) == true) &&
+                (this.AnnualSpendLimit == null && other.AnnualSpendLimit == null ||
+                 this.AnnualSpendLimit?.Equals(other.AnnualSpendLimit) == true) &&
+                (this.LifeTimeSpendLimit == null && other.LifeTimeSpendLimit == null ||
+                 this.LifeTimeSpendLimit?.Equals(other.LifeTimeSpendLimit) == true) &&
+                (this.DailyVolumeLimit == null && other.DailyVolumeLimit == null ||
+                 this.DailyVolumeLimit?.Equals(other.DailyVolumeLimit) == true) &&
+                (this.WeeklyVolumeLimit == null && other.WeeklyVolumeLimit == null ||
+                 this.WeeklyVolumeLimit?.Equals(other.WeeklyVolumeLimit) == true) &&
+                (this.MonthlyVolumeLimit == null && other.MonthlyVolumeLimit == null ||
+                 this.MonthlyVolumeLimit?.Equals(other.MonthlyVolumeLimit) == true) &&
+                (this.AnnualVolumeLimit == null && other.AnnualVolumeLimit == null ||
+                 this.AnnualVolumeLimit?.Equals(other.AnnualVolumeLimit) == true) &&
+                (this.LifeTimeVolumeLimit == null && other.LifeTimeVolumeLimit == null ||
+                 this.LifeTimeVolumeLimit?.Equals(other.LifeTimeVolumeLimit) == true) &&
+                (this.TransactionSpendLimit == null && other.TransactionSpendLimit == null ||
+                 this.TransactionSpendLimit?.Equals(other.TransactionSpendLimit) == true) &&
+                (this.TransactionVolumeLimit == null && other.TransactionVolumeLimit == null ||
+                 this.TransactionVolumeLimit?.Equals(other.TransactionVolumeLimit) == true) &&
+                (this.DailyTransactionCount == null && other.DailyTransactionCount == null ||
+                 this.DailyTransactionCount?.Equals(other.DailyTransactionCount) == true) &&
+                (this.WeeklyTransactionCount == null && other.WeeklyTransactionCount == null ||
+                 this.WeeklyTransactionCount?.Equals(other.WeeklyTransactionCount) == true) &&
+                (this.MonthlyTransactionCount == null && other.MonthlyTransactionCount == null ||
+                 this.MonthlyTransactionCount?.Equals(other.MonthlyTransactionCount) == true) &&
+                (this.AnnualTransactionCount == null && other.AnnualTransactionCount == null ||
+                 this.AnnualTransactionCount?.Equals(other.AnnualTransactionCount) == true) &&
+                (this.LifeTimeTransactionCount == null && other.LifeTimeTransactionCount == null ||
+                 this.LifeTimeTransactionCount?.Equals(other.LifeTimeTransactionCount) == true) &&
+                (this.IsVelocityCeiling == null && other.IsVelocityCeiling == null ||
+                 this.IsVelocityCeiling?.Equals(other.IsVelocityCeiling) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Level = {(this.Level == null ? "null" : this.Level)}");
+            toStringOutput.Add($"this.Level = {this.Level ?? "null"}");
             toStringOutput.Add($"this.DailySpendLimit = {(this.DailySpendLimit == null ? "null" : this.DailySpendLimit.ToString())}");
             toStringOutput.Add($"this.WeeklySpendLimit = {(this.WeeklySpendLimit == null ? "null" : this.WeeklySpendLimit.ToString())}");
             toStringOutput.Add($"this.MonthlySpendLimit = {(this.MonthlySpendLimit == null ? "null" : this.MonthlySpendLimit.ToString())}");

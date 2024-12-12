@@ -45,11 +45,11 @@ namespace ShellDataReportingAPIs.Standard.Models
             bool? isCardOrderOption = null,
             bool? isPINReminderOption = null)
         {
+
             if (pINAdviceTypeID != null)
             {
                 this.PINAdviceTypeID = pINAdviceTypeID;
             }
-
             this.IsCardOrderOption = isCardOrderOption;
             this.IsPINReminderOption = isPINReminderOption;
         }
@@ -93,14 +93,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PINAdviceTypes : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPINAdviceTypeID()
         {
@@ -119,20 +117,18 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PINAdviceTypes other &&                ((this.PINAdviceTypeID == null && other.PINAdviceTypeID == null) || (this.PINAdviceTypeID?.Equals(other.PINAdviceTypeID) == true)) &&
-                ((this.IsCardOrderOption == null && other.IsCardOrderOption == null) || (this.IsCardOrderOption?.Equals(other.IsCardOrderOption) == true)) &&
-                ((this.IsPINReminderOption == null && other.IsPINReminderOption == null) || (this.IsPINReminderOption?.Equals(other.IsPINReminderOption) == true));
+            return obj is PINAdviceTypes other &&
+                (this.PINAdviceTypeID == null && other.PINAdviceTypeID == null ||
+                 this.PINAdviceTypeID?.Equals(other.PINAdviceTypeID) == true) &&
+                (this.IsCardOrderOption == null && other.IsCardOrderOption == null ||
+                 this.IsCardOrderOption?.Equals(other.IsCardOrderOption) == true) &&
+                (this.IsPINReminderOption == null && other.IsPINReminderOption == null ||
+                 this.IsPINReminderOption?.Equals(other.IsPINReminderOption) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

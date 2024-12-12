@@ -45,6 +45,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? salesItemId = null,
             int? updateOdometerReferenceId = null)
         {
+
             if (salesItemId != null)
             {
                 this.SalesItemId = salesItemId;
@@ -54,7 +55,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.UpdateOdometerReferenceId = updateOdometerReferenceId;
             }
-
         }
 
         /// <summary>
@@ -97,14 +97,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"UpdateOdometerReference : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSalesItemId()
         {
@@ -112,7 +110,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetUpdateOdometerReferenceId()
         {
@@ -140,19 +138,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is UpdateOdometerReference other &&                ((this.SalesItemId == null && other.SalesItemId == null) || (this.SalesItemId?.Equals(other.SalesItemId) == true)) &&
-                ((this.UpdateOdometerReferenceId == null && other.UpdateOdometerReferenceId == null) || (this.UpdateOdometerReferenceId?.Equals(other.UpdateOdometerReferenceId) == true));
+            return obj is UpdateOdometerReference other &&
+                (this.SalesItemId == null && other.SalesItemId == null ||
+                 this.SalesItemId?.Equals(other.SalesItemId) == true) &&
+                (this.UpdateOdometerReferenceId == null && other.UpdateOdometerReferenceId == null ||
+                 this.UpdateOdometerReferenceId?.Equals(other.UpdateOdometerReferenceId) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

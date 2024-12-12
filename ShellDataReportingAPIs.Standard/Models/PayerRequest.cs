@@ -102,32 +102,31 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PayerRequest : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PayerRequest other &&                ((this.Payers == null && other.Payers == null) || (this.Payers?.Equals(other.Payers) == true)) &&
-                ((this.ReturnBasicDetailsOnly == null && other.ReturnBasicDetailsOnly == null) || (this.ReturnBasicDetailsOnly?.Equals(other.ReturnBasicDetailsOnly) == true)) &&
-                ((this.IncludeAddresses == null && other.IncludeAddresses == null) || (this.IncludeAddresses?.Equals(other.IncludeAddresses) == true)) &&
-                ((this.IncludeBonusParameters == null && other.IncludeBonusParameters == null) || (this.IncludeBonusParameters?.Equals(other.IncludeBonusParameters) == true)) &&
-                ((this.CurrentPage == null && other.CurrentPage == null) || (this.CurrentPage?.Equals(other.CurrentPage) == true)) &&
-                ((this.PageSize == null && other.PageSize == null) || (this.PageSize?.Equals(other.PageSize) == true));
+            return obj is PayerRequest other &&
+                (this.Payers == null && other.Payers == null ||
+                 this.Payers?.Equals(other.Payers) == true) &&
+                (this.ReturnBasicDetailsOnly == null && other.ReturnBasicDetailsOnly == null ||
+                 this.ReturnBasicDetailsOnly?.Equals(other.ReturnBasicDetailsOnly) == true) &&
+                (this.IncludeAddresses == null && other.IncludeAddresses == null ||
+                 this.IncludeAddresses?.Equals(other.IncludeAddresses) == true) &&
+                (this.IncludeBonusParameters == null && other.IncludeBonusParameters == null ||
+                 this.IncludeBonusParameters?.Equals(other.IncludeBonusParameters) == true) &&
+                (this.CurrentPage == null && other.CurrentPage == null ||
+                 this.CurrentPage?.Equals(other.CurrentPage) == true) &&
+                (this.PageSize == null && other.PageSize == null ||
+                 this.PageSize?.Equals(other.PageSize) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

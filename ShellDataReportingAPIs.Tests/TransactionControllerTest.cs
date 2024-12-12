@@ -135,7 +135,7 @@ namespace ShellDataReportingAPIs.Tests
         ///    * EVChargeStartDate
         ///    * EVChargeStartTime
         ///    * EVChargeEndDate
-        ///    * EVChargeEndTime.
+        ///    * EVChargeEndTime.
         /// </summary>
         /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
         [Test]

@@ -61,6 +61,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string customerCurrencyCode = null,
             string customerCurrencySymbol = null)
         {
+
             if (totalInvoices != null)
             {
                 this.TotalInvoices = totalInvoices;
@@ -90,7 +91,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.CustomerCurrencySymbol = customerCurrencySymbol;
             }
-
         }
 
         /// <summary>
@@ -207,14 +207,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"InvoiceSummaryDetails : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalInvoices()
         {
@@ -222,7 +220,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalGrossAmountCustomerCurrency()
         {
@@ -230,7 +228,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalNetAmountCustomerCurrency()
         {
@@ -238,7 +236,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalVATAmountCustomerCurrency()
         {
@@ -246,7 +244,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerCurrencyCode()
         {
@@ -254,7 +252,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCustomerCurrencySymbol()
         {
@@ -318,23 +316,24 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is InvoiceSummaryDetails other &&                ((this.TotalInvoices == null && other.TotalInvoices == null) || (this.TotalInvoices?.Equals(other.TotalInvoices) == true)) &&
-                ((this.TotalGrossAmountCustomerCurrency == null && other.TotalGrossAmountCustomerCurrency == null) || (this.TotalGrossAmountCustomerCurrency?.Equals(other.TotalGrossAmountCustomerCurrency) == true)) &&
-                ((this.TotalNetAmountCustomerCurrency == null && other.TotalNetAmountCustomerCurrency == null) || (this.TotalNetAmountCustomerCurrency?.Equals(other.TotalNetAmountCustomerCurrency) == true)) &&
-                ((this.TotalVATAmountCustomerCurrency == null && other.TotalVATAmountCustomerCurrency == null) || (this.TotalVATAmountCustomerCurrency?.Equals(other.TotalVATAmountCustomerCurrency) == true)) &&
-                ((this.CustomerCurrencyCode == null && other.CustomerCurrencyCode == null) || (this.CustomerCurrencyCode?.Equals(other.CustomerCurrencyCode) == true)) &&
-                ((this.CustomerCurrencySymbol == null && other.CustomerCurrencySymbol == null) || (this.CustomerCurrencySymbol?.Equals(other.CustomerCurrencySymbol) == true));
+            return obj is InvoiceSummaryDetails other &&
+                (this.TotalInvoices == null && other.TotalInvoices == null ||
+                 this.TotalInvoices?.Equals(other.TotalInvoices) == true) &&
+                (this.TotalGrossAmountCustomerCurrency == null && other.TotalGrossAmountCustomerCurrency == null ||
+                 this.TotalGrossAmountCustomerCurrency?.Equals(other.TotalGrossAmountCustomerCurrency) == true) &&
+                (this.TotalNetAmountCustomerCurrency == null && other.TotalNetAmountCustomerCurrency == null ||
+                 this.TotalNetAmountCustomerCurrency?.Equals(other.TotalNetAmountCustomerCurrency) == true) &&
+                (this.TotalVATAmountCustomerCurrency == null && other.TotalVATAmountCustomerCurrency == null ||
+                 this.TotalVATAmountCustomerCurrency?.Equals(other.TotalVATAmountCustomerCurrency) == true) &&
+                (this.CustomerCurrencyCode == null && other.CustomerCurrencyCode == null ||
+                 this.CustomerCurrencyCode?.Equals(other.CustomerCurrencyCode) == true) &&
+                (this.CustomerCurrencySymbol == null && other.CustomerCurrencySymbol == null ||
+                 this.CustomerCurrencySymbol?.Equals(other.CustomerCurrencySymbol) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -345,8 +344,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.TotalGrossAmountCustomerCurrency = {(this.TotalGrossAmountCustomerCurrency == null ? "null" : this.TotalGrossAmountCustomerCurrency.ToString())}");
             toStringOutput.Add($"this.TotalNetAmountCustomerCurrency = {(this.TotalNetAmountCustomerCurrency == null ? "null" : this.TotalNetAmountCustomerCurrency.ToString())}");
             toStringOutput.Add($"this.TotalVATAmountCustomerCurrency = {(this.TotalVATAmountCustomerCurrency == null ? "null" : this.TotalVATAmountCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.CustomerCurrencyCode = {(this.CustomerCurrencyCode == null ? "null" : this.CustomerCurrencyCode)}");
-            toStringOutput.Add($"this.CustomerCurrencySymbol = {(this.CustomerCurrencySymbol == null ? "null" : this.CustomerCurrencySymbol)}");
+            toStringOutput.Add($"this.CustomerCurrencyCode = {this.CustomerCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CustomerCurrencySymbol = {this.CustomerCurrencySymbol ?? "null"}");
         }
     }
 }

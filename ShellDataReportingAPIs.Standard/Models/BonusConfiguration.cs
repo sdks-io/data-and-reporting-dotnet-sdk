@@ -129,6 +129,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             List<Models.AssociatedAccount> associatedAccounts = null,
             List<Models.FeeRuleProduct> feeRuleProducts = null)
         {
+
             if (pricingAccountId != null)
             {
                 this.PricingAccountId = pricingAccountId;
@@ -233,7 +234,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.FeeRuleAvailableTo = feeRuleAvailableTo;
             }
-
             this.FeeRuleLocations = feeRuleLocations;
             this.FeeRuleTiers = feeRuleTiers;
             this.AssociatedAccounts = associatedAccounts;
@@ -669,14 +669,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"BonusConfiguration : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPricingAccountId()
         {
@@ -684,7 +682,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPricingAccountNumber()
         {
@@ -692,7 +690,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPricingAccountShortName()
         {
@@ -700,7 +698,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPricingAccountFullName()
         {
@@ -708,7 +706,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleId()
         {
@@ -716,7 +714,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleDescription()
         {
@@ -724,7 +722,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleDateEffective()
         {
@@ -732,7 +730,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleDateTerminated()
         {
@@ -740,7 +738,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetBonusPaidTo()
         {
@@ -748,7 +746,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetBonusPaidToAccountId()
         {
@@ -756,7 +754,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetBonusPaidToAccountNumber()
         {
@@ -764,7 +762,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetBonusPaidToAccountShortName()
         {
@@ -772,7 +770,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetBonusPaidToAccountFullName()
         {
@@ -780,7 +778,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFrequency()
         {
@@ -788,7 +786,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNextCalculationDate()
         {
@@ -796,7 +794,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPreviousCalculatedDate()
         {
@@ -804,7 +802,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleBasis()
         {
@@ -812,7 +810,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleCurrencyCode()
         {
@@ -820,7 +818,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleCurrencySymbol()
         {
@@ -828,7 +826,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleAvailableFrom()
         {
@@ -836,7 +834,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleAvailableTo()
         {
@@ -1035,42 +1033,62 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is BonusConfiguration other &&                ((this.PricingAccountId == null && other.PricingAccountId == null) || (this.PricingAccountId?.Equals(other.PricingAccountId) == true)) &&
-                ((this.PricingAccountNumber == null && other.PricingAccountNumber == null) || (this.PricingAccountNumber?.Equals(other.PricingAccountNumber) == true)) &&
-                ((this.PricingAccountShortName == null && other.PricingAccountShortName == null) || (this.PricingAccountShortName?.Equals(other.PricingAccountShortName) == true)) &&
-                ((this.PricingAccountFullName == null && other.PricingAccountFullName == null) || (this.PricingAccountFullName?.Equals(other.PricingAccountFullName) == true)) &&
-                ((this.FeeRuleId == null && other.FeeRuleId == null) || (this.FeeRuleId?.Equals(other.FeeRuleId) == true)) &&
-                ((this.FeeRuleDescription == null && other.FeeRuleDescription == null) || (this.FeeRuleDescription?.Equals(other.FeeRuleDescription) == true)) &&
-                ((this.FeeRuleDateEffective == null && other.FeeRuleDateEffective == null) || (this.FeeRuleDateEffective?.Equals(other.FeeRuleDateEffective) == true)) &&
-                ((this.FeeRuleDateTerminated == null && other.FeeRuleDateTerminated == null) || (this.FeeRuleDateTerminated?.Equals(other.FeeRuleDateTerminated) == true)) &&
-                ((this.BonusPaidTo == null && other.BonusPaidTo == null) || (this.BonusPaidTo?.Equals(other.BonusPaidTo) == true)) &&
-                ((this.BonusPaidToAccountId == null && other.BonusPaidToAccountId == null) || (this.BonusPaidToAccountId?.Equals(other.BonusPaidToAccountId) == true)) &&
-                ((this.BonusPaidToAccountNumber == null && other.BonusPaidToAccountNumber == null) || (this.BonusPaidToAccountNumber?.Equals(other.BonusPaidToAccountNumber) == true)) &&
-                ((this.BonusPaidToAccountShortName == null && other.BonusPaidToAccountShortName == null) || (this.BonusPaidToAccountShortName?.Equals(other.BonusPaidToAccountShortName) == true)) &&
-                ((this.BonusPaidToAccountFullName == null && other.BonusPaidToAccountFullName == null) || (this.BonusPaidToAccountFullName?.Equals(other.BonusPaidToAccountFullName) == true)) &&
-                ((this.Frequency == null && other.Frequency == null) || (this.Frequency?.Equals(other.Frequency) == true)) &&
-                ((this.NextCalculationDate == null && other.NextCalculationDate == null) || (this.NextCalculationDate?.Equals(other.NextCalculationDate) == true)) &&
-                ((this.PreviousCalculatedDate == null && other.PreviousCalculatedDate == null) || (this.PreviousCalculatedDate?.Equals(other.PreviousCalculatedDate) == true)) &&
-                ((this.FeeRuleBasis == null && other.FeeRuleBasis == null) || (this.FeeRuleBasis?.Equals(other.FeeRuleBasis) == true)) &&
-                ((this.FeeRuleCurrencyCode == null && other.FeeRuleCurrencyCode == null) || (this.FeeRuleCurrencyCode?.Equals(other.FeeRuleCurrencyCode) == true)) &&
-                ((this.FeeRuleCurrencySymbol == null && other.FeeRuleCurrencySymbol == null) || (this.FeeRuleCurrencySymbol?.Equals(other.FeeRuleCurrencySymbol) == true)) &&
-                ((this.FeeRuleAvailableFrom == null && other.FeeRuleAvailableFrom == null) || (this.FeeRuleAvailableFrom?.Equals(other.FeeRuleAvailableFrom) == true)) &&
-                ((this.FeeRuleAvailableTo == null && other.FeeRuleAvailableTo == null) || (this.FeeRuleAvailableTo?.Equals(other.FeeRuleAvailableTo) == true)) &&
-                ((this.FeeRuleLocations == null && other.FeeRuleLocations == null) || (this.FeeRuleLocations?.Equals(other.FeeRuleLocations) == true)) &&
-                ((this.FeeRuleTiers == null && other.FeeRuleTiers == null) || (this.FeeRuleTiers?.Equals(other.FeeRuleTiers) == true)) &&
-                ((this.AssociatedAccounts == null && other.AssociatedAccounts == null) || (this.AssociatedAccounts?.Equals(other.AssociatedAccounts) == true)) &&
-                ((this.FeeRuleProducts == null && other.FeeRuleProducts == null) || (this.FeeRuleProducts?.Equals(other.FeeRuleProducts) == true));
+            return obj is BonusConfiguration other &&
+                (this.PricingAccountId == null && other.PricingAccountId == null ||
+                 this.PricingAccountId?.Equals(other.PricingAccountId) == true) &&
+                (this.PricingAccountNumber == null && other.PricingAccountNumber == null ||
+                 this.PricingAccountNumber?.Equals(other.PricingAccountNumber) == true) &&
+                (this.PricingAccountShortName == null && other.PricingAccountShortName == null ||
+                 this.PricingAccountShortName?.Equals(other.PricingAccountShortName) == true) &&
+                (this.PricingAccountFullName == null && other.PricingAccountFullName == null ||
+                 this.PricingAccountFullName?.Equals(other.PricingAccountFullName) == true) &&
+                (this.FeeRuleId == null && other.FeeRuleId == null ||
+                 this.FeeRuleId?.Equals(other.FeeRuleId) == true) &&
+                (this.FeeRuleDescription == null && other.FeeRuleDescription == null ||
+                 this.FeeRuleDescription?.Equals(other.FeeRuleDescription) == true) &&
+                (this.FeeRuleDateEffective == null && other.FeeRuleDateEffective == null ||
+                 this.FeeRuleDateEffective?.Equals(other.FeeRuleDateEffective) == true) &&
+                (this.FeeRuleDateTerminated == null && other.FeeRuleDateTerminated == null ||
+                 this.FeeRuleDateTerminated?.Equals(other.FeeRuleDateTerminated) == true) &&
+                (this.BonusPaidTo == null && other.BonusPaidTo == null ||
+                 this.BonusPaidTo?.Equals(other.BonusPaidTo) == true) &&
+                (this.BonusPaidToAccountId == null && other.BonusPaidToAccountId == null ||
+                 this.BonusPaidToAccountId?.Equals(other.BonusPaidToAccountId) == true) &&
+                (this.BonusPaidToAccountNumber == null && other.BonusPaidToAccountNumber == null ||
+                 this.BonusPaidToAccountNumber?.Equals(other.BonusPaidToAccountNumber) == true) &&
+                (this.BonusPaidToAccountShortName == null && other.BonusPaidToAccountShortName == null ||
+                 this.BonusPaidToAccountShortName?.Equals(other.BonusPaidToAccountShortName) == true) &&
+                (this.BonusPaidToAccountFullName == null && other.BonusPaidToAccountFullName == null ||
+                 this.BonusPaidToAccountFullName?.Equals(other.BonusPaidToAccountFullName) == true) &&
+                (this.Frequency == null && other.Frequency == null ||
+                 this.Frequency?.Equals(other.Frequency) == true) &&
+                (this.NextCalculationDate == null && other.NextCalculationDate == null ||
+                 this.NextCalculationDate?.Equals(other.NextCalculationDate) == true) &&
+                (this.PreviousCalculatedDate == null && other.PreviousCalculatedDate == null ||
+                 this.PreviousCalculatedDate?.Equals(other.PreviousCalculatedDate) == true) &&
+                (this.FeeRuleBasis == null && other.FeeRuleBasis == null ||
+                 this.FeeRuleBasis?.Equals(other.FeeRuleBasis) == true) &&
+                (this.FeeRuleCurrencyCode == null && other.FeeRuleCurrencyCode == null ||
+                 this.FeeRuleCurrencyCode?.Equals(other.FeeRuleCurrencyCode) == true) &&
+                (this.FeeRuleCurrencySymbol == null && other.FeeRuleCurrencySymbol == null ||
+                 this.FeeRuleCurrencySymbol?.Equals(other.FeeRuleCurrencySymbol) == true) &&
+                (this.FeeRuleAvailableFrom == null && other.FeeRuleAvailableFrom == null ||
+                 this.FeeRuleAvailableFrom?.Equals(other.FeeRuleAvailableFrom) == true) &&
+                (this.FeeRuleAvailableTo == null && other.FeeRuleAvailableTo == null ||
+                 this.FeeRuleAvailableTo?.Equals(other.FeeRuleAvailableTo) == true) &&
+                (this.FeeRuleLocations == null && other.FeeRuleLocations == null ||
+                 this.FeeRuleLocations?.Equals(other.FeeRuleLocations) == true) &&
+                (this.FeeRuleTiers == null && other.FeeRuleTiers == null ||
+                 this.FeeRuleTiers?.Equals(other.FeeRuleTiers) == true) &&
+                (this.AssociatedAccounts == null && other.AssociatedAccounts == null ||
+                 this.AssociatedAccounts?.Equals(other.AssociatedAccounts) == true) &&
+                (this.FeeRuleProducts == null && other.FeeRuleProducts == null ||
+                 this.FeeRuleProducts?.Equals(other.FeeRuleProducts) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -1078,26 +1096,26 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.PricingAccountId = {(this.PricingAccountId == null ? "null" : this.PricingAccountId.ToString())}");
-            toStringOutput.Add($"this.PricingAccountNumber = {(this.PricingAccountNumber == null ? "null" : this.PricingAccountNumber)}");
-            toStringOutput.Add($"this.PricingAccountShortName = {(this.PricingAccountShortName == null ? "null" : this.PricingAccountShortName)}");
-            toStringOutput.Add($"this.PricingAccountFullName = {(this.PricingAccountFullName == null ? "null" : this.PricingAccountFullName)}");
+            toStringOutput.Add($"this.PricingAccountNumber = {this.PricingAccountNumber ?? "null"}");
+            toStringOutput.Add($"this.PricingAccountShortName = {this.PricingAccountShortName ?? "null"}");
+            toStringOutput.Add($"this.PricingAccountFullName = {this.PricingAccountFullName ?? "null"}");
             toStringOutput.Add($"this.FeeRuleId = {(this.FeeRuleId == null ? "null" : this.FeeRuleId.ToString())}");
-            toStringOutput.Add($"this.FeeRuleDescription = {(this.FeeRuleDescription == null ? "null" : this.FeeRuleDescription)}");
-            toStringOutput.Add($"this.FeeRuleDateEffective = {(this.FeeRuleDateEffective == null ? "null" : this.FeeRuleDateEffective)}");
-            toStringOutput.Add($"this.FeeRuleDateTerminated = {(this.FeeRuleDateTerminated == null ? "null" : this.FeeRuleDateTerminated)}");
-            toStringOutput.Add($"this.BonusPaidTo = {(this.BonusPaidTo == null ? "null" : this.BonusPaidTo)}");
+            toStringOutput.Add($"this.FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
+            toStringOutput.Add($"this.FeeRuleDateEffective = {this.FeeRuleDateEffective ?? "null"}");
+            toStringOutput.Add($"this.FeeRuleDateTerminated = {this.FeeRuleDateTerminated ?? "null"}");
+            toStringOutput.Add($"this.BonusPaidTo = {this.BonusPaidTo ?? "null"}");
             toStringOutput.Add($"this.BonusPaidToAccountId = {(this.BonusPaidToAccountId == null ? "null" : this.BonusPaidToAccountId.ToString())}");
-            toStringOutput.Add($"this.BonusPaidToAccountNumber = {(this.BonusPaidToAccountNumber == null ? "null" : this.BonusPaidToAccountNumber)}");
-            toStringOutput.Add($"this.BonusPaidToAccountShortName = {(this.BonusPaidToAccountShortName == null ? "null" : this.BonusPaidToAccountShortName)}");
-            toStringOutput.Add($"this.BonusPaidToAccountFullName = {(this.BonusPaidToAccountFullName == null ? "null" : this.BonusPaidToAccountFullName)}");
-            toStringOutput.Add($"this.Frequency = {(this.Frequency == null ? "null" : this.Frequency)}");
-            toStringOutput.Add($"this.NextCalculationDate = {(this.NextCalculationDate == null ? "null" : this.NextCalculationDate)}");
-            toStringOutput.Add($"this.PreviousCalculatedDate = {(this.PreviousCalculatedDate == null ? "null" : this.PreviousCalculatedDate)}");
-            toStringOutput.Add($"this.FeeRuleBasis = {(this.FeeRuleBasis == null ? "null" : this.FeeRuleBasis)}");
-            toStringOutput.Add($"this.FeeRuleCurrencyCode = {(this.FeeRuleCurrencyCode == null ? "null" : this.FeeRuleCurrencyCode)}");
-            toStringOutput.Add($"this.FeeRuleCurrencySymbol = {(this.FeeRuleCurrencySymbol == null ? "null" : this.FeeRuleCurrencySymbol)}");
-            toStringOutput.Add($"this.FeeRuleAvailableFrom = {(this.FeeRuleAvailableFrom == null ? "null" : this.FeeRuleAvailableFrom)}");
-            toStringOutput.Add($"this.FeeRuleAvailableTo = {(this.FeeRuleAvailableTo == null ? "null" : this.FeeRuleAvailableTo)}");
+            toStringOutput.Add($"this.BonusPaidToAccountNumber = {this.BonusPaidToAccountNumber ?? "null"}");
+            toStringOutput.Add($"this.BonusPaidToAccountShortName = {this.BonusPaidToAccountShortName ?? "null"}");
+            toStringOutput.Add($"this.BonusPaidToAccountFullName = {this.BonusPaidToAccountFullName ?? "null"}");
+            toStringOutput.Add($"this.Frequency = {this.Frequency ?? "null"}");
+            toStringOutput.Add($"this.NextCalculationDate = {this.NextCalculationDate ?? "null"}");
+            toStringOutput.Add($"this.PreviousCalculatedDate = {this.PreviousCalculatedDate ?? "null"}");
+            toStringOutput.Add($"this.FeeRuleBasis = {this.FeeRuleBasis ?? "null"}");
+            toStringOutput.Add($"this.FeeRuleCurrencyCode = {this.FeeRuleCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.FeeRuleCurrencySymbol = {this.FeeRuleCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"this.FeeRuleAvailableFrom = {this.FeeRuleAvailableFrom ?? "null"}");
+            toStringOutput.Add($"this.FeeRuleAvailableTo = {this.FeeRuleAvailableTo ?? "null"}");
             toStringOutput.Add($"this.FeeRuleLocations = {(this.FeeRuleLocations == null ? "null" : $"[{string.Join(", ", this.FeeRuleLocations)} ]")}");
             toStringOutput.Add($"this.FeeRuleTiers = {(this.FeeRuleTiers == null ? "null" : $"[{string.Join(", ", this.FeeRuleTiers)} ]")}");
             toStringOutput.Add($"this.AssociatedAccounts = {(this.AssociatedAccounts == null ? "null" : $"[{string.Join(", ", this.AssociatedAccounts)} ]")}");

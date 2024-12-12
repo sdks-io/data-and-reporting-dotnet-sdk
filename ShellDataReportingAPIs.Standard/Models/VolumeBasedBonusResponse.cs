@@ -84,31 +84,29 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"VolumeBasedBonusResponse : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is VolumeBasedBonusResponse other &&                ((this.Configuration == null && other.Configuration == null) || (this.Configuration?.Equals(other.Configuration) == true)) &&
-                ((this.CurrentPeriodConsumption == null && other.CurrentPeriodConsumption == null) || (this.CurrentPeriodConsumption?.Equals(other.CurrentPeriodConsumption) == true)) &&
-                ((this.HistoricalBonusPaid == null && other.HistoricalBonusPaid == null) || (this.HistoricalBonusPaid?.Equals(other.HistoricalBonusPaid) == true)) &&
-                ((this.Error == null && other.Error == null) || (this.Error?.Equals(other.Error) == true)) &&
-                ((this.RequestId == null && other.RequestId == null) || (this.RequestId?.Equals(other.RequestId) == true));
+            return obj is VolumeBasedBonusResponse other &&
+                (this.Configuration == null && other.Configuration == null ||
+                 this.Configuration?.Equals(other.Configuration) == true) &&
+                (this.CurrentPeriodConsumption == null && other.CurrentPeriodConsumption == null ||
+                 this.CurrentPeriodConsumption?.Equals(other.CurrentPeriodConsumption) == true) &&
+                (this.HistoricalBonusPaid == null && other.HistoricalBonusPaid == null ||
+                 this.HistoricalBonusPaid?.Equals(other.HistoricalBonusPaid) == true) &&
+                (this.Error == null && other.Error == null ||
+                 this.Error?.Equals(other.Error) == true) &&
+                (this.RequestId == null && other.RequestId == null ||
+                 this.RequestId?.Equals(other.RequestId) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -119,7 +117,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.CurrentPeriodConsumption = {(this.CurrentPeriodConsumption == null ? "null" : $"[{string.Join(", ", this.CurrentPeriodConsumption)} ]")}");
             toStringOutput.Add($"this.HistoricalBonusPaid = {(this.HistoricalBonusPaid == null ? "null" : $"[{string.Join(", ", this.HistoricalBonusPaid)} ]")}");
             toStringOutput.Add($"this.Error = {(this.Error == null ? "null" : this.Error.ToString())}");
-            toStringOutput.Add($"this.RequestId = {(this.RequestId == null ? "null" : this.RequestId)}");
+            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
         }
     }
 }

@@ -217,41 +217,47 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"TransactionExceptionsRequest : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is TransactionExceptionsRequest other &&                ((this.ColCoId == null && other.ColCoId == null) || (this.ColCoId?.Equals(other.ColCoId) == true)) &&
-                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.PayerId == null && other.PayerId == null) || (this.PayerId?.Equals(other.PayerId) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.Accounts == null && other.Accounts == null) || (this.Accounts?.Equals(other.Accounts) == true)) &&
-                ((this.TransactionsFromDate == null && other.TransactionsFromDate == null) || (this.TransactionsFromDate?.Equals(other.TransactionsFromDate) == true)) &&
-                ((this.TransactionsToDate == null && other.TransactionsToDate == null) || (this.TransactionsToDate?.Equals(other.TransactionsToDate) == true)) &&
-                ((this.MValue == null && other.MValue == null) || (this.MValue?.Equals(other.MValue) == true)) &&
-                this.Condition.Equals(other.Condition) &&
-                ((this.Products == null && other.Products == null) || (this.Products?.Equals(other.Products) == true)) &&
-                ((this.ExceptionPeriod == null && other.ExceptionPeriod == null) || (this.ExceptionPeriod?.Equals(other.ExceptionPeriod) == true)) &&
-                this.OutputType.Equals(other.OutputType) &&
-                ((this.FuelOnly == null && other.FuelOnly == null) || (this.FuelOnly?.Equals(other.FuelOnly) == true)) &&
-                ((this.SiteGroupIds == null && other.SiteGroupIds == null) || (this.SiteGroupIds?.Equals(other.SiteGroupIds) == true)) &&
-                ((this.UseFieldId == null && other.UseFieldId == null) || (this.UseFieldId?.Equals(other.UseFieldId) == true));
+            return obj is TransactionExceptionsRequest other &&
+                (this.ColCoId == null && other.ColCoId == null ||
+                 this.ColCoId?.Equals(other.ColCoId) == true) &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.PayerId == null && other.PayerId == null ||
+                 this.PayerId?.Equals(other.PayerId) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.Accounts == null && other.Accounts == null ||
+                 this.Accounts?.Equals(other.Accounts) == true) &&
+                (this.TransactionsFromDate == null && other.TransactionsFromDate == null ||
+                 this.TransactionsFromDate?.Equals(other.TransactionsFromDate) == true) &&
+                (this.TransactionsToDate == null && other.TransactionsToDate == null ||
+                 this.TransactionsToDate?.Equals(other.TransactionsToDate) == true) &&
+                (this.MValue == null && other.MValue == null ||
+                 this.MValue?.Equals(other.MValue) == true) &&
+                (this.Condition.Equals(other.Condition)) &&
+                (this.Products == null && other.Products == null ||
+                 this.Products?.Equals(other.Products) == true) &&
+                (this.ExceptionPeriod == null && other.ExceptionPeriod == null ||
+                 this.ExceptionPeriod?.Equals(other.ExceptionPeriod) == true) &&
+                (this.OutputType.Equals(other.OutputType)) &&
+                (this.FuelOnly == null && other.FuelOnly == null ||
+                 this.FuelOnly?.Equals(other.FuelOnly) == true) &&
+                (this.SiteGroupIds == null && other.SiteGroupIds == null ||
+                 this.SiteGroupIds?.Equals(other.SiteGroupIds) == true) &&
+                (this.UseFieldId == null && other.UseFieldId == null ||
+                 this.UseFieldId?.Equals(other.UseFieldId) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -261,10 +267,10 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
             toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
             toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
-            toStringOutput.Add($"this.TransactionsFromDate = {(this.TransactionsFromDate == null ? "null" : this.TransactionsFromDate)}");
-            toStringOutput.Add($"this.TransactionsToDate = {(this.TransactionsToDate == null ? "null" : this.TransactionsToDate)}");
+            toStringOutput.Add($"this.TransactionsFromDate = {this.TransactionsFromDate ?? "null"}");
+            toStringOutput.Add($"this.TransactionsToDate = {this.TransactionsToDate ?? "null"}");
             toStringOutput.Add($"this.MValue = {(this.MValue == null ? "null" : this.MValue.ToString())}");
             toStringOutput.Add($"this.Condition = {this.Condition}");
             toStringOutput.Add($"this.Products = {(this.Products == null ? "null" : $"[{string.Join(", ", this.Products)} ]")}");

@@ -35,7 +35,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="detail">detail.</param>
         public DefaultErrorFault(
             string faultstring = null,
-            Models.Detail detail = null)
+            Models.DefaultErrorFaultDetail detail = null)
         {
             this.Faultstring = faultstring;
             this.Detail = detail;
@@ -48,44 +48,39 @@ namespace ShellDataReportingAPIs.Standard.Models
         public string Faultstring { get; set; }
 
         /// <summary>
-        /// Gets or sets Detail.
+        /// Details about the error
         /// </summary>
         [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Detail Detail { get; set; }
+        public Models.DefaultErrorFaultDetail Detail { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"DefaultErrorFault : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is DefaultErrorFault other &&                ((this.Faultstring == null && other.Faultstring == null) || (this.Faultstring?.Equals(other.Faultstring) == true)) &&
-                ((this.Detail == null && other.Detail == null) || (this.Detail?.Equals(other.Detail) == true));
+            return obj is DefaultErrorFault other &&
+                (this.Faultstring == null && other.Faultstring == null ||
+                 this.Faultstring?.Equals(other.Faultstring) == true) &&
+                (this.Detail == null && other.Detail == null ||
+                 this.Detail?.Equals(other.Detail) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Faultstring = {(this.Faultstring == null ? "null" : this.Faultstring)}");
+            toStringOutput.Add($"this.Faultstring = {this.Faultstring ?? "null"}");
             toStringOutput.Add($"this.Detail = {(this.Detail == null ? "null" : this.Detail.ToString())}");
         }
     }

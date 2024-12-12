@@ -89,6 +89,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string invoiceCurrencyCode = null,
             string invoiceCurrencySymbol = null)
         {
+
             if (feeTypeGroup != null)
             {
                 this.FeeTypeGroup = feeTypeGroup;
@@ -153,7 +154,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.InvoiceCurrencySymbol = invoiceCurrencySymbol;
             }
-
         }
 
         /// <summary>
@@ -394,14 +394,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"FeeItemSummaryAllOf0 : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeTypeGroup()
         {
@@ -409,7 +407,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeTypeId()
         {
@@ -417,7 +415,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductId()
         {
@@ -425,7 +423,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductCode()
         {
@@ -433,7 +431,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductName()
         {
@@ -441,7 +439,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupId()
         {
@@ -449,7 +447,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductGroupName()
         {
@@ -457,7 +455,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalQuantity()
         {
@@ -465,7 +463,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalInvoiceNetAmount()
         {
@@ -473,7 +471,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalInvoiceGrossAmount()
         {
@@ -481,7 +479,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalInvoiceVATAmount()
         {
@@ -489,7 +487,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceCurrencyCode()
         {
@@ -497,7 +495,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceCurrencySymbol()
         {
@@ -624,49 +622,57 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is FeeItemSummaryAllOf0 other &&                ((this.FeeTypeGroup == null && other.FeeTypeGroup == null) || (this.FeeTypeGroup?.Equals(other.FeeTypeGroup) == true)) &&
-                ((this.FeeTypeId == null && other.FeeTypeId == null) || (this.FeeTypeId?.Equals(other.FeeTypeId) == true)) &&
-                ((this.ProductId == null && other.ProductId == null) || (this.ProductId?.Equals(other.ProductId) == true)) &&
-                ((this.ProductCode == null && other.ProductCode == null) || (this.ProductCode?.Equals(other.ProductCode) == true)) &&
-                ((this.ProductName == null && other.ProductName == null) || (this.ProductName?.Equals(other.ProductName) == true)) &&
-                ((this.ProductGroupId == null && other.ProductGroupId == null) || (this.ProductGroupId?.Equals(other.ProductGroupId) == true)) &&
-                ((this.ProductGroupName == null && other.ProductGroupName == null) || (this.ProductGroupName?.Equals(other.ProductGroupName) == true)) &&
-                ((this.TotalQuantity == null && other.TotalQuantity == null) || (this.TotalQuantity?.Equals(other.TotalQuantity) == true)) &&
-                ((this.TotalInvoiceNetAmount == null && other.TotalInvoiceNetAmount == null) || (this.TotalInvoiceNetAmount?.Equals(other.TotalInvoiceNetAmount) == true)) &&
-                ((this.TotalInvoiceGrossAmount == null && other.TotalInvoiceGrossAmount == null) || (this.TotalInvoiceGrossAmount?.Equals(other.TotalInvoiceGrossAmount) == true)) &&
-                ((this.TotalInvoiceVATAmount == null && other.TotalInvoiceVATAmount == null) || (this.TotalInvoiceVATAmount?.Equals(other.TotalInvoiceVATAmount) == true)) &&
-                ((this.InvoiceCurrencyCode == null && other.InvoiceCurrencyCode == null) || (this.InvoiceCurrencyCode?.Equals(other.InvoiceCurrencyCode) == true)) &&
-                ((this.InvoiceCurrencySymbol == null && other.InvoiceCurrencySymbol == null) || (this.InvoiceCurrencySymbol?.Equals(other.InvoiceCurrencySymbol) == true));
+            return obj is FeeItemSummaryAllOf0 other &&
+                (this.FeeTypeGroup == null && other.FeeTypeGroup == null ||
+                 this.FeeTypeGroup?.Equals(other.FeeTypeGroup) == true) &&
+                (this.FeeTypeId == null && other.FeeTypeId == null ||
+                 this.FeeTypeId?.Equals(other.FeeTypeId) == true) &&
+                (this.ProductId == null && other.ProductId == null ||
+                 this.ProductId?.Equals(other.ProductId) == true) &&
+                (this.ProductCode == null && other.ProductCode == null ||
+                 this.ProductCode?.Equals(other.ProductCode) == true) &&
+                (this.ProductName == null && other.ProductName == null ||
+                 this.ProductName?.Equals(other.ProductName) == true) &&
+                (this.ProductGroupId == null && other.ProductGroupId == null ||
+                 this.ProductGroupId?.Equals(other.ProductGroupId) == true) &&
+                (this.ProductGroupName == null && other.ProductGroupName == null ||
+                 this.ProductGroupName?.Equals(other.ProductGroupName) == true) &&
+                (this.TotalQuantity == null && other.TotalQuantity == null ||
+                 this.TotalQuantity?.Equals(other.TotalQuantity) == true) &&
+                (this.TotalInvoiceNetAmount == null && other.TotalInvoiceNetAmount == null ||
+                 this.TotalInvoiceNetAmount?.Equals(other.TotalInvoiceNetAmount) == true) &&
+                (this.TotalInvoiceGrossAmount == null && other.TotalInvoiceGrossAmount == null ||
+                 this.TotalInvoiceGrossAmount?.Equals(other.TotalInvoiceGrossAmount) == true) &&
+                (this.TotalInvoiceVATAmount == null && other.TotalInvoiceVATAmount == null ||
+                 this.TotalInvoiceVATAmount?.Equals(other.TotalInvoiceVATAmount) == true) &&
+                (this.InvoiceCurrencyCode == null && other.InvoiceCurrencyCode == null ||
+                 this.InvoiceCurrencyCode?.Equals(other.InvoiceCurrencyCode) == true) &&
+                (this.InvoiceCurrencySymbol == null && other.InvoiceCurrencySymbol == null ||
+                 this.InvoiceCurrencySymbol?.Equals(other.InvoiceCurrencySymbol) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.FeeTypeGroup = {(this.FeeTypeGroup == null ? "null" : this.FeeTypeGroup)}");
-            toStringOutput.Add($"this.FeeTypeId = {(this.FeeTypeId == null ? "null" : this.FeeTypeId)}");
+            toStringOutput.Add($"this.FeeTypeGroup = {this.FeeTypeGroup ?? "null"}");
+            toStringOutput.Add($"this.FeeTypeId = {this.FeeTypeId ?? "null"}");
             toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");
-            toStringOutput.Add($"this.ProductName = {(this.ProductName == null ? "null" : this.ProductName)}");
+            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
             toStringOutput.Add($"this.ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {(this.ProductGroupName == null ? "null" : this.ProductGroupName)}");
+            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
             toStringOutput.Add($"this.TotalQuantity = {(this.TotalQuantity == null ? "null" : this.TotalQuantity.ToString())}");
             toStringOutput.Add($"this.TotalInvoiceNetAmount = {(this.TotalInvoiceNetAmount == null ? "null" : this.TotalInvoiceNetAmount.ToString())}");
             toStringOutput.Add($"this.TotalInvoiceGrossAmount = {(this.TotalInvoiceGrossAmount == null ? "null" : this.TotalInvoiceGrossAmount.ToString())}");
             toStringOutput.Add($"this.TotalInvoiceVATAmount = {(this.TotalInvoiceVATAmount == null ? "null" : this.TotalInvoiceVATAmount.ToString())}");
-            toStringOutput.Add($"this.InvoiceCurrencyCode = {(this.InvoiceCurrencyCode == null ? "null" : this.InvoiceCurrencyCode)}");
-            toStringOutput.Add($"this.InvoiceCurrencySymbol = {(this.InvoiceCurrencySymbol == null ? "null" : this.InvoiceCurrencySymbol)}");
+            toStringOutput.Add($"this.InvoiceCurrencyCode = {this.InvoiceCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.InvoiceCurrencySymbol = {this.InvoiceCurrencySymbol ?? "null"}");
         }
     }
 }

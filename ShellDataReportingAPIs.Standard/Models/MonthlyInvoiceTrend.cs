@@ -61,6 +61,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? totalVATAmount = null,
             int? year = null)
         {
+
             if (currencyCode != null)
             {
                 this.CurrencyCode = currencyCode;
@@ -90,7 +91,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.Year = year;
             }
-
         }
 
         /// <summary>
@@ -207,14 +207,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"MonthlyInvoiceTrend : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencyCode()
         {
@@ -222,7 +220,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCurrencySymbol()
         {
@@ -230,7 +228,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetMonth()
         {
@@ -238,7 +236,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalNetAmount()
         {
@@ -246,7 +244,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalVATAmount()
         {
@@ -254,7 +252,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetYear()
         {
@@ -318,31 +316,32 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is MonthlyInvoiceTrend other &&                ((this.CurrencyCode == null && other.CurrencyCode == null) || (this.CurrencyCode?.Equals(other.CurrencyCode) == true)) &&
-                ((this.CurrencySymbol == null && other.CurrencySymbol == null) || (this.CurrencySymbol?.Equals(other.CurrencySymbol) == true)) &&
-                ((this.Month == null && other.Month == null) || (this.Month?.Equals(other.Month) == true)) &&
-                ((this.TotalNetAmount == null && other.TotalNetAmount == null) || (this.TotalNetAmount?.Equals(other.TotalNetAmount) == true)) &&
-                ((this.TotalVATAmount == null && other.TotalVATAmount == null) || (this.TotalVATAmount?.Equals(other.TotalVATAmount) == true)) &&
-                ((this.Year == null && other.Year == null) || (this.Year?.Equals(other.Year) == true));
+            return obj is MonthlyInvoiceTrend other &&
+                (this.CurrencyCode == null && other.CurrencyCode == null ||
+                 this.CurrencyCode?.Equals(other.CurrencyCode) == true) &&
+                (this.CurrencySymbol == null && other.CurrencySymbol == null ||
+                 this.CurrencySymbol?.Equals(other.CurrencySymbol) == true) &&
+                (this.Month == null && other.Month == null ||
+                 this.Month?.Equals(other.Month) == true) &&
+                (this.TotalNetAmount == null && other.TotalNetAmount == null ||
+                 this.TotalNetAmount?.Equals(other.TotalNetAmount) == true) &&
+                (this.TotalVATAmount == null && other.TotalVATAmount == null ||
+                 this.TotalVATAmount?.Equals(other.TotalVATAmount) == true) &&
+                (this.Year == null && other.Year == null ||
+                 this.Year?.Equals(other.Year) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.CurrencyCode = {(this.CurrencyCode == null ? "null" : this.CurrencyCode)}");
-            toStringOutput.Add($"this.CurrencySymbol = {(this.CurrencySymbol == null ? "null" : this.CurrencySymbol)}");
+            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.Month = {(this.Month == null ? "null" : this.Month.ToString())}");
             toStringOutput.Add($"this.TotalNetAmount = {(this.TotalNetAmount == null ? "null" : this.TotalNetAmount.ToString())}");
             toStringOutput.Add($"this.TotalVATAmount = {(this.TotalVATAmount == null ? "null" : this.TotalVATAmount.ToString())}");

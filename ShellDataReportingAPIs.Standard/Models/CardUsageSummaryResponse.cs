@@ -66,29 +66,25 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"CardUsageSummaryResponse : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is CardUsageSummaryResponse other &&                ((this.UsageSummary == null && other.UsageSummary == null) || (this.UsageSummary?.Equals(other.UsageSummary) == true)) &&
-                ((this.RequestId == null && other.RequestId == null) || (this.RequestId?.Equals(other.RequestId) == true)) &&
-                ((this.Error == null && other.Error == null) || (this.Error?.Equals(other.Error) == true));
+            return obj is CardUsageSummaryResponse other &&
+                (this.UsageSummary == null && other.UsageSummary == null ||
+                 this.UsageSummary?.Equals(other.UsageSummary) == true) &&
+                (this.RequestId == null && other.RequestId == null ||
+                 this.RequestId?.Equals(other.RequestId) == true) &&
+                (this.Error == null && other.Error == null ||
+                 this.Error?.Equals(other.Error) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -96,7 +92,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.UsageSummary = {(this.UsageSummary == null ? "null" : $"[{string.Join(", ", this.UsageSummary)} ]")}");
-            toStringOutput.Add($"this.RequestId = {(this.RequestId == null ? "null" : this.RequestId)}");
+            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
             toStringOutput.Add($"this.Error = {(this.Error == null ? "null" : this.Error.ToString())}");
         }
     }

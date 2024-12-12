@@ -77,6 +77,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? siteId = null,
             string siteName = null)
         {
+
             if (delcoId != null)
             {
                 this.DelcoId = delcoId;
@@ -126,7 +127,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.SiteName = siteName;
             }
-
         }
 
         /// <summary>
@@ -313,14 +313,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"FeeRuleLocation : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDelcoId()
         {
@@ -328,7 +326,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCountry()
         {
@@ -336,7 +334,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCountryCode()
         {
@@ -344,7 +342,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelNetworkId()
         {
@@ -352,7 +350,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNetworkName()
         {
@@ -360,7 +358,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupId()
         {
@@ -368,7 +366,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupName()
         {
@@ -376,7 +374,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteCode()
         {
@@ -384,7 +382,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteId()
         {
@@ -392,7 +390,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteName()
         {
@@ -492,43 +490,48 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is FeeRuleLocation other &&                ((this.DelcoId == null && other.DelcoId == null) || (this.DelcoId?.Equals(other.DelcoId) == true)) &&
-                ((this.Country == null && other.Country == null) || (this.Country?.Equals(other.Country) == true)) &&
-                ((this.CountryCode == null && other.CountryCode == null) || (this.CountryCode?.Equals(other.CountryCode) == true)) &&
-                ((this.FuelNetworkId == null && other.FuelNetworkId == null) || (this.FuelNetworkId?.Equals(other.FuelNetworkId) == true)) &&
-                ((this.NetworkName == null && other.NetworkName == null) || (this.NetworkName?.Equals(other.NetworkName) == true)) &&
-                ((this.SiteGroupId == null && other.SiteGroupId == null) || (this.SiteGroupId?.Equals(other.SiteGroupId) == true)) &&
-                ((this.SiteGroupName == null && other.SiteGroupName == null) || (this.SiteGroupName?.Equals(other.SiteGroupName) == true)) &&
-                ((this.SiteCode == null && other.SiteCode == null) || (this.SiteCode?.Equals(other.SiteCode) == true)) &&
-                ((this.SiteId == null && other.SiteId == null) || (this.SiteId?.Equals(other.SiteId) == true)) &&
-                ((this.SiteName == null && other.SiteName == null) || (this.SiteName?.Equals(other.SiteName) == true));
+            return obj is FeeRuleLocation other &&
+                (this.DelcoId == null && other.DelcoId == null ||
+                 this.DelcoId?.Equals(other.DelcoId) == true) &&
+                (this.Country == null && other.Country == null ||
+                 this.Country?.Equals(other.Country) == true) &&
+                (this.CountryCode == null && other.CountryCode == null ||
+                 this.CountryCode?.Equals(other.CountryCode) == true) &&
+                (this.FuelNetworkId == null && other.FuelNetworkId == null ||
+                 this.FuelNetworkId?.Equals(other.FuelNetworkId) == true) &&
+                (this.NetworkName == null && other.NetworkName == null ||
+                 this.NetworkName?.Equals(other.NetworkName) == true) &&
+                (this.SiteGroupId == null && other.SiteGroupId == null ||
+                 this.SiteGroupId?.Equals(other.SiteGroupId) == true) &&
+                (this.SiteGroupName == null && other.SiteGroupName == null ||
+                 this.SiteGroupName?.Equals(other.SiteGroupName) == true) &&
+                (this.SiteCode == null && other.SiteCode == null ||
+                 this.SiteCode?.Equals(other.SiteCode) == true) &&
+                (this.SiteId == null && other.SiteId == null ||
+                 this.SiteId?.Equals(other.SiteId) == true) &&
+                (this.SiteName == null && other.SiteName == null ||
+                 this.SiteName?.Equals(other.SiteName) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.DelcoId = {(this.DelcoId == null ? "null" : this.DelcoId)}");
-            toStringOutput.Add($"this.Country = {(this.Country == null ? "null" : this.Country)}");
-            toStringOutput.Add($"this.CountryCode = {(this.CountryCode == null ? "null" : this.CountryCode)}");
+            toStringOutput.Add($"this.DelcoId = {this.DelcoId ?? "null"}");
+            toStringOutput.Add($"this.Country = {this.Country ?? "null"}");
+            toStringOutput.Add($"this.CountryCode = {this.CountryCode ?? "null"}");
             toStringOutput.Add($"this.FuelNetworkId = {(this.FuelNetworkId == null ? "null" : this.FuelNetworkId.ToString())}");
-            toStringOutput.Add($"this.NetworkName = {(this.NetworkName == null ? "null" : this.NetworkName)}");
+            toStringOutput.Add($"this.NetworkName = {this.NetworkName ?? "null"}");
             toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {(this.SiteGroupName == null ? "null" : this.SiteGroupName)}");
+            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
             toStringOutput.Add($"this.SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode.ToString())}");
             toStringOutput.Add($"this.SiteId = {(this.SiteId == null ? "null" : this.SiteId.ToString())}");
-            toStringOutput.Add($"this.SiteName = {(this.SiteName == null ? "null" : this.SiteName)}");
+            toStringOutput.Add($"this.SiteName = {this.SiteName ?? "null"}");
         }
     }
 }

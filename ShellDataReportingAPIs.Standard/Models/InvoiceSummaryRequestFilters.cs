@@ -111,6 +111,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             List<Models.Accounts> accounts = null,
             string type = null)
         {
+
             if (colCoId != null)
             {
                 this.ColCoId = colCoId;
@@ -195,13 +196,12 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.ColCoCode = colCoCode;
             }
-
             this.Accounts = accounts;
+
             if (type != null)
             {
                 this.Type = type;
             }
-
         }
 
         /// <summary>
@@ -609,14 +609,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"InvoiceSummaryRequestFilters : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetColCoId()
         {
@@ -624,7 +622,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerId()
         {
@@ -632,7 +630,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerNumber()
         {
@@ -640,7 +638,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceId()
         {
@@ -648,7 +646,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceNumber()
         {
@@ -656,7 +654,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFromDate()
         {
@@ -664,7 +662,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetToDate()
         {
@@ -672,7 +670,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceDate()
         {
@@ -680,7 +678,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentId()
         {
@@ -688,7 +686,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentNumber()
         {
@@ -696,7 +694,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetStatementOfAccountId()
         {
@@ -704,7 +702,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSoAReferenceNumber()
         {
@@ -712,7 +710,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPeriod()
         {
@@ -720,7 +718,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceStatus()
         {
@@ -728,7 +726,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoicedOnBehalfOf()
         {
@@ -736,7 +734,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIncludeEInvoiceDetails()
         {
@@ -744,7 +742,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetColCoCode()
         {
@@ -752,7 +750,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetType()
         {
@@ -924,36 +922,50 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is InvoiceSummaryRequestFilters other &&                ((this.ColCoId == null && other.ColCoId == null) || (this.ColCoId?.Equals(other.ColCoId) == true)) &&
-                ((this.PayerId == null && other.PayerId == null) || (this.PayerId?.Equals(other.PayerId) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.InvoiceId == null && other.InvoiceId == null) || (this.InvoiceId?.Equals(other.InvoiceId) == true)) &&
-                ((this.InvoiceNumber == null && other.InvoiceNumber == null) || (this.InvoiceNumber?.Equals(other.InvoiceNumber) == true)) &&
-                ((this.FromDate == null && other.FromDate == null) || (this.FromDate?.Equals(other.FromDate) == true)) &&
-                ((this.ToDate == null && other.ToDate == null) || (this.ToDate?.Equals(other.ToDate) == true)) &&
-                ((this.InvoiceDate == null && other.InvoiceDate == null) || (this.InvoiceDate?.Equals(other.InvoiceDate) == true)) &&
-                ((this.SummaryDocumentId == null && other.SummaryDocumentId == null) || (this.SummaryDocumentId?.Equals(other.SummaryDocumentId) == true)) &&
-                ((this.SummaryDocumentNumber == null && other.SummaryDocumentNumber == null) || (this.SummaryDocumentNumber?.Equals(other.SummaryDocumentNumber) == true)) &&
-                ((this.StatementOfAccountId == null && other.StatementOfAccountId == null) || (this.StatementOfAccountId?.Equals(other.StatementOfAccountId) == true)) &&
-                ((this.SoAReferenceNumber == null && other.SoAReferenceNumber == null) || (this.SoAReferenceNumber?.Equals(other.SoAReferenceNumber) == true)) &&
-                ((this.Period == null && other.Period == null) || (this.Period?.Equals(other.Period) == true)) &&
-                ((this.InvoiceStatus == null && other.InvoiceStatus == null) || (this.InvoiceStatus?.Equals(other.InvoiceStatus) == true)) &&
-                ((this.InvoicedOnBehalfOf == null && other.InvoicedOnBehalfOf == null) || (this.InvoicedOnBehalfOf?.Equals(other.InvoicedOnBehalfOf) == true)) &&
-                ((this.IncludeEInvoiceDetails == null && other.IncludeEInvoiceDetails == null) || (this.IncludeEInvoiceDetails?.Equals(other.IncludeEInvoiceDetails) == true)) &&
-                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.Accounts == null && other.Accounts == null) || (this.Accounts?.Equals(other.Accounts) == true)) &&
-                ((this.Type == null && other.Type == null) || (this.Type?.Equals(other.Type) == true));
+            return obj is InvoiceSummaryRequestFilters other &&
+                (this.ColCoId == null && other.ColCoId == null ||
+                 this.ColCoId?.Equals(other.ColCoId) == true) &&
+                (this.PayerId == null && other.PayerId == null ||
+                 this.PayerId?.Equals(other.PayerId) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.InvoiceId == null && other.InvoiceId == null ||
+                 this.InvoiceId?.Equals(other.InvoiceId) == true) &&
+                (this.InvoiceNumber == null && other.InvoiceNumber == null ||
+                 this.InvoiceNumber?.Equals(other.InvoiceNumber) == true) &&
+                (this.FromDate == null && other.FromDate == null ||
+                 this.FromDate?.Equals(other.FromDate) == true) &&
+                (this.ToDate == null && other.ToDate == null ||
+                 this.ToDate?.Equals(other.ToDate) == true) &&
+                (this.InvoiceDate == null && other.InvoiceDate == null ||
+                 this.InvoiceDate?.Equals(other.InvoiceDate) == true) &&
+                (this.SummaryDocumentId == null && other.SummaryDocumentId == null ||
+                 this.SummaryDocumentId?.Equals(other.SummaryDocumentId) == true) &&
+                (this.SummaryDocumentNumber == null && other.SummaryDocumentNumber == null ||
+                 this.SummaryDocumentNumber?.Equals(other.SummaryDocumentNumber) == true) &&
+                (this.StatementOfAccountId == null && other.StatementOfAccountId == null ||
+                 this.StatementOfAccountId?.Equals(other.StatementOfAccountId) == true) &&
+                (this.SoAReferenceNumber == null && other.SoAReferenceNumber == null ||
+                 this.SoAReferenceNumber?.Equals(other.SoAReferenceNumber) == true) &&
+                (this.Period == null && other.Period == null ||
+                 this.Period?.Equals(other.Period) == true) &&
+                (this.InvoiceStatus == null && other.InvoiceStatus == null ||
+                 this.InvoiceStatus?.Equals(other.InvoiceStatus) == true) &&
+                (this.InvoicedOnBehalfOf == null && other.InvoicedOnBehalfOf == null ||
+                 this.InvoicedOnBehalfOf?.Equals(other.InvoicedOnBehalfOf) == true) &&
+                (this.IncludeEInvoiceDetails == null && other.IncludeEInvoiceDetails == null ||
+                 this.IncludeEInvoiceDetails?.Equals(other.IncludeEInvoiceDetails) == true) &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.Accounts == null && other.Accounts == null ||
+                 this.Accounts?.Equals(other.Accounts) == true) &&
+                (this.Type == null && other.Type == null ||
+                 this.Type?.Equals(other.Type) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -962,23 +974,23 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
             toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
             toStringOutput.Add($"this.InvoiceId = {(this.InvoiceId == null ? "null" : this.InvoiceId.ToString())}");
-            toStringOutput.Add($"this.InvoiceNumber = {(this.InvoiceNumber == null ? "null" : this.InvoiceNumber)}");
-            toStringOutput.Add($"this.FromDate = {(this.FromDate == null ? "null" : this.FromDate)}");
-            toStringOutput.Add($"this.ToDate = {(this.ToDate == null ? "null" : this.ToDate)}");
-            toStringOutput.Add($"this.InvoiceDate = {(this.InvoiceDate == null ? "null" : this.InvoiceDate)}");
+            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
+            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
+            toStringOutput.Add($"this.InvoiceDate = {this.InvoiceDate ?? "null"}");
             toStringOutput.Add($"this.SummaryDocumentId = {(this.SummaryDocumentId == null ? "null" : this.SummaryDocumentId.ToString())}");
-            toStringOutput.Add($"this.SummaryDocumentNumber = {(this.SummaryDocumentNumber == null ? "null" : this.SummaryDocumentNumber)}");
-            toStringOutput.Add($"this.StatementOfAccountId = {(this.StatementOfAccountId == null ? "null" : this.StatementOfAccountId)}");
-            toStringOutput.Add($"this.SoAReferenceNumber = {(this.SoAReferenceNumber == null ? "null" : this.SoAReferenceNumber)}");
+            toStringOutput.Add($"this.SummaryDocumentNumber = {this.SummaryDocumentNumber ?? "null"}");
+            toStringOutput.Add($"this.StatementOfAccountId = {this.StatementOfAccountId ?? "null"}");
+            toStringOutput.Add($"this.SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
             toStringOutput.Add($"this.Period = {(this.Period == null ? "null" : this.Period.ToString())}");
-            toStringOutput.Add($"this.InvoiceStatus = {(this.InvoiceStatus == null ? "null" : this.InvoiceStatus)}");
-            toStringOutput.Add($"this.InvoicedOnBehalfOf = {(this.InvoicedOnBehalfOf == null ? "null" : this.InvoicedOnBehalfOf)}");
+            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"this.InvoicedOnBehalfOf = {this.InvoicedOnBehalfOf ?? "null"}");
             toStringOutput.Add($"this.IncludeEInvoiceDetails = {(this.IncludeEInvoiceDetails == null ? "null" : this.IncludeEInvoiceDetails.ToString())}");
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
             toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
-            toStringOutput.Add($"this.Type = {(this.Type == null ? "null" : this.Type)}");
+            toStringOutput.Add($"this.Type = {this.Type ?? "null"}");
         }
     }
 }

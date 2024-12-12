@@ -45,6 +45,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? productid = null,
             string productCode = null)
         {
+
             if (productid != null)
             {
                 this.Productid = productid;
@@ -54,7 +55,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.ProductCode = productCode;
             }
-
         }
 
         /// <summary>
@@ -99,14 +99,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"ExceptionProduct : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductid()
         {
@@ -114,7 +112,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductCode()
         {
@@ -142,19 +140,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is ExceptionProduct other &&                ((this.Productid == null && other.Productid == null) || (this.Productid?.Equals(other.Productid) == true)) &&
-                ((this.ProductCode == null && other.ProductCode == null) || (this.ProductCode?.Equals(other.ProductCode) == true));
+            return obj is ExceptionProduct other &&
+                (this.Productid == null && other.Productid == null ||
+                 this.Productid?.Equals(other.Productid) == true) &&
+                (this.ProductCode == null && other.ProductCode == null ||
+                 this.ProductCode?.Equals(other.ProductCode) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -162,7 +157,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.Productid = {(this.Productid == null ? "null" : this.Productid.ToString())}");
-            toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");
+            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
         }
     }
 }

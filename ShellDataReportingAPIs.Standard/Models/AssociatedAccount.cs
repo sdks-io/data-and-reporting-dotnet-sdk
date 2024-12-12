@@ -53,6 +53,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string associatedAccountShortName = null,
             string associatedAccountFullName = null)
         {
+
             if (associatedAccountId != null)
             {
                 this.AssociatedAccountId = associatedAccountId;
@@ -72,7 +73,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.AssociatedAccountFullName = associatedAccountFullName;
             }
-
         }
 
         /// <summary>
@@ -151,14 +151,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"AssociatedAccount : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAssociatedAccountId()
         {
@@ -166,7 +164,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAssociatedAccountNumber()
         {
@@ -174,7 +172,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAssociatedAccountShortName()
         {
@@ -182,7 +180,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAssociatedAccountFullName()
         {
@@ -228,21 +226,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is AssociatedAccount other &&                ((this.AssociatedAccountId == null && other.AssociatedAccountId == null) || (this.AssociatedAccountId?.Equals(other.AssociatedAccountId) == true)) &&
-                ((this.AssociatedAccountNumber == null && other.AssociatedAccountNumber == null) || (this.AssociatedAccountNumber?.Equals(other.AssociatedAccountNumber) == true)) &&
-                ((this.AssociatedAccountShortName == null && other.AssociatedAccountShortName == null) || (this.AssociatedAccountShortName?.Equals(other.AssociatedAccountShortName) == true)) &&
-                ((this.AssociatedAccountFullName == null && other.AssociatedAccountFullName == null) || (this.AssociatedAccountFullName?.Equals(other.AssociatedAccountFullName) == true));
+            return obj is AssociatedAccount other &&
+                (this.AssociatedAccountId == null && other.AssociatedAccountId == null ||
+                 this.AssociatedAccountId?.Equals(other.AssociatedAccountId) == true) &&
+                (this.AssociatedAccountNumber == null && other.AssociatedAccountNumber == null ||
+                 this.AssociatedAccountNumber?.Equals(other.AssociatedAccountNumber) == true) &&
+                (this.AssociatedAccountShortName == null && other.AssociatedAccountShortName == null ||
+                 this.AssociatedAccountShortName?.Equals(other.AssociatedAccountShortName) == true) &&
+                (this.AssociatedAccountFullName == null && other.AssociatedAccountFullName == null ||
+                 this.AssociatedAccountFullName?.Equals(other.AssociatedAccountFullName) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -250,9 +247,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.AssociatedAccountId = {(this.AssociatedAccountId == null ? "null" : this.AssociatedAccountId.ToString())}");
-            toStringOutput.Add($"this.AssociatedAccountNumber = {(this.AssociatedAccountNumber == null ? "null" : this.AssociatedAccountNumber)}");
-            toStringOutput.Add($"this.AssociatedAccountShortName = {(this.AssociatedAccountShortName == null ? "null" : this.AssociatedAccountShortName)}");
-            toStringOutput.Add($"this.AssociatedAccountFullName = {(this.AssociatedAccountFullName == null ? "null" : this.AssociatedAccountFullName)}");
+            toStringOutput.Add($"this.AssociatedAccountNumber = {this.AssociatedAccountNumber ?? "null"}");
+            toStringOutput.Add($"this.AssociatedAccountShortName = {this.AssociatedAccountShortName ?? "null"}");
+            toStringOutput.Add($"this.AssociatedAccountFullName = {this.AssociatedAccountFullName ?? "null"}");
         }
     }
 }

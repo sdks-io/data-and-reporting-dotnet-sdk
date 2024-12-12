@@ -73,6 +73,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             double? pricePerUnit = null,
             double? pricePerUnitAfterDiscount = null)
         {
+
             if (tierPriceListId != null)
             {
                 this.TierPriceListId = tierPriceListId;
@@ -117,7 +118,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.PricePerUnitAfterDiscount = pricePerUnitAfterDiscount;
             }
-
         }
 
         /// <summary>
@@ -297,14 +297,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"Tier : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTierPriceListId()
         {
@@ -312,7 +310,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPriceListDescription()
         {
@@ -320,7 +318,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTierMin()
         {
@@ -328,7 +326,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTierMax()
         {
@@ -336,7 +334,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTieredPricingGroupName()
         {
@@ -344,7 +342,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTieredPricingGroupPeriod()
         {
@@ -352,7 +350,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDiscountValue()
         {
@@ -360,7 +358,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPricePerUnit()
         {
@@ -368,7 +366,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPricePerUnitAfterDiscount()
         {
@@ -459,26 +457,30 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is Tier other &&                ((this.TierPriceListId == null && other.TierPriceListId == null) || (this.TierPriceListId?.Equals(other.TierPriceListId) == true)) &&
-                ((this.PriceListDescription == null && other.PriceListDescription == null) || (this.PriceListDescription?.Equals(other.PriceListDescription) == true)) &&
-                ((this.TierMin == null && other.TierMin == null) || (this.TierMin?.Equals(other.TierMin) == true)) &&
-                ((this.TierMax == null && other.TierMax == null) || (this.TierMax?.Equals(other.TierMax) == true)) &&
-                ((this.TieredPricingGroupName == null && other.TieredPricingGroupName == null) || (this.TieredPricingGroupName?.Equals(other.TieredPricingGroupName) == true)) &&
-                ((this.TieredPricingGroupPeriod == null && other.TieredPricingGroupPeriod == null) || (this.TieredPricingGroupPeriod?.Equals(other.TieredPricingGroupPeriod) == true)) &&
-                ((this.DiscountValue == null && other.DiscountValue == null) || (this.DiscountValue?.Equals(other.DiscountValue) == true)) &&
-                ((this.PricePerUnit == null && other.PricePerUnit == null) || (this.PricePerUnit?.Equals(other.PricePerUnit) == true)) &&
-                ((this.PricePerUnitAfterDiscount == null && other.PricePerUnitAfterDiscount == null) || (this.PricePerUnitAfterDiscount?.Equals(other.PricePerUnitAfterDiscount) == true));
+            return obj is Tier other &&
+                (this.TierPriceListId == null && other.TierPriceListId == null ||
+                 this.TierPriceListId?.Equals(other.TierPriceListId) == true) &&
+                (this.PriceListDescription == null && other.PriceListDescription == null ||
+                 this.PriceListDescription?.Equals(other.PriceListDescription) == true) &&
+                (this.TierMin == null && other.TierMin == null ||
+                 this.TierMin?.Equals(other.TierMin) == true) &&
+                (this.TierMax == null && other.TierMax == null ||
+                 this.TierMax?.Equals(other.TierMax) == true) &&
+                (this.TieredPricingGroupName == null && other.TieredPricingGroupName == null ||
+                 this.TieredPricingGroupName?.Equals(other.TieredPricingGroupName) == true) &&
+                (this.TieredPricingGroupPeriod == null && other.TieredPricingGroupPeriod == null ||
+                 this.TieredPricingGroupPeriod?.Equals(other.TieredPricingGroupPeriod) == true) &&
+                (this.DiscountValue == null && other.DiscountValue == null ||
+                 this.DiscountValue?.Equals(other.DiscountValue) == true) &&
+                (this.PricePerUnit == null && other.PricePerUnit == null ||
+                 this.PricePerUnit?.Equals(other.PricePerUnit) == true) &&
+                (this.PricePerUnitAfterDiscount == null && other.PricePerUnitAfterDiscount == null ||
+                 this.PricePerUnitAfterDiscount?.Equals(other.PricePerUnitAfterDiscount) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -486,11 +488,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.TierPriceListId = {(this.TierPriceListId == null ? "null" : this.TierPriceListId.ToString())}");
-            toStringOutput.Add($"this.PriceListDescription = {(this.PriceListDescription == null ? "null" : this.PriceListDescription)}");
+            toStringOutput.Add($"this.PriceListDescription = {this.PriceListDescription ?? "null"}");
             toStringOutput.Add($"this.TierMin = {(this.TierMin == null ? "null" : this.TierMin.ToString())}");
             toStringOutput.Add($"this.TierMax = {(this.TierMax == null ? "null" : this.TierMax.ToString())}");
-            toStringOutput.Add($"this.TieredPricingGroupName = {(this.TieredPricingGroupName == null ? "null" : this.TieredPricingGroupName)}");
-            toStringOutput.Add($"this.TieredPricingGroupPeriod = {(this.TieredPricingGroupPeriod == null ? "null" : this.TieredPricingGroupPeriod)}");
+            toStringOutput.Add($"this.TieredPricingGroupName = {this.TieredPricingGroupName ?? "null"}");
+            toStringOutput.Add($"this.TieredPricingGroupPeriod = {this.TieredPricingGroupPeriod ?? "null"}");
             toStringOutput.Add($"this.DiscountValue = {(this.DiscountValue == null ? "null" : this.DiscountValue.ToString())}");
             toStringOutput.Add($"this.PricePerUnit = {(this.PricePerUnit == null ? "null" : this.PricePerUnit.ToString())}");
             toStringOutput.Add($"this.PricePerUnitAfterDiscount = {(this.PricePerUnitAfterDiscount == null ? "null" : this.PricePerUnitAfterDiscount.ToString())}");

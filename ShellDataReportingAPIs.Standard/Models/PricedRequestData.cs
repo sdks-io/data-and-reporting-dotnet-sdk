@@ -177,6 +177,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             this.ColCoCode = colCoCode;
             this.InvoiceStatus = invoiceStatus;
             this.PayerNumber = payerNumber;
+
             if (accountId != null)
             {
                 this.AccountId = accountId;
@@ -261,9 +262,9 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.LineItemDescription = lineItemDescription;
             }
-
             this.Cards = cards;
             this.SortOrder = sortOrder;
+
             if (fromDate != null)
             {
                 this.FromDate = fromDate;
@@ -273,8 +274,8 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.ToDate = toDate;
             }
-
             this.Period = period;
+
             if (postingDateFrom != null)
             {
                 this.PostingDateFrom = postingDateFrom;
@@ -289,15 +290,15 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.TransactionItemId = transactionItemId;
             }
-
             this.FuelOnly = fuelOnly;
+
             if (includeFees != null)
             {
                 this.IncludeFees = includeFees;
             }
-
             this.IsMultipayer = isMultipayer;
             this.ValidInvoiceDateOnly = validInvoiceDateOnly;
+
             if (invoiceFromDate != null)
             {
                 this.InvoiceFromDate = invoiceFromDate;
@@ -322,7 +323,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.TransactionId = transactionId;
             }
-
         }
 
         /// <summary>
@@ -699,7 +699,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Gets or sets Period.
+        /// Pass below one of the value as per the required transaction period
+        /// 1. Last 7 Days
+        /// 2. Last 30 Days
+        /// 3. Last 90 Days
         /// </summary>
         [JsonProperty("Period", NullValueHandling = NullValueHandling.Ignore)]
         public Models.PricedTransactionReqV2PeriodEnum? Period { get; set; }
@@ -911,14 +914,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PricedRequestData : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountId()
         {
@@ -926,7 +927,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountNumber()
         {
@@ -934,7 +935,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDriverName()
         {
@@ -942,7 +943,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardGroupId()
         {
@@ -950,7 +951,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetCardPAN()
         {
@@ -958,7 +959,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductCode()
         {
@@ -966,7 +967,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetProductName()
         {
@@ -974,7 +975,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteCode()
         {
@@ -982,7 +983,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIncomingSiteNumber()
         {
@@ -990,7 +991,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceDate()
         {
@@ -998,7 +999,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceNumber()
         {
@@ -1006,7 +1007,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPurchasedInCountryCode()
         {
@@ -1014,7 +1015,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPurchasedInCountry()
         {
@@ -1022,7 +1023,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSiteGroupId()
         {
@@ -1030,7 +1031,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVehicleRegistrationNumber()
         {
@@ -1038,7 +1039,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeTypeId()
         {
@@ -1046,7 +1047,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLineItemDescription()
         {
@@ -1054,7 +1055,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFromDate()
         {
@@ -1062,7 +1063,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetToDate()
         {
@@ -1070,7 +1071,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPostingDateFrom()
         {
@@ -1078,7 +1079,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPostingDateTo()
         {
@@ -1086,7 +1087,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionItemId()
         {
@@ -1094,7 +1095,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFuelOnly()
         {
@@ -1103,7 +1104,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIncludeFees()
         {
@@ -1111,7 +1112,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceFromDate()
         {
@@ -1119,7 +1120,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceToDate()
         {
@@ -1127,7 +1128,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetHostingCollectingCompanyNumber()
         {
@@ -1135,7 +1136,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSearch()
         {
@@ -1143,7 +1144,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTransactionId()
         {
@@ -1414,97 +1415,129 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PricedRequestData other &&                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.InvoiceStatus == null && other.InvoiceStatus == null) || (this.InvoiceStatus?.Equals(other.InvoiceStatus) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.AccountId == null && other.AccountId == null) || (this.AccountId?.Equals(other.AccountId) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.DriverName == null && other.DriverName == null) || (this.DriverName?.Equals(other.DriverName) == true)) &&
-                ((this.CardGroupId == null && other.CardGroupId == null) || (this.CardGroupId?.Equals(other.CardGroupId) == true)) &&
-                ((this.CardPAN == null && other.CardPAN == null) || (this.CardPAN?.Equals(other.CardPAN) == true)) &&
-                ((this.ProductCode == null && other.ProductCode == null) || (this.ProductCode?.Equals(other.ProductCode) == true)) &&
-                ((this.ProductName == null && other.ProductName == null) || (this.ProductName?.Equals(other.ProductName) == true)) &&
-                ((this.SiteCode == null && other.SiteCode == null) || (this.SiteCode?.Equals(other.SiteCode) == true)) &&
-                ((this.IncomingSiteNumber == null && other.IncomingSiteNumber == null) || (this.IncomingSiteNumber?.Equals(other.IncomingSiteNumber) == true)) &&
-                ((this.InvoiceDate == null && other.InvoiceDate == null) || (this.InvoiceDate?.Equals(other.InvoiceDate) == true)) &&
-                ((this.InvoiceNumber == null && other.InvoiceNumber == null) || (this.InvoiceNumber?.Equals(other.InvoiceNumber) == true)) &&
-                ((this.PurchasedInCountryCode == null && other.PurchasedInCountryCode == null) || (this.PurchasedInCountryCode?.Equals(other.PurchasedInCountryCode) == true)) &&
-                ((this.PurchasedInCountry == null && other.PurchasedInCountry == null) || (this.PurchasedInCountry?.Equals(other.PurchasedInCountry) == true)) &&
-                ((this.SiteGroupId == null && other.SiteGroupId == null) || (this.SiteGroupId?.Equals(other.SiteGroupId) == true)) &&
-                ((this.VehicleRegistrationNumber == null && other.VehicleRegistrationNumber == null) || (this.VehicleRegistrationNumber?.Equals(other.VehicleRegistrationNumber) == true)) &&
-                ((this.FeeTypeId == null && other.FeeTypeId == null) || (this.FeeTypeId?.Equals(other.FeeTypeId) == true)) &&
-                ((this.LineItemDescription == null && other.LineItemDescription == null) || (this.LineItemDescription?.Equals(other.LineItemDescription) == true)) &&
-                ((this.Cards == null && other.Cards == null) || (this.Cards?.Equals(other.Cards) == true)) &&
-                ((this.SortOrder == null && other.SortOrder == null) || (this.SortOrder?.Equals(other.SortOrder) == true)) &&
-                ((this.FromDate == null && other.FromDate == null) || (this.FromDate?.Equals(other.FromDate) == true)) &&
-                ((this.ToDate == null && other.ToDate == null) || (this.ToDate?.Equals(other.ToDate) == true)) &&
-                ((this.Period == null && other.Period == null) || (this.Period?.Equals(other.Period) == true)) &&
-                ((this.PostingDateFrom == null && other.PostingDateFrom == null) || (this.PostingDateFrom?.Equals(other.PostingDateFrom) == true)) &&
-                ((this.PostingDateTo == null && other.PostingDateTo == null) || (this.PostingDateTo?.Equals(other.PostingDateTo) == true)) &&
-                ((this.TransactionItemId == null && other.TransactionItemId == null) || (this.TransactionItemId?.Equals(other.TransactionItemId) == true)) &&
-                ((this.FuelOnly == null && other.FuelOnly == null) || (this.FuelOnly?.Equals(other.FuelOnly) == true)) &&
-                ((this.IncludeFees == null && other.IncludeFees == null) || (this.IncludeFees?.Equals(other.IncludeFees) == true)) &&
-                ((this.IsMultipayer == null && other.IsMultipayer == null) || (this.IsMultipayer?.Equals(other.IsMultipayer) == true)) &&
-                ((this.ValidInvoiceDateOnly == null && other.ValidInvoiceDateOnly == null) || (this.ValidInvoiceDateOnly?.Equals(other.ValidInvoiceDateOnly) == true)) &&
-                ((this.InvoiceFromDate == null && other.InvoiceFromDate == null) || (this.InvoiceFromDate?.Equals(other.InvoiceFromDate) == true)) &&
-                ((this.InvoiceToDate == null && other.InvoiceToDate == null) || (this.InvoiceToDate?.Equals(other.InvoiceToDate) == true)) &&
-                ((this.HostingCollectingCompanyNumber == null && other.HostingCollectingCompanyNumber == null) || (this.HostingCollectingCompanyNumber?.Equals(other.HostingCollectingCompanyNumber) == true)) &&
-                ((this.Search == null && other.Search == null) || (this.Search?.Equals(other.Search) == true)) &&
-                ((this.TransactionId == null && other.TransactionId == null) || (this.TransactionId?.Equals(other.TransactionId) == true));
+            return obj is PricedRequestData other &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.InvoiceStatus == null && other.InvoiceStatus == null ||
+                 this.InvoiceStatus?.Equals(other.InvoiceStatus) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.AccountId == null && other.AccountId == null ||
+                 this.AccountId?.Equals(other.AccountId) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.DriverName == null && other.DriverName == null ||
+                 this.DriverName?.Equals(other.DriverName) == true) &&
+                (this.CardGroupId == null && other.CardGroupId == null ||
+                 this.CardGroupId?.Equals(other.CardGroupId) == true) &&
+                (this.CardPAN == null && other.CardPAN == null ||
+                 this.CardPAN?.Equals(other.CardPAN) == true) &&
+                (this.ProductCode == null && other.ProductCode == null ||
+                 this.ProductCode?.Equals(other.ProductCode) == true) &&
+                (this.ProductName == null && other.ProductName == null ||
+                 this.ProductName?.Equals(other.ProductName) == true) &&
+                (this.SiteCode == null && other.SiteCode == null ||
+                 this.SiteCode?.Equals(other.SiteCode) == true) &&
+                (this.IncomingSiteNumber == null && other.IncomingSiteNumber == null ||
+                 this.IncomingSiteNumber?.Equals(other.IncomingSiteNumber) == true) &&
+                (this.InvoiceDate == null && other.InvoiceDate == null ||
+                 this.InvoiceDate?.Equals(other.InvoiceDate) == true) &&
+                (this.InvoiceNumber == null && other.InvoiceNumber == null ||
+                 this.InvoiceNumber?.Equals(other.InvoiceNumber) == true) &&
+                (this.PurchasedInCountryCode == null && other.PurchasedInCountryCode == null ||
+                 this.PurchasedInCountryCode?.Equals(other.PurchasedInCountryCode) == true) &&
+                (this.PurchasedInCountry == null && other.PurchasedInCountry == null ||
+                 this.PurchasedInCountry?.Equals(other.PurchasedInCountry) == true) &&
+                (this.SiteGroupId == null && other.SiteGroupId == null ||
+                 this.SiteGroupId?.Equals(other.SiteGroupId) == true) &&
+                (this.VehicleRegistrationNumber == null && other.VehicleRegistrationNumber == null ||
+                 this.VehicleRegistrationNumber?.Equals(other.VehicleRegistrationNumber) == true) &&
+                (this.FeeTypeId == null && other.FeeTypeId == null ||
+                 this.FeeTypeId?.Equals(other.FeeTypeId) == true) &&
+                (this.LineItemDescription == null && other.LineItemDescription == null ||
+                 this.LineItemDescription?.Equals(other.LineItemDescription) == true) &&
+                (this.Cards == null && other.Cards == null ||
+                 this.Cards?.Equals(other.Cards) == true) &&
+                (this.SortOrder == null && other.SortOrder == null ||
+                 this.SortOrder?.Equals(other.SortOrder) == true) &&
+                (this.FromDate == null && other.FromDate == null ||
+                 this.FromDate?.Equals(other.FromDate) == true) &&
+                (this.ToDate == null && other.ToDate == null ||
+                 this.ToDate?.Equals(other.ToDate) == true) &&
+                (this.Period == null && other.Period == null ||
+                 this.Period?.Equals(other.Period) == true) &&
+                (this.PostingDateFrom == null && other.PostingDateFrom == null ||
+                 this.PostingDateFrom?.Equals(other.PostingDateFrom) == true) &&
+                (this.PostingDateTo == null && other.PostingDateTo == null ||
+                 this.PostingDateTo?.Equals(other.PostingDateTo) == true) &&
+                (this.TransactionItemId == null && other.TransactionItemId == null ||
+                 this.TransactionItemId?.Equals(other.TransactionItemId) == true) &&
+                (this.FuelOnly == null && other.FuelOnly == null ||
+                 this.FuelOnly?.Equals(other.FuelOnly) == true) &&
+                (this.IncludeFees == null && other.IncludeFees == null ||
+                 this.IncludeFees?.Equals(other.IncludeFees) == true) &&
+                (this.IsMultipayer == null && other.IsMultipayer == null ||
+                 this.IsMultipayer?.Equals(other.IsMultipayer) == true) &&
+                (this.ValidInvoiceDateOnly == null && other.ValidInvoiceDateOnly == null ||
+                 this.ValidInvoiceDateOnly?.Equals(other.ValidInvoiceDateOnly) == true) &&
+                (this.InvoiceFromDate == null && other.InvoiceFromDate == null ||
+                 this.InvoiceFromDate?.Equals(other.InvoiceFromDate) == true) &&
+                (this.InvoiceToDate == null && other.InvoiceToDate == null ||
+                 this.InvoiceToDate?.Equals(other.InvoiceToDate) == true) &&
+                (this.HostingCollectingCompanyNumber == null && other.HostingCollectingCompanyNumber == null ||
+                 this.HostingCollectingCompanyNumber?.Equals(other.HostingCollectingCompanyNumber) == true) &&
+                (this.Search == null && other.Search == null ||
+                 this.Search?.Equals(other.Search) == true) &&
+                (this.TransactionId == null && other.TransactionId == null ||
+                 this.TransactionId?.Equals(other.TransactionId) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode)}");
+            toStringOutput.Add($"this.ColCoCode = {this.ColCoCode ?? "null"}");
             toStringOutput.Add($"InvoiceStatus = {(this.InvoiceStatus == null ? "null" : this.InvoiceStatus.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
             toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
-            toStringOutput.Add($"this.DriverName = {(this.DriverName == null ? "null" : this.DriverName)}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"this.DriverName = {this.DriverName ?? "null"}");
             toStringOutput.Add($"this.CardGroupId = {(this.CardGroupId == null ? "null" : this.CardGroupId.ToString())}");
-            toStringOutput.Add($"this.CardPAN = {(this.CardPAN == null ? "null" : this.CardPAN)}");
-            toStringOutput.Add($"this.ProductCode = {(this.ProductCode == null ? "null" : this.ProductCode)}");
-            toStringOutput.Add($"this.ProductName = {(this.ProductName == null ? "null" : this.ProductName)}");
-            toStringOutput.Add($"this.SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode)}");
-            toStringOutput.Add($"this.IncomingSiteNumber = {(this.IncomingSiteNumber == null ? "null" : this.IncomingSiteNumber)}");
-            toStringOutput.Add($"this.InvoiceDate = {(this.InvoiceDate == null ? "null" : this.InvoiceDate)}");
-            toStringOutput.Add($"this.InvoiceNumber = {(this.InvoiceNumber == null ? "null" : this.InvoiceNumber)}");
-            toStringOutput.Add($"this.PurchasedInCountryCode = {(this.PurchasedInCountryCode == null ? "null" : this.PurchasedInCountryCode)}");
-            toStringOutput.Add($"this.PurchasedInCountry = {(this.PurchasedInCountry == null ? "null" : this.PurchasedInCountry)}");
+            toStringOutput.Add($"this.CardPAN = {this.CardPAN ?? "null"}");
+            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
+            toStringOutput.Add($"this.SiteCode = {this.SiteCode ?? "null"}");
+            toStringOutput.Add($"this.IncomingSiteNumber = {this.IncomingSiteNumber ?? "null"}");
+            toStringOutput.Add($"this.InvoiceDate = {this.InvoiceDate ?? "null"}");
+            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
+            toStringOutput.Add($"this.PurchasedInCountryCode = {this.PurchasedInCountryCode ?? "null"}");
+            toStringOutput.Add($"this.PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
             toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.VehicleRegistrationNumber = {(this.VehicleRegistrationNumber == null ? "null" : this.VehicleRegistrationNumber)}");
+            toStringOutput.Add($"this.VehicleRegistrationNumber = {this.VehicleRegistrationNumber ?? "null"}");
             toStringOutput.Add($"this.FeeTypeId = {(this.FeeTypeId == null ? "null" : this.FeeTypeId.ToString())}");
-            toStringOutput.Add($"this.LineItemDescription = {(this.LineItemDescription == null ? "null" : this.LineItemDescription)}");
+            toStringOutput.Add($"this.LineItemDescription = {this.LineItemDescription ?? "null"}");
             toStringOutput.Add($"this.Cards = {(this.Cards == null ? "null" : $"[{string.Join(", ", this.Cards)} ]")}");
             toStringOutput.Add($"this.SortOrder = {(this.SortOrder == null ? "null" : this.SortOrder.ToString())}");
-            toStringOutput.Add($"this.FromDate = {(this.FromDate == null ? "null" : this.FromDate)}");
-            toStringOutput.Add($"this.ToDate = {(this.ToDate == null ? "null" : this.ToDate)}");
+            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
             toStringOutput.Add($"this.Period = {(this.Period == null ? "null" : this.Period.ToString())}");
-            toStringOutput.Add($"this.PostingDateFrom = {(this.PostingDateFrom == null ? "null" : this.PostingDateFrom)}");
-            toStringOutput.Add($"this.PostingDateTo = {(this.PostingDateTo == null ? "null" : this.PostingDateTo)}");
-            toStringOutput.Add($"this.TransactionItemId = {(this.TransactionItemId == null ? "null" : this.TransactionItemId)}");
+            toStringOutput.Add($"this.PostingDateFrom = {this.PostingDateFrom ?? "null"}");
+            toStringOutput.Add($"this.PostingDateTo = {this.PostingDateTo ?? "null"}");
+            toStringOutput.Add($"this.TransactionItemId = {this.TransactionItemId ?? "null"}");
             toStringOutput.Add($"this.FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");
             toStringOutput.Add($"this.IncludeFees = {(this.IncludeFees == null ? "null" : this.IncludeFees.ToString())}");
             toStringOutput.Add($"this.IsMultipayer = {(this.IsMultipayer == null ? "null" : this.IsMultipayer.ToString())}");
             toStringOutput.Add($"this.ValidInvoiceDateOnly = {(this.ValidInvoiceDateOnly == null ? "null" : this.ValidInvoiceDateOnly.ToString())}");
-            toStringOutput.Add($"this.InvoiceFromDate = {(this.InvoiceFromDate == null ? "null" : this.InvoiceFromDate)}");
-            toStringOutput.Add($"this.InvoiceToDate = {(this.InvoiceToDate == null ? "null" : this.InvoiceToDate)}");
-            toStringOutput.Add($"this.HostingCollectingCompanyNumber = {(this.HostingCollectingCompanyNumber == null ? "null" : this.HostingCollectingCompanyNumber)}");
-            toStringOutput.Add($"this.Search = {(this.Search == null ? "null" : this.Search)}");
-            toStringOutput.Add($"this.TransactionId = {(this.TransactionId == null ? "null" : this.TransactionId)}");
+            toStringOutput.Add($"this.InvoiceFromDate = {this.InvoiceFromDate ?? "null"}");
+            toStringOutput.Add($"this.InvoiceToDate = {this.InvoiceToDate ?? "null"}");
+            toStringOutput.Add($"this.HostingCollectingCompanyNumber = {this.HostingCollectingCompanyNumber ?? "null"}");
+            toStringOutput.Add($"this.Search = {this.Search ?? "null"}");
+            toStringOutput.Add($"this.TransactionId = {this.TransactionId ?? "null"}");
         }
     }
 }

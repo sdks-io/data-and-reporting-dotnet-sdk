@@ -47,19 +47,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="paymentsSinceLastSOA">PaymentsSinceLastSOA.</param>
         /// <param name="invoicesSummaries">InvoicesSummaries.</param>
         public StatementOfAccountResp(
-            Models.LastStatementOfAccount2 lastStatementOfAccount = null,
+            Models.LastStatementOfAccount lastStatementOfAccount = null,
             List<Models.MonthlyInvoiceTrend> monthlyInvoiceTrend = null,
             List<Models.PastStatementOfAccounts> pastStatementOfAccounts = null,
             List<Models.PaymentsSinceLastSOA> paymentsSinceLastSOA = null,
             List<Models.InvoicesSummaries> invoicesSummaries = null)
         {
             this.LastStatementOfAccount = lastStatementOfAccount;
+
             if (monthlyInvoiceTrend != null)
             {
                 this.MonthlyInvoiceTrend = monthlyInvoiceTrend;
             }
-
             this.PastStatementOfAccounts = pastStatementOfAccounts;
+
             if (paymentsSinceLastSOA != null)
             {
                 this.PaymentsSinceLastSOA = paymentsSinceLastSOA;
@@ -69,14 +70,13 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.InvoicesSummaries = invoicesSummaries;
             }
-
         }
 
         /// <summary>
-        /// Gets or sets LastStatementOfAccount.
+        /// Latest statement of the account generated for the given Payer.
         /// </summary>
         [JsonProperty("LastStatementOfAccount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.LastStatementOfAccount2 LastStatementOfAccount { get; set; }
+        public Models.LastStatementOfAccount LastStatementOfAccount { get; set; }
 
         /// <summary>
         /// Gets or sets MonthlyInvoiceTrend.
@@ -142,14 +142,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"StatementOfAccountResp : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetMonthlyInvoiceTrend()
         {
@@ -157,7 +155,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentsSinceLastSOA()
         {
@@ -165,7 +163,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoicesSummaries()
         {
@@ -202,22 +200,22 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is StatementOfAccountResp other &&                ((this.LastStatementOfAccount == null && other.LastStatementOfAccount == null) || (this.LastStatementOfAccount?.Equals(other.LastStatementOfAccount) == true)) &&
-                ((this.MonthlyInvoiceTrend == null && other.MonthlyInvoiceTrend == null) || (this.MonthlyInvoiceTrend?.Equals(other.MonthlyInvoiceTrend) == true)) &&
-                ((this.PastStatementOfAccounts == null && other.PastStatementOfAccounts == null) || (this.PastStatementOfAccounts?.Equals(other.PastStatementOfAccounts) == true)) &&
-                ((this.PaymentsSinceLastSOA == null && other.PaymentsSinceLastSOA == null) || (this.PaymentsSinceLastSOA?.Equals(other.PaymentsSinceLastSOA) == true)) &&
-                ((this.InvoicesSummaries == null && other.InvoicesSummaries == null) || (this.InvoicesSummaries?.Equals(other.InvoicesSummaries) == true));
+            return obj is StatementOfAccountResp other &&
+                (this.LastStatementOfAccount == null && other.LastStatementOfAccount == null ||
+                 this.LastStatementOfAccount?.Equals(other.LastStatementOfAccount) == true) &&
+                (this.MonthlyInvoiceTrend == null && other.MonthlyInvoiceTrend == null ||
+                 this.MonthlyInvoiceTrend?.Equals(other.MonthlyInvoiceTrend) == true) &&
+                (this.PastStatementOfAccounts == null && other.PastStatementOfAccounts == null ||
+                 this.PastStatementOfAccounts?.Equals(other.PastStatementOfAccounts) == true) &&
+                (this.PaymentsSinceLastSOA == null && other.PaymentsSinceLastSOA == null ||
+                 this.PaymentsSinceLastSOA?.Equals(other.PaymentsSinceLastSOA) == true) &&
+                (this.InvoicesSummaries == null && other.InvoicesSummaries == null ||
+                 this.InvoicesSummaries?.Equals(other.InvoicesSummaries) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>

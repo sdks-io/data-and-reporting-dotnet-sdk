@@ -93,6 +93,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? totalSummaryDocuments = null,
             double? totalVATAmountBillingCurrency = null)
         {
+
             if (amountDue != null)
             {
                 this.AmountDue = amountDue;
@@ -162,7 +163,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.TotalVATAmountBillingCurrency = totalVATAmountBillingCurrency;
             }
-
         }
 
         /// <summary>
@@ -424,14 +424,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"InvoicesSummaries : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountDue()
         {
@@ -439,7 +437,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountNotOverdue()
         {
@@ -447,7 +445,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountOverdue()
         {
@@ -455,7 +453,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountPaid()
         {
@@ -463,7 +461,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetBillingCurrencyCode()
         {
@@ -471,7 +469,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetBillingCurrencySymbol()
         {
@@ -479,7 +477,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetOutstandingBalance()
         {
@@ -487,7 +485,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentDueDate()
         {
@@ -495,7 +493,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentDate()
         {
@@ -503,7 +501,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalBillingDocuments()
         {
@@ -511,7 +509,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalGrossAmountBillingCurrency()
         {
@@ -519,7 +517,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalNetAmountBillingCurrency()
         {
@@ -527,7 +525,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalSummaryDocuments()
         {
@@ -535,7 +533,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTotalVATAmountBillingCurrency()
         {
@@ -671,31 +669,40 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is InvoicesSummaries other &&                ((this.AmountDue == null && other.AmountDue == null) || (this.AmountDue?.Equals(other.AmountDue) == true)) &&
-                ((this.AmountNotOverdue == null && other.AmountNotOverdue == null) || (this.AmountNotOverdue?.Equals(other.AmountNotOverdue) == true)) &&
-                ((this.AmountOverdue == null && other.AmountOverdue == null) || (this.AmountOverdue?.Equals(other.AmountOverdue) == true)) &&
-                ((this.AmountPaid == null && other.AmountPaid == null) || (this.AmountPaid?.Equals(other.AmountPaid) == true)) &&
-                ((this.BillingCurrencyCode == null && other.BillingCurrencyCode == null) || (this.BillingCurrencyCode?.Equals(other.BillingCurrencyCode) == true)) &&
-                ((this.BillingCurrencySymbol == null && other.BillingCurrencySymbol == null) || (this.BillingCurrencySymbol?.Equals(other.BillingCurrencySymbol) == true)) &&
-                ((this.OutstandingBalance == null && other.OutstandingBalance == null) || (this.OutstandingBalance?.Equals(other.OutstandingBalance) == true)) &&
-                ((this.PaymentDueDate == null && other.PaymentDueDate == null) || (this.PaymentDueDate?.Equals(other.PaymentDueDate) == true)) &&
-                ((this.SummaryDocumentDate == null && other.SummaryDocumentDate == null) || (this.SummaryDocumentDate?.Equals(other.SummaryDocumentDate) == true)) &&
-                ((this.TotalBillingDocuments == null && other.TotalBillingDocuments == null) || (this.TotalBillingDocuments?.Equals(other.TotalBillingDocuments) == true)) &&
-                ((this.TotalGrossAmountBillingCurrency == null && other.TotalGrossAmountBillingCurrency == null) || (this.TotalGrossAmountBillingCurrency?.Equals(other.TotalGrossAmountBillingCurrency) == true)) &&
-                ((this.TotalNetAmountBillingCurrency == null && other.TotalNetAmountBillingCurrency == null) || (this.TotalNetAmountBillingCurrency?.Equals(other.TotalNetAmountBillingCurrency) == true)) &&
-                ((this.TotalSummaryDocuments == null && other.TotalSummaryDocuments == null) || (this.TotalSummaryDocuments?.Equals(other.TotalSummaryDocuments) == true)) &&
-                ((this.TotalVATAmountBillingCurrency == null && other.TotalVATAmountBillingCurrency == null) || (this.TotalVATAmountBillingCurrency?.Equals(other.TotalVATAmountBillingCurrency) == true));
+            return obj is InvoicesSummaries other &&
+                (this.AmountDue == null && other.AmountDue == null ||
+                 this.AmountDue?.Equals(other.AmountDue) == true) &&
+                (this.AmountNotOverdue == null && other.AmountNotOverdue == null ||
+                 this.AmountNotOverdue?.Equals(other.AmountNotOverdue) == true) &&
+                (this.AmountOverdue == null && other.AmountOverdue == null ||
+                 this.AmountOverdue?.Equals(other.AmountOverdue) == true) &&
+                (this.AmountPaid == null && other.AmountPaid == null ||
+                 this.AmountPaid?.Equals(other.AmountPaid) == true) &&
+                (this.BillingCurrencyCode == null && other.BillingCurrencyCode == null ||
+                 this.BillingCurrencyCode?.Equals(other.BillingCurrencyCode) == true) &&
+                (this.BillingCurrencySymbol == null && other.BillingCurrencySymbol == null ||
+                 this.BillingCurrencySymbol?.Equals(other.BillingCurrencySymbol) == true) &&
+                (this.OutstandingBalance == null && other.OutstandingBalance == null ||
+                 this.OutstandingBalance?.Equals(other.OutstandingBalance) == true) &&
+                (this.PaymentDueDate == null && other.PaymentDueDate == null ||
+                 this.PaymentDueDate?.Equals(other.PaymentDueDate) == true) &&
+                (this.SummaryDocumentDate == null && other.SummaryDocumentDate == null ||
+                 this.SummaryDocumentDate?.Equals(other.SummaryDocumentDate) == true) &&
+                (this.TotalBillingDocuments == null && other.TotalBillingDocuments == null ||
+                 this.TotalBillingDocuments?.Equals(other.TotalBillingDocuments) == true) &&
+                (this.TotalGrossAmountBillingCurrency == null && other.TotalGrossAmountBillingCurrency == null ||
+                 this.TotalGrossAmountBillingCurrency?.Equals(other.TotalGrossAmountBillingCurrency) == true) &&
+                (this.TotalNetAmountBillingCurrency == null && other.TotalNetAmountBillingCurrency == null ||
+                 this.TotalNetAmountBillingCurrency?.Equals(other.TotalNetAmountBillingCurrency) == true) &&
+                (this.TotalSummaryDocuments == null && other.TotalSummaryDocuments == null ||
+                 this.TotalSummaryDocuments?.Equals(other.TotalSummaryDocuments) == true) &&
+                (this.TotalVATAmountBillingCurrency == null && other.TotalVATAmountBillingCurrency == null ||
+                 this.TotalVATAmountBillingCurrency?.Equals(other.TotalVATAmountBillingCurrency) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -706,11 +713,11 @@ namespace ShellDataReportingAPIs.Standard.Models
             toStringOutput.Add($"this.AmountNotOverdue = {(this.AmountNotOverdue == null ? "null" : this.AmountNotOverdue.ToString())}");
             toStringOutput.Add($"this.AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
             toStringOutput.Add($"this.AmountPaid = {(this.AmountPaid == null ? "null" : this.AmountPaid.ToString())}");
-            toStringOutput.Add($"this.BillingCurrencyCode = {(this.BillingCurrencyCode == null ? "null" : this.BillingCurrencyCode)}");
-            toStringOutput.Add($"this.BillingCurrencySymbol = {(this.BillingCurrencySymbol == null ? "null" : this.BillingCurrencySymbol)}");
+            toStringOutput.Add($"this.BillingCurrencyCode = {this.BillingCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.BillingCurrencySymbol = {this.BillingCurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.OutstandingBalance = {(this.OutstandingBalance == null ? "null" : this.OutstandingBalance.ToString())}");
-            toStringOutput.Add($"this.PaymentDueDate = {(this.PaymentDueDate == null ? "null" : this.PaymentDueDate)}");
-            toStringOutput.Add($"this.SummaryDocumentDate = {(this.SummaryDocumentDate == null ? "null" : this.SummaryDocumentDate)}");
+            toStringOutput.Add($"this.PaymentDueDate = {this.PaymentDueDate ?? "null"}");
+            toStringOutput.Add($"this.SummaryDocumentDate = {this.SummaryDocumentDate ?? "null"}");
             toStringOutput.Add($"this.TotalBillingDocuments = {(this.TotalBillingDocuments == null ? "null" : this.TotalBillingDocuments.ToString())}");
             toStringOutput.Add($"this.TotalGrossAmountBillingCurrency = {(this.TotalGrossAmountBillingCurrency == null ? "null" : this.TotalGrossAmountBillingCurrency.ToString())}");
             toStringOutput.Add($"this.TotalNetAmountBillingCurrency = {(this.TotalNetAmountBillingCurrency == null ? "null" : this.TotalNetAmountBillingCurrency.ToString())}");

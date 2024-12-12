@@ -65,6 +65,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? feeRuleBasisID = null,
             string feeRuleBasisDescription = null)
         {
+
             if (tierMin != null)
             {
                 this.TierMin = tierMin;
@@ -99,7 +100,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.FeeRuleBasisDescription = feeRuleBasisDescription;
             }
-
         }
 
         /// <summary>
@@ -232,14 +232,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"FeesFeeRuleTiers : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTierMin()
         {
@@ -247,7 +245,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTierMax()
         {
@@ -255,7 +253,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDateEffective()
         {
@@ -263,7 +261,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDateTerminated()
         {
@@ -271,7 +269,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTierValue()
         {
@@ -279,7 +277,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleBasisID()
         {
@@ -287,7 +285,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFeeRuleBasisDescription()
         {
@@ -360,24 +358,26 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is FeesFeeRuleTiers other &&                ((this.TierMin == null && other.TierMin == null) || (this.TierMin?.Equals(other.TierMin) == true)) &&
-                ((this.TierMax == null && other.TierMax == null) || (this.TierMax?.Equals(other.TierMax) == true)) &&
-                ((this.DateEffective == null && other.DateEffective == null) || (this.DateEffective?.Equals(other.DateEffective) == true)) &&
-                ((this.DateTerminated == null && other.DateTerminated == null) || (this.DateTerminated?.Equals(other.DateTerminated) == true)) &&
-                ((this.TierValue == null && other.TierValue == null) || (this.TierValue?.Equals(other.TierValue) == true)) &&
-                ((this.FeeRuleBasisID == null && other.FeeRuleBasisID == null) || (this.FeeRuleBasisID?.Equals(other.FeeRuleBasisID) == true)) &&
-                ((this.FeeRuleBasisDescription == null && other.FeeRuleBasisDescription == null) || (this.FeeRuleBasisDescription?.Equals(other.FeeRuleBasisDescription) == true));
+            return obj is FeesFeeRuleTiers other &&
+                (this.TierMin == null && other.TierMin == null ||
+                 this.TierMin?.Equals(other.TierMin) == true) &&
+                (this.TierMax == null && other.TierMax == null ||
+                 this.TierMax?.Equals(other.TierMax) == true) &&
+                (this.DateEffective == null && other.DateEffective == null ||
+                 this.DateEffective?.Equals(other.DateEffective) == true) &&
+                (this.DateTerminated == null && other.DateTerminated == null ||
+                 this.DateTerminated?.Equals(other.DateTerminated) == true) &&
+                (this.TierValue == null && other.TierValue == null ||
+                 this.TierValue?.Equals(other.TierValue) == true) &&
+                (this.FeeRuleBasisID == null && other.FeeRuleBasisID == null ||
+                 this.FeeRuleBasisID?.Equals(other.FeeRuleBasisID) == true) &&
+                (this.FeeRuleBasisDescription == null && other.FeeRuleBasisDescription == null ||
+                 this.FeeRuleBasisDescription?.Equals(other.FeeRuleBasisDescription) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -386,11 +386,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             toStringOutput.Add($"this.TierMin = {(this.TierMin == null ? "null" : this.TierMin.ToString())}");
             toStringOutput.Add($"this.TierMax = {(this.TierMax == null ? "null" : this.TierMax.ToString())}");
-            toStringOutput.Add($"this.DateEffective = {(this.DateEffective == null ? "null" : this.DateEffective)}");
-            toStringOutput.Add($"this.DateTerminated = {(this.DateTerminated == null ? "null" : this.DateTerminated)}");
+            toStringOutput.Add($"this.DateEffective = {this.DateEffective ?? "null"}");
+            toStringOutput.Add($"this.DateTerminated = {this.DateTerminated ?? "null"}");
             toStringOutput.Add($"this.TierValue = {(this.TierValue == null ? "null" : this.TierValue.ToString())}");
             toStringOutput.Add($"this.FeeRuleBasisID = {(this.FeeRuleBasisID == null ? "null" : this.FeeRuleBasisID.ToString())}");
-            toStringOutput.Add($"this.FeeRuleBasisDescription = {(this.FeeRuleBasisDescription == null ? "null" : this.FeeRuleBasisDescription)}");
+            toStringOutput.Add($"this.FeeRuleBasisDescription = {this.FeeRuleBasisDescription ?? "null"}");
         }
     }
 }

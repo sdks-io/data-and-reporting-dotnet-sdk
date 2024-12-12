@@ -92,18 +92,19 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? colCoCode = null)
         {
             this.PayerNumber = payerNumber;
+
             if (accountNumber != null)
             {
                 this.AccountNumber = accountNumber;
             }
-
             this.AccountNumberList = accountNumberList;
+
             if (invoiceNumber != null)
             {
                 this.InvoiceNumber = invoiceNumber;
             }
-
             this.InvoiceNumberList = invoiceNumberList;
+
             if (invoiceStatus != null)
             {
                 this.InvoiceStatus = invoiceStatus;
@@ -148,7 +149,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.VATIssuerCountry = vATIssuerCountry;
             }
-
             this.SortyBy = sortyBy;
             this.ColCoCode = colCoCode;
         }
@@ -434,14 +434,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"SearchDocReq : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountNumber()
         {
@@ -449,7 +447,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceNumber()
         {
@@ -457,7 +455,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetInvoiceStatus()
         {
@@ -465,7 +463,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIssuingDateFrom()
         {
@@ -473,7 +471,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIssuingDateTo()
         {
@@ -481,7 +479,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDueDateFrom()
         {
@@ -489,7 +487,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDueDateTo()
         {
@@ -497,7 +495,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetGrossAmount()
         {
@@ -505,7 +503,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetGrossAmountOperator()
         {
@@ -513,7 +511,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDocumentType()
         {
@@ -521,7 +519,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetVATIssuerCountry()
         {
@@ -630,53 +628,64 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is SearchDocReq other &&                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.AccountNumberList == null && other.AccountNumberList == null) || (this.AccountNumberList?.Equals(other.AccountNumberList) == true)) &&
-                ((this.InvoiceNumber == null && other.InvoiceNumber == null) || (this.InvoiceNumber?.Equals(other.InvoiceNumber) == true)) &&
-                ((this.InvoiceNumberList == null && other.InvoiceNumberList == null) || (this.InvoiceNumberList?.Equals(other.InvoiceNumberList) == true)) &&
-                ((this.InvoiceStatus == null && other.InvoiceStatus == null) || (this.InvoiceStatus?.Equals(other.InvoiceStatus) == true)) &&
-                ((this.IssuingDateFrom == null && other.IssuingDateFrom == null) || (this.IssuingDateFrom?.Equals(other.IssuingDateFrom) == true)) &&
-                ((this.IssuingDateTo == null && other.IssuingDateTo == null) || (this.IssuingDateTo?.Equals(other.IssuingDateTo) == true)) &&
-                ((this.DueDateFrom == null && other.DueDateFrom == null) || (this.DueDateFrom?.Equals(other.DueDateFrom) == true)) &&
-                ((this.DueDateTo == null && other.DueDateTo == null) || (this.DueDateTo?.Equals(other.DueDateTo) == true)) &&
-                ((this.GrossAmount == null && other.GrossAmount == null) || (this.GrossAmount?.Equals(other.GrossAmount) == true)) &&
-                ((this.GrossAmountOperator == null && other.GrossAmountOperator == null) || (this.GrossAmountOperator?.Equals(other.GrossAmountOperator) == true)) &&
-                ((this.DocumentType == null && other.DocumentType == null) || (this.DocumentType?.Equals(other.DocumentType) == true)) &&
-                ((this.VATIssuerCountry == null && other.VATIssuerCountry == null) || (this.VATIssuerCountry?.Equals(other.VATIssuerCountry) == true)) &&
-                ((this.SortyBy == null && other.SortyBy == null) || (this.SortyBy?.Equals(other.SortyBy) == true)) &&
-                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true));
+            return obj is SearchDocReq other &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.AccountNumberList == null && other.AccountNumberList == null ||
+                 this.AccountNumberList?.Equals(other.AccountNumberList) == true) &&
+                (this.InvoiceNumber == null && other.InvoiceNumber == null ||
+                 this.InvoiceNumber?.Equals(other.InvoiceNumber) == true) &&
+                (this.InvoiceNumberList == null && other.InvoiceNumberList == null ||
+                 this.InvoiceNumberList?.Equals(other.InvoiceNumberList) == true) &&
+                (this.InvoiceStatus == null && other.InvoiceStatus == null ||
+                 this.InvoiceStatus?.Equals(other.InvoiceStatus) == true) &&
+                (this.IssuingDateFrom == null && other.IssuingDateFrom == null ||
+                 this.IssuingDateFrom?.Equals(other.IssuingDateFrom) == true) &&
+                (this.IssuingDateTo == null && other.IssuingDateTo == null ||
+                 this.IssuingDateTo?.Equals(other.IssuingDateTo) == true) &&
+                (this.DueDateFrom == null && other.DueDateFrom == null ||
+                 this.DueDateFrom?.Equals(other.DueDateFrom) == true) &&
+                (this.DueDateTo == null && other.DueDateTo == null ||
+                 this.DueDateTo?.Equals(other.DueDateTo) == true) &&
+                (this.GrossAmount == null && other.GrossAmount == null ||
+                 this.GrossAmount?.Equals(other.GrossAmount) == true) &&
+                (this.GrossAmountOperator == null && other.GrossAmountOperator == null ||
+                 this.GrossAmountOperator?.Equals(other.GrossAmountOperator) == true) &&
+                (this.DocumentType == null && other.DocumentType == null ||
+                 this.DocumentType?.Equals(other.DocumentType) == true) &&
+                (this.VATIssuerCountry == null && other.VATIssuerCountry == null ||
+                 this.VATIssuerCountry?.Equals(other.VATIssuerCountry) == true) &&
+                (this.SortyBy == null && other.SortyBy == null ||
+                 this.SortyBy?.Equals(other.SortyBy) == true) &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
             toStringOutput.Add($"this.AccountNumberList = {(this.AccountNumberList == null ? "null" : $"[{string.Join(", ", this.AccountNumberList)} ]")}");
-            toStringOutput.Add($"this.InvoiceNumber = {(this.InvoiceNumber == null ? "null" : this.InvoiceNumber)}");
+            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
             toStringOutput.Add($"this.InvoiceNumberList = {(this.InvoiceNumberList == null ? "null" : $"[{string.Join(", ", this.InvoiceNumberList)} ]")}");
-            toStringOutput.Add($"this.InvoiceStatus = {(this.InvoiceStatus == null ? "null" : this.InvoiceStatus)}");
-            toStringOutput.Add($"this.IssuingDateFrom = {(this.IssuingDateFrom == null ? "null" : this.IssuingDateFrom)}");
-            toStringOutput.Add($"this.IssuingDateTo = {(this.IssuingDateTo == null ? "null" : this.IssuingDateTo)}");
-            toStringOutput.Add($"this.DueDateFrom = {(this.DueDateFrom == null ? "null" : this.DueDateFrom)}");
-            toStringOutput.Add($"this.DueDateTo = {(this.DueDateTo == null ? "null" : this.DueDateTo)}");
-            toStringOutput.Add($"this.GrossAmount = {(this.GrossAmount == null ? "null" : this.GrossAmount)}");
-            toStringOutput.Add($"this.GrossAmountOperator = {(this.GrossAmountOperator == null ? "null" : this.GrossAmountOperator)}");
-            toStringOutput.Add($"this.DocumentType = {(this.DocumentType == null ? "null" : this.DocumentType)}");
-            toStringOutput.Add($"this.VATIssuerCountry = {(this.VATIssuerCountry == null ? "null" : this.VATIssuerCountry)}");
+            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"this.IssuingDateFrom = {this.IssuingDateFrom ?? "null"}");
+            toStringOutput.Add($"this.IssuingDateTo = {this.IssuingDateTo ?? "null"}");
+            toStringOutput.Add($"this.DueDateFrom = {this.DueDateFrom ?? "null"}");
+            toStringOutput.Add($"this.DueDateTo = {this.DueDateTo ?? "null"}");
+            toStringOutput.Add($"this.GrossAmount = {this.GrossAmount ?? "null"}");
+            toStringOutput.Add($"this.GrossAmountOperator = {this.GrossAmountOperator ?? "null"}");
+            toStringOutput.Add($"this.DocumentType = {this.DocumentType ?? "null"}");
+            toStringOutput.Add($"this.VATIssuerCountry = {this.VATIssuerCountry ?? "null"}");
             toStringOutput.Add($"this.SortyBy = {(this.SortyBy == null ? "null" : $"[{string.Join(", ", this.SortyBy)} ]")}");
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
         }

@@ -77,6 +77,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string documentStatus = null,
             string documentName = null)
         {
+
             if (documentId != null)
             {
                 this.DocumentId = documentId;
@@ -126,7 +127,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.DocumentName = documentName;
             }
-
         }
 
         /// <summary>
@@ -322,14 +322,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"EIDDocument : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDocumentId()
         {
@@ -337,7 +335,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountGroupId()
         {
@@ -345,7 +343,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountGroupName()
         {
@@ -353,7 +351,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDocumentType()
         {
@@ -361,7 +359,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDocumentFormat()
         {
@@ -369,7 +367,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDocumentDate()
         {
@@ -377,7 +375,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNumberOfInvoices()
         {
@@ -385,7 +383,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetFileSize()
         {
@@ -393,7 +391,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDocumentStatus()
         {
@@ -401,7 +399,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDocumentName()
         {
@@ -501,27 +499,32 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is EIDDocument other &&                ((this.DocumentId == null && other.DocumentId == null) || (this.DocumentId?.Equals(other.DocumentId) == true)) &&
-                ((this.AccountGroupId == null && other.AccountGroupId == null) || (this.AccountGroupId?.Equals(other.AccountGroupId) == true)) &&
-                ((this.AccountGroupName == null && other.AccountGroupName == null) || (this.AccountGroupName?.Equals(other.AccountGroupName) == true)) &&
-                ((this.DocumentType == null && other.DocumentType == null) || (this.DocumentType?.Equals(other.DocumentType) == true)) &&
-                ((this.DocumentFormat == null && other.DocumentFormat == null) || (this.DocumentFormat?.Equals(other.DocumentFormat) == true)) &&
-                ((this.DocumentDate == null && other.DocumentDate == null) || (this.DocumentDate?.Equals(other.DocumentDate) == true)) &&
-                ((this.NumberOfInvoices == null && other.NumberOfInvoices == null) || (this.NumberOfInvoices?.Equals(other.NumberOfInvoices) == true)) &&
-                ((this.FileSize == null && other.FileSize == null) || (this.FileSize?.Equals(other.FileSize) == true)) &&
-                ((this.DocumentStatus == null && other.DocumentStatus == null) || (this.DocumentStatus?.Equals(other.DocumentStatus) == true)) &&
-                ((this.DocumentName == null && other.DocumentName == null) || (this.DocumentName?.Equals(other.DocumentName) == true));
+            return obj is EIDDocument other &&
+                (this.DocumentId == null && other.DocumentId == null ||
+                 this.DocumentId?.Equals(other.DocumentId) == true) &&
+                (this.AccountGroupId == null && other.AccountGroupId == null ||
+                 this.AccountGroupId?.Equals(other.AccountGroupId) == true) &&
+                (this.AccountGroupName == null && other.AccountGroupName == null ||
+                 this.AccountGroupName?.Equals(other.AccountGroupName) == true) &&
+                (this.DocumentType == null && other.DocumentType == null ||
+                 this.DocumentType?.Equals(other.DocumentType) == true) &&
+                (this.DocumentFormat == null && other.DocumentFormat == null ||
+                 this.DocumentFormat?.Equals(other.DocumentFormat) == true) &&
+                (this.DocumentDate == null && other.DocumentDate == null ||
+                 this.DocumentDate?.Equals(other.DocumentDate) == true) &&
+                (this.NumberOfInvoices == null && other.NumberOfInvoices == null ||
+                 this.NumberOfInvoices?.Equals(other.NumberOfInvoices) == true) &&
+                (this.FileSize == null && other.FileSize == null ||
+                 this.FileSize?.Equals(other.FileSize) == true) &&
+                (this.DocumentStatus == null && other.DocumentStatus == null ||
+                 this.DocumentStatus?.Equals(other.DocumentStatus) == true) &&
+                (this.DocumentName == null && other.DocumentName == null ||
+                 this.DocumentName?.Equals(other.DocumentName) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -529,15 +532,15 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.DocumentId = {(this.DocumentId == null ? "null" : this.DocumentId.ToString())}");
-            toStringOutput.Add($"this.AccountGroupId = {(this.AccountGroupId == null ? "null" : this.AccountGroupId)}");
-            toStringOutput.Add($"this.AccountGroupName = {(this.AccountGroupName == null ? "null" : this.AccountGroupName)}");
-            toStringOutput.Add($"this.DocumentType = {(this.DocumentType == null ? "null" : this.DocumentType)}");
-            toStringOutput.Add($"this.DocumentFormat = {(this.DocumentFormat == null ? "null" : this.DocumentFormat)}");
-            toStringOutput.Add($"this.DocumentDate = {(this.DocumentDate == null ? "null" : this.DocumentDate)}");
+            toStringOutput.Add($"this.AccountGroupId = {this.AccountGroupId ?? "null"}");
+            toStringOutput.Add($"this.AccountGroupName = {this.AccountGroupName ?? "null"}");
+            toStringOutput.Add($"this.DocumentType = {this.DocumentType ?? "null"}");
+            toStringOutput.Add($"this.DocumentFormat = {this.DocumentFormat ?? "null"}");
+            toStringOutput.Add($"this.DocumentDate = {this.DocumentDate ?? "null"}");
             toStringOutput.Add($"this.NumberOfInvoices = {(this.NumberOfInvoices == null ? "null" : this.NumberOfInvoices.ToString())}");
             toStringOutput.Add($"this.FileSize = {(this.FileSize == null ? "null" : this.FileSize.ToString())}");
-            toStringOutput.Add($"this.DocumentStatus = {(this.DocumentStatus == null ? "null" : this.DocumentStatus)}");
-            toStringOutput.Add($"this.DocumentName = {(this.DocumentName == null ? "null" : this.DocumentName)}");
+            toStringOutput.Add($"this.DocumentStatus = {this.DocumentStatus ?? "null"}");
+            toStringOutput.Add($"this.DocumentName = {this.DocumentName ?? "null"}");
         }
     }
 }

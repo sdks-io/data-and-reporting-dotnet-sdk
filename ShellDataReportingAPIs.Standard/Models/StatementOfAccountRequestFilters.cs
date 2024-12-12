@@ -75,6 +75,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             int? colCoId = null,
             List<Models.Accounts> accounts = null)
         {
+
             if (colCoCode != null)
             {
                 this.ColCoCode = colCoCode;
@@ -119,7 +120,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.ColCoId = colCoId;
             }
-
             this.Accounts = accounts;
         }
 
@@ -308,14 +308,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"StatementOfAccountRequestFilters : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetColCoCode()
         {
@@ -323,7 +321,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerId()
         {
@@ -331,7 +329,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPayerNumber()
         {
@@ -339,7 +337,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIncludeMonthlyInvoiceTrend()
         {
@@ -347,7 +345,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIncludePastStatementOfAccounts()
         {
@@ -355,7 +353,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetDueOrOverDueSOADocumentsOnly()
         {
@@ -363,7 +361,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetNumberOfSOADocuments()
         {
@@ -371,7 +369,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetIncludeAccountInvoicesSummary()
         {
@@ -379,7 +377,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetColCoId()
         {
@@ -470,27 +468,32 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is StatementOfAccountRequestFilters other &&                ((this.ColCoCode == null && other.ColCoCode == null) || (this.ColCoCode?.Equals(other.ColCoCode) == true)) &&
-                ((this.PayerId == null && other.PayerId == null) || (this.PayerId?.Equals(other.PayerId) == true)) &&
-                ((this.PayerNumber == null && other.PayerNumber == null) || (this.PayerNumber?.Equals(other.PayerNumber) == true)) &&
-                ((this.IncludeMonthlyInvoiceTrend == null && other.IncludeMonthlyInvoiceTrend == null) || (this.IncludeMonthlyInvoiceTrend?.Equals(other.IncludeMonthlyInvoiceTrend) == true)) &&
-                ((this.IncludePastStatementOfAccounts == null && other.IncludePastStatementOfAccounts == null) || (this.IncludePastStatementOfAccounts?.Equals(other.IncludePastStatementOfAccounts) == true)) &&
-                ((this.DueOrOverDueSOADocumentsOnly == null && other.DueOrOverDueSOADocumentsOnly == null) || (this.DueOrOverDueSOADocumentsOnly?.Equals(other.DueOrOverDueSOADocumentsOnly) == true)) &&
-                ((this.NumberOfSOADocuments == null && other.NumberOfSOADocuments == null) || (this.NumberOfSOADocuments?.Equals(other.NumberOfSOADocuments) == true)) &&
-                ((this.IncludeAccountInvoicesSummary == null && other.IncludeAccountInvoicesSummary == null) || (this.IncludeAccountInvoicesSummary?.Equals(other.IncludeAccountInvoicesSummary) == true)) &&
-                ((this.ColCoId == null && other.ColCoId == null) || (this.ColCoId?.Equals(other.ColCoId) == true)) &&
-                ((this.Accounts == null && other.Accounts == null) || (this.Accounts?.Equals(other.Accounts) == true));
+            return obj is StatementOfAccountRequestFilters other &&
+                (this.ColCoCode == null && other.ColCoCode == null ||
+                 this.ColCoCode?.Equals(other.ColCoCode) == true) &&
+                (this.PayerId == null && other.PayerId == null ||
+                 this.PayerId?.Equals(other.PayerId) == true) &&
+                (this.PayerNumber == null && other.PayerNumber == null ||
+                 this.PayerNumber?.Equals(other.PayerNumber) == true) &&
+                (this.IncludeMonthlyInvoiceTrend == null && other.IncludeMonthlyInvoiceTrend == null ||
+                 this.IncludeMonthlyInvoiceTrend?.Equals(other.IncludeMonthlyInvoiceTrend) == true) &&
+                (this.IncludePastStatementOfAccounts == null && other.IncludePastStatementOfAccounts == null ||
+                 this.IncludePastStatementOfAccounts?.Equals(other.IncludePastStatementOfAccounts) == true) &&
+                (this.DueOrOverDueSOADocumentsOnly == null && other.DueOrOverDueSOADocumentsOnly == null ||
+                 this.DueOrOverDueSOADocumentsOnly?.Equals(other.DueOrOverDueSOADocumentsOnly) == true) &&
+                (this.NumberOfSOADocuments == null && other.NumberOfSOADocuments == null ||
+                 this.NumberOfSOADocuments?.Equals(other.NumberOfSOADocuments) == true) &&
+                (this.IncludeAccountInvoicesSummary == null && other.IncludeAccountInvoicesSummary == null ||
+                 this.IncludeAccountInvoicesSummary?.Equals(other.IncludeAccountInvoicesSummary) == true) &&
+                (this.ColCoId == null && other.ColCoId == null ||
+                 this.ColCoId?.Equals(other.ColCoId) == true) &&
+                (this.Accounts == null && other.Accounts == null ||
+                 this.Accounts?.Equals(other.Accounts) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -499,7 +502,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         {
             toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
             toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {(this.PayerNumber == null ? "null" : this.PayerNumber)}");
+            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
             toStringOutput.Add($"this.IncludeMonthlyInvoiceTrend = {(this.IncludeMonthlyInvoiceTrend == null ? "null" : this.IncludeMonthlyInvoiceTrend.ToString())}");
             toStringOutput.Add($"this.IncludePastStatementOfAccounts = {(this.IncludePastStatementOfAccounts == null ? "null" : this.IncludePastStatementOfAccounts.ToString())}");
             toStringOutput.Add($"this.DueOrOverDueSOADocumentsOnly = {(this.DueOrOverDueSOADocumentsOnly == null ? "null" : this.DueOrOverDueSOADocumentsOnly.ToString())}");

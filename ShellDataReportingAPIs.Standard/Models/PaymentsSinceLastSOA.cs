@@ -121,6 +121,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string localCurrencySymbol = null,
             string localCurrencyExchangeRate = null)
         {
+
             if (accountId != null)
             {
                 this.AccountId = accountId;
@@ -225,7 +226,6 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.LocalCurrencyExchangeRate = localCurrencyExchangeRate;
             }
-
         }
 
         /// <summary>
@@ -621,14 +621,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         public override string ToString()
         {
             var toStringOutput = new List<string>();
-
             this.ToString(toStringOutput);
-
             return $"PaymentsSinceLastSOA : ({string.Join(", ", toStringOutput)})";
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountId()
         {
@@ -636,7 +634,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountNumber()
         {
@@ -644,7 +642,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAccountShortName()
         {
@@ -652,7 +650,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentId()
         {
@@ -660,7 +658,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentNumber()
         {
@@ -668,7 +666,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentDate()
         {
@@ -676,7 +674,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentPaymentDueDate()
         {
@@ -684,7 +682,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentTotalValue()
         {
@@ -692,7 +690,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentTotalVAT()
         {
@@ -700,7 +698,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetSummaryDocumentDDAmount()
         {
@@ -708,7 +706,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentDate()
         {
@@ -716,7 +714,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentReference()
         {
@@ -724,7 +722,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentCurrencyCode()
         {
@@ -732,7 +730,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPaymentCurrencySymbol()
         {
@@ -740,7 +738,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetAmountPaid()
         {
@@ -748,7 +746,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetBalance()
         {
@@ -756,7 +754,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetTruePayment()
         {
@@ -764,7 +762,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetPrepaidBalance()
         {
@@ -772,7 +770,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLocalCurrencyCode()
         {
@@ -780,7 +778,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLocalCurrencySymbol()
         {
@@ -788,7 +786,7 @@ namespace ShellDataReportingAPIs.Standard.Models
         }
 
         /// <summary>
-        /// Marks the field to not be serailized.
+        /// Marks the field to not be serialized.
         /// </summary>
         public void UnsetLocalCurrencyExchangeRate()
         {
@@ -987,38 +985,54 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
 
-            if (obj == this)
-            {
-                return true;
-            }
-            return obj is PaymentsSinceLastSOA other &&                ((this.AccountId == null && other.AccountId == null) || (this.AccountId?.Equals(other.AccountId) == true)) &&
-                ((this.AccountNumber == null && other.AccountNumber == null) || (this.AccountNumber?.Equals(other.AccountNumber) == true)) &&
-                ((this.AccountShortName == null && other.AccountShortName == null) || (this.AccountShortName?.Equals(other.AccountShortName) == true)) &&
-                ((this.SummaryDocumentId == null && other.SummaryDocumentId == null) || (this.SummaryDocumentId?.Equals(other.SummaryDocumentId) == true)) &&
-                ((this.SummaryDocumentNumber == null && other.SummaryDocumentNumber == null) || (this.SummaryDocumentNumber?.Equals(other.SummaryDocumentNumber) == true)) &&
-                ((this.SummaryDocumentDate == null && other.SummaryDocumentDate == null) || (this.SummaryDocumentDate?.Equals(other.SummaryDocumentDate) == true)) &&
-                ((this.SummaryDocumentPaymentDueDate == null && other.SummaryDocumentPaymentDueDate == null) || (this.SummaryDocumentPaymentDueDate?.Equals(other.SummaryDocumentPaymentDueDate) == true)) &&
-                ((this.SummaryDocumentTotalValue == null && other.SummaryDocumentTotalValue == null) || (this.SummaryDocumentTotalValue?.Equals(other.SummaryDocumentTotalValue) == true)) &&
-                ((this.SummaryDocumentTotalVAT == null && other.SummaryDocumentTotalVAT == null) || (this.SummaryDocumentTotalVAT?.Equals(other.SummaryDocumentTotalVAT) == true)) &&
-                ((this.SummaryDocumentDDAmount == null && other.SummaryDocumentDDAmount == null) || (this.SummaryDocumentDDAmount?.Equals(other.SummaryDocumentDDAmount) == true)) &&
-                ((this.PaymentDate == null && other.PaymentDate == null) || (this.PaymentDate?.Equals(other.PaymentDate) == true)) &&
-                ((this.PaymentReference == null && other.PaymentReference == null) || (this.PaymentReference?.Equals(other.PaymentReference) == true)) &&
-                ((this.PaymentCurrencyCode == null && other.PaymentCurrencyCode == null) || (this.PaymentCurrencyCode?.Equals(other.PaymentCurrencyCode) == true)) &&
-                ((this.PaymentCurrencySymbol == null && other.PaymentCurrencySymbol == null) || (this.PaymentCurrencySymbol?.Equals(other.PaymentCurrencySymbol) == true)) &&
-                ((this.AmountPaid == null && other.AmountPaid == null) || (this.AmountPaid?.Equals(other.AmountPaid) == true)) &&
-                ((this.Balance == null && other.Balance == null) || (this.Balance?.Equals(other.Balance) == true)) &&
-                ((this.TruePayment == null && other.TruePayment == null) || (this.TruePayment?.Equals(other.TruePayment) == true)) &&
-                ((this.PrepaidBalance == null && other.PrepaidBalance == null) || (this.PrepaidBalance?.Equals(other.PrepaidBalance) == true)) &&
-                ((this.LocalCurrencyCode == null && other.LocalCurrencyCode == null) || (this.LocalCurrencyCode?.Equals(other.LocalCurrencyCode) == true)) &&
-                ((this.LocalCurrencySymbol == null && other.LocalCurrencySymbol == null) || (this.LocalCurrencySymbol?.Equals(other.LocalCurrencySymbol) == true)) &&
-                ((this.LocalCurrencyExchangeRate == null && other.LocalCurrencyExchangeRate == null) || (this.LocalCurrencyExchangeRate?.Equals(other.LocalCurrencyExchangeRate) == true));
+            return obj is PaymentsSinceLastSOA other &&
+                (this.AccountId == null && other.AccountId == null ||
+                 this.AccountId?.Equals(other.AccountId) == true) &&
+                (this.AccountNumber == null && other.AccountNumber == null ||
+                 this.AccountNumber?.Equals(other.AccountNumber) == true) &&
+                (this.AccountShortName == null && other.AccountShortName == null ||
+                 this.AccountShortName?.Equals(other.AccountShortName) == true) &&
+                (this.SummaryDocumentId == null && other.SummaryDocumentId == null ||
+                 this.SummaryDocumentId?.Equals(other.SummaryDocumentId) == true) &&
+                (this.SummaryDocumentNumber == null && other.SummaryDocumentNumber == null ||
+                 this.SummaryDocumentNumber?.Equals(other.SummaryDocumentNumber) == true) &&
+                (this.SummaryDocumentDate == null && other.SummaryDocumentDate == null ||
+                 this.SummaryDocumentDate?.Equals(other.SummaryDocumentDate) == true) &&
+                (this.SummaryDocumentPaymentDueDate == null && other.SummaryDocumentPaymentDueDate == null ||
+                 this.SummaryDocumentPaymentDueDate?.Equals(other.SummaryDocumentPaymentDueDate) == true) &&
+                (this.SummaryDocumentTotalValue == null && other.SummaryDocumentTotalValue == null ||
+                 this.SummaryDocumentTotalValue?.Equals(other.SummaryDocumentTotalValue) == true) &&
+                (this.SummaryDocumentTotalVAT == null && other.SummaryDocumentTotalVAT == null ||
+                 this.SummaryDocumentTotalVAT?.Equals(other.SummaryDocumentTotalVAT) == true) &&
+                (this.SummaryDocumentDDAmount == null && other.SummaryDocumentDDAmount == null ||
+                 this.SummaryDocumentDDAmount?.Equals(other.SummaryDocumentDDAmount) == true) &&
+                (this.PaymentDate == null && other.PaymentDate == null ||
+                 this.PaymentDate?.Equals(other.PaymentDate) == true) &&
+                (this.PaymentReference == null && other.PaymentReference == null ||
+                 this.PaymentReference?.Equals(other.PaymentReference) == true) &&
+                (this.PaymentCurrencyCode == null && other.PaymentCurrencyCode == null ||
+                 this.PaymentCurrencyCode?.Equals(other.PaymentCurrencyCode) == true) &&
+                (this.PaymentCurrencySymbol == null && other.PaymentCurrencySymbol == null ||
+                 this.PaymentCurrencySymbol?.Equals(other.PaymentCurrencySymbol) == true) &&
+                (this.AmountPaid == null && other.AmountPaid == null ||
+                 this.AmountPaid?.Equals(other.AmountPaid) == true) &&
+                (this.Balance == null && other.Balance == null ||
+                 this.Balance?.Equals(other.Balance) == true) &&
+                (this.TruePayment == null && other.TruePayment == null ||
+                 this.TruePayment?.Equals(other.TruePayment) == true) &&
+                (this.PrepaidBalance == null && other.PrepaidBalance == null ||
+                 this.PrepaidBalance?.Equals(other.PrepaidBalance) == true) &&
+                (this.LocalCurrencyCode == null && other.LocalCurrencyCode == null ||
+                 this.LocalCurrencyCode?.Equals(other.LocalCurrencyCode) == true) &&
+                (this.LocalCurrencySymbol == null && other.LocalCurrencySymbol == null ||
+                 this.LocalCurrencySymbol?.Equals(other.LocalCurrencySymbol) == true) &&
+                (this.LocalCurrencyExchangeRate == null && other.LocalCurrencyExchangeRate == null ||
+                 this.LocalCurrencyExchangeRate?.Equals(other.LocalCurrencyExchangeRate) == true);
         }
-        
+
         /// <summary>
         /// ToString overload.
         /// </summary>
@@ -1026,26 +1040,26 @@ namespace ShellDataReportingAPIs.Standard.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : this.AccountNumber)}");
-            toStringOutput.Add($"this.AccountShortName = {(this.AccountShortName == null ? "null" : this.AccountShortName)}");
+            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"this.AccountShortName = {this.AccountShortName ?? "null"}");
             toStringOutput.Add($"this.SummaryDocumentId = {(this.SummaryDocumentId == null ? "null" : this.SummaryDocumentId.ToString())}");
-            toStringOutput.Add($"this.SummaryDocumentNumber = {(this.SummaryDocumentNumber == null ? "null" : this.SummaryDocumentNumber)}");
-            toStringOutput.Add($"this.SummaryDocumentDate = {(this.SummaryDocumentDate == null ? "null" : this.SummaryDocumentDate)}");
-            toStringOutput.Add($"this.SummaryDocumentPaymentDueDate = {(this.SummaryDocumentPaymentDueDate == null ? "null" : this.SummaryDocumentPaymentDueDate)}");
+            toStringOutput.Add($"this.SummaryDocumentNumber = {this.SummaryDocumentNumber ?? "null"}");
+            toStringOutput.Add($"this.SummaryDocumentDate = {this.SummaryDocumentDate ?? "null"}");
+            toStringOutput.Add($"this.SummaryDocumentPaymentDueDate = {this.SummaryDocumentPaymentDueDate ?? "null"}");
             toStringOutput.Add($"this.SummaryDocumentTotalValue = {(this.SummaryDocumentTotalValue == null ? "null" : this.SummaryDocumentTotalValue.ToString())}");
             toStringOutput.Add($"this.SummaryDocumentTotalVAT = {(this.SummaryDocumentTotalVAT == null ? "null" : this.SummaryDocumentTotalVAT.ToString())}");
             toStringOutput.Add($"this.SummaryDocumentDDAmount = {(this.SummaryDocumentDDAmount == null ? "null" : this.SummaryDocumentDDAmount.ToString())}");
-            toStringOutput.Add($"this.PaymentDate = {(this.PaymentDate == null ? "null" : this.PaymentDate)}");
-            toStringOutput.Add($"this.PaymentReference = {(this.PaymentReference == null ? "null" : this.PaymentReference)}");
-            toStringOutput.Add($"this.PaymentCurrencyCode = {(this.PaymentCurrencyCode == null ? "null" : this.PaymentCurrencyCode)}");
-            toStringOutput.Add($"this.PaymentCurrencySymbol = {(this.PaymentCurrencySymbol == null ? "null" : this.PaymentCurrencySymbol)}");
+            toStringOutput.Add($"this.PaymentDate = {this.PaymentDate ?? "null"}");
+            toStringOutput.Add($"this.PaymentReference = {this.PaymentReference ?? "null"}");
+            toStringOutput.Add($"this.PaymentCurrencyCode = {this.PaymentCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.PaymentCurrencySymbol = {this.PaymentCurrencySymbol ?? "null"}");
             toStringOutput.Add($"this.AmountPaid = {(this.AmountPaid == null ? "null" : this.AmountPaid.ToString())}");
             toStringOutput.Add($"this.Balance = {(this.Balance == null ? "null" : this.Balance.ToString())}");
-            toStringOutput.Add($"this.TruePayment = {(this.TruePayment == null ? "null" : this.TruePayment)}");
+            toStringOutput.Add($"this.TruePayment = {this.TruePayment ?? "null"}");
             toStringOutput.Add($"this.PrepaidBalance = {(this.PrepaidBalance == null ? "null" : this.PrepaidBalance.ToString())}");
-            toStringOutput.Add($"this.LocalCurrencyCode = {(this.LocalCurrencyCode == null ? "null" : this.LocalCurrencyCode)}");
-            toStringOutput.Add($"this.LocalCurrencySymbol = {(this.LocalCurrencySymbol == null ? "null" : this.LocalCurrencySymbol)}");
-            toStringOutput.Add($"this.LocalCurrencyExchangeRate = {(this.LocalCurrencyExchangeRate == null ? "null" : this.LocalCurrencyExchangeRate)}");
+            toStringOutput.Add($"this.LocalCurrencyCode = {this.LocalCurrencyCode ?? "null"}");
+            toStringOutput.Add($"this.LocalCurrencySymbol = {this.LocalCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"this.LocalCurrencyExchangeRate = {this.LocalCurrencyExchangeRate ?? "null"}");
         }
     }
 }
