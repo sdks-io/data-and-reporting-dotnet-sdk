@@ -982,26 +982,26 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountShortName = {this.AccountShortName ?? "null"}");
-            toStringOutput.Add($"this.CardId = {(this.CardId == null ? "null" : this.CardId.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.Day = {(this.Day == null ? "null" : this.Day.ToString())}");
-            toStringOutput.Add($"this.DriverName = {this.DriverName ?? "null"}");
-            toStringOutput.Add($"this.Month = {(this.Month == null ? "null" : this.Month.ToString())}");
-            toStringOutput.Add($"this.PAN = {this.PAN ?? "null"}");
-            toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.PayerShortName = {this.PayerShortName ?? "null"}");
-            toStringOutput.Add($"this.TotalAmount = {(this.TotalAmount == null ? "null" : this.TotalAmount.ToString())}");
-            toStringOutput.Add($"this.TotalQuantity = {(this.TotalQuantity == null ? "null" : this.TotalQuantity.ToString())}");
-            toStringOutput.Add($"this.TotalSalesItems = {(this.TotalSalesItems == null ? "null" : this.TotalSalesItems.ToString())}");
-            toStringOutput.Add($"this.TotalTransactions = {(this.TotalTransactions == null ? "null" : this.TotalTransactions.ToString())}");
-            toStringOutput.Add($"this.VRN = {this.VRN ?? "null"}");
-            toStringOutput.Add($"this.Week = {(this.Week == null ? "null" : this.Week.ToString())}");
-            toStringOutput.Add($"this.Year = {(this.Year == null ? "null" : this.Year.ToString())}");
+            toStringOutput.Add($"AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
+            toStringOutput.Add($"AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"AccountShortName = {this.AccountShortName ?? "null"}");
+            toStringOutput.Add($"CardId = {(this.CardId == null ? "null" : this.CardId.ToString())}");
+            toStringOutput.Add($"CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"Day = {(this.Day == null ? "null" : this.Day.ToString())}");
+            toStringOutput.Add($"DriverName = {this.DriverName ?? "null"}");
+            toStringOutput.Add($"Month = {(this.Month == null ? "null" : this.Month.ToString())}");
+            toStringOutput.Add($"PAN = {this.PAN ?? "null"}");
+            toStringOutput.Add($"PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"PayerShortName = {this.PayerShortName ?? "null"}");
+            toStringOutput.Add($"TotalAmount = {(this.TotalAmount == null ? "null" : this.TotalAmount.ToString())}");
+            toStringOutput.Add($"TotalQuantity = {(this.TotalQuantity == null ? "null" : this.TotalQuantity.ToString())}");
+            toStringOutput.Add($"TotalSalesItems = {(this.TotalSalesItems == null ? "null" : this.TotalSalesItems.ToString())}");
+            toStringOutput.Add($"TotalTransactions = {(this.TotalTransactions == null ? "null" : this.TotalTransactions.ToString())}");
+            toStringOutput.Add($"VRN = {this.VRN ?? "null"}");
+            toStringOutput.Add($"Week = {(this.Week == null ? "null" : this.Week.ToString())}");
+            toStringOutput.Add($"Year = {(this.Year == null ? "null" : this.Year.ToString())}");
         }
     }
 }

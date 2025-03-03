@@ -1013,26 +1013,26 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
-            toStringOutput.Add($"this.CardId = {(this.CardId == null ? "null" : this.CardId.ToString())}");
-            toStringOutput.Add($"this.CardPAN = {this.CardPAN ?? "null"}");
-            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
-            toStringOutput.Add($"this.FeeTypeGroup = {this.FeeTypeGroup ?? "null"}");
-            toStringOutput.Add($"this.FeeTypeId = {(this.FeeTypeId == null ? "null" : this.FeeTypeId.ToString())}");
-            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
-            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
-            toStringOutput.Add($"this.Period = {(this.Period == null ? "null" : this.Period.ToString())}");
-            toStringOutput.Add($"this.IncludeCancelledItems = {(this.IncludeCancelledItems == null ? "null" : this.IncludeCancelledItems.ToString())}");
-            toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
-            toStringOutput.Add($"this.LineItemDescription = {this.LineItemDescription ?? "null"}");
-            toStringOutput.Add($"this.SortOrder = {this.SortOrder ?? "null"}");
-            toStringOutput.Add($"this.CurrentPage = {(this.CurrentPage == null ? "null" : this.CurrentPage.ToString())}");
-            toStringOutput.Add($"this.PageSize = {(this.PageSize == null ? "null" : this.PageSize.ToString())}");
+            toStringOutput.Add($"ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
+            toStringOutput.Add($"CardId = {(this.CardId == null ? "null" : this.CardId.ToString())}");
+            toStringOutput.Add($"CardPAN = {this.CardPAN ?? "null"}");
+            toStringOutput.Add($"InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"FeeTypeGroup = {this.FeeTypeGroup ?? "null"}");
+            toStringOutput.Add($"FeeTypeId = {(this.FeeTypeId == null ? "null" : this.FeeTypeId.ToString())}");
+            toStringOutput.Add($"FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"ToDate = {this.ToDate ?? "null"}");
+            toStringOutput.Add($"Period = {(this.Period == null ? "null" : this.Period.ToString())}");
+            toStringOutput.Add($"IncludeCancelledItems = {(this.IncludeCancelledItems == null ? "null" : this.IncludeCancelledItems.ToString())}");
+            toStringOutput.Add($"ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
+            toStringOutput.Add($"ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"LineItemDescription = {this.LineItemDescription ?? "null"}");
+            toStringOutput.Add($"SortOrder = {this.SortOrder ?? "null"}");
+            toStringOutput.Add($"CurrentPage = {(this.CurrentPage == null ? "null" : this.CurrentPage.ToString())}");
+            toStringOutput.Add($"PageSize = {(this.PageSize == null ? "null" : this.PageSize.ToString())}");
         }
     }
 }

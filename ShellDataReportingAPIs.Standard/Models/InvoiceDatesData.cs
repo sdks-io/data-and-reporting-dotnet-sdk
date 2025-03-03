@@ -81,8 +81,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.InvoiceNumbers = {(this.InvoiceNumbers == null ? "null" : $"[{string.Join(", ", this.InvoiceNumbers)} ]")}");
-            toStringOutput.Add($"this.InvoiceDates = {(this.InvoiceDates == null ? "null" : $"[{string.Join(", ", this.InvoiceDates)} ]")}");
+            toStringOutput.Add($"InvoiceNumbers = {(this.InvoiceNumbers == null ? "null" : $"[{string.Join(", ", this.InvoiceNumbers)} ]")}");
+            toStringOutput.Add($"InvoiceDates = {(this.InvoiceDates == null ? "null" : $"[{string.Join(", ", this.InvoiceDates)} ]")}");
         }
     }
 }

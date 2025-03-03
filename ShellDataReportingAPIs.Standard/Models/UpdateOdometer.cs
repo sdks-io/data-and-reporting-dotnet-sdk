@@ -81,8 +81,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.SalesItemId = {this.SalesItemId ?? "null"}");
-            toStringOutput.Add($"this.NewOdometerValue = {(this.NewOdometerValue == null ? "null" : this.NewOdometerValue.ToString())}");
+            toStringOutput.Add($"SalesItemId = {this.SalesItemId ?? "null"}");
+            toStringOutput.Add($"NewOdometerValue = {(this.NewOdometerValue == null ? "null" : this.NewOdometerValue.ToString())}");
         }
     }
 }

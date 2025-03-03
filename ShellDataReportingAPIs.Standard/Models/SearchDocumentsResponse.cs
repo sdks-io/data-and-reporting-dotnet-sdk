@@ -135,13 +135,13 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
-            toStringOutput.Add($"this.Status = {this.Status ?? "null"}");
-            toStringOutput.Add($"this.Data = {(this.Data == null ? "null" : $"[{string.Join(", ", this.Data)} ]")}");
-            toStringOutput.Add($"this.TotalRecords = {(this.TotalRecords == null ? "null" : this.TotalRecords.ToString())}");
-            toStringOutput.Add($"this.TotalRecordsOnPage = {(this.TotalRecordsOnPage == null ? "null" : this.TotalRecordsOnPage.ToString())}");
-            toStringOutput.Add($"this.IsFirstPage = {(this.IsFirstPage == null ? "null" : this.IsFirstPage.ToString())}");
-            toStringOutput.Add($"this.IsLastPage = {(this.IsLastPage == null ? "null" : this.IsLastPage.ToString())}");
+            toStringOutput.Add($"RequestId = {this.RequestId ?? "null"}");
+            toStringOutput.Add($"Status = {this.Status ?? "null"}");
+            toStringOutput.Add($"Data = {(this.Data == null ? "null" : $"[{string.Join(", ", this.Data)} ]")}");
+            toStringOutput.Add($"TotalRecords = {(this.TotalRecords == null ? "null" : this.TotalRecords.ToString())}");
+            toStringOutput.Add($"TotalRecordsOnPage = {(this.TotalRecordsOnPage == null ? "null" : this.TotalRecordsOnPage.ToString())}");
+            toStringOutput.Add($"IsFirstPage = {(this.IsFirstPage == null ? "null" : this.IsFirstPage.ToString())}");
+            toStringOutput.Add($"IsLastPage = {(this.IsLastPage == null ? "null" : this.IsLastPage.ToString())}");
         }
     }
 }

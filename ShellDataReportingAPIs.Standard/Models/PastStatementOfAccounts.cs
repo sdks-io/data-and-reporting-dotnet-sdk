@@ -1641,40 +1641,40 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.AmountDue = {(this.AmountDue == null ? "null" : this.AmountDue.ToString())}");
-            toStringOutput.Add($"this.AmountNotOverdue = {(this.AmountNotOverdue == null ? "null" : this.AmountNotOverdue.ToString())}");
-            toStringOutput.Add($"this.AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
-            toStringOutput.Add($"this.AmountOverdueFromUnallocated = {(this.AmountOverdueFromUnallocated == null ? "null" : this.AmountOverdueFromUnallocated.ToString())}");
-            toStringOutput.Add($"this.AmountPaid = {(this.AmountPaid == null ? "null" : this.AmountPaid.ToString())}");
-            toStringOutput.Add($"this.BalanceOnThisStatement = {(this.BalanceOnThisStatement == null ? "null" : this.BalanceOnThisStatement.ToString())}");
-            toStringOutput.Add($"this.BillingCurrencyCode = {this.BillingCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.BillingCurrencySymbol = {this.BillingCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.CreditLimit = {(this.CreditLimit == null ? "null" : this.CreditLimit.ToString())}");
-            toStringOutput.Add($"this.CreditLimitCurrencyCode = {this.CreditLimitCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.CreditLimitCurrencySymbol = {this.CreditLimitCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.CreditLimitInCustomerCurrency = {(this.CreditLimitInCustomerCurrency == null ? "null" : this.CreditLimitInCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.FullyPaid = {(this.FullyPaid == null ? "null" : this.FullyPaid.ToString())}");
-            toStringOutput.Add($"this.LastPaymentCurrencyCode = {this.LastPaymentCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.LastPaymentCurrencySymbol = {this.LastPaymentCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.LastPaymentDate = {this.LastPaymentDate ?? "null"}");
-            toStringOutput.Add($"this.LastPaymentValue = {(this.LastPaymentValue == null ? "null" : this.LastPaymentValue.ToString())}");
-            toStringOutput.Add($"this.OutstandingBalance = {(this.OutstandingBalance == null ? "null" : this.OutstandingBalance.ToString())}");
-            toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.PaymentDueDate = {this.PaymentDueDate ?? "null"}");
-            toStringOutput.Add($"this.SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
-            toStringOutput.Add($"this.StatementDate = {this.StatementDate ?? "null"}");
-            toStringOutput.Add($"this.StatementOfAccountId = {(this.StatementOfAccountId == null ? "null" : this.StatementOfAccountId.ToString())}");
-            toStringOutput.Add($"this.TotalBillingDocuments = {(this.TotalBillingDocuments == null ? "null" : this.TotalBillingDocuments.ToString())}");
-            toStringOutput.Add($"this.TotalNetAmountBillingCurrency = {(this.TotalNetAmountBillingCurrency == null ? "null" : this.TotalNetAmountBillingCurrency.ToString())}");
-            toStringOutput.Add($"this.TotalSummaryBillingDocuments = {(this.TotalSummaryBillingDocuments == null ? "null" : this.TotalSummaryBillingDocuments.ToString())}");
-            toStringOutput.Add($"this.TotalVATAmountBillingCurrency = {(this.TotalVATAmountBillingCurrency == null ? "null" : this.TotalVATAmountBillingCurrency.ToString())}");
-            toStringOutput.Add($"this.UnallocatedPayment = {(this.UnallocatedPayment == null ? "null" : this.UnallocatedPayment.ToString())}");
-            toStringOutput.Add($"this.LocalCurrencyCode = {this.LocalCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.LocalCurrencySymbol = {this.LocalCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.LocalCurrencyExchangeRate = {(this.LocalCurrencyExchangeRate == null ? "null" : this.LocalCurrencyExchangeRate.ToString())}");
+            toStringOutput.Add($"AmountDue = {(this.AmountDue == null ? "null" : this.AmountDue.ToString())}");
+            toStringOutput.Add($"AmountNotOverdue = {(this.AmountNotOverdue == null ? "null" : this.AmountNotOverdue.ToString())}");
+            toStringOutput.Add($"AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
+            toStringOutput.Add($"AmountOverdueFromUnallocated = {(this.AmountOverdueFromUnallocated == null ? "null" : this.AmountOverdueFromUnallocated.ToString())}");
+            toStringOutput.Add($"AmountPaid = {(this.AmountPaid == null ? "null" : this.AmountPaid.ToString())}");
+            toStringOutput.Add($"BalanceOnThisStatement = {(this.BalanceOnThisStatement == null ? "null" : this.BalanceOnThisStatement.ToString())}");
+            toStringOutput.Add($"BillingCurrencyCode = {this.BillingCurrencyCode ?? "null"}");
+            toStringOutput.Add($"BillingCurrencySymbol = {this.BillingCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"CreditLimit = {(this.CreditLimit == null ? "null" : this.CreditLimit.ToString())}");
+            toStringOutput.Add($"CreditLimitCurrencyCode = {this.CreditLimitCurrencyCode ?? "null"}");
+            toStringOutput.Add($"CreditLimitCurrencySymbol = {this.CreditLimitCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"CreditLimitInCustomerCurrency = {(this.CreditLimitInCustomerCurrency == null ? "null" : this.CreditLimitInCustomerCurrency.ToString())}");
+            toStringOutput.Add($"CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"FullyPaid = {(this.FullyPaid == null ? "null" : this.FullyPaid.ToString())}");
+            toStringOutput.Add($"LastPaymentCurrencyCode = {this.LastPaymentCurrencyCode ?? "null"}");
+            toStringOutput.Add($"LastPaymentCurrencySymbol = {this.LastPaymentCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"LastPaymentDate = {this.LastPaymentDate ?? "null"}");
+            toStringOutput.Add($"LastPaymentValue = {(this.LastPaymentValue == null ? "null" : this.LastPaymentValue.ToString())}");
+            toStringOutput.Add($"OutstandingBalance = {(this.OutstandingBalance == null ? "null" : this.OutstandingBalance.ToString())}");
+            toStringOutput.Add($"PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"PaymentDueDate = {this.PaymentDueDate ?? "null"}");
+            toStringOutput.Add($"SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
+            toStringOutput.Add($"StatementDate = {this.StatementDate ?? "null"}");
+            toStringOutput.Add($"StatementOfAccountId = {(this.StatementOfAccountId == null ? "null" : this.StatementOfAccountId.ToString())}");
+            toStringOutput.Add($"TotalBillingDocuments = {(this.TotalBillingDocuments == null ? "null" : this.TotalBillingDocuments.ToString())}");
+            toStringOutput.Add($"TotalNetAmountBillingCurrency = {(this.TotalNetAmountBillingCurrency == null ? "null" : this.TotalNetAmountBillingCurrency.ToString())}");
+            toStringOutput.Add($"TotalSummaryBillingDocuments = {(this.TotalSummaryBillingDocuments == null ? "null" : this.TotalSummaryBillingDocuments.ToString())}");
+            toStringOutput.Add($"TotalVATAmountBillingCurrency = {(this.TotalVATAmountBillingCurrency == null ? "null" : this.TotalVATAmountBillingCurrency.ToString())}");
+            toStringOutput.Add($"UnallocatedPayment = {(this.UnallocatedPayment == null ? "null" : this.UnallocatedPayment.ToString())}");
+            toStringOutput.Add($"LocalCurrencyCode = {this.LocalCurrencyCode ?? "null"}");
+            toStringOutput.Add($"LocalCurrencySymbol = {this.LocalCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"LocalCurrencyExchangeRate = {(this.LocalCurrencyExchangeRate == null ? "null" : this.LocalCurrencyExchangeRate.ToString())}");
         }
     }
 }

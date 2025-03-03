@@ -522,16 +522,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.DelcoId = {this.DelcoId ?? "null"}");
-            toStringOutput.Add($"this.Country = {this.Country ?? "null"}");
-            toStringOutput.Add($"this.CountryCode = {this.CountryCode ?? "null"}");
-            toStringOutput.Add($"this.FuelNetworkId = {(this.FuelNetworkId == null ? "null" : this.FuelNetworkId.ToString())}");
-            toStringOutput.Add($"this.NetworkName = {this.NetworkName ?? "null"}");
-            toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
-            toStringOutput.Add($"this.SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode.ToString())}");
-            toStringOutput.Add($"this.SiteId = {(this.SiteId == null ? "null" : this.SiteId.ToString())}");
-            toStringOutput.Add($"this.SiteName = {this.SiteName ?? "null"}");
+            toStringOutput.Add($"DelcoId = {this.DelcoId ?? "null"}");
+            toStringOutput.Add($"Country = {this.Country ?? "null"}");
+            toStringOutput.Add($"CountryCode = {this.CountryCode ?? "null"}");
+            toStringOutput.Add($"FuelNetworkId = {(this.FuelNetworkId == null ? "null" : this.FuelNetworkId.ToString())}");
+            toStringOutput.Add($"NetworkName = {this.NetworkName ?? "null"}");
+            toStringOutput.Add($"SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
+            toStringOutput.Add($"SiteGroupName = {this.SiteGroupName ?? "null"}");
+            toStringOutput.Add($"SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode.ToString())}");
+            toStringOutput.Add($"SiteId = {(this.SiteId == null ? "null" : this.SiteId.ToString())}");
+            toStringOutput.Add($"SiteName = {this.SiteName ?? "null"}");
         }
     }
 }

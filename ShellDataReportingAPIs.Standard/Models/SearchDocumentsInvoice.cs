@@ -678,20 +678,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.DocumentReference = {(this.DocumentReference == null ? "null" : this.DocumentReference.ToString())}");
-            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
-            toStringOutput.Add($"this.PayerName = {this.PayerName ?? "null"}");
-            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountName = {this.AccountName ?? "null"}");
-            toStringOutput.Add($"this.DocumentType = {this.DocumentType ?? "null"}");
-            toStringOutput.Add($"this.GrossAmount = {(this.GrossAmount == null ? "null" : this.GrossAmount.ToString())}");
-            toStringOutput.Add($"this.NetAmount = {(this.NetAmount == null ? "null" : this.NetAmount.ToString())}");
-            toStringOutput.Add($"this.TaxAmount = {(this.TaxAmount == null ? "null" : this.TaxAmount.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
-            toStringOutput.Add($"this.InvoiceDate = {this.InvoiceDate ?? "null"}");
-            toStringOutput.Add($"this.DueDate = {this.DueDate ?? "null"}");
-            toStringOutput.Add($"this.VATCountryISOCode = {this.VATCountryISOCode ?? "null"}");
+            toStringOutput.Add($"DocumentReference = {(this.DocumentReference == null ? "null" : this.DocumentReference.ToString())}");
+            toStringOutput.Add($"InvoiceNumber = {this.InvoiceNumber ?? "null"}");
+            toStringOutput.Add($"PayerName = {this.PayerName ?? "null"}");
+            toStringOutput.Add($"AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"AccountName = {this.AccountName ?? "null"}");
+            toStringOutput.Add($"DocumentType = {this.DocumentType ?? "null"}");
+            toStringOutput.Add($"GrossAmount = {(this.GrossAmount == null ? "null" : this.GrossAmount.ToString())}");
+            toStringOutput.Add($"NetAmount = {(this.NetAmount == null ? "null" : this.NetAmount.ToString())}");
+            toStringOutput.Add($"TaxAmount = {(this.TaxAmount == null ? "null" : this.TaxAmount.ToString())}");
+            toStringOutput.Add($"CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"InvoiceDate = {this.InvoiceDate ?? "null"}");
+            toStringOutput.Add($"DueDate = {this.DueDate ?? "null"}");
+            toStringOutput.Add($"VATCountryISOCode = {this.VATCountryISOCode ?? "null"}");
         }
     }
 }

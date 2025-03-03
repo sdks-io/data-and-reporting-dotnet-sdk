@@ -648,21 +648,21 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
-            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
-            toStringOutput.Add($"this.PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
-            toStringOutput.Add($"this.CardPAN = {this.CardPAN ?? "null"}");
-            toStringOutput.Add($"this.FromDateTime = {this.FromDateTime ?? "null"}");
-            toStringOutput.Add($"this.ToDateTime = {this.ToDateTime ?? "null"}");
-            toStringOutput.Add($"this.TransactionStatus = {this.TransactionStatus ?? "null"}");
-            toStringOutput.Add($"this.FuelOnly = {this.FuelOnly ?? "null"}");
-            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
-            toStringOutput.Add($"this.VehicleRegistrationNumber = {this.VehicleRegistrationNumber ?? "null"}");
-            toStringOutput.Add($"this.IncludeDeclines = {(this.IncludeDeclines == null ? "null" : this.IncludeDeclines.ToString())}");
-            toStringOutput.Add($"this.CardIssuerName = {this.CardIssuerName ?? "null"}");
-            toStringOutput.Add($"this.ColumnList = {this.ColumnList ?? "null"}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
+            toStringOutput.Add($"CardPAN = {this.CardPAN ?? "null"}");
+            toStringOutput.Add($"FromDateTime = {this.FromDateTime ?? "null"}");
+            toStringOutput.Add($"ToDateTime = {this.ToDateTime ?? "null"}");
+            toStringOutput.Add($"TransactionStatus = {this.TransactionStatus ?? "null"}");
+            toStringOutput.Add($"FuelOnly = {this.FuelOnly ?? "null"}");
+            toStringOutput.Add($"ProductGroupName = {this.ProductGroupName ?? "null"}");
+            toStringOutput.Add($"VehicleRegistrationNumber = {this.VehicleRegistrationNumber ?? "null"}");
+            toStringOutput.Add($"IncludeDeclines = {(this.IncludeDeclines == null ? "null" : this.IncludeDeclines.ToString())}");
+            toStringOutput.Add($"CardIssuerName = {this.CardIssuerName ?? "null"}");
+            toStringOutput.Add($"ColumnList = {this.ColumnList ?? "null"}");
         }
     }
 }

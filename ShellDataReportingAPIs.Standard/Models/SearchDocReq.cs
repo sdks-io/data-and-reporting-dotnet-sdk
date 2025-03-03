@@ -672,22 +672,22 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountNumberList = {(this.AccountNumberList == null ? "null" : $"[{string.Join(", ", this.AccountNumberList)} ]")}");
-            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
-            toStringOutput.Add($"this.InvoiceNumberList = {(this.InvoiceNumberList == null ? "null" : $"[{string.Join(", ", this.InvoiceNumberList)} ]")}");
-            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
-            toStringOutput.Add($"this.IssuingDateFrom = {this.IssuingDateFrom ?? "null"}");
-            toStringOutput.Add($"this.IssuingDateTo = {this.IssuingDateTo ?? "null"}");
-            toStringOutput.Add($"this.DueDateFrom = {this.DueDateFrom ?? "null"}");
-            toStringOutput.Add($"this.DueDateTo = {this.DueDateTo ?? "null"}");
-            toStringOutput.Add($"this.GrossAmount = {this.GrossAmount ?? "null"}");
-            toStringOutput.Add($"this.GrossAmountOperator = {this.GrossAmountOperator ?? "null"}");
-            toStringOutput.Add($"this.DocumentType = {this.DocumentType ?? "null"}");
-            toStringOutput.Add($"this.VATIssuerCountry = {this.VATIssuerCountry ?? "null"}");
-            toStringOutput.Add($"this.SortyBy = {(this.SortyBy == null ? "null" : $"[{string.Join(", ", this.SortyBy)} ]")}");
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"AccountNumberList = {(this.AccountNumberList == null ? "null" : $"[{string.Join(", ", this.AccountNumberList)} ]")}");
+            toStringOutput.Add($"InvoiceNumber = {this.InvoiceNumber ?? "null"}");
+            toStringOutput.Add($"InvoiceNumberList = {(this.InvoiceNumberList == null ? "null" : $"[{string.Join(", ", this.InvoiceNumberList)} ]")}");
+            toStringOutput.Add($"InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"IssuingDateFrom = {this.IssuingDateFrom ?? "null"}");
+            toStringOutput.Add($"IssuingDateTo = {this.IssuingDateTo ?? "null"}");
+            toStringOutput.Add($"DueDateFrom = {this.DueDateFrom ?? "null"}");
+            toStringOutput.Add($"DueDateTo = {this.DueDateTo ?? "null"}");
+            toStringOutput.Add($"GrossAmount = {this.GrossAmount ?? "null"}");
+            toStringOutput.Add($"GrossAmountOperator = {this.GrossAmountOperator ?? "null"}");
+            toStringOutput.Add($"DocumentType = {this.DocumentType ?? "null"}");
+            toStringOutput.Add($"VATIssuerCountry = {this.VATIssuerCountry ?? "null"}");
+            toStringOutput.Add($"SortyBy = {(this.SortyBy == null ? "null" : $"[{string.Join(", ", this.SortyBy)} ]")}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
         }
     }
 }

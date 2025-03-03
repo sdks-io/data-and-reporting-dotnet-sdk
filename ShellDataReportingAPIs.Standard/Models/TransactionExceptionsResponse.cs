@@ -141,10 +141,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.CardExceptions = {(this.CardExceptions == null ? "null" : $"[{string.Join(", ", this.CardExceptions)} ]")}");
-            toStringOutput.Add($"this.TransactionExceptions = {(this.TransactionExceptions == null ? "null" : $"[{string.Join(", ", this.TransactionExceptions)} ]")}");
-            toStringOutput.Add($"this.Error = {(this.Error == null ? "null" : this.Error.ToString())}");
-            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
+            toStringOutput.Add($"CardExceptions = {(this.CardExceptions == null ? "null" : $"[{string.Join(", ", this.CardExceptions)} ]")}");
+            toStringOutput.Add($"TransactionExceptions = {(this.TransactionExceptions == null ? "null" : $"[{string.Join(", ", this.TransactionExceptions)} ]")}");
+            toStringOutput.Add($"Error = {(this.Error == null ? "null" : this.Error.ToString())}");
+            toStringOutput.Add($"RequestId = {this.RequestId ?? "null"}");
         }
     }
 }

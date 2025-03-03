@@ -200,9 +200,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.TierMinimum = {(this.TierMinimum == null ? "null" : this.TierMinimum.ToString())}");
-            toStringOutput.Add($"this.MValue = {(this.MValue == null ? "null" : this.MValue.ToString())}");
-            toStringOutput.Add($"this.TierMaximum = {(this.TierMaximum == null ? "null" : this.TierMaximum.ToString())}");
+            toStringOutput.Add($"TierMinimum = {(this.TierMinimum == null ? "null" : this.TierMinimum.ToString())}");
+            toStringOutput.Add($"MValue = {(this.MValue == null ? "null" : this.MValue.ToString())}");
+            toStringOutput.Add($"TierMaximum = {(this.TierMaximum == null ? "null" : this.TierMaximum.ToString())}");
         }
     }
 }

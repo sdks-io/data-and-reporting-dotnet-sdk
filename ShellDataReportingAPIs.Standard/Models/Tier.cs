@@ -487,15 +487,15 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.TierPriceListId = {(this.TierPriceListId == null ? "null" : this.TierPriceListId.ToString())}");
-            toStringOutput.Add($"this.PriceListDescription = {this.PriceListDescription ?? "null"}");
-            toStringOutput.Add($"this.TierMin = {(this.TierMin == null ? "null" : this.TierMin.ToString())}");
-            toStringOutput.Add($"this.TierMax = {(this.TierMax == null ? "null" : this.TierMax.ToString())}");
-            toStringOutput.Add($"this.TieredPricingGroupName = {this.TieredPricingGroupName ?? "null"}");
-            toStringOutput.Add($"this.TieredPricingGroupPeriod = {this.TieredPricingGroupPeriod ?? "null"}");
-            toStringOutput.Add($"this.DiscountValue = {(this.DiscountValue == null ? "null" : this.DiscountValue.ToString())}");
-            toStringOutput.Add($"this.PricePerUnit = {(this.PricePerUnit == null ? "null" : this.PricePerUnit.ToString())}");
-            toStringOutput.Add($"this.PricePerUnitAfterDiscount = {(this.PricePerUnitAfterDiscount == null ? "null" : this.PricePerUnitAfterDiscount.ToString())}");
+            toStringOutput.Add($"TierPriceListId = {(this.TierPriceListId == null ? "null" : this.TierPriceListId.ToString())}");
+            toStringOutput.Add($"PriceListDescription = {this.PriceListDescription ?? "null"}");
+            toStringOutput.Add($"TierMin = {(this.TierMin == null ? "null" : this.TierMin.ToString())}");
+            toStringOutput.Add($"TierMax = {(this.TierMax == null ? "null" : this.TierMax.ToString())}");
+            toStringOutput.Add($"TieredPricingGroupName = {this.TieredPricingGroupName ?? "null"}");
+            toStringOutput.Add($"TieredPricingGroupPeriod = {this.TieredPricingGroupPeriod ?? "null"}");
+            toStringOutput.Add($"DiscountValue = {(this.DiscountValue == null ? "null" : this.DiscountValue.ToString())}");
+            toStringOutput.Add($"PricePerUnit = {(this.PricePerUnit == null ? "null" : this.PricePerUnit.ToString())}");
+            toStringOutput.Add($"PricePerUnitAfterDiscount = {(this.PricePerUnitAfterDiscount == null ? "null" : this.PricePerUnitAfterDiscount.ToString())}");
         }
     }
 }

@@ -1095,31 +1095,31 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.PricingAccountId = {(this.PricingAccountId == null ? "null" : this.PricingAccountId.ToString())}");
-            toStringOutput.Add($"this.PricingAccountNumber = {this.PricingAccountNumber ?? "null"}");
-            toStringOutput.Add($"this.PricingAccountShortName = {this.PricingAccountShortName ?? "null"}");
-            toStringOutput.Add($"this.PricingAccountFullName = {this.PricingAccountFullName ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleId = {(this.FeeRuleId == null ? "null" : this.FeeRuleId.ToString())}");
-            toStringOutput.Add($"this.FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleDateEffective = {this.FeeRuleDateEffective ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleDateTerminated = {this.FeeRuleDateTerminated ?? "null"}");
-            toStringOutput.Add($"this.BonusPaidTo = {this.BonusPaidTo ?? "null"}");
-            toStringOutput.Add($"this.BonusPaidToAccountId = {(this.BonusPaidToAccountId == null ? "null" : this.BonusPaidToAccountId.ToString())}");
-            toStringOutput.Add($"this.BonusPaidToAccountNumber = {this.BonusPaidToAccountNumber ?? "null"}");
-            toStringOutput.Add($"this.BonusPaidToAccountShortName = {this.BonusPaidToAccountShortName ?? "null"}");
-            toStringOutput.Add($"this.BonusPaidToAccountFullName = {this.BonusPaidToAccountFullName ?? "null"}");
-            toStringOutput.Add($"this.Frequency = {this.Frequency ?? "null"}");
-            toStringOutput.Add($"this.NextCalculationDate = {this.NextCalculationDate ?? "null"}");
-            toStringOutput.Add($"this.PreviousCalculatedDate = {this.PreviousCalculatedDate ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleBasis = {this.FeeRuleBasis ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleCurrencyCode = {this.FeeRuleCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleCurrencySymbol = {this.FeeRuleCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleAvailableFrom = {this.FeeRuleAvailableFrom ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleAvailableTo = {this.FeeRuleAvailableTo ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleLocations = {(this.FeeRuleLocations == null ? "null" : $"[{string.Join(", ", this.FeeRuleLocations)} ]")}");
-            toStringOutput.Add($"this.FeeRuleTiers = {(this.FeeRuleTiers == null ? "null" : $"[{string.Join(", ", this.FeeRuleTiers)} ]")}");
-            toStringOutput.Add($"this.AssociatedAccounts = {(this.AssociatedAccounts == null ? "null" : $"[{string.Join(", ", this.AssociatedAccounts)} ]")}");
-            toStringOutput.Add($"this.FeeRuleProducts = {(this.FeeRuleProducts == null ? "null" : $"[{string.Join(", ", this.FeeRuleProducts)} ]")}");
+            toStringOutput.Add($"PricingAccountId = {(this.PricingAccountId == null ? "null" : this.PricingAccountId.ToString())}");
+            toStringOutput.Add($"PricingAccountNumber = {this.PricingAccountNumber ?? "null"}");
+            toStringOutput.Add($"PricingAccountShortName = {this.PricingAccountShortName ?? "null"}");
+            toStringOutput.Add($"PricingAccountFullName = {this.PricingAccountFullName ?? "null"}");
+            toStringOutput.Add($"FeeRuleId = {(this.FeeRuleId == null ? "null" : this.FeeRuleId.ToString())}");
+            toStringOutput.Add($"FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
+            toStringOutput.Add($"FeeRuleDateEffective = {this.FeeRuleDateEffective ?? "null"}");
+            toStringOutput.Add($"FeeRuleDateTerminated = {this.FeeRuleDateTerminated ?? "null"}");
+            toStringOutput.Add($"BonusPaidTo = {this.BonusPaidTo ?? "null"}");
+            toStringOutput.Add($"BonusPaidToAccountId = {(this.BonusPaidToAccountId == null ? "null" : this.BonusPaidToAccountId.ToString())}");
+            toStringOutput.Add($"BonusPaidToAccountNumber = {this.BonusPaidToAccountNumber ?? "null"}");
+            toStringOutput.Add($"BonusPaidToAccountShortName = {this.BonusPaidToAccountShortName ?? "null"}");
+            toStringOutput.Add($"BonusPaidToAccountFullName = {this.BonusPaidToAccountFullName ?? "null"}");
+            toStringOutput.Add($"Frequency = {this.Frequency ?? "null"}");
+            toStringOutput.Add($"NextCalculationDate = {this.NextCalculationDate ?? "null"}");
+            toStringOutput.Add($"PreviousCalculatedDate = {this.PreviousCalculatedDate ?? "null"}");
+            toStringOutput.Add($"FeeRuleBasis = {this.FeeRuleBasis ?? "null"}");
+            toStringOutput.Add($"FeeRuleCurrencyCode = {this.FeeRuleCurrencyCode ?? "null"}");
+            toStringOutput.Add($"FeeRuleCurrencySymbol = {this.FeeRuleCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"FeeRuleAvailableFrom = {this.FeeRuleAvailableFrom ?? "null"}");
+            toStringOutput.Add($"FeeRuleAvailableTo = {this.FeeRuleAvailableTo ?? "null"}");
+            toStringOutput.Add($"FeeRuleLocations = {(this.FeeRuleLocations == null ? "null" : $"[{string.Join(", ", this.FeeRuleLocations)} ]")}");
+            toStringOutput.Add($"FeeRuleTiers = {(this.FeeRuleTiers == null ? "null" : $"[{string.Join(", ", this.FeeRuleTiers)} ]")}");
+            toStringOutput.Add($"AssociatedAccounts = {(this.AssociatedAccounts == null ? "null" : $"[{string.Join(", ", this.AssociatedAccounts)} ]")}");
+            toStringOutput.Add($"FeeRuleProducts = {(this.FeeRuleProducts == null ? "null" : $"[{string.Join(", ", this.FeeRuleProducts)} ]")}");
         }
     }
 }

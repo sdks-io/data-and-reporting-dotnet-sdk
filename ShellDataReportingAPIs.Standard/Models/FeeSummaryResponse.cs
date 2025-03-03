@@ -91,9 +91,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.FeeItemsSummary = {(this.FeeItemsSummary == null ? "null" : $"[{string.Join(", ", this.FeeItemsSummary)} ]")}");
-            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
-            toStringOutput.Add($"this.Error = {(this.Error == null ? "null" : this.Error.ToString())}");
+            toStringOutput.Add($"FeeItemsSummary = {(this.FeeItemsSummary == null ? "null" : $"[{string.Join(", ", this.FeeItemsSummary)} ]")}");
+            toStringOutput.Add($"RequestId = {this.RequestId ?? "null"}");
+            toStringOutput.Add($"Error = {(this.Error == null ? "null" : this.Error.ToString())}");
         }
     }
 }

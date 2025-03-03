@@ -1692,7 +1692,7 @@ PricedTransactionRequestV2 body = new PricedTransactionRequestV2
     Filters = new PricedRequestData
     {
         ColCoCode = "032",
-        InvoiceStatus = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
+        InvoiceStatus = PricedTransactionReqV2InvoiceStatusEnum.A,
         PayerNumber = "DE26685263",
         AccountId = 29484,
         AccountNumber = "DE26667080",

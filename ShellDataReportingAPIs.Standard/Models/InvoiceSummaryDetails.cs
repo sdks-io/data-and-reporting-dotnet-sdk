@@ -340,12 +340,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.TotalInvoices = {(this.TotalInvoices == null ? "null" : this.TotalInvoices.ToString())}");
-            toStringOutput.Add($"this.TotalGrossAmountCustomerCurrency = {(this.TotalGrossAmountCustomerCurrency == null ? "null" : this.TotalGrossAmountCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.TotalNetAmountCustomerCurrency = {(this.TotalNetAmountCustomerCurrency == null ? "null" : this.TotalNetAmountCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.TotalVATAmountCustomerCurrency = {(this.TotalVATAmountCustomerCurrency == null ? "null" : this.TotalVATAmountCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.CustomerCurrencyCode = {this.CustomerCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.CustomerCurrencySymbol = {this.CustomerCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"TotalInvoices = {(this.TotalInvoices == null ? "null" : this.TotalInvoices.ToString())}");
+            toStringOutput.Add($"TotalGrossAmountCustomerCurrency = {(this.TotalGrossAmountCustomerCurrency == null ? "null" : this.TotalGrossAmountCustomerCurrency.ToString())}");
+            toStringOutput.Add($"TotalNetAmountCustomerCurrency = {(this.TotalNetAmountCustomerCurrency == null ? "null" : this.TotalNetAmountCustomerCurrency.ToString())}");
+            toStringOutput.Add($"TotalVATAmountCustomerCurrency = {(this.TotalVATAmountCustomerCurrency == null ? "null" : this.TotalVATAmountCustomerCurrency.ToString())}");
+            toStringOutput.Add($"CustomerCurrencyCode = {this.CustomerCurrencyCode ?? "null"}");
+            toStringOutput.Add($"CustomerCurrencySymbol = {this.CustomerCurrencySymbol ?? "null"}");
         }
     }
 }

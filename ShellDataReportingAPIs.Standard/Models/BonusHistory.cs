@@ -1552,38 +1552,38 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.PayerShortName = {this.PayerShortName ?? "null"}");
-            toStringOutput.Add($"this.PayerFullName = {this.PayerFullName ?? "null"}");
-            toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountShortName = {this.AccountShortName ?? "null"}");
-            toStringOutput.Add($"this.AccountFullName = {this.AccountFullName ?? "null"}");
-            toStringOutput.Add($"this.InvoiceAccountId = {(this.InvoiceAccountId == null ? "null" : this.InvoiceAccountId.ToString())}");
-            toStringOutput.Add($"this.InvoiceAccountNumber = {this.InvoiceAccountNumber ?? "null"}");
-            toStringOutput.Add($"this.InvoiceAccountShortName = {this.InvoiceAccountShortName ?? "null"}");
-            toStringOutput.Add($"this.InvoiceAccountFullName = {this.InvoiceAccountFullName ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleId = {this.FeeRuleId ?? "null"}");
-            toStringOutput.Add($"this.FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
-            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
-            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
-            toStringOutput.Add($"this.BonusPaidTo = {this.BonusPaidTo ?? "null"}");
-            toStringOutput.Add($"this.FeeItemId = {(this.FeeItemId == null ? "null" : this.FeeItemId.ToString())}");
-            toStringOutput.Add($"this.FeeRuleBasis = {this.FeeRuleBasis ?? "null"}");
-            toStringOutput.Add($"this.FeeItemCurrencyCode = {this.FeeItemCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.FeeItemCurrencySymbol = {this.FeeItemCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.ProratedVolume = {(this.ProratedVolume == null ? "null" : this.ProratedVolume.ToString())}");
-            toStringOutput.Add($"this.TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
-            toStringOutput.Add($"this.FeeProduct = {this.FeeProduct ?? "null"}");
-            toStringOutput.Add($"this.InvoiceGrossAmount = {(this.InvoiceGrossAmount == null ? "null" : this.InvoiceGrossAmount.ToString())}");
-            toStringOutput.Add($"this.InvoiceNetAmount = {(this.InvoiceNetAmount == null ? "null" : this.InvoiceNetAmount.ToString())}");
-            toStringOutput.Add($"this.InvoiceVATAmount = {(this.InvoiceVATAmount == null ? "null" : this.InvoiceVATAmount.ToString())}");
-            toStringOutput.Add($"this.IsFeeCancelled = {(this.IsFeeCancelled == null ? "null" : this.IsFeeCancelled.ToString())}");
-            toStringOutput.Add($"this.FeeItemTierProratedVolume = {(this.FeeItemTierProratedVolume == null ? "null" : this.FeeItemTierProratedVolume.ToString())}");
-            toStringOutput.Add($"this.FeeItemTierTotalVolume = {(this.FeeItemTierTotalVolume == null ? "null" : this.FeeItemTierTotalVolume.ToString())}");
-            toStringOutput.Add($"this.TierMinimum = {(this.TierMinimum == null ? "null" : this.TierMinimum.ToString())}");
-            toStringOutput.Add($"this.TierRate = {(this.TierRate == null ? "null" : this.TierRate.ToString())}");
+            toStringOutput.Add($"PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"PayerShortName = {this.PayerShortName ?? "null"}");
+            toStringOutput.Add($"PayerFullName = {this.PayerFullName ?? "null"}");
+            toStringOutput.Add($"AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
+            toStringOutput.Add($"AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"AccountShortName = {this.AccountShortName ?? "null"}");
+            toStringOutput.Add($"AccountFullName = {this.AccountFullName ?? "null"}");
+            toStringOutput.Add($"InvoiceAccountId = {(this.InvoiceAccountId == null ? "null" : this.InvoiceAccountId.ToString())}");
+            toStringOutput.Add($"InvoiceAccountNumber = {this.InvoiceAccountNumber ?? "null"}");
+            toStringOutput.Add($"InvoiceAccountShortName = {this.InvoiceAccountShortName ?? "null"}");
+            toStringOutput.Add($"InvoiceAccountFullName = {this.InvoiceAccountFullName ?? "null"}");
+            toStringOutput.Add($"FeeRuleId = {this.FeeRuleId ?? "null"}");
+            toStringOutput.Add($"FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
+            toStringOutput.Add($"FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"ToDate = {this.ToDate ?? "null"}");
+            toStringOutput.Add($"BonusPaidTo = {this.BonusPaidTo ?? "null"}");
+            toStringOutput.Add($"FeeItemId = {(this.FeeItemId == null ? "null" : this.FeeItemId.ToString())}");
+            toStringOutput.Add($"FeeRuleBasis = {this.FeeRuleBasis ?? "null"}");
+            toStringOutput.Add($"FeeItemCurrencyCode = {this.FeeItemCurrencyCode ?? "null"}");
+            toStringOutput.Add($"FeeItemCurrencySymbol = {this.FeeItemCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"ProratedVolume = {(this.ProratedVolume == null ? "null" : this.ProratedVolume.ToString())}");
+            toStringOutput.Add($"TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
+            toStringOutput.Add($"FeeProduct = {this.FeeProduct ?? "null"}");
+            toStringOutput.Add($"InvoiceGrossAmount = {(this.InvoiceGrossAmount == null ? "null" : this.InvoiceGrossAmount.ToString())}");
+            toStringOutput.Add($"InvoiceNetAmount = {(this.InvoiceNetAmount == null ? "null" : this.InvoiceNetAmount.ToString())}");
+            toStringOutput.Add($"InvoiceVATAmount = {(this.InvoiceVATAmount == null ? "null" : this.InvoiceVATAmount.ToString())}");
+            toStringOutput.Add($"IsFeeCancelled = {(this.IsFeeCancelled == null ? "null" : this.IsFeeCancelled.ToString())}");
+            toStringOutput.Add($"FeeItemTierProratedVolume = {(this.FeeItemTierProratedVolume == null ? "null" : this.FeeItemTierProratedVolume.ToString())}");
+            toStringOutput.Add($"FeeItemTierTotalVolume = {(this.FeeItemTierTotalVolume == null ? "null" : this.FeeItemTierTotalVolume.ToString())}");
+            toStringOutput.Add($"TierMinimum = {(this.TierMinimum == null ? "null" : this.TierMinimum.ToString())}");
+            toStringOutput.Add($"TierRate = {(this.TierRate == null ? "null" : this.TierRate.ToString())}");
         }
     }
 }

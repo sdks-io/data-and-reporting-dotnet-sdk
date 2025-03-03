@@ -531,16 +531,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.DocumentId = {(this.DocumentId == null ? "null" : this.DocumentId.ToString())}");
-            toStringOutput.Add($"this.AccountGroupId = {this.AccountGroupId ?? "null"}");
-            toStringOutput.Add($"this.AccountGroupName = {this.AccountGroupName ?? "null"}");
-            toStringOutput.Add($"this.DocumentType = {this.DocumentType ?? "null"}");
-            toStringOutput.Add($"this.DocumentFormat = {this.DocumentFormat ?? "null"}");
-            toStringOutput.Add($"this.DocumentDate = {this.DocumentDate ?? "null"}");
-            toStringOutput.Add($"this.NumberOfInvoices = {(this.NumberOfInvoices == null ? "null" : this.NumberOfInvoices.ToString())}");
-            toStringOutput.Add($"this.FileSize = {(this.FileSize == null ? "null" : this.FileSize.ToString())}");
-            toStringOutput.Add($"this.DocumentStatus = {this.DocumentStatus ?? "null"}");
-            toStringOutput.Add($"this.DocumentName = {this.DocumentName ?? "null"}");
+            toStringOutput.Add($"DocumentId = {(this.DocumentId == null ? "null" : this.DocumentId.ToString())}");
+            toStringOutput.Add($"AccountGroupId = {this.AccountGroupId ?? "null"}");
+            toStringOutput.Add($"AccountGroupName = {this.AccountGroupName ?? "null"}");
+            toStringOutput.Add($"DocumentType = {this.DocumentType ?? "null"}");
+            toStringOutput.Add($"DocumentFormat = {this.DocumentFormat ?? "null"}");
+            toStringOutput.Add($"DocumentDate = {this.DocumentDate ?? "null"}");
+            toStringOutput.Add($"NumberOfInvoices = {(this.NumberOfInvoices == null ? "null" : this.NumberOfInvoices.ToString())}");
+            toStringOutput.Add($"FileSize = {(this.FileSize == null ? "null" : this.FileSize.ToString())}");
+            toStringOutput.Add($"DocumentStatus = {this.DocumentStatus ?? "null"}");
+            toStringOutput.Add($"DocumentName = {this.DocumentName ?? "null"}");
         }
     }
 }

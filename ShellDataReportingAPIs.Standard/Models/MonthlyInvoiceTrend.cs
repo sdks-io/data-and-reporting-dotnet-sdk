@@ -340,12 +340,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.Month = {(this.Month == null ? "null" : this.Month.ToString())}");
-            toStringOutput.Add($"this.TotalNetAmount = {(this.TotalNetAmount == null ? "null" : this.TotalNetAmount.ToString())}");
-            toStringOutput.Add($"this.TotalVATAmount = {(this.TotalVATAmount == null ? "null" : this.TotalVATAmount.ToString())}");
-            toStringOutput.Add($"this.Year = {(this.Year == null ? "null" : this.Year.ToString())}");
+            toStringOutput.Add($"CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"Month = {(this.Month == null ? "null" : this.Month.ToString())}");
+            toStringOutput.Add($"TotalNetAmount = {(this.TotalNetAmount == null ? "null" : this.TotalNetAmount.ToString())}");
+            toStringOutput.Add($"TotalVATAmount = {(this.TotalVATAmount == null ? "null" : this.TotalVATAmount.ToString())}");
+            toStringOutput.Add($"Year = {(this.Year == null ? "null" : this.Year.ToString())}");
         }
     }
 }

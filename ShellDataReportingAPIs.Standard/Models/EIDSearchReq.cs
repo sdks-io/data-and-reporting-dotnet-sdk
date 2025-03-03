@@ -358,15 +358,15 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.AccountGroupCountry = {(this.AccountGroupCountry == null ? "null" : this.AccountGroupCountry.ToString())}");
-            toStringOutput.Add($"this.AccountGroupId = {(this.AccountGroupId == null ? "null" : $"[{string.Join(", ", this.AccountGroupId)} ]")}");
-            toStringOutput.Add($"this.AccountGroupName = {this.AccountGroupName ?? "null"}");
-            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
-            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
-            toStringOutput.Add($"this.InvoiceType = {this.InvoiceType ?? "null"}");
-            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
-            toStringOutput.Add($"this.SortBy = {(this.SortBy == null ? "null" : $"[{string.Join(", ", this.SortBy)} ]")}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"AccountGroupCountry = {(this.AccountGroupCountry == null ? "null" : this.AccountGroupCountry.ToString())}");
+            toStringOutput.Add($"AccountGroupId = {(this.AccountGroupId == null ? "null" : $"[{string.Join(", ", this.AccountGroupId)} ]")}");
+            toStringOutput.Add($"AccountGroupName = {this.AccountGroupName ?? "null"}");
+            toStringOutput.Add($"FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"ToDate = {this.ToDate ?? "null"}");
+            toStringOutput.Add($"InvoiceType = {this.InvoiceType ?? "null"}");
+            toStringOutput.Add($"InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"SortBy = {(this.SortBy == null ? "null" : $"[{string.Join(", ", this.SortBy)} ]")}");
         }
     }
 }

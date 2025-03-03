@@ -339,12 +339,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.FeeRuleId = {(this.FeeRuleId == null ? "null" : this.FeeRuleId.ToString())}");
-            toStringOutput.Add($"this.FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
-            toStringOutput.Add($"this.PriceRuleID = {(this.PriceRuleID == null ? "null" : this.PriceRuleID.ToString())}");
-            toStringOutput.Add($"this.PriceRuleDescription = {this.PriceRuleDescription ?? "null"}");
-            toStringOutput.Add($"this.TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
-            toStringOutput.Add($"this.NextFeeCreationDate = {this.NextFeeCreationDate ?? "null"}");
+            toStringOutput.Add($"FeeRuleId = {(this.FeeRuleId == null ? "null" : this.FeeRuleId.ToString())}");
+            toStringOutput.Add($"FeeRuleDescription = {this.FeeRuleDescription ?? "null"}");
+            toStringOutput.Add($"PriceRuleID = {(this.PriceRuleID == null ? "null" : this.PriceRuleID.ToString())}");
+            toStringOutput.Add($"PriceRuleDescription = {this.PriceRuleDescription ?? "null"}");
+            toStringOutput.Add($"TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
+            toStringOutput.Add($"NextFeeCreationDate = {this.NextFeeCreationDate ?? "null"}");
         }
     }
 }

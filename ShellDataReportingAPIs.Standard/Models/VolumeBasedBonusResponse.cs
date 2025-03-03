@@ -113,11 +113,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Configuration = {(this.Configuration == null ? "null" : $"[{string.Join(", ", this.Configuration)} ]")}");
-            toStringOutput.Add($"this.CurrentPeriodConsumption = {(this.CurrentPeriodConsumption == null ? "null" : $"[{string.Join(", ", this.CurrentPeriodConsumption)} ]")}");
-            toStringOutput.Add($"this.HistoricalBonusPaid = {(this.HistoricalBonusPaid == null ? "null" : $"[{string.Join(", ", this.HistoricalBonusPaid)} ]")}");
-            toStringOutput.Add($"this.Error = {(this.Error == null ? "null" : this.Error.ToString())}");
-            toStringOutput.Add($"this.RequestId = {this.RequestId ?? "null"}");
+            toStringOutput.Add($"Configuration = {(this.Configuration == null ? "null" : $"[{string.Join(", ", this.Configuration)} ]")}");
+            toStringOutput.Add($"CurrentPeriodConsumption = {(this.CurrentPeriodConsumption == null ? "null" : $"[{string.Join(", ", this.CurrentPeriodConsumption)} ]")}");
+            toStringOutput.Add($"HistoricalBonusPaid = {(this.HistoricalBonusPaid == null ? "null" : $"[{string.Join(", ", this.HistoricalBonusPaid)} ]")}");
+            toStringOutput.Add($"Error = {(this.Error == null ? "null" : this.Error.ToString())}");
+            toStringOutput.Add($"RequestId = {this.RequestId ?? "null"}");
         }
     }
 }

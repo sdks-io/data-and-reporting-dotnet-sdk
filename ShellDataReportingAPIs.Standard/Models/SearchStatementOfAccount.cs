@@ -715,20 +715,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.StatementOfAccountId = {(this.StatementOfAccountId == null ? "null" : this.StatementOfAccountId.ToString())}");
-            toStringOutput.Add($"this.SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
-            toStringOutput.Add($"this.StatementDate = {this.StatementDate ?? "null"}");
-            toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.AmountDue = {(this.AmountDue == null ? "null" : this.AmountDue.ToString())}");
-            toStringOutput.Add($"this.AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.DueDate = {this.DueDate ?? "null"}");
-            toStringOutput.Add($"this.InvoicedOnBehalfOf = {this.InvoicedOnBehalfOf ?? "null"}");
-            toStringOutput.Add($"this.Status = {this.Status ?? "null"}");
-            toStringOutput.Add($"this.GrossAmountCustomerCurrency = {(this.GrossAmountCustomerCurrency == null ? "null" : this.GrossAmountCustomerCurrency.ToString())}");
-            toStringOutput.Add($"this.DocumentReferenceNumber = {this.DocumentReferenceNumber ?? "null"}");
+            toStringOutput.Add($"StatementOfAccountId = {(this.StatementOfAccountId == null ? "null" : this.StatementOfAccountId.ToString())}");
+            toStringOutput.Add($"SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
+            toStringOutput.Add($"StatementDate = {this.StatementDate ?? "null"}");
+            toStringOutput.Add($"PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"AmountDue = {(this.AmountDue == null ? "null" : this.AmountDue.ToString())}");
+            toStringOutput.Add($"AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
+            toStringOutput.Add($"CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"DueDate = {this.DueDate ?? "null"}");
+            toStringOutput.Add($"InvoicedOnBehalfOf = {this.InvoicedOnBehalfOf ?? "null"}");
+            toStringOutput.Add($"Status = {this.Status ?? "null"}");
+            toStringOutput.Add($"GrossAmountCustomerCurrency = {(this.GrossAmountCustomerCurrency == null ? "null" : this.GrossAmountCustomerCurrency.ToString())}");
+            toStringOutput.Add($"DocumentReferenceNumber = {this.DocumentReferenceNumber ?? "null"}");
         }
     }
 }

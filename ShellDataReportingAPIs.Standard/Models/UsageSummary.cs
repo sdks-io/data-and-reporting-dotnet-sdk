@@ -708,20 +708,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Date = {this.Date ?? "null"}");
-            toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
-            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
-            toStringOutput.Add($"this.IsFuelProduct = {(this.IsFuelProduct == null ? "null" : this.IsFuelProduct.ToString())}");
-            toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
-            toStringOutput.Add($"this.TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
-            toStringOutput.Add($"this.TotalGross = {(this.TotalGross == null ? "null" : this.TotalGross.ToString())}");
-            toStringOutput.Add($"this.TotalNet = {(this.TotalNet == null ? "null" : this.TotalNet.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.ProductGroupID = {(this.ProductGroupID == null ? "null" : this.ProductGroupID.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
+            toStringOutput.Add($"Date = {this.Date ?? "null"}");
+            toStringOutput.Add($"ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
+            toStringOutput.Add($"ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"ProductName = {this.ProductName ?? "null"}");
+            toStringOutput.Add($"IsFuelProduct = {(this.IsFuelProduct == null ? "null" : this.IsFuelProduct.ToString())}");
+            toStringOutput.Add($"SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
+            toStringOutput.Add($"SiteGroupName = {this.SiteGroupName ?? "null"}");
+            toStringOutput.Add($"TotalVolume = {(this.TotalVolume == null ? "null" : this.TotalVolume.ToString())}");
+            toStringOutput.Add($"TotalGross = {(this.TotalGross == null ? "null" : this.TotalGross.ToString())}");
+            toStringOutput.Add($"TotalNet = {(this.TotalNet == null ? "null" : this.TotalNet.ToString())}");
+            toStringOutput.Add($"CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"ProductGroupID = {(this.ProductGroupID == null ? "null" : this.ProductGroupID.ToString())}");
+            toStringOutput.Add($"ProductGroupName = {this.ProductGroupName ?? "null"}");
         }
     }
 }

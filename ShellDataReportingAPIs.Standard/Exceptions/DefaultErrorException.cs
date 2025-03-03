@@ -38,5 +38,23 @@ namespace ShellDataReportingAPIs.Standard.Exceptions
         /// </summary>
         [JsonProperty("fault", NullValueHandling = NullValueHandling.Ignore)]
         public Models.DefaultErrorFault Fault { get; set; }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            var toStringOutput = new List<string>();
+            this.ToString(toStringOutput);
+            return $"DefaultErrorException : ({string.Join(", ", toStringOutput)})";
+        }
+
+        /// <summary>
+        /// ToString overload.
+        /// </summary>
+        /// <param name="toStringOutput">List of strings.</param>
+        protected void ToString(List<string> toStringOutput)
+        {
+            base.ToString(toStringOutput);
+            toStringOutput.Add($"Fault = {(this.Fault == null ? "null" : this.Fault.ToString())}");
+        }
     }
 }

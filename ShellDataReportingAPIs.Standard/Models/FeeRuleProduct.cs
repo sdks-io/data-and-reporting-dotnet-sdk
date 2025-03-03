@@ -292,11 +292,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
-            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
-            toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
+            toStringOutput.Add($"ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
+            toStringOutput.Add($"ProductGroupName = {this.ProductGroupName ?? "null"}");
+            toStringOutput.Add($"ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
+            toStringOutput.Add($"ProductName = {this.ProductName ?? "null"}");
         }
     }
 }

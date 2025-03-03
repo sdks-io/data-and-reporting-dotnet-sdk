@@ -154,8 +154,8 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Lat = {this.Lat ?? "null"}");
-            toStringOutput.Add($"this.Lng = {this.Lng ?? "null"}");
+            toStringOutput.Add($"Lat = {this.Lat ?? "null"}");
+            toStringOutput.Add($"Lng = {this.Lng ?? "null"}");
         }
     }
 }

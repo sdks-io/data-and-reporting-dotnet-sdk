@@ -1706,42 +1706,42 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Date = {this.Date ?? "null"}");
-            toStringOutput.Add($"this.Day = {this.Day ?? "null"}");
-            toStringOutput.Add($"this.Type = {this.Type ?? "null"}");
-            toStringOutput.Add($"this.PriceListId = {(this.PriceListId == null ? "null" : this.PriceListId.ToString())}");
-            toStringOutput.Add($"this.PriceListDescription = {this.PriceListDescription ?? "null"}");
-            toStringOutput.Add($"this.PriceRuleId = {(this.PriceRuleId == null ? "null" : this.PriceRuleId.ToString())}");
-            toStringOutput.Add($"this.PriceRuleName = {this.PriceRuleName ?? "null"}");
-            toStringOutput.Add($"this.DelCoId = {(this.DelCoId == null ? "null" : this.DelCoId.ToString())}");
-            toStringOutput.Add($"this.CountryCode = {this.CountryCode ?? "null"}");
-            toStringOutput.Add($"this.Country = {this.Country ?? "null"}");
-            toStringOutput.Add($"this.ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
-            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
-            toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
-            toStringOutput.Add($"this.PricePerUnit = {(this.PricePerUnit == null ? "null" : this.PricePerUnit.ToString())}");
-            toStringOutput.Add($"this.CurrencyCode = {this.CurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.CurrencySymbol = {this.CurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.PriceType = {this.PriceType ?? "null"}");
-            toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
-            toStringOutput.Add($"this.SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode.ToString())}");
-            toStringOutput.Add($"this.SiteId = {(this.SiteId == null ? "null" : this.SiteId.ToString())}");
-            toStringOutput.Add($"this.SiteName = {this.SiteName ?? "null"}");
-            toStringOutput.Add($"this.FuelNetworkId = {(this.FuelNetworkId == null ? "null" : this.FuelNetworkId.ToString())}");
-            toStringOutput.Add($"this.NetworkName = {this.NetworkName ?? "null"}");
-            toStringOutput.Add($"this.PriceRuleDelcoId = {(this.PriceRuleDelcoId == null ? "null" : this.PriceRuleDelcoId.ToString())}");
-            toStringOutput.Add($"this.PriceRuleDelcoName = {this.PriceRuleDelcoName ?? "null"}");
-            toStringOutput.Add($"this.PriceRuleCountry = {this.PriceRuleCountry ?? "null"}");
-            toStringOutput.Add($"this.PriceRuleCountryCode = {this.PriceRuleCountryCode ?? "null"}");
-            toStringOutput.Add($"this.PriceRuleBasisId = {(this.PriceRuleBasisId == null ? "null" : this.PriceRuleBasisId.ToString())}");
-            toStringOutput.Add($"this.DiscountValue = {(this.DiscountValue == null ? "null" : this.DiscountValue.ToString())}");
-            toStringOutput.Add($"this.PricePerUnitAfterDiscount = {(this.PricePerUnitAfterDiscount == null ? "null" : this.PricePerUnitAfterDiscount.ToString())}");
-            toStringOutput.Add($"this.VATPercentage = {(this.VATPercentage == null ? "null" : this.VATPercentage.ToString())}");
-            toStringOutput.Add($"this.PriceRuleCategoryId = {(this.PriceRuleCategoryId == null ? "null" : this.PriceRuleCategoryId.ToString())}");
-            toStringOutput.Add($"this.Tiers = {(this.Tiers == null ? "null" : $"[{string.Join(", ", this.Tiers)} ]")}");
+            toStringOutput.Add($"Date = {this.Date ?? "null"}");
+            toStringOutput.Add($"Day = {this.Day ?? "null"}");
+            toStringOutput.Add($"Type = {this.Type ?? "null"}");
+            toStringOutput.Add($"PriceListId = {(this.PriceListId == null ? "null" : this.PriceListId.ToString())}");
+            toStringOutput.Add($"PriceListDescription = {this.PriceListDescription ?? "null"}");
+            toStringOutput.Add($"PriceRuleId = {(this.PriceRuleId == null ? "null" : this.PriceRuleId.ToString())}");
+            toStringOutput.Add($"PriceRuleName = {this.PriceRuleName ?? "null"}");
+            toStringOutput.Add($"DelCoId = {(this.DelCoId == null ? "null" : this.DelCoId.ToString())}");
+            toStringOutput.Add($"CountryCode = {this.CountryCode ?? "null"}");
+            toStringOutput.Add($"Country = {this.Country ?? "null"}");
+            toStringOutput.Add($"ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
+            toStringOutput.Add($"ProductGroupName = {this.ProductGroupName ?? "null"}");
+            toStringOutput.Add($"ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
+            toStringOutput.Add($"ProductName = {this.ProductName ?? "null"}");
+            toStringOutput.Add($"PricePerUnit = {(this.PricePerUnit == null ? "null" : this.PricePerUnit.ToString())}");
+            toStringOutput.Add($"CurrencyCode = {this.CurrencyCode ?? "null"}");
+            toStringOutput.Add($"CurrencySymbol = {this.CurrencySymbol ?? "null"}");
+            toStringOutput.Add($"PriceType = {this.PriceType ?? "null"}");
+            toStringOutput.Add($"SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
+            toStringOutput.Add($"SiteGroupName = {this.SiteGroupName ?? "null"}");
+            toStringOutput.Add($"SiteCode = {(this.SiteCode == null ? "null" : this.SiteCode.ToString())}");
+            toStringOutput.Add($"SiteId = {(this.SiteId == null ? "null" : this.SiteId.ToString())}");
+            toStringOutput.Add($"SiteName = {this.SiteName ?? "null"}");
+            toStringOutput.Add($"FuelNetworkId = {(this.FuelNetworkId == null ? "null" : this.FuelNetworkId.ToString())}");
+            toStringOutput.Add($"NetworkName = {this.NetworkName ?? "null"}");
+            toStringOutput.Add($"PriceRuleDelcoId = {(this.PriceRuleDelcoId == null ? "null" : this.PriceRuleDelcoId.ToString())}");
+            toStringOutput.Add($"PriceRuleDelcoName = {this.PriceRuleDelcoName ?? "null"}");
+            toStringOutput.Add($"PriceRuleCountry = {this.PriceRuleCountry ?? "null"}");
+            toStringOutput.Add($"PriceRuleCountryCode = {this.PriceRuleCountryCode ?? "null"}");
+            toStringOutput.Add($"PriceRuleBasisId = {(this.PriceRuleBasisId == null ? "null" : this.PriceRuleBasisId.ToString())}");
+            toStringOutput.Add($"DiscountValue = {(this.DiscountValue == null ? "null" : this.DiscountValue.ToString())}");
+            toStringOutput.Add($"PricePerUnitAfterDiscount = {(this.PricePerUnitAfterDiscount == null ? "null" : this.PricePerUnitAfterDiscount.ToString())}");
+            toStringOutput.Add($"VATPercentage = {(this.VATPercentage == null ? "null" : this.VATPercentage.ToString())}");
+            toStringOutput.Add($"PriceRuleCategoryId = {(this.PriceRuleCategoryId == null ? "null" : this.PriceRuleCategoryId.ToString())}");
+            toStringOutput.Add($"Tiers = {(this.Tiers == null ? "null" : $"[{string.Join(", ", this.Tiers)} ]")}");
         }
     }
 }

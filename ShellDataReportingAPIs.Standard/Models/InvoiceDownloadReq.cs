@@ -157,11 +157,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountNumber = {(this.AccountNumber == null ? "null" : $"[{string.Join(", ", this.AccountNumber)} ]")}");
-            toStringOutput.Add($"this.DocumentReference = {(this.DocumentReference == null ? "null" : $"[{string.Join(", ", this.DocumentReference)} ]")}");
-            toStringOutput.Add($"this.InvoiceOrSOANumber = {this.InvoiceOrSOANumber ?? "null"}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"AccountNumber = {(this.AccountNumber == null ? "null" : $"[{string.Join(", ", this.AccountNumber)} ]")}");
+            toStringOutput.Add($"DocumentReference = {(this.DocumentReference == null ? "null" : $"[{string.Join(", ", this.DocumentReference)} ]")}");
+            toStringOutput.Add($"InvoiceOrSOANumber = {this.InvoiceOrSOANumber ?? "null"}");
         }
     }
 }

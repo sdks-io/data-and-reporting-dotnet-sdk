@@ -100,10 +100,12 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// </summary>
         /// <param name="invoiceStatus">InvoiceStatus.</param>
         /// <param name="colCoCode">ColCoCode.</param>
+        /// <param name="colCoId">ColCoId.</param>
         /// <param name="payerNumber">PayerNumber.</param>
         /// <param name="accountId">AccountId.</param>
         /// <param name="accountNumber">AccountNumber.</param>
         /// <param name="driverName">DriverName.</param>
+        /// <param name="cardId">CardId.</param>
         /// <param name="cardGroupId">CardGroupId.</param>
         /// <param name="cardPAN">CardPAN.</param>
         /// <param name="productCode">ProductCode.</param>
@@ -136,12 +138,14 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="search">Search.</param>
         /// <param name="transactionId">TransactionId.</param>
         public PricedRequestData(
-            object invoiceStatus,
+            Models.PricedTransactionReqV2InvoiceStatusEnum invoiceStatus,
             string colCoCode = null,
+            int? colCoId = null,
             string payerNumber = null,
             int? accountId = null,
             string accountNumber = null,
             string driverName = null,
+            int? cardId = null,
             int? cardGroupId = null,
             string cardPAN = null,
             string productCode = null,
@@ -175,6 +179,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             string transactionId = null)
         {
             this.ColCoCode = colCoCode;
+            this.ColCoId = colCoId;
             this.InvoiceStatus = invoiceStatus;
             this.PayerNumber = payerNumber;
 
@@ -192,6 +197,7 @@ namespace ShellDataReportingAPIs.Standard.Models
             {
                 this.DriverName = driverName;
             }
+            this.CardId = cardId;
 
             if (cardGroupId != null)
             {
@@ -332,10 +338,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         public string ColCoCode { get; set; }
 
         /// <summary>
-        /// Gets or sets InvoiceStatus.
+        /// The Collecting Company Id in the Shell Card Platform.
+        /// </summary>
+        [JsonProperty("ColCoId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ColCoId { get; set; }
+
+        /// <summary>
+        /// Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All
         /// </summary>
         [JsonProperty("InvoiceStatus")]
-        public object InvoiceStatus { get; set; }
+        public Models.PricedTransactionReqV2InvoiceStatusEnum InvoiceStatus { get; set; }
 
         /// <summary>
         /// Payer Number of the selected payer.
@@ -396,6 +408,12 @@ namespace ShellDataReportingAPIs.Standard.Models
                 this.driverName = value;
             }
         }
+
+        /// <summary>
+        /// Unique Card Id in the Shell Card Platform
+        /// </summary>
+        [JsonProperty("CardId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CardId { get; set; }
 
         /// <summary>
         /// Card Group Id in GFN
@@ -1421,8 +1439,9 @@ namespace ShellDataReportingAPIs.Standard.Models
             return obj is PricedRequestData other &&
                 (this.ColCoCode == null && other.ColCoCode == null ||
                  this.ColCoCode?.Equals(other.ColCoCode) == true) &&
-                (this.InvoiceStatus == null && other.InvoiceStatus == null ||
-                 this.InvoiceStatus?.Equals(other.InvoiceStatus) == true) &&
+                (this.ColCoId == null && other.ColCoId == null ||
+                 this.ColCoId?.Equals(other.ColCoId) == true) &&
+                (this.InvoiceStatus.Equals(other.InvoiceStatus)) &&
                 (this.PayerNumber == null && other.PayerNumber == null ||
                  this.PayerNumber?.Equals(other.PayerNumber) == true) &&
                 (this.AccountId == null && other.AccountId == null ||
@@ -1431,6 +1450,8 @@ namespace ShellDataReportingAPIs.Standard.Models
                  this.AccountNumber?.Equals(other.AccountNumber) == true) &&
                 (this.DriverName == null && other.DriverName == null ||
                  this.DriverName?.Equals(other.DriverName) == true) &&
+                (this.CardId == null && other.CardId == null ||
+                 this.CardId?.Equals(other.CardId) == true) &&
                 (this.CardGroupId == null && other.CardGroupId == null ||
                  this.CardGroupId?.Equals(other.CardGroupId) == true) &&
                 (this.CardPAN == null && other.CardPAN == null ||
@@ -1501,43 +1522,45 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoCode = {this.ColCoCode ?? "null"}");
-            toStringOutput.Add($"InvoiceStatus = {(this.InvoiceStatus == null ? "null" : this.InvoiceStatus.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
-            toStringOutput.Add($"this.DriverName = {this.DriverName ?? "null"}");
-            toStringOutput.Add($"this.CardGroupId = {(this.CardGroupId == null ? "null" : this.CardGroupId.ToString())}");
-            toStringOutput.Add($"this.CardPAN = {this.CardPAN ?? "null"}");
-            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
-            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
-            toStringOutput.Add($"this.SiteCode = {this.SiteCode ?? "null"}");
-            toStringOutput.Add($"this.IncomingSiteNumber = {this.IncomingSiteNumber ?? "null"}");
-            toStringOutput.Add($"this.InvoiceDate = {this.InvoiceDate ?? "null"}");
-            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
-            toStringOutput.Add($"this.PurchasedInCountryCode = {this.PurchasedInCountryCode ?? "null"}");
-            toStringOutput.Add($"this.PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
-            toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.VehicleRegistrationNumber = {this.VehicleRegistrationNumber ?? "null"}");
-            toStringOutput.Add($"this.FeeTypeId = {(this.FeeTypeId == null ? "null" : this.FeeTypeId.ToString())}");
-            toStringOutput.Add($"this.LineItemDescription = {this.LineItemDescription ?? "null"}");
-            toStringOutput.Add($"this.Cards = {(this.Cards == null ? "null" : $"[{string.Join(", ", this.Cards)} ]")}");
-            toStringOutput.Add($"this.SortOrder = {(this.SortOrder == null ? "null" : this.SortOrder.ToString())}");
-            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
-            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
-            toStringOutput.Add($"this.Period = {(this.Period == null ? "null" : this.Period.ToString())}");
-            toStringOutput.Add($"this.PostingDateFrom = {this.PostingDateFrom ?? "null"}");
-            toStringOutput.Add($"this.PostingDateTo = {this.PostingDateTo ?? "null"}");
-            toStringOutput.Add($"this.TransactionItemId = {this.TransactionItemId ?? "null"}");
-            toStringOutput.Add($"this.FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");
-            toStringOutput.Add($"this.IncludeFees = {(this.IncludeFees == null ? "null" : this.IncludeFees.ToString())}");
-            toStringOutput.Add($"this.IsMultipayer = {(this.IsMultipayer == null ? "null" : this.IsMultipayer.ToString())}");
-            toStringOutput.Add($"this.ValidInvoiceDateOnly = {(this.ValidInvoiceDateOnly == null ? "null" : this.ValidInvoiceDateOnly.ToString())}");
-            toStringOutput.Add($"this.InvoiceFromDate = {this.InvoiceFromDate ?? "null"}");
-            toStringOutput.Add($"this.InvoiceToDate = {this.InvoiceToDate ?? "null"}");
-            toStringOutput.Add($"this.HostingCollectingCompanyNumber = {this.HostingCollectingCompanyNumber ?? "null"}");
-            toStringOutput.Add($"this.Search = {this.Search ?? "null"}");
-            toStringOutput.Add($"this.TransactionId = {this.TransactionId ?? "null"}");
+            toStringOutput.Add($"ColCoCode = {this.ColCoCode ?? "null"}");
+            toStringOutput.Add($"ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
+            toStringOutput.Add($"InvoiceStatus = {this.InvoiceStatus}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
+            toStringOutput.Add($"AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"DriverName = {this.DriverName ?? "null"}");
+            toStringOutput.Add($"CardId = {(this.CardId == null ? "null" : this.CardId.ToString())}");
+            toStringOutput.Add($"CardGroupId = {(this.CardGroupId == null ? "null" : this.CardGroupId.ToString())}");
+            toStringOutput.Add($"CardPAN = {this.CardPAN ?? "null"}");
+            toStringOutput.Add($"ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"ProductName = {this.ProductName ?? "null"}");
+            toStringOutput.Add($"SiteCode = {this.SiteCode ?? "null"}");
+            toStringOutput.Add($"IncomingSiteNumber = {this.IncomingSiteNumber ?? "null"}");
+            toStringOutput.Add($"InvoiceDate = {this.InvoiceDate ?? "null"}");
+            toStringOutput.Add($"InvoiceNumber = {this.InvoiceNumber ?? "null"}");
+            toStringOutput.Add($"PurchasedInCountryCode = {this.PurchasedInCountryCode ?? "null"}");
+            toStringOutput.Add($"PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
+            toStringOutput.Add($"SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
+            toStringOutput.Add($"VehicleRegistrationNumber = {this.VehicleRegistrationNumber ?? "null"}");
+            toStringOutput.Add($"FeeTypeId = {(this.FeeTypeId == null ? "null" : this.FeeTypeId.ToString())}");
+            toStringOutput.Add($"LineItemDescription = {this.LineItemDescription ?? "null"}");
+            toStringOutput.Add($"Cards = {(this.Cards == null ? "null" : $"[{string.Join(", ", this.Cards)} ]")}");
+            toStringOutput.Add($"SortOrder = {(this.SortOrder == null ? "null" : this.SortOrder.ToString())}");
+            toStringOutput.Add($"FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"ToDate = {this.ToDate ?? "null"}");
+            toStringOutput.Add($"Period = {(this.Period == null ? "null" : this.Period.ToString())}");
+            toStringOutput.Add($"PostingDateFrom = {this.PostingDateFrom ?? "null"}");
+            toStringOutput.Add($"PostingDateTo = {this.PostingDateTo ?? "null"}");
+            toStringOutput.Add($"TransactionItemId = {this.TransactionItemId ?? "null"}");
+            toStringOutput.Add($"FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");
+            toStringOutput.Add($"IncludeFees = {(this.IncludeFees == null ? "null" : this.IncludeFees.ToString())}");
+            toStringOutput.Add($"IsMultipayer = {(this.IsMultipayer == null ? "null" : this.IsMultipayer.ToString())}");
+            toStringOutput.Add($"ValidInvoiceDateOnly = {(this.ValidInvoiceDateOnly == null ? "null" : this.ValidInvoiceDateOnly.ToString())}");
+            toStringOutput.Add($"InvoiceFromDate = {this.InvoiceFromDate ?? "null"}");
+            toStringOutput.Add($"InvoiceToDate = {this.InvoiceToDate ?? "null"}");
+            toStringOutput.Add($"HostingCollectingCompanyNumber = {this.HostingCollectingCompanyNumber ?? "null"}");
+            toStringOutput.Add($"Search = {this.Search ?? "null"}");
+            toStringOutput.Add($"TransactionId = {this.TransactionId ?? "null"}");
         }
     }
 }

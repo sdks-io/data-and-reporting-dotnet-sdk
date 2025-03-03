@@ -104,10 +104,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.EIDList = {(this.EIDList == null ? "null" : $"[{string.Join(", ", this.EIDList)} ]")}");
-            toStringOutput.Add($"this.AccountGroupCountry = {(this.AccountGroupCountry == null ? "null" : this.AccountGroupCountry.ToString())}");
-            toStringOutput.Add($"this.AccountGroupIdList = {(this.AccountGroupIdList == null ? "null" : $"[{string.Join(", ", this.AccountGroupIdList)} ]")}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"EIDList = {(this.EIDList == null ? "null" : $"[{string.Join(", ", this.EIDList)} ]")}");
+            toStringOutput.Add($"AccountGroupCountry = {(this.AccountGroupCountry == null ? "null" : this.AccountGroupCountry.ToString())}");
+            toStringOutput.Add($"AccountGroupIdList = {(this.AccountGroupIdList == null ? "null" : $"[{string.Join(", ", this.AccountGroupIdList)} ]")}");
         }
     }
 }

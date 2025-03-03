@@ -500,16 +500,16 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.IncludeMonthlyInvoiceTrend = {(this.IncludeMonthlyInvoiceTrend == null ? "null" : this.IncludeMonthlyInvoiceTrend.ToString())}");
-            toStringOutput.Add($"this.IncludePastStatementOfAccounts = {(this.IncludePastStatementOfAccounts == null ? "null" : this.IncludePastStatementOfAccounts.ToString())}");
-            toStringOutput.Add($"this.DueOrOverDueSOADocumentsOnly = {(this.DueOrOverDueSOADocumentsOnly == null ? "null" : this.DueOrOverDueSOADocumentsOnly.ToString())}");
-            toStringOutput.Add($"this.NumberOfSOADocuments = {(this.NumberOfSOADocuments == null ? "null" : this.NumberOfSOADocuments.ToString())}");
-            toStringOutput.Add($"this.IncludeAccountInvoicesSummary = {(this.IncludeAccountInvoicesSummary == null ? "null" : this.IncludeAccountInvoicesSummary.ToString())}");
-            toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
-            toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"IncludeMonthlyInvoiceTrend = {(this.IncludeMonthlyInvoiceTrend == null ? "null" : this.IncludeMonthlyInvoiceTrend.ToString())}");
+            toStringOutput.Add($"IncludePastStatementOfAccounts = {(this.IncludePastStatementOfAccounts == null ? "null" : this.IncludePastStatementOfAccounts.ToString())}");
+            toStringOutput.Add($"DueOrOverDueSOADocumentsOnly = {(this.DueOrOverDueSOADocumentsOnly == null ? "null" : this.DueOrOverDueSOADocumentsOnly.ToString())}");
+            toStringOutput.Add($"NumberOfSOADocuments = {(this.NumberOfSOADocuments == null ? "null" : this.NumberOfSOADocuments.ToString())}");
+            toStringOutput.Add($"IncludeAccountInvoicesSummary = {(this.IncludeAccountInvoicesSummary == null ? "null" : this.IncludeAccountInvoicesSummary.ToString())}");
+            toStringOutput.Add($"ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
+            toStringOutput.Add($"Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
         }
     }
 }

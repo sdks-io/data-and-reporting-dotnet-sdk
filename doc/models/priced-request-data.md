@@ -12,11 +12,13 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ColCoCode` | `string` | Required | Collecting Company Code (Shell Code) of the selected payer. |
-| `InvoiceStatus` | `object` | Required | - |
+| `ColCoId` | `int?` | Optional | The Collecting Company Id in the Shell Card Platform. |
+| `InvoiceStatus` | [`PricedTransactionReqV2InvoiceStatusEnum`](../../doc/models/priced-transaction-req-v2-invoice-status-enum.md) | Required | Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `PayerNumber` | `string` | Required | Payer Number of the selected payer.<br>**Constraints**: *Minimum Length*: `1` |
 | `AccountId` | `int?` | Optional | Account Id (GFN customer id) |
 | `AccountNumber` | `string` | Optional | Account Number of the selected account. |
 | `DriverName` | `string` | Optional | Driver Name (of Card record)<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `40` |
+| `CardId` | `int?` | Optional | Unique Card Id in the Shell Card Platform |
 | `CardGroupId` | `int?` | Optional | Card Group Id in GFN |
 | `CardPAN` | `string` | Optional | Full Card PAN |
 | `ProductCode` | `string` | Optional | Product Code – Global as per GFN configuration<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `8` |
@@ -54,14 +56,13 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 ```json
 {
   "ColCoCode": "032",
-  "InvoiceStatus": {
-    "key1": "val1",
-    "key2": "val2"
-  },
+  "ColCoId": 32,
+  "InvoiceStatus": "A",
   "PayerNumber": "DE26685263",
   "AccountId": 29484,
   "AccountNumber": "DE26667080",
   "DriverName": "HH NX 508",
+  "CardId": 12435,
   "CardGroupId": 40000,
   "CardPAN": "7002051006629890645",
   "ProductCode": "10",

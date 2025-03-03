@@ -203,9 +203,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Reference = {this.Reference ?? "null"}");
-            toStringOutput.Add($"this.Type = {this.Type ?? "null"}");
-            toStringOutput.Add($"this.IsApplicable = {this.IsApplicable ?? "null"}");
+            toStringOutput.Add($"Reference = {this.Reference ?? "null"}");
+            toStringOutput.Add($"Type = {this.Type ?? "null"}");
+            toStringOutput.Add($"IsApplicable = {this.IsApplicable ?? "null"}");
         }
     }
 }

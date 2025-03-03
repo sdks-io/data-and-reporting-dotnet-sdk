@@ -264,21 +264,21 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
-            toStringOutput.Add($"this.TransactionsFromDate = {this.TransactionsFromDate ?? "null"}");
-            toStringOutput.Add($"this.TransactionsToDate = {this.TransactionsToDate ?? "null"}");
-            toStringOutput.Add($"this.MValue = {(this.MValue == null ? "null" : this.MValue.ToString())}");
-            toStringOutput.Add($"this.Condition = {this.Condition}");
-            toStringOutput.Add($"this.Products = {(this.Products == null ? "null" : $"[{string.Join(", ", this.Products)} ]")}");
-            toStringOutput.Add($"this.ExceptionPeriod = {(this.ExceptionPeriod == null ? "null" : this.ExceptionPeriod.ToString())}");
-            toStringOutput.Add($"this.OutputType = {this.OutputType}");
-            toStringOutput.Add($"this.FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");
-            toStringOutput.Add($"this.SiteGroupIds = {(this.SiteGroupIds == null ? "null" : $"[{string.Join(", ", this.SiteGroupIds)} ]")}");
-            toStringOutput.Add($"this.UseFieldId = {(this.UseFieldId == null ? "null" : this.UseFieldId.ToString())}");
+            toStringOutput.Add($"ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
+            toStringOutput.Add($"TransactionsFromDate = {this.TransactionsFromDate ?? "null"}");
+            toStringOutput.Add($"TransactionsToDate = {this.TransactionsToDate ?? "null"}");
+            toStringOutput.Add($"MValue = {(this.MValue == null ? "null" : this.MValue.ToString())}");
+            toStringOutput.Add($"Condition = {this.Condition}");
+            toStringOutput.Add($"Products = {(this.Products == null ? "null" : $"[{string.Join(", ", this.Products)} ]")}");
+            toStringOutput.Add($"ExceptionPeriod = {(this.ExceptionPeriod == null ? "null" : this.ExceptionPeriod.ToString())}");
+            toStringOutput.Add($"OutputType = {this.OutputType}");
+            toStringOutput.Add($"FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");
+            toStringOutput.Add($"SiteGroupIds = {(this.SiteGroupIds == null ? "null" : $"[{string.Join(", ", this.SiteGroupIds)} ]")}");
+            toStringOutput.Add($"UseFieldId = {(this.UseFieldId == null ? "null" : this.UseFieldId.ToString())}");
         }
     }
 }

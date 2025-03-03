@@ -91,9 +91,9 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.Filters = {(this.Filters == null ? "null" : this.Filters.ToString())}");
-            toStringOutput.Add($"this.Page = {this.Page ?? "null"}");
-            toStringOutput.Add($"this.PageSize = {this.PageSize ?? "null"}");
+            toStringOutput.Add($"Filters = {(this.Filters == null ? "null" : this.Filters.ToString())}");
+            toStringOutput.Add($"Page = {this.Page ?? "null"}");
+            toStringOutput.Add($"PageSize = {this.PageSize ?? "null"}");
         }
     }
 }

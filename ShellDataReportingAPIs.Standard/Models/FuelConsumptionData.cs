@@ -982,26 +982,26 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.AccountName = {this.AccountName ?? "null"}");
-            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
-            toStringOutput.Add($"this.PayerName = {this.PayerName ?? "null"}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.CardNumber = {this.CardNumber ?? "null"}");
-            toStringOutput.Add($"this.CardGroupId = {(this.CardGroupId == null ? "null" : this.CardGroupId.ToString())}");
-            toStringOutput.Add($"this.CardGroupName = {this.CardGroupName ?? "null"}");
-            toStringOutput.Add($"this.DriverName = {this.DriverName ?? "null"}");
-            toStringOutput.Add($"this.LicenseNumber = {this.LicenseNumber ?? "null"}");
-            toStringOutput.Add($"this.InitialOdometer = {(this.InitialOdometer == null ? "null" : this.InitialOdometer.ToString())}");
-            toStringOutput.Add($"this.LastOdometer = {(this.LastOdometer == null ? "null" : this.LastOdometer.ToString())}");
-            toStringOutput.Add($"this.Distance = {(this.Distance == null ? "null" : this.Distance.ToString())}");
-            toStringOutput.Add($"this.FuelConsumption = {(this.FuelConsumption == null ? "null" : this.FuelConsumption.ToString())}");
-            toStringOutput.Add($"this.FuelNetAmount = {(this.FuelNetAmount == null ? "null" : this.FuelNetAmount.ToString())}");
-            toStringOutput.Add($"this.Discount = {(this.Discount == null ? "null" : this.Discount.ToString())}");
-            toStringOutput.Add($"this.FuelTax = {(this.FuelTax == null ? "null" : this.FuelTax.ToString())}");
-            toStringOutput.Add($"this.FuelVolume = {(this.FuelVolume == null ? "null" : this.FuelVolume.ToString())}");
-            toStringOutput.Add($"this.GrossNonFuelExpenses = {(this.GrossNonFuelExpenses == null ? "null" : this.GrossNonFuelExpenses.ToString())}");
-            toStringOutput.Add($"this.CO2Produced = {(this.CO2Produced == null ? "null" : this.CO2Produced.ToString())}");
-            toStringOutput.Add($"this.TransactionCount = {(this.TransactionCount == null ? "null" : this.TransactionCount.ToString())}");
+            toStringOutput.Add($"AccountName = {this.AccountName ?? "null"}");
+            toStringOutput.Add($"AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"PayerName = {this.PayerName ?? "null"}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"CardNumber = {this.CardNumber ?? "null"}");
+            toStringOutput.Add($"CardGroupId = {(this.CardGroupId == null ? "null" : this.CardGroupId.ToString())}");
+            toStringOutput.Add($"CardGroupName = {this.CardGroupName ?? "null"}");
+            toStringOutput.Add($"DriverName = {this.DriverName ?? "null"}");
+            toStringOutput.Add($"LicenseNumber = {this.LicenseNumber ?? "null"}");
+            toStringOutput.Add($"InitialOdometer = {(this.InitialOdometer == null ? "null" : this.InitialOdometer.ToString())}");
+            toStringOutput.Add($"LastOdometer = {(this.LastOdometer == null ? "null" : this.LastOdometer.ToString())}");
+            toStringOutput.Add($"Distance = {(this.Distance == null ? "null" : this.Distance.ToString())}");
+            toStringOutput.Add($"FuelConsumption = {(this.FuelConsumption == null ? "null" : this.FuelConsumption.ToString())}");
+            toStringOutput.Add($"FuelNetAmount = {(this.FuelNetAmount == null ? "null" : this.FuelNetAmount.ToString())}");
+            toStringOutput.Add($"Discount = {(this.Discount == null ? "null" : this.Discount.ToString())}");
+            toStringOutput.Add($"FuelTax = {(this.FuelTax == null ? "null" : this.FuelTax.ToString())}");
+            toStringOutput.Add($"FuelVolume = {(this.FuelVolume == null ? "null" : this.FuelVolume.ToString())}");
+            toStringOutput.Add($"GrossNonFuelExpenses = {(this.GrossNonFuelExpenses == null ? "null" : this.GrossNonFuelExpenses.ToString())}");
+            toStringOutput.Add($"CO2Produced = {(this.CO2Produced == null ? "null" : this.CO2Produced.ToString())}");
+            toStringOutput.Add($"TransactionCount = {(this.TransactionCount == null ? "null" : this.TransactionCount.ToString())}");
         }
     }
 }

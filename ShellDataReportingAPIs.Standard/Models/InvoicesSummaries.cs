@@ -709,20 +709,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.AmountDue = {(this.AmountDue == null ? "null" : this.AmountDue.ToString())}");
-            toStringOutput.Add($"this.AmountNotOverdue = {(this.AmountNotOverdue == null ? "null" : this.AmountNotOverdue.ToString())}");
-            toStringOutput.Add($"this.AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
-            toStringOutput.Add($"this.AmountPaid = {(this.AmountPaid == null ? "null" : this.AmountPaid.ToString())}");
-            toStringOutput.Add($"this.BillingCurrencyCode = {this.BillingCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.BillingCurrencySymbol = {this.BillingCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.OutstandingBalance = {(this.OutstandingBalance == null ? "null" : this.OutstandingBalance.ToString())}");
-            toStringOutput.Add($"this.PaymentDueDate = {this.PaymentDueDate ?? "null"}");
-            toStringOutput.Add($"this.SummaryDocumentDate = {this.SummaryDocumentDate ?? "null"}");
-            toStringOutput.Add($"this.TotalBillingDocuments = {(this.TotalBillingDocuments == null ? "null" : this.TotalBillingDocuments.ToString())}");
-            toStringOutput.Add($"this.TotalGrossAmountBillingCurrency = {(this.TotalGrossAmountBillingCurrency == null ? "null" : this.TotalGrossAmountBillingCurrency.ToString())}");
-            toStringOutput.Add($"this.TotalNetAmountBillingCurrency = {(this.TotalNetAmountBillingCurrency == null ? "null" : this.TotalNetAmountBillingCurrency.ToString())}");
-            toStringOutput.Add($"this.TotalSummaryDocuments = {(this.TotalSummaryDocuments == null ? "null" : this.TotalSummaryDocuments.ToString())}");
-            toStringOutput.Add($"this.TotalVATAmountBillingCurrency = {(this.TotalVATAmountBillingCurrency == null ? "null" : this.TotalVATAmountBillingCurrency.ToString())}");
+            toStringOutput.Add($"AmountDue = {(this.AmountDue == null ? "null" : this.AmountDue.ToString())}");
+            toStringOutput.Add($"AmountNotOverdue = {(this.AmountNotOverdue == null ? "null" : this.AmountNotOverdue.ToString())}");
+            toStringOutput.Add($"AmountOverdue = {(this.AmountOverdue == null ? "null" : this.AmountOverdue.ToString())}");
+            toStringOutput.Add($"AmountPaid = {(this.AmountPaid == null ? "null" : this.AmountPaid.ToString())}");
+            toStringOutput.Add($"BillingCurrencyCode = {this.BillingCurrencyCode ?? "null"}");
+            toStringOutput.Add($"BillingCurrencySymbol = {this.BillingCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"OutstandingBalance = {(this.OutstandingBalance == null ? "null" : this.OutstandingBalance.ToString())}");
+            toStringOutput.Add($"PaymentDueDate = {this.PaymentDueDate ?? "null"}");
+            toStringOutput.Add($"SummaryDocumentDate = {this.SummaryDocumentDate ?? "null"}");
+            toStringOutput.Add($"TotalBillingDocuments = {(this.TotalBillingDocuments == null ? "null" : this.TotalBillingDocuments.ToString())}");
+            toStringOutput.Add($"TotalGrossAmountBillingCurrency = {(this.TotalGrossAmountBillingCurrency == null ? "null" : this.TotalGrossAmountBillingCurrency.ToString())}");
+            toStringOutput.Add($"TotalNetAmountBillingCurrency = {(this.TotalNetAmountBillingCurrency == null ? "null" : this.TotalNetAmountBillingCurrency.ToString())}");
+            toStringOutput.Add($"TotalSummaryDocuments = {(this.TotalSummaryDocuments == null ? "null" : this.TotalSummaryDocuments.ToString())}");
+            toStringOutput.Add($"TotalVATAmountBillingCurrency = {(this.TotalVATAmountBillingCurrency == null ? "null" : this.TotalVATAmountBillingCurrency.ToString())}");
         }
     }
 }

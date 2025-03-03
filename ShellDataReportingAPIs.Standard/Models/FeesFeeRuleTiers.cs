@@ -384,13 +384,13 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.TierMin = {(this.TierMin == null ? "null" : this.TierMin.ToString())}");
-            toStringOutput.Add($"this.TierMax = {(this.TierMax == null ? "null" : this.TierMax.ToString())}");
-            toStringOutput.Add($"this.DateEffective = {this.DateEffective ?? "null"}");
-            toStringOutput.Add($"this.DateTerminated = {this.DateTerminated ?? "null"}");
-            toStringOutput.Add($"this.TierValue = {(this.TierValue == null ? "null" : this.TierValue.ToString())}");
-            toStringOutput.Add($"this.FeeRuleBasisID = {(this.FeeRuleBasisID == null ? "null" : this.FeeRuleBasisID.ToString())}");
-            toStringOutput.Add($"this.FeeRuleBasisDescription = {this.FeeRuleBasisDescription ?? "null"}");
+            toStringOutput.Add($"TierMin = {(this.TierMin == null ? "null" : this.TierMin.ToString())}");
+            toStringOutput.Add($"TierMax = {(this.TierMax == null ? "null" : this.TierMax.ToString())}");
+            toStringOutput.Add($"DateEffective = {this.DateEffective ?? "null"}");
+            toStringOutput.Add($"DateTerminated = {this.DateTerminated ?? "null"}");
+            toStringOutput.Add($"TierValue = {(this.TierValue == null ? "null" : this.TierValue.ToString())}");
+            toStringOutput.Add($"FeeRuleBasisID = {(this.FeeRuleBasisID == null ? "null" : this.FeeRuleBasisID.ToString())}");
+            toStringOutput.Add($"FeeRuleBasisDescription = {this.FeeRuleBasisDescription ?? "null"}");
         }
     }
 }

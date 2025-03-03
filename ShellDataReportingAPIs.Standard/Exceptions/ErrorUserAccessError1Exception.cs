@@ -38,5 +38,23 @@ namespace ShellDataReportingAPIs.Standard.Exceptions
         /// </summary>
         [JsonProperty("Error", NullValueHandling = NullValueHandling.Ignore)]
         public Models.ErrorUserAccessError Error { get; set; }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            var toStringOutput = new List<string>();
+            this.ToString(toStringOutput);
+            return $"ErrorUserAccessError1Exception : ({string.Join(", ", toStringOutput)})";
+        }
+
+        /// <summary>
+        /// ToString overload.
+        /// </summary>
+        /// <param name="toStringOutput">List of strings.</param>
+        protected void ToString(List<string> toStringOutput)
+        {
+            base.ToString(toStringOutput);
+            toStringOutput.Add($"Error = {(this.Error == null ? "null" : this.Error.ToString())}");
+        }
     }
 }

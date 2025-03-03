@@ -735,20 +735,20 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
-            toStringOutput.Add($"this.ProductCode = {this.ProductCode ?? "null"}");
-            toStringOutput.Add($"this.ProductName = {this.ProductName ?? "null"}");
-            toStringOutput.Add($"this.ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
-            toStringOutput.Add($"this.ProductGroupName = {this.ProductGroupName ?? "null"}");
-            toStringOutput.Add($"this.SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
-            toStringOutput.Add($"this.SiteGroupName = {this.SiteGroupName ?? "null"}");
-            toStringOutput.Add($"this.TotalFuelQuantity = {(this.TotalFuelQuantity == null ? "null" : this.TotalFuelQuantity.ToString())}");
-            toStringOutput.Add($"this.TotalNetAmount = {(this.TotalNetAmount == null ? "null" : this.TotalNetAmount.ToString())}");
-            toStringOutput.Add($"this.TotalGrossAmount = {(this.TotalGrossAmount == null ? "null" : this.TotalGrossAmount.ToString())}");
-            toStringOutput.Add($"this.InvoiceCurrencyCode = {this.InvoiceCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.InvoiceCurrencySymbol = {this.InvoiceCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.CustomerRetailValueTotalNet = {(this.CustomerRetailValueTotalNet == null ? "null" : this.CustomerRetailValueTotalNet.ToString())}");
-            toStringOutput.Add($"this.CustomerRetailValueTotalGross = {(this.CustomerRetailValueTotalGross == null ? "null" : this.CustomerRetailValueTotalGross.ToString())}");
+            toStringOutput.Add($"ProductId = {(this.ProductId == null ? "null" : this.ProductId.ToString())}");
+            toStringOutput.Add($"ProductCode = {this.ProductCode ?? "null"}");
+            toStringOutput.Add($"ProductName = {this.ProductName ?? "null"}");
+            toStringOutput.Add($"ProductGroupId = {(this.ProductGroupId == null ? "null" : this.ProductGroupId.ToString())}");
+            toStringOutput.Add($"ProductGroupName = {this.ProductGroupName ?? "null"}");
+            toStringOutput.Add($"SiteGroupId = {(this.SiteGroupId == null ? "null" : this.SiteGroupId.ToString())}");
+            toStringOutput.Add($"SiteGroupName = {this.SiteGroupName ?? "null"}");
+            toStringOutput.Add($"TotalFuelQuantity = {(this.TotalFuelQuantity == null ? "null" : this.TotalFuelQuantity.ToString())}");
+            toStringOutput.Add($"TotalNetAmount = {(this.TotalNetAmount == null ? "null" : this.TotalNetAmount.ToString())}");
+            toStringOutput.Add($"TotalGrossAmount = {(this.TotalGrossAmount == null ? "null" : this.TotalGrossAmount.ToString())}");
+            toStringOutput.Add($"InvoiceCurrencyCode = {this.InvoiceCurrencyCode ?? "null"}");
+            toStringOutput.Add($"InvoiceCurrencySymbol = {this.InvoiceCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"CustomerRetailValueTotalNet = {(this.CustomerRetailValueTotalNet == null ? "null" : this.CustomerRetailValueTotalNet.ToString())}");
+            toStringOutput.Add($"CustomerRetailValueTotalGross = {(this.CustomerRetailValueTotalGross == null ? "null" : this.CustomerRetailValueTotalGross.ToString())}");
         }
     }
 }

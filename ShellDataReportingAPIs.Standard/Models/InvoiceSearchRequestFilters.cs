@@ -937,25 +937,25 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
-            toStringOutput.Add($"this.PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
-            toStringOutput.Add($"this.PayerNumber = {this.PayerNumber ?? "null"}");
-            toStringOutput.Add($"this.InvoiceId = {(this.InvoiceId == null ? "null" : this.InvoiceId.ToString())}");
-            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
-            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
-            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
-            toStringOutput.Add($"this.InvoiceDate = {this.InvoiceDate ?? "null"}");
-            toStringOutput.Add($"this.SummaryDocumentId = {(this.SummaryDocumentId == null ? "null" : this.SummaryDocumentId.ToString())}");
-            toStringOutput.Add($"this.SummaryDocumentNumber = {this.SummaryDocumentNumber ?? "null"}");
-            toStringOutput.Add($"this.StatementOfAccountId = {this.StatementOfAccountId ?? "null"}");
-            toStringOutput.Add($"this.SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
-            toStringOutput.Add($"this.Period = {(this.Period == null ? "null" : this.Period.ToString())}");
-            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
-            toStringOutput.Add($"this.InvoicedOnBehalfOf = {this.InvoicedOnBehalfOf ?? "null"}");
-            toStringOutput.Add($"this.IncludeEInvoiceDetails = {(this.IncludeEInvoiceDetails == null ? "null" : this.IncludeEInvoiceDetails.ToString())}");
-            toStringOutput.Add($"this.ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
-            toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
-            toStringOutput.Add($"this.Type = {this.Type ?? "null"}");
+            toStringOutput.Add($"ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
+            toStringOutput.Add($"PayerId = {(this.PayerId == null ? "null" : this.PayerId.ToString())}");
+            toStringOutput.Add($"PayerNumber = {this.PayerNumber ?? "null"}");
+            toStringOutput.Add($"InvoiceId = {(this.InvoiceId == null ? "null" : this.InvoiceId.ToString())}");
+            toStringOutput.Add($"InvoiceNumber = {this.InvoiceNumber ?? "null"}");
+            toStringOutput.Add($"FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"ToDate = {this.ToDate ?? "null"}");
+            toStringOutput.Add($"InvoiceDate = {this.InvoiceDate ?? "null"}");
+            toStringOutput.Add($"SummaryDocumentId = {(this.SummaryDocumentId == null ? "null" : this.SummaryDocumentId.ToString())}");
+            toStringOutput.Add($"SummaryDocumentNumber = {this.SummaryDocumentNumber ?? "null"}");
+            toStringOutput.Add($"StatementOfAccountId = {this.StatementOfAccountId ?? "null"}");
+            toStringOutput.Add($"SoAReferenceNumber = {this.SoAReferenceNumber ?? "null"}");
+            toStringOutput.Add($"Period = {(this.Period == null ? "null" : this.Period.ToString())}");
+            toStringOutput.Add($"InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"InvoicedOnBehalfOf = {this.InvoicedOnBehalfOf ?? "null"}");
+            toStringOutput.Add($"IncludeEInvoiceDetails = {(this.IncludeEInvoiceDetails == null ? "null" : this.IncludeEInvoiceDetails.ToString())}");
+            toStringOutput.Add($"ColCoCode = {(this.ColCoCode == null ? "null" : this.ColCoCode.ToString())}");
+            toStringOutput.Add($"Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
+            toStringOutput.Add($"Type = {this.Type ?? "null"}");
         }
     }
 }

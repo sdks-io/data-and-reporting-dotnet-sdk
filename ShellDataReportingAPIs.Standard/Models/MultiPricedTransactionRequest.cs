@@ -362,26 +362,26 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
-            toStringOutput.Add($"this.ColCoCode = {this.ColCoCode}");
-            toStringOutput.Add($"this.Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
-            toStringOutput.Add($"this.InvoiceStatus = {this.InvoiceStatus ?? "null"}");
-            toStringOutput.Add($"this.PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
-            toStringOutput.Add($"this.FromDate = {this.FromDate ?? "null"}");
-            toStringOutput.Add($"this.ToDate = {this.ToDate ?? "null"}");
-            toStringOutput.Add($"this.Period = {(this.Period == null ? "null" : this.Period.ToString())}");
-            toStringOutput.Add($"this.PostingDateFrom = {this.PostingDateFrom ?? "null"}");
-            toStringOutput.Add($"this.PostingDateTo = {this.PostingDateTo ?? "null"}");
-            toStringOutput.Add($"this.InvoiceDate = {this.InvoiceDate ?? "null"}");
-            toStringOutput.Add($"this.InvoiceNumber = {this.InvoiceNumber ?? "null"}");
-            toStringOutput.Add($"this.ValidInvoiceDateOnly = {(this.ValidInvoiceDateOnly == null ? "null" : this.ValidInvoiceDateOnly.ToString())}");
-            toStringOutput.Add($"this.InvoiceFromDate = {this.InvoiceFromDate ?? "null"}");
-            toStringOutput.Add($"this.InvoiceToDate = {this.InvoiceToDate ?? "null"}");
-            toStringOutput.Add($"this.FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");
-            toStringOutput.Add($"this.IncludeFees = {(this.IncludeFees == null ? "null" : this.IncludeFees.ToString())}");
-            toStringOutput.Add($"this.SortOrder = {this.SortOrder ?? "null"}");
-            toStringOutput.Add($"this.CurrentPage = {(this.CurrentPage == null ? "null" : this.CurrentPage.ToString())}");
-            toStringOutput.Add($"this.PageSize = {(this.PageSize == null ? "null" : this.PageSize.ToString())}");
+            toStringOutput.Add($"ColCoId = {(this.ColCoId == null ? "null" : this.ColCoId.ToString())}");
+            toStringOutput.Add($"ColCoCode = {this.ColCoCode}");
+            toStringOutput.Add($"Accounts = {(this.Accounts == null ? "null" : $"[{string.Join(", ", this.Accounts)} ]")}");
+            toStringOutput.Add($"InvoiceStatus = {this.InvoiceStatus ?? "null"}");
+            toStringOutput.Add($"PurchasedInCountry = {this.PurchasedInCountry ?? "null"}");
+            toStringOutput.Add($"FromDate = {this.FromDate ?? "null"}");
+            toStringOutput.Add($"ToDate = {this.ToDate ?? "null"}");
+            toStringOutput.Add($"Period = {(this.Period == null ? "null" : this.Period.ToString())}");
+            toStringOutput.Add($"PostingDateFrom = {this.PostingDateFrom ?? "null"}");
+            toStringOutput.Add($"PostingDateTo = {this.PostingDateTo ?? "null"}");
+            toStringOutput.Add($"InvoiceDate = {this.InvoiceDate ?? "null"}");
+            toStringOutput.Add($"InvoiceNumber = {this.InvoiceNumber ?? "null"}");
+            toStringOutput.Add($"ValidInvoiceDateOnly = {(this.ValidInvoiceDateOnly == null ? "null" : this.ValidInvoiceDateOnly.ToString())}");
+            toStringOutput.Add($"InvoiceFromDate = {this.InvoiceFromDate ?? "null"}");
+            toStringOutput.Add($"InvoiceToDate = {this.InvoiceToDate ?? "null"}");
+            toStringOutput.Add($"FuelOnly = {(this.FuelOnly == null ? "null" : this.FuelOnly.ToString())}");
+            toStringOutput.Add($"IncludeFees = {(this.IncludeFees == null ? "null" : this.IncludeFees.ToString())}");
+            toStringOutput.Add($"SortOrder = {this.SortOrder ?? "null"}");
+            toStringOutput.Add($"CurrentPage = {(this.CurrentPage == null ? "null" : this.CurrentPage.ToString())}");
+            toStringOutput.Add($"PageSize = {(this.PageSize == null ? "null" : this.PageSize.ToString())}");
         }
     }
 }

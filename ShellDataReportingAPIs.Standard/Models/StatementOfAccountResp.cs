@@ -222,11 +222,11 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.LastStatementOfAccount = {(this.LastStatementOfAccount == null ? "null" : this.LastStatementOfAccount.ToString())}");
-            toStringOutput.Add($"this.MonthlyInvoiceTrend = {(this.MonthlyInvoiceTrend == null ? "null" : $"[{string.Join(", ", this.MonthlyInvoiceTrend)} ]")}");
-            toStringOutput.Add($"this.PastStatementOfAccounts = {(this.PastStatementOfAccounts == null ? "null" : $"[{string.Join(", ", this.PastStatementOfAccounts)} ]")}");
-            toStringOutput.Add($"this.PaymentsSinceLastSOA = {(this.PaymentsSinceLastSOA == null ? "null" : $"[{string.Join(", ", this.PaymentsSinceLastSOA)} ]")}");
-            toStringOutput.Add($"this.InvoicesSummaries = {(this.InvoicesSummaries == null ? "null" : $"[{string.Join(", ", this.InvoicesSummaries)} ]")}");
+            toStringOutput.Add($"LastStatementOfAccount = {(this.LastStatementOfAccount == null ? "null" : this.LastStatementOfAccount.ToString())}");
+            toStringOutput.Add($"MonthlyInvoiceTrend = {(this.MonthlyInvoiceTrend == null ? "null" : $"[{string.Join(", ", this.MonthlyInvoiceTrend)} ]")}");
+            toStringOutput.Add($"PastStatementOfAccounts = {(this.PastStatementOfAccounts == null ? "null" : $"[{string.Join(", ", this.PastStatementOfAccounts)} ]")}");
+            toStringOutput.Add($"PaymentsSinceLastSOA = {(this.PaymentsSinceLastSOA == null ? "null" : $"[{string.Join(", ", this.PaymentsSinceLastSOA)} ]")}");
+            toStringOutput.Add($"InvoicesSummaries = {(this.InvoicesSummaries == null ? "null" : $"[{string.Join(", ", this.InvoicesSummaries)} ]")}");
         }
     }
 }

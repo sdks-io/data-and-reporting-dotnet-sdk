@@ -246,10 +246,10 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.AssociatedAccountId = {(this.AssociatedAccountId == null ? "null" : this.AssociatedAccountId.ToString())}");
-            toStringOutput.Add($"this.AssociatedAccountNumber = {this.AssociatedAccountNumber ?? "null"}");
-            toStringOutput.Add($"this.AssociatedAccountShortName = {this.AssociatedAccountShortName ?? "null"}");
-            toStringOutput.Add($"this.AssociatedAccountFullName = {this.AssociatedAccountFullName ?? "null"}");
+            toStringOutput.Add($"AssociatedAccountId = {(this.AssociatedAccountId == null ? "null" : this.AssociatedAccountId.ToString())}");
+            toStringOutput.Add($"AssociatedAccountNumber = {this.AssociatedAccountNumber ?? "null"}");
+            toStringOutput.Add($"AssociatedAccountShortName = {this.AssociatedAccountShortName ?? "null"}");
+            toStringOutput.Add($"AssociatedAccountFullName = {this.AssociatedAccountFullName ?? "null"}");
         }
     }
 }

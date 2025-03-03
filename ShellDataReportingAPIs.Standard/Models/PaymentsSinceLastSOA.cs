@@ -1039,27 +1039,27 @@ namespace ShellDataReportingAPIs.Standard.Models
         /// <param name="toStringOutput">List of strings.</param>
         protected void ToString(List<string> toStringOutput)
         {
-            toStringOutput.Add($"this.AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
-            toStringOutput.Add($"this.AccountNumber = {this.AccountNumber ?? "null"}");
-            toStringOutput.Add($"this.AccountShortName = {this.AccountShortName ?? "null"}");
-            toStringOutput.Add($"this.SummaryDocumentId = {(this.SummaryDocumentId == null ? "null" : this.SummaryDocumentId.ToString())}");
-            toStringOutput.Add($"this.SummaryDocumentNumber = {this.SummaryDocumentNumber ?? "null"}");
-            toStringOutput.Add($"this.SummaryDocumentDate = {this.SummaryDocumentDate ?? "null"}");
-            toStringOutput.Add($"this.SummaryDocumentPaymentDueDate = {this.SummaryDocumentPaymentDueDate ?? "null"}");
-            toStringOutput.Add($"this.SummaryDocumentTotalValue = {(this.SummaryDocumentTotalValue == null ? "null" : this.SummaryDocumentTotalValue.ToString())}");
-            toStringOutput.Add($"this.SummaryDocumentTotalVAT = {(this.SummaryDocumentTotalVAT == null ? "null" : this.SummaryDocumentTotalVAT.ToString())}");
-            toStringOutput.Add($"this.SummaryDocumentDDAmount = {(this.SummaryDocumentDDAmount == null ? "null" : this.SummaryDocumentDDAmount.ToString())}");
-            toStringOutput.Add($"this.PaymentDate = {this.PaymentDate ?? "null"}");
-            toStringOutput.Add($"this.PaymentReference = {this.PaymentReference ?? "null"}");
-            toStringOutput.Add($"this.PaymentCurrencyCode = {this.PaymentCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.PaymentCurrencySymbol = {this.PaymentCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.AmountPaid = {(this.AmountPaid == null ? "null" : this.AmountPaid.ToString())}");
-            toStringOutput.Add($"this.Balance = {(this.Balance == null ? "null" : this.Balance.ToString())}");
-            toStringOutput.Add($"this.TruePayment = {this.TruePayment ?? "null"}");
-            toStringOutput.Add($"this.PrepaidBalance = {(this.PrepaidBalance == null ? "null" : this.PrepaidBalance.ToString())}");
-            toStringOutput.Add($"this.LocalCurrencyCode = {this.LocalCurrencyCode ?? "null"}");
-            toStringOutput.Add($"this.LocalCurrencySymbol = {this.LocalCurrencySymbol ?? "null"}");
-            toStringOutput.Add($"this.LocalCurrencyExchangeRate = {this.LocalCurrencyExchangeRate ?? "null"}");
+            toStringOutput.Add($"AccountId = {(this.AccountId == null ? "null" : this.AccountId.ToString())}");
+            toStringOutput.Add($"AccountNumber = {this.AccountNumber ?? "null"}");
+            toStringOutput.Add($"AccountShortName = {this.AccountShortName ?? "null"}");
+            toStringOutput.Add($"SummaryDocumentId = {(this.SummaryDocumentId == null ? "null" : this.SummaryDocumentId.ToString())}");
+            toStringOutput.Add($"SummaryDocumentNumber = {this.SummaryDocumentNumber ?? "null"}");
+            toStringOutput.Add($"SummaryDocumentDate = {this.SummaryDocumentDate ?? "null"}");
+            toStringOutput.Add($"SummaryDocumentPaymentDueDate = {this.SummaryDocumentPaymentDueDate ?? "null"}");
+            toStringOutput.Add($"SummaryDocumentTotalValue = {(this.SummaryDocumentTotalValue == null ? "null" : this.SummaryDocumentTotalValue.ToString())}");
+            toStringOutput.Add($"SummaryDocumentTotalVAT = {(this.SummaryDocumentTotalVAT == null ? "null" : this.SummaryDocumentTotalVAT.ToString())}");
+            toStringOutput.Add($"SummaryDocumentDDAmount = {(this.SummaryDocumentDDAmount == null ? "null" : this.SummaryDocumentDDAmount.ToString())}");
+            toStringOutput.Add($"PaymentDate = {this.PaymentDate ?? "null"}");
+            toStringOutput.Add($"PaymentReference = {this.PaymentReference ?? "null"}");
+            toStringOutput.Add($"PaymentCurrencyCode = {this.PaymentCurrencyCode ?? "null"}");
+            toStringOutput.Add($"PaymentCurrencySymbol = {this.PaymentCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"AmountPaid = {(this.AmountPaid == null ? "null" : this.AmountPaid.ToString())}");
+            toStringOutput.Add($"Balance = {(this.Balance == null ? "null" : this.Balance.ToString())}");
+            toStringOutput.Add($"TruePayment = {this.TruePayment ?? "null"}");
+            toStringOutput.Add($"PrepaidBalance = {(this.PrepaidBalance == null ? "null" : this.PrepaidBalance.ToString())}");
+            toStringOutput.Add($"LocalCurrencyCode = {this.LocalCurrencyCode ?? "null"}");
+            toStringOutput.Add($"LocalCurrencySymbol = {this.LocalCurrencySymbol ?? "null"}");
+            toStringOutput.Add($"LocalCurrencyExchangeRate = {this.LocalCurrencyExchangeRate ?? "null"}");
         }
     }
 }
