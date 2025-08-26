@@ -11,8 +11,6 @@
 |  --- | --- | --- | --- |
 | `CardExceptions` | [`List<CardExceptions>`](../../doc/models/card-exceptions.md) | Optional | - |
 | `TransactionExceptions` | [`List<TransactionExceptions>`](../../doc/models/transaction-exceptions.md) | Optional | - |
-| `Error` | [`ErrorStatus`](../../doc/models/error-status.md) | Optional | - |
-| `RequestId` | `string` | Optional | API Request Id |
 
 ## Example (as JSON)
 
@@ -42,12 +40,7 @@
       "TransactionGUID": "TransactionGUID2",
       "TransactionDate": "TransactionDate6"
     }
-  ],
-  "Error": {
-    "Code": "Code4",
-    "Description": "Description2"
-  },
-  "RequestId": "RequestId8"
+  ]
 }
 ```
 

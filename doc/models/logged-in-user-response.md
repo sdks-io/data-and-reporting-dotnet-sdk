@@ -13,15 +13,15 @@
 | `DisplayName` | `string` | Optional | Name of the logged in user. |
 | `IdMSSOID` | `string` | Optional | Single Sign On/Unique Identifier of the User in Identity Management system |
 | `PreferredLanguage` | `string` | Optional | ISO culture code/ Language chosen by the logged in user |
-| `IsSuperAdmin` | `bool?` | Optional | Whether the user is a super administrator<br>**Default**: `false` |
+| `IsSuperAdmin` | `bool?` | Optional | Whether the user is a super administrator<br><br>**Default**: `false` |
 | `DateFormat` | `string` | Optional | Preferred Date format for the logged in user |
 | `TimeFormat` | `string` | Optional | Preferred Time format for the logged in user |
 | `WeekBegins` | `int?` | Optional | Preferred Day to Begin the Week. The value will be between 1 to 7 or null. |
-| `DisplayWeek` | `bool?` | Optional | Preferred Display Week on Fuel Prices configuration for the logged in User.<br>**Default**: `true` |
+| `DisplayWeek` | `bool?` | Optional | Preferred Display Week on Fuel Prices configuration for the logged in User.<br><br>**Default**: `true` |
 | `CSVSeparator` | `string` | Optional | Preferred CSV Separator for the logged in user. |
 | `DecimalSeparator` | `string` | Optional | Preferred Decimal separator configured for the logged in user<br>Note: - Colco default value (configured at Microservices) is returned when the user is not provided or does not exist. |
 | `ReportFormat` | `string` | Optional | Preferred report format configured for the logged in user |
-| `HasAPIAccess` | `bool?` | Optional | True/False<br>True, if user has access to the requested API. This is validated based on the role Vs API access matrix and client Vs API access matrix.<br>**Default**: `true` |
+| `HasAPIAccess` | `bool?` | Optional | True/False<br>True, if user has access to the requested API. This is validated based on the role Vs API access matrix and client Vs API access matrix.<br><br>**Default**: `true` |
 | `Roles` | [`List<Role>`](../../doc/models/role.md) | Optional | List of roles the user have access to |
 | `Payers` | [`List<PayerAccess>`](../../doc/models/payer-access.md) | Optional | List of payers which the user has access to.<br>•    It will return 250 payers only and it is configurable. If the user has more than that, the remaining will be ignored.<br>•    The payer which is marked as default will be the first item in the output.<br><br>Note: This list will be empty for users mapped with roles which has either IsShellAdmin or IsServiceAccount set to true as their access level is controlled at ColCo level only. |
 | `Accounts` | [`List<AccountAccess>`](../../doc/models/account-access.md) | Optional | List of accounts which the user has access to.<br>Note: This list will be empty for users mapped with roles which has either IsCustomerAdmin, IsShellAdmin or IsServiceAccount set to true as their access level is controller at either ColCo or payer level only. |
@@ -32,8 +32,6 @@
 | `PayerCount` | `int?` | Optional | Count of payers accessible to the user at the time when user was created or last updated.<br>Note:<br>Count may vary based on customer operations hence it may not be an up to date value. |
 | `AccountCount` | `int?` | Optional | Count of accounts at the time when the user was created or last updated.<br>Note:<br>Count may vary based on customer operations hence it may not be an up to date value. |
 | `CardCount` | `int?` | Optional | Count of cards at the time when the user was created or last updated.<br>Note:<br>Count may vary based on customer operations hence it may not be an up to date value. |
-| `Error` | [`ErrorStatus`](../../doc/models/error-status.md) | Optional | - |
-| `RequestId` | `string` | Optional | Request Id of the API call |
 
 ## Example (as JSON)
 
@@ -56,8 +54,7 @@
   "UserClassificationByShell": "S",
   "PayerCount": 1,
   "AccountCount": 1,
-  "CardCount": 15,
-  "RequestId": "f20979a8-872f-4653-cf12-89b52f1dc7cb"
+  "CardCount": 15
 }
 ```
 

@@ -10,11 +10,6 @@
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Transactions` | [`List<MultiPricedTransactionResponseTransactionsItems>`](../../doc/models/multi-priced-transaction-response-transactions-items.md) | Optional | - |
-| `Error` | [`ErrorStatus`](../../doc/models/error-status.md) | Optional | - |
-| `RequestId` | `string` | Optional | API Request Id |
-| `CurrentPage` | `int?` | Optional | Current Page |
-| `RowCount` | `int?` | Optional | Total row count matched for the given input criteria |
-| `TotalPages` | `int?` | Optional | Calculated page count based on page size from the incoming API request and total number of rows matched for the given input criteria |
 
 ## Example (as JSON)
 
@@ -35,14 +30,7 @@
       "CardExpiry": "CardExpiry0",
       "TransactionDate": "TransactionDate0"
     }
-  ],
-  "Error": {
-    "Code": "Code4",
-    "Description": "Description2"
-  },
-  "RequestId": "RequestId8",
-  "CurrentPage": 154,
-  "RowCount": 52
+  ]
 }
 ```
 

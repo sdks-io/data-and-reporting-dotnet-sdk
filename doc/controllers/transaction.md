@@ -67,44 +67,34 @@ This operation can fetch transactions that are old up to 24 (configurable) month
 
 ```csharp
 PricedTransactionsAsync(
-    string apikey,
     string requestId,
-    Models.PriceTransactionRequest body = null)
+    Models.PriceTransactionReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`PriceTransactionRequest`](../../doc/models/price-transaction-request.md) | Body, Optional | Priced Transaction Request Body |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`PriceTransactionReq`](../../doc/models/price-transaction-req.md) | Body, Optional | Priced Transaction Request Body |
 
 ## Response Type
 
-[`Task<Models.PricedTransactionResponse>`](../../doc/models/priced-transaction-response.md)
+[`Task<Models.PricedTransactionRes>`](../../doc/models/priced-transaction-res.md)
 
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-PriceTransactionRequest body = new PriceTransactionRequest
+string requestId = "RequestId8";
+PriceTransactionReq body = new PriceTransactionReq
 {
-    ColCoCode = 5,
-    PayerNumber = "GB00000001",
-    InvoiceStatus = "A",
-    FromDate = "20230703",
-    ToDate = "20231002",
-    IncludeFees = true,
-    CurrentPage = 1,
-    PageSize = 2000,
+    Page = 1,
+    PageSize = 100,
 };
 
 try
 {
-    PricedTransactionResponse result = await transactionController.PricedTransactionsAsync(
-        apikey,
+    PricedTransactionRes result = await transactionController.PricedTransactionsAsync(
         requestId,
         body
     );
@@ -116,164 +106,15 @@ catch (ApiException e)
 }
 ```
 
-## Example Response *(as JSON)*
-
-```json
-{
-  "Transactions": [
-    {
-      "AccountId": 2,
-      "AccountName": "API Transaction Customer Testing ",
-      "AccountNumber": "GB00000001",
-      "AccountShortName": "API Transaction Customer Testing ",
-      "Additional1": "",
-      "Additional2": "",
-      "Additional3": "",
-      "Additional4": "",
-      "AllowClearing": "",
-      "AuthorisationCode": "",
-      "CardExpiry": null,
-      "CardExpiryPeriod": "",
-      "CardGroupId": "",
-      "CardGroupName": "",
-      "CardId": null,
-      "CardPAN": "",
-      "CardSequenceNumber": "",
-      "CardType": "",
-      "CheckDigit": "",
-      "ColCoExchangeRate": 0.840303,
-      "CorrectionFlag": "N",
-      "CreditDebitCode": "C",
-      "CRMNumber": "",
-      "CustomerCountry": "United Kingdom",
-      "CustomerCountryCode": "GB",
-      "CustomerCurrencyCode": "GBP",
-      "CustomerCurrencySymbol": "£",
-      "CustomerRetailPriceUnitGross": null,
-      "CustomerRetailValueTotalGross": null,
-      "CustomerRetailValueTotalNet": null,
-      "DelcoCode": "005",
-      "DelCoExchangeRate": null,
-      "DelcoListPriceUnitNet": null,
-      "DelcoName": "Shell U.K. Oil Products Limited",
-      "DelcoRetailPriceUnitNet": null,
-      "DelCoToColCoExchangeRate": null,
-      "DelcoRetailPriceUnitGross": null,
-      "DelcoRetailValueTotalNet": null,
-      "DelcoRetailValueTotalGross": null,
-      "DiscountType": "",
-      "DisputeStatus": "",
-      "DriverName": "",
-      "EffectiveDiscountInCustomerCurrency": null,
-      "EffectiveDiscountInTrxCurrency": null,
-      "EffectiveUnitDiscountInCustomerCurrency": null,
-      "EuroRebateAmount": null,
-      "EuroVATAmount": null,
-      "FleetIDDescription": "",
-      "FleetIdInput": "",
-      "FuelProduct": false,
-      "IncomingCurrencyCode": "",
-      "IncomingProductCode": "1",
-      "IncomingSiteDescription": "",
-      "IncomingSiteNumber": "",
-      "InvoiceCurrencyCode": "GBP",
-      "InvoiceCurrencySymbol": "£",
-      "InvoiceDate": "20230720 00:00:00",
-      "InvoiceGrossAmount": -150,
-      "InvoiceNetAmount": -150,
-      "InvoiceNumber": "3200009606",
-      "InvoiceTax": 0,
-      "IsInvoiced": true,
-      "IsShellSite": null,
-      "IssuerCode": "",
-      "Location": [
-        {
-          "Latitude": "",
-          "Longitude": ""
-        }
-      ],
-      "NetEuroAmount": null,
-      "NetInvoiceIndicator": "",
-      "Network": "",
-      "NetworkCode": "",
-      "OdometerInput": null,
-      "OriginalSalesItemId": "",
-      "ParentCustomerId": null,
-      "ParentCustomerName": "",
-      "ParentCustomerNumber": "",
-      "PayerGroup": "25",
-      "PayerGroupName": "11607315 - EAST CITY TRADING",
-      "PayerName": "API Transaction Customer Testing ",
-      "PayerNumber": "GB00000001",
-      "PINIndicator": "",
-      "PostingDate": "20230720 10:31:14",
-      "ProductCode": "1",
-      "ProductGroupId": 23,
-      "ProductGroupName": "Monetary Adjustment",
-      "ProductName": "Bonus National",
-      "PurchasedInCountry": "",
-      "PurchasedInCountryCode": "",
-      "Quantity": -3,
-      "RebateonNetAmountInCustomerCurrency": null,
-      "RebateonNetAmountInTransactionCurrency": null,
-      "RebateRate": null,
-      "ReceiptNumber": "31455",
-      "RefundFlag": "",
-      "ReleaseCode": "",
-      "SalesItemId": 31455,
-      "SiteCode": "",
-      "SiteCountry": "",
-      "SiteGroupId": null,
-      "SiteGroupName": "",
-      "SiteName": "",
-      "TransactionCurrencyCode": "GBP",
-      "TransactionCurrencySymbol": "£",
-      "TransactionDate": "20230720",
-      "TransactionGrossAmount": -150,
-      "TransactionId": "",
-      "TransactionLine": "",
-      "TransactionNetAmount": -150,
-      "TransactionStatus": "I",
-      "TransactionTax": 0,
-      "TransactionTime": "00:00:00",
-      "TransactionType": "",
-      "TransactionTypeDescription": "",
-      "TrnIdentifier": "0531455",
-      "Type": "FeeItem",
-      "UnitDiscountInvoiceCurrency": null,
-      "UnitDiscountTransactionCurrency": null,
-      "UnitPriceInInvoiceCurrency": null,
-      "UnitPriceInTransactionCurrency": null,
-      "UTCOffset": "",
-      "VATApplicable": "N",
-      "VATCategory": "89",
-      "VATCountry": "United Kingdom",
-      "VATonNetAmount": 0,
-      "VATonNetAmountInCustomerCurrency": 0,
-      "VATRate": 0,
-      "VehicleRegistration": ""
-    }
-  ],
-  "CurrentPage": 1,
-  "RowCount": 3515,
-  "TotalPages": 3515,
-  "Error": {
-    "Code": "0000",
-    "Description": "Success"
-  },
-  "RequestId": "9c22ffa0-81aa-4e04-c90d-81f1e6a48e9c"
-}
-```
-
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Priced Transactions Summary
@@ -315,68 +156,28 @@ If none of the above parameters are provided then last 7 days transactions will 
 
 ```csharp
 PricedTransactionsSummaryAsync(
-    string apikey,
     string requestId,
-    Models.PriceTransSummaryRequest body = null)
+    Models.PriceTransSummaryReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`PriceTransSummaryRequest`](../../doc/models/price-trans-summary-request.md) | Body, Optional | PricedSummary RequestBody |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`PriceTransSummaryReq`](../../doc/models/price-trans-summary-req.md) | Body, Optional | PricedSummary RequestBody |
 
 ## Response Type
 
-[`Task<Models.PricedTransSummaryResponse>`](../../doc/models/priced-trans-summary-response.md)
+[`Task<Models.PricedTransSummaryResp>`](../../doc/models/priced-trans-summary-resp.md)
 
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-PriceTransSummaryRequest body = new PriceTransSummaryRequest
-{
-    ColCoId = 1,
-    ColCoCode = 86,
-    PayerId = 123456,
-    PayerNumber = "GB000000123",
-    CardId = 275549,
-    CardPAN = "7002051006629890645",
-    DriverName = "MICHAEL",
-    VehicleRegistrationNumber = "A144",
-    InvoiceStatus = "I",
-    ProductId = 21,
-    ProductCode = "10",
-    PurchasedInCountry = "UK",
-    CardGroupId = 5,
-    FromDate = "20210718",
-    ToDate = "20210818",
-    Period = 1,
-    SiteCode = "050001",
-    SiteGroupId = 202,
-    PostingDateFrom = "20210820 13:23:55",
-    PostingDateTo = "20210821 13:23:55",
-    SalesItemId = "18315958002",
-    TransactionId = "XXyUwr03Ek20s3LD_890UY",
-    InvoiceDate = "20210821",
-    InvoiceNumber = "AT5456",
-    ValidInvoiceDateOnly = true,
-    InvoiceFromDate = "20210821",
-    InvoiceToDate = "20210921",
-    FuelOnly = true,
-    IncludeFees = true,
-};
-
+string requestId = "RequestId8";
 try
 {
-    PricedTransSummaryResponse result = await transactionController.PricedTransactionsSummaryAsync(
-        apikey,
-        requestId,
-        body
-    );
+    PricedTransSummaryResp result = await transactionController.PricedTransactionsSummaryAsync(requestId);
 }
 catch (ApiException e)
 {
@@ -385,45 +186,15 @@ catch (ApiException e)
 }
 ```
 
-## Example Response *(as JSON)*
-
-```json
-{
-  "TransactionsSummary": [
-    {
-      "ProductId": 0,
-      "ProductCode": "10",
-      "ProductName": "Unleaded - High octane",
-      "ProductGroupId": 2,
-      "ProductGroupName": "All Fuels",
-      "SiteGroupId": 202,
-      "SiteGroupName": "CZ 9100 ECONOMY NETWORK",
-      "TotalFuelQuantity": 0,
-      "TotalNetAmount": 0,
-      "TotalGrossAmount": 0,
-      "InvoiceCurrencyCode": "GBP",
-      "InvoiceCurrencySymbol": "$",
-      "CustomerRetailValueTotalNet": 21.9,
-      "CustomerRetailValueTotalGross": 23.5
-    }
-  ],
-  "Error": {
-    "Description": "Success",
-    "Code": "0000"
-  },
-  "RequestId": "ed557f02-c7d7-4c01-b3e5-11bf3239c8ed"
-}
-```
-
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Multipriced Transactions
@@ -461,68 +232,85 @@ If none of the above parameters are provided then last 7 days transactions will 
 
 ```csharp
 MultipricedTransactionsAsync(
-    string apikey,
     string requestId,
-    Models.MultiPricedTransactionRequest body = null)
+    Models.MultiPricedTransactionReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`MultiPricedTransactionRequest`](../../doc/models/multi-priced-transaction-request.md) | Body, Optional | MultiPayer RequestBody |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`MultiPricedTransactionReq`](../../doc/models/multi-priced-transaction-req.md) | Body, Optional | MultiPayer RequestBody |
 
 ## Response Type
 
-[`Task<Models.MultiPricedTransactionResponse>`](../../doc/models/multi-priced-transaction-response.md)
+[`Task<Models.MultiPricedTransactionRes>`](../../doc/models/multi-priced-transaction-res.md)
 
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-MultiPricedTransactionRequest body = new MultiPricedTransactionRequest
+string requestId = "RequestId8";
+MultiPricedTransactionReq body = new MultiPricedTransactionReq
 {
-    ColCoCode = 86,
-    Accounts = new List<MultiPricedTransactionRequestAccountsItems>
-    {
-        new MultiPricedTransactionRequestAccountsItems
-        {
-            PayerId = 123456,
-            PayerNumber = "GB000000123",
-            AccountId = 123456,
-            AccountNumber = "GB000000123",
-        },
-    },
-    ColCoId = 1,
-    InvoiceStatus = "I",
-    PurchasedInCountry = "UK",
-    FromDate = "20210814",
-    ToDate = "20210814",
-    Period = 1,
-    PostingDateFrom = "20210325 06:46:07",
-    PostingDateTo = "20210325 06:46:07",
-    InvoiceDate = "20210325",
-    InvoiceNumber = "8716711",
-    ValidInvoiceDateOnly = true,
-    InvoiceFromDate = "20210325",
-    InvoiceToDate = "20210325",
-    FuelOnly = true,
-    IncludeFees = true,
-    SortOrder = "1,3,6",
-    CurrentPage = 1,
-    PageSize = 50,
+    Page = 1,
+    PageSize = 100,
 };
 
 try
 {
-    MultiPricedTransactionResponse result = await transactionController.MultipricedTransactionsAsync(
-        apikey,
+    MultiPricedTransactionRes result = await transactionController.MultipricedTransactionsAsync(
         requestId,
         body
     );
+}
+catch (ApiException e)
+{
+    // TODO: Handle exception here
+    Console.WriteLine(e.Message);
+}
+```
+
+## Errors
+
+| HTTP Status Code | Error Description | Exception Class |
+|  --- | --- | --- |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+
+
+# Card Usage Summary
+
+This operation is to provide the expenditure analysis for a card for the past 7 months.
+The response contains a daily summary of the transactions (billed & unbilled) from 1st of the last 7 months for the requested card grouped by card, site-group and product.
+
+```csharp
+CardUsageSummaryAsync(
+    string requestId,
+    Models.CardUsageSummaryReq body = null)
+```
+
+## Parameters
+
+| Parameter | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`CardUsageSummaryReq`](../../doc/models/card-usage-summary-req.md) | Body, Optional | Card Usage Summary RequestBody |
+
+## Response Type
+
+[`Task<Models.CardUsageSummaryRes>`](../../doc/models/card-usage-summary-res.md)
+
+## Example Usage
+
+```csharp
+string requestId = "RequestId8";
+try
+{
+    CardUsageSummaryRes result = await transactionController.CardUsageSummaryAsync(requestId);
 }
 catch (ApiException e)
 {
@@ -535,147 +323,36 @@ catch (ApiException e)
 
 ```json
 {
-  "Transactions": [
+  "RequestId": "eb621f45-a543-4d9a-a934-2f223b263c42",
+  "Status": "SUCCESS",
+  "Data": [
     {
-      "Type": "SalesItem",
-      "CardId": 275549,
-      "CardPAN": "7002051006629890645",
-      "CardExpiry": "20210921",
-      "TransactionDate": "20210921",
-      "TransactionTime": "04:26:34",
-      "UTCOffset": "+08:00:00",
-      "FleetIdInput": "XYZ1234",
-      "OdometerInput": 12345,
-      "DriverName": "ANDREW GILBERRY",
-      "VehicleRegistration": "MV65YLH",
-      "InvoiceCurrencyCode": "GBP",
-      "InvoiceCurrencySymbol": "Ã‚Â£",
-      "TransactionCurrencyCode": "GBP",
-      "TransactionCurrencySymbol": "Ã‚Â£",
-      "TransactionNetAmount": 674,
-      "TransactionTax": 0,
-      "TransactionGrossAmount": 0,
-      "InvoiceNetAmount": 0,
-      "InvoiceTax": 0,
-      "InvoiceGrossAmount": 0,
-      "PurchasedInCountry": "France, Germany",
-      "AccountId": 29484,
-      "AccountNumber": "GB99215176",
-      "AccountName": "MA LIMITED",
-      "AccountShortName": "MAL",
-      "Quantity": 1,
-      "FuelProduct": true,
-      "UnitPriceInTransactionCurrency": 12,
-      "UnitPriceInInvoiceCurrency": 13,
-      "UnitDiscountTransactionCurrency": 1,
-      "UnitDiscountInvoiceCurrency": 2,
-      "IsInvoiced": true,
-      "InvoiceNumber": "S04500493",
-      "InvoiceDate": "20211001 13:23:55",
-      "SiteCode": "050001",
-      "SiteName": "CHARNOCK RICHARD NTHBOUND MWSA 0755",
-      "SiteCountry": "France",
-      "Location": [
+      "UsageSummary": [
         {
-          "Latitude": "37.4224764",
-          "Longitude": "-122.0842499"
+          "Date": "20170930",
+          "ProductId": 1,
+          "ProductCode": "2",
+          "ProductName": "Diesel AGO",
+          "IsFuelProduct": true,
+          "SiteGroupId": 1234,
+          "SiteGroupName": "UK 9500 MOTORWAY NETWORK",
+          "TotalVolume": 123.12,
+          "TotalGross": 123.12,
+          "TotalNet": 123.12,
+          "CurrencyCode": "GBP",
+          "CurrencySymbol": "£",
+          "ProductGroupId": 1234,
+          "ProductGroupName": "Motor gasoline"
         }
-      ],
-      "CardGroupName": "006240 FIRE BRIGHT SOLUTIONS",
-      "ReceiptNumber": "01234",
-      "ProductCode": "10",
-      "ProductName": "TMF Charges",
-      "ProductGroupId": 2,
-      "ProductGroupName": "All Fuels",
-      "DelCoExchangeRate": 2.23,
-      "ColCoExchangeRate": 2,
-      "IsShellSite": true,
-      "Network": "100016  ESSO BE",
-      "SiteGroupId": 202,
-      "SiteGroupName": "CZ 9100 ECONOMY NETWORK",
-      "PostingDate": "20181001 13:23:55",
-      "IssuerCode": "7002",
-      "PurchasedInCountryCode": "NL",
-      "CustomerCountryCode": "NL",
-      "CustomerCountry": "Netherlands",
-      "ReleaseCode": "8",
-      "CardGroupId": "A12",
-      "CardSequenceNumber": "002",
-      "CheckDigit": "2",
-      "FleetIDDescription": "A51617HAGH",
-      "VATRate": 0.2,
-      "VATCategory": "1",
-      "VATCountry": "Netherlands",
-      "EffectiveDiscountInTrxCurrency": 0.2,
-      "TransactionType": "ODP",
-      "PINIndicator": "Y",
-      "VATApplicable": "Y",
-      "NetInvoiceIndicator": "N",
-      "CustomerCurrencyCode": "GBP",
-      "CustomerCurrencySymbol": "$",
-      "EffectiveUnitDiscountInCustomerCurrency": 23,
-      "EffectiveDiscountInCustomerCurrency": 32,
-      "VATonNetAmountInCustomerCurrency": 12,
-      "DiscountType": "1",
-      "TransactionStatus": "U",
-      "SalesItemId": 18315958002,
-      "PayerGroup": "12119008",
-      "PayerGroupName": "SHELL GROUP OF COMPANIES",
-      "RefundFlag": "N",
-      "OriginalSalesItemId": "A1256",
-      "DelcoName": "SHELL NEDERLAND VERKOOPMAATSCHAPPIJ BV",
-      "DelcoCode": "014",
-      "PayerNumber": "PH50000843",
-      "PayerName": "PARKLEY & CO",
-      "CardExpiryPeriod": "1901",
-      "AuthorisationCode": "011256",
-      "TransactionId": "io9KVXk1UkW57XWKyeaHHg",
-      "TransactionLine": "1",
-      "AllowClearing": "Y",
-      "CRMNumber": "CR1234",
-      "DisputeStatus": "4",
-      "RebateRate": 28.279,
-      "DelCoToColCoExchangeRate": 1,
-      "NetEuroAmount": 37.93,
-      "EuroRebateAmount": 0,
-      "EuroVATAmount": 7.96,
-      "ParentCustomerNumber": "12121",
-      "ParentCustomerName": "MICHAEL",
-      "ParentCustomerId": 7121121,
-      "IncomingSiteNumber": "100021",
-      "IncomingSiteDescription": "HN3 INTI_02-82.02",
-      "IncomingCurrencyCode": "GBP",
-      "IncomingProductCode": "30",
-      "CreditDebitCode": "D",
-      "CorrectionFlag": "N",
-      "Additional1": "Additional Data",
-      "Additional2": "Additional Data",
-      "Additional3": "Additional Data",
-      "Additional4": "Additional Data",
-      "RebateonNetAmountInCustomerCurrency": 0.735,
-      "RebateonNetAmountInTransactionCurrency": 0.735,
-      "NetworkCode": "AVEE PTUAZONW CUBFAO COSFS",
-      "TrnIdentifier": "A1234",
-      "CardType": "A1234",
-      "DelcoListPriceUnitNet": 30.5,
-      "DelcoRetailPriceUnitNet": 1.921,
-      "DelcoRetailPriceUnitGross": 1.921,
-      "DelcoRetailValueTotalNet": 1.921,
-      "DelcoRetailValueTotalGross": 1.921,
-      "CustomerRetailPriceUnitGross": 1.921,
-      "CustomerRetailValueTotalGross": 1.921,
-      "CustomerRetailValueTotalNet": 1.921,
-      "TransactionTypeDescription": "A12"
+      ]
     }
   ],
-  "Error": {
-    "Description": "Success",
-    "Code": "0000"
-  },
-  "RequestId": "ed557f02-c7d7-4c01-b3e5-11bf3239c8ed",
-  "CurrentPage": 10,
-  "RowCount": 100,
-  "TotalPages": 10
+  "Warnings": [
+    {
+      "Message": "System is down for upgradation.",
+      "Type": "System Outage"
+    }
+  ]
 }
 ```
 
@@ -683,65 +360,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-
-
-# Card Usage Summary
-
-This operation is to provide the expenditure analysis for a card for the past 7 months.
-The response contains a daily summary of the transactions (billed & unbilled) from 1st of the last 7 months for the requested card grouped by card, site-group and product.
-
-```csharp
-CardUsageSummaryAsync(
-    string apikey,
-    string requestId,
-    Models.CardUsageSummaryRequest body = null)
-```
-
-## Parameters
-
-| Parameter | Type | Tags | Description |
-|  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`CardUsageSummaryRequest`](../../doc/models/card-usage-summary-request.md) | Body, Optional | Card Usage Summary RequestBody |
-
-## Response Type
-
-[`Task<Models.CardUsageSummaryResponse>`](../../doc/models/card-usage-summary-response.md)
-
-## Example Usage
-
-```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-try
-{
-    CardUsageSummaryResponse result = await transactionController.CardUsageSummaryAsync(
-        apikey,
-        requestId
-    );
-}
-catch (ApiException e)
-{
-    // TODO: Handle exception here
-    Console.WriteLine(e.Message);
-}
-```
-
-## Errors
-
-| HTTP Status Code | Error Description | Exception Class |
-|  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Volume Based Bonus
@@ -751,34 +374,28 @@ catch (ApiException e)
 
 ```csharp
 VolumeBasedBonusAsync(
-    string apikey,
     string requestId,
-    Models.VolumeBasedBonusRequest body = null)
+    Models.VolumeBasedBonusReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`VolumeBasedBonusRequest`](../../doc/models/volume-based-bonus-request.md) | Body, Optional | VolumeBasedBonus RequestBody |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`VolumeBasedBonusReq`](../../doc/models/volume-based-bonus-req.md) | Body, Optional | VolumeBasedBonus RequestBody |
 
 ## Response Type
 
-[`Task<Models.VolumeBasedBonusResponse>`](../../doc/models/volume-based-bonus-response.md)
+[`Task<Models.VolumeBasedBonusRes>`](../../doc/models/volume-based-bonus-res.md)
 
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
+string requestId = "RequestId8";
 try
 {
-    VolumeBasedBonusResponse result = await transactionController.VolumeBasedBonusAsync(
-        apikey,
-        requestId
-    );
+    VolumeBasedBonusRes result = await transactionController.VolumeBasedBonusAsync(requestId);
 }
 catch (ApiException e)
 {
@@ -787,15 +404,142 @@ catch (ApiException e)
 }
 ```
 
+## Example Response *(as JSON)*
+
+```json
+{
+  "RequestId": "eb621f45-a543-4d9a-a934-2f223b263c42",
+  "Status": "SUCCESS",
+  "Data": [
+    {
+      "Configuration": [
+        {
+          "PricingAccountId": 123456,
+          "PricingAccountNumber": "GB000000123",
+          "PricingAccountShortName": "MATTHEW",
+          "PricingAccountFullName": "MATTHEW",
+          "FeeRuleId": 1,
+          "FeeRuleDescription": "NL/GAGO/D018/UP0.0120>1",
+          "FeeRuleDateEffective": "20231223",
+          "FeeRuleDateTerminated": "20231223",
+          "BonusPaidTo": "1-Pay to Payer",
+          "BonusPaidToAccountId": 123456,
+          "BonusPaidToAccountNumber": "GB000000123",
+          "BonusPaidToAccountShortName": "12345",
+          "BonusPaidToAccountFullName": "GB000000123",
+          "Frequency": "3-Weekly – Monday",
+          "NextCalculationDate": "20231223",
+          "PreviousCalculatedDate": "20231223",
+          "FeeRuleBasis": "3-Lump Sum",
+          "FeeRuleCurrencyCode": "GBP",
+          "FeeRuleCurrencySymbol": "£",
+          "FeeRuleAvailableFrom": "20231223",
+          "FeeRuleAvailableTo": "20231223",
+          "FeeRuleLocations": [
+            {
+              "DelcoId": "866",
+              "Country": "United Kingdom",
+              "CountryCode": "UK",
+              "FuelNetworkId": 100007,
+              "NetworkName": "VALERO",
+              "SiteGroupId": 100007,
+              "SiteGroupName": "VALERO ENERGY LTD",
+              "SiteCode": 999493,
+              "SiteId": 100007,
+              "SiteName": "VALERO ENERGY LTD"
+            }
+          ],
+          "FeeRuleProducts": [
+            {
+              "ProductGroupID": 3,
+              "ProductGroupName": "Motor gasoline",
+              "ProductCode": "30 for Diesel AGO",
+              "ProductId": 30,
+              "ProductName": "Diesel AGO"
+            }
+          ],
+          "FeeRuleTiers": [
+            {
+              "TierMinimum": 1234,
+              "TierMaximum": 1234,
+              "Value": 1234.12
+            }
+          ],
+          "AssociatedAccounts": [
+            {
+              "AssociatedAccountId": 12345,
+              "AssociatedAccountNumber": "GB000000123",
+              "AssociatedAccountShortName": "Account short name",
+              "AssociatedAccountFullName": "Account Full name"
+            }
+          ]
+        }
+      ],
+      "CurrentPeriodConsumption": [
+        {
+          "FeeRuleId": 12345,
+          "FeeRuleDescription": "NL/GAGO/D018/UP0.0120>1",
+          "Month": 1,
+          "Year": "2018",
+          "TotalVolume": 10000.78
+        }
+      ],
+      "HistoricalBonusPaid": [
+        {
+          "PayerId": 12345,
+          "PayerNumber": "GB000000123",
+          "PayerShortName": "Jorden",
+          "PayerFullName": "MATTHEW",
+          "AccountId": 123456,
+          "AccountNumber": "GB000000123",
+          "AccountShortName": "SALT",
+          "AccountFullName": "ABCD1234",
+          "InvoiceAccountId": 12345,
+          "InvoiceAccountNumber": "GB000000123",
+          "InvoiceAccountShortName": "DFE1234",
+          "InvoiceAccountFullName": "AZAD PVT LMT",
+          "FeeRuleId": "12345",
+          "FeeRuleDescription": "NL/GAGO/D018/UP0.0120>1",
+          "FromDate": "20231223",
+          "ToDate": "20231223",
+          "BonusPaidTo": "5-Pay to Associated Customers",
+          "FeeItemId": 12345,
+          "FeeRuleBasis": "2-Percentage of Uplift",
+          "FeeItemCurrencyCode": "GBP",
+          "FeeItemCurrencySymbol": "$",
+          "ProratedVolume": 123.12,
+          "TotalVolume": 123.12,
+          "FeeProduct": "1562-Bonus diesel Shell",
+          "InvoiceGrossAmount": 123.12,
+          "InvoiceNetAmount": 123.12,
+          "InvoiceVATAmount": 123.12,
+          "IsFeeCancelled": true,
+          "FeeItemTierProratedVolume": 123.12,
+          "FeeItemTierTotalVolume": 123.12,
+          "TierMinimum": 123,
+          "TierRate": 123.12
+        }
+      ]
+    }
+  ],
+  "Warnings": [
+    {
+      "Message": "System is down for upgradation.",
+      "Type": "System Outage"
+    }
+  ]
+}
+```
+
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Volume Based Pricing
@@ -805,34 +549,28 @@ catch (ApiException e)
 
 ```csharp
 VolumeBasedPricingAsync(
-    string apikey,
     string requestId,
-    Models.VolumeBasedPricingRequest body = null)
+    Models.VolumeBasedPricingReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`VolumeBasedPricingRequest`](../../doc/models/volume-based-pricing-request.md) | Body, Optional | VolumeBasedPricing RequestBody |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`VolumeBasedPricingReq`](../../doc/models/volume-based-pricing-req.md) | Body, Optional | VolumeBasedPricing RequestBody |
 
 ## Response Type
 
-[`Task<Models.VolumeBasedPricingResponse>`](../../doc/models/volume-based-pricing-response.md)
+[`Task<Models.VolumeBasedPricingRes>`](../../doc/models/volume-based-pricing-res.md)
 
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
+string requestId = "RequestId8";
 try
 {
-    VolumeBasedPricingResponse result = await transactionController.VolumeBasedPricingAsync(
-        apikey,
-        requestId
-    );
+    VolumeBasedPricingRes result = await transactionController.VolumeBasedPricingAsync(requestId);
 }
 catch (ApiException e)
 {
@@ -841,15 +579,108 @@ catch (ApiException e)
 }
 ```
 
+## Example Response *(as JSON)*
+
+```json
+{
+  "RequestId": "eb621f45-a543-4d9a-a934-2f223b263c42",
+  "Status": "SUCCESS",
+  "Data": [
+    {
+      "Configuration": [
+        {
+          "PricingAccountId": 123456,
+          "PricingAccountNumber": "GB000000123",
+          "PricingAccountShortName": "ABCD1234",
+          "PricingAccountFullName": "ABCD1234",
+          "FeeRuleId": 12345,
+          "FeeRuleDescription": "NL/GAGO/D018/UP0.0120>1",
+          "FeeRuleDateEffective": "20231223",
+          "FeeRuleDateTerminated": "20231223",
+          "BonusPaidTo": "1-Pay to Payer",
+          "BonusPaidToAccountId": 123456,
+          "BonusPaidToAccountNumber": "GB000000123",
+          "BonusPaidToAccountShortName": "12345",
+          "BonusPaidToAccountFullName": "GB000000123",
+          "Frequency": "3-Weekly – Monday",
+          "NextCalculationDate": "20231223",
+          "PreviousCalculatedDate": "20231223",
+          "FeeRuleBasis": "3-Lump Sum",
+          "FeeRuleCurrencyCode": "GBP",
+          "FeeRuleCurrencySymbol": "£",
+          "FeeRuleAvailableFrom": "20231223",
+          "FeeRuleAvailableTo": "20231223",
+          "FeeRuleLocations": [
+            {
+              "DelcoId": "866",
+              "Country": "United Kingdom",
+              "CountryCode": "UK",
+              "FuelNetworkId": 100007,
+              "NetworkName": "VALERO",
+              "SiteGroupId": 100007,
+              "SiteGroupName": "VALERO ENERGY LTD",
+              "SiteCode": 999493,
+              "SiteId": 100007,
+              "SiteName": "VALERO ENERGY LTD"
+            }
+          ],
+          "FeeRuleProducts": [
+            {
+              "ProductGroupID": 3,
+              "ProductGroupName": "Motor gasoline",
+              "ProductCode": "30 for Diesel AGO",
+              "ProductId": 30,
+              "ProductName": "Diesel AGO"
+            }
+          ],
+          "FeeRuleTiers": [
+            {
+              "TierMinimum": 1234,
+              "TierMaximum": 1234,
+              "Value": 1234.12
+            }
+          ]
+        }
+      ],
+      "CurrentPeriodConsumption": [
+        {
+          "FeeRuleId": 12345,
+          "FeeRuleDescription": "NL/GAGO/D018/UP0.0120>1",
+          "PriceRuleID": 100005,
+          "PriceRuleDescription": "PL/GAGO/GMOT/UL0.055",
+          "TotalVolume": 10000.78,
+          "NextFeeCreationDate": "20231223"
+        }
+      ],
+      "History": [
+        {
+          "FromDate": "20231223",
+          "ToDate": "20231223",
+          "FeesRuleID": 8081,
+          "FeesRuleDescription": "PT/P067/D120/P4.0",
+          "TotalVolume": 12356.66
+        }
+      ],
+      "Warnings": [
+        {
+          "Message": "System is down for upgradation.",
+          "Type": "System Outage"
+        }
+      ]
+    }
+  ]
+}
+```
+
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Fees
@@ -871,55 +702,34 @@ To get the summary of charges, the endpoint *transaction/feessummary* should be 
 
 ```csharp
 FeesAsync(
-    string apikey,
     string requestId,
-    Models.TransactionFeesRequest body = null)
+    Models.TransactionFeesReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`TransactionFeesRequest`](../../doc/models/transaction-fees-request.md) | Body, Optional | Transaction Fees RequestBody |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`TransactionFeesReq`](../../doc/models/transaction-fees-req.md) | Body, Optional | Transaction Fees RequestBody |
 
 ## Response Type
 
-[`Task<Models.TransactionFeesResponse>`](../../doc/models/transaction-fees-response.md)
+[`Task<Models.TransactionFeesRes>`](../../doc/models/transaction-fees-res.md)
 
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-TransactionFeesRequest body = new TransactionFeesRequest
+string requestId = "RequestId8";
+TransactionFeesReq body = new TransactionFeesReq
 {
-    ColCoId = 1,
-    ColCoCode = 86,
-    PayerId = 123456,
-    PayerNumber = "GB000000123",
-    CardId = 275549,
-    CardPAN = "7002051006629890645",
-    InvoiceStatus = "I",
-    FeeTypeGroup = "Account Charges",
-    FeeTypeId = 1,
-    FromDate = "20210823",
-    ToDate = "20210823",
-    Period = 1,
-    IncludeCancelledItems = true,
-    ProductId = 100,
-    ProductCode = "102",
-    LineItemDescription = "string",
-    SortOrder = "1",
-    CurrentPage = 1,
-    PageSize = 50,
+    Page = 1,
+    PageSize = 100,
 };
 
 try
 {
-    TransactionFeesResponse result = await transactionController.FeesAsync(
-        apikey,
+    TransactionFeesRes result = await transactionController.FeesAsync(
         requestId,
         body
     );
@@ -931,118 +741,15 @@ catch (ApiException e)
 }
 ```
 
-## Example Response *(as JSON)*
-
-```json
-{
-  "FeeItems": [
-    {
-      "FeeItemId": 1234,
-      "AccountId": 29484,
-      "AccountNumber": "GB99215176",
-      "AccountShortName": "GB123",
-      "InvoiceAccountId": 123456,
-      "InvoiceAccountNumber": "GB0000013",
-      "InvoiceAccountShortName": "GB123",
-      "PayerId": 29484,
-      "PayerNumber": "GB99215176",
-      "PayerShortName": "PARKLEY",
-      "CardId": 275549,
-      "CardPAN": "7002051006629890645",
-      "CardGroupId": 5,
-      "CardGroupName": "006240 FIRE BRIGHT SOLUTIONS",
-      "FeeTypeId": 3,
-      "FeeType": "89",
-      "FeeTypeGroup": "Account",
-      "FeeRuleId": 12345,
-      "FeeRuleDescription": "NL/GAGO/D018",
-      "FeeRuleTiers": [
-        {
-          "TierMin": 123,
-          "TierMax": 321,
-          "DateEffective": "20180131",
-          "DateTerminated": "20180907",
-          "TierValue": 12.23,
-          "FeeRuleBasisID": 1,
-          "FeeRuleBasisDescription": "Currency Per Unit"
-        }
-      ],
-      "FeeItemDate": "20180604",
-      "FeeItemTime": "121018",
-      "IsManual": true,
-      "IsCancelled": true,
-      "CustomerCurrencyCode": "GBP",
-      "CustomerCurrencySymbol": "$",
-      "ProductId": 102,
-      "ProductCode": "2",
-      "ProductName": "Service fee",
-      "ProductGroupId": 22,
-      "ProductGroupName": "Card related fees",
-      "LineItemDescription": "charge",
-      "Quantity": 1,
-      "IsInvoiced": true,
-      "VATCountryCode": "QWER",
-      "VATCountryName": "QWER",
-      "VATPercentage": 0.1,
-      "VATCategoryID": 1,
-      "VATCategoryDescription": "QWER",
-      "LegislativeRegionId": 2,
-      "LegislativeRegionName": "qwert",
-      "SystemEntryDate": "20170912",
-      "SystemEntryTime": "10:20",
-      "ColCoNetAmount": 100.9,
-      "ColCoVATAmount": 104.5,
-      "ColCoGrossAmount": 101.7,
-      "InterimInvoiceId": 1010191,
-      "InterimInvoiceNumber": "G1010191",
-      "InvoiceId": 10101,
-      "InvoiceNumber": "10209",
-      "InvoiceDate": "20180807",
-      "CustomerExchangeRate": 10.34,
-      "InvoiceNetAmount": 19.34,
-      "InvoiceGrossAmount": 50.23,
-      "InvoiceVATAmount": 10.2,
-      "ReverseCharge": true,
-      "OriginalFeeItemId": 12345,
-      "OriginalCurrencyCode": "GBP",
-      "OriginalCurrencySymbol": "$",
-      "OriginalUnitPrice": 1.2,
-      "OriginalNetAmount": 13.8,
-      "OriginalVATAmount": 17.23,
-      "OriginalGrossAmount": 18.9,
-      "OriginalExchangeRate": 156.2,
-      "OriginalLegislativeRegionId": 1234,
-      "OriginalLegislativeRegionName": "190",
-      "Frequency": "1- Daily (all days)",
-      "FeeItemCardLevelBreakup": "PAN|CardId",
-      "OriginalFeeItemInvoiceId": 1,
-      "OriginalFeeItemInvoiceNumber": "QW1",
-      "OriginalFeeItemInvoiceDate": "101219",
-      "DriverName": "ANDREW GILBERRY",
-      "EmbossText": "ANDREW",
-      "VRN": "MV65YLH"
-    }
-  ],
-  "Error": {
-    "Description": "Success",
-    "Code": "0000"
-  },
-  "RequestId": "ed557f02-c7d7-4c01-b3e5-11bf3239c8ed",
-  "CurrentPage": 10,
-  "RowCount": 100,
-  "TotalPages": 10
-}
-```
-
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Fee Summary Response
@@ -1064,18 +771,16 @@ The endpoint supports the exact same search criteria as the endpoint *transactio
 
 ```csharp
 FeeSummaryResponseAsync(
-    string apikey,
     string requestId,
-    Models.TransactionFeesRequest body = null)
+    Models.TransactionFeesSummaryReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`TransactionFeesRequest`](../../doc/models/transaction-fees-request.md) | Body, Optional | FeeSummary RequestBody |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`TransactionFeesSummaryReq`](../../doc/models/transaction-fees-summary-req.md) | Body, Optional | FeeSummary RequestBody |
 
 ## Response Type
 
@@ -1084,36 +789,10 @@ FeeSummaryResponseAsync(
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-TransactionFeesRequest body = new TransactionFeesRequest
-{
-    ColCoId = 1,
-    ColCoCode = 86,
-    PayerId = 123456,
-    PayerNumber = "GB000000123",
-    CardId = 275549,
-    CardPAN = "7002051006629890645",
-    InvoiceStatus = "I",
-    FeeTypeGroup = "Account Charges",
-    FeeTypeId = 1,
-    FromDate = "20210823",
-    ToDate = "20210823",
-    Period = 1,
-    IncludeCancelledItems = true,
-    ProductId = 100,
-    ProductCode = "102",
-    LineItemDescription = "string",
-    SortOrder = "1",
-};
-
+string requestId = "RequestId8";
 try
 {
-    FeeSummaryResponse result = await transactionController.FeeSummaryResponseAsync(
-        apikey,
-        requestId,
-        body
-    );
+    FeeSummaryResponse result = await transactionController.FeeSummaryResponseAsync(requestId);
 }
 catch (ApiException e)
 {
@@ -1122,40 +801,15 @@ catch (ApiException e)
 }
 ```
 
-## Example Response *(as JSON)*
-
-```json
-{
-  "FeeItemsSummary": [
-    {
-      "FeeTypeGroup": "Account",
-      "FeeTypeId": "1",
-      "ProductId": 102,
-      "ProductCode": "Invoice production fee",
-      "ProductName": "Invoice production fee",
-      "ProductGroupId": 22,
-      "ProductGroupName": "Card related fees",
-      "TotalQuantity": 2,
-      "TotalInvoiceNetAmount": 22.23,
-      "TotalInvoiceGrossAmount": 28.92,
-      "TotalInvoiceVATAmount": 10.02,
-      "InvoiceCurrencyCode": "GBP",
-      "InvoiceCurrencySymbol": "Ã‚Â£"
-    }
-  ],
-  "RequestId": "ed557f02-c7d7-4c01-b3e5-11bf3239c8ed"
-}
-```
-
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Fuel Consumption
@@ -1165,18 +819,16 @@ catch (ApiException e)
 
 ```csharp
 FuelConsumptionAsync(
-    string apikey,
     string requestId,
-    Models.FuelConsumptionRequest body = null)
+    Models.FuelConsumptionReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`FuelConsumptionRequest`](../../doc/models/fuel-consumption-request.md) | Body, Optional | FuelConsumption RequestBody |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`FuelConsumptionReq`](../../doc/models/fuel-consumption-req.md) | Body, Optional | FuelConsumption RequestBody |
 
 ## Response Type
 
@@ -1185,21 +837,10 @@ FuelConsumptionAsync(
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-FuelConsumptionRequest body = new FuelConsumptionRequest
-{
-    ColCoId = 14,
-    PayerId = 10,
-};
-
+string requestId = "RequestId8";
 try
 {
-    FuelConsumptionResponse result = await transactionController.FuelConsumptionAsync(
-        apikey,
-        requestId,
-        body
-    );
+    FuelConsumptionResponse result = await transactionController.FuelConsumptionAsync(requestId);
 }
 catch (ApiException e)
 {
@@ -1208,51 +849,15 @@ catch (ApiException e)
 }
 ```
 
-## Example Response *(as JSON)*
-
-```json
-{
-  "FuelConsumption": [
-    {
-      "AccountName": "Pink Fox Television",
-      "AccountNumber": "DE00000009",
-      "PayerName": "Pink Fox Television",
-      "PayerNumber": "DE00000009",
-      "CardNumber": "7002141005592540015",
-      "CardGroupId": null,
-      "CardGroupName": null,
-      "DriverName": "CSSTEST B",
-      "LicenseNumber": "123456",
-      "InitialOdometer": 123456,
-      "LastOdometer": 0,
-      "Distance": 0,
-      "FuelConsumptions": 0,
-      "FuelNetAmount": 17650.57,
-      "Discount": -11.49,
-      "FuelTax": 7023.08,
-      "FuelVolume": 7097,
-      "GrossNonFuelExpenses": 26754.49,
-      "CO2Produced": 14.23803,
-      "TransactionCount": 307
-    }
-  ],
-  "Error": {
-    "Code": "0000",
-    "Description": "Success"
-  },
-  "RequestId": "7e9ed35c-11b7-4b57-fe5b-ba6c39479d37"
-}
-```
-
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Update Odometer
@@ -1262,7 +867,6 @@ catch (ApiException e)
 
 ```csharp
 UpdateOdometerAsync(
-    string apikey,
     string requestId,
     Models.UpdateOdometerRequest body = null)
 ```
@@ -1271,44 +875,20 @@ UpdateOdometerAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
 | `body` | [`UpdateOdometerRequest`](../../doc/models/update-odometer-request.md) | Body, Optional | updateOdometer RequestBody |
 
 ## Response Type
 
-[`Task<Models.UpdateOdometerResponse>`](../../doc/models/update-odometer-response.md)
+[`Task<Models.UpdateOdometerResp>`](../../doc/models/update-odometer-resp.md)
 
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-UpdateOdometerRequest body = new UpdateOdometerRequest
-{
-    ColCoId = 0,
-    ColCoCode = 0,
-    PayerId = 0,
-    AccountId = 0,
-    AccountNumber = "string",
-    UpdateOdometers = new List<UpdateOdometer>
-    {
-        new UpdateOdometer
-        {
-            SalesItemId = "string",
-            NewOdometerValue = 0,
-        },
-    },
-    NotifyCaller = true,
-};
-
+string requestId = "RequestId8";
 try
 {
-    UpdateOdometerResponse result = await transactionController.UpdateOdometerAsync(
-        apikey,
-        requestId,
-        body
-    );
+    UpdateOdometerResp result = await transactionController.UpdateOdometerAsync(requestId);
 }
 catch (ApiException e)
 {
@@ -1317,34 +897,15 @@ catch (ApiException e)
 }
 ```
 
-## Example Response *(as JSON)*
-
-```json
-{
-  "ServiceReference": 0,
-  "UpdateOdometerReferences": [
-    {
-      "SalesItemId": 0,
-      "UpdateOdometerReferenceId": 0
-    }
-  ],
-  "Error": {
-    "Code": "0000",
-    "Description": "Success"
-  },
-  "RequestId": "string"
-}
-```
-
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Transaction Exceptions
@@ -1354,47 +915,28 @@ catch (ApiException e)
 
 ```csharp
 TransactionExceptionsAsync(
-    string apikey,
     string requestId,
-    Models.TransactionExceptionsRequest body = null)
+    Models.TransactionExceptionsReq body = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `apikey` | `string` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
-| `body` | [`TransactionExceptionsRequest`](../../doc/models/transaction-exceptions-request.md) | Body, Optional | Transaction Exceptions RequestBody |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `body` | [`TransactionExceptionsReq`](../../doc/models/transaction-exceptions-req.md) | Body, Optional | Transaction Exceptions RequestBody |
 
 ## Response Type
 
-[`Task<Models.TransactionExceptionsResponse>`](../../doc/models/transaction-exceptions-response.md)
+[`Task<Models.TransactionExceptionsRes>`](../../doc/models/transaction-exceptions-res.md)
 
 ## Example Usage
 
 ```csharp
-string apikey = "apikey6";
-string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-TransactionExceptionsRequest body = new TransactionExceptionsRequest
-{
-    TransactionsFromDate = "2023-01-01",
-    TransactionsToDate = "2023-05-30",
-    Condition = 1,
-    OutputType = 2,
-    ColCoId = 14,
-    PayerId = 10,
-    MValue = 10,
-    ExceptionPeriod = 1,
-};
-
+string requestId = "RequestId8";
 try
 {
-    TransactionExceptionsResponse result = await transactionController.TransactionExceptionsAsync(
-        apikey,
-        requestId,
-        body
-    );
+    TransactionExceptionsRes result = await transactionController.TransactionExceptionsAsync(requestId);
 }
 catch (ApiException e)
 {
@@ -1403,52 +945,15 @@ catch (ApiException e)
 }
 ```
 
-## Example Response *(as JSON)*
-
-```json
-{
-  "CardExceptions": [
-    {
-      "AccountId": 10,
-      "AccountNumber": "DE00000009",
-      "AccountShortName": "Pink Fox Television",
-      "CardId": 575646,
-      "CurrencyCode": "EUR",
-      "CurrencySymbol": "€",
-      "Day": null,
-      "DriverName": "CSSTEST B",
-      "Month": 5,
-      "PAN": "7002141005592540015",
-      "PayerId": 10,
-      "PayerNumber": "DE00000009",
-      "PayerShortName": "Pink Fox Television",
-      "TotalAmount": 4290.29,
-      "TotalQuantity": 851,
-      "TotalSalesItems": 29,
-      "TotalTransactions": 29,
-      "VRN": "123456",
-      "Week": null,
-      "Year": 2023
-    }
-  ],
-  "TransactionExceptions": null,
-  "Error": {
-    "Code": "0000",
-    "Description": "Success"
-  },
-  "RequestId": "a5665b0b-1843-4a8f-daa3-1f3256db7758"
-}
-```
-
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
 # Recent Transactions New
@@ -1483,7 +988,7 @@ RecentTransactionsNewAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`RecentTransactionRequest`](../../doc/models/recent-transaction-request.md) | Body, Optional | New Recent Transaction RequestBody |
 
 ## Response Type
@@ -1676,7 +1181,7 @@ PricedTransactionsV2Async(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`PricedTransactionRequestV2`](../../doc/models/priced-transaction-request-v2.md) | Body, Optional | Priced TransactionV2 RequestBody |
 
 ## Response Type
@@ -1689,7 +1194,7 @@ PricedTransactionsV2Async(
 string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
 PricedTransactionRequestV2 body = new PricedTransactionRequestV2
 {
-    Filters = new PricedRequestData
+    Filters = new Filters
     {
         ColCoCode = "032",
         InvoiceStatus = PricedTransactionReqV2InvoiceStatusEnum.A,

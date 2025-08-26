@@ -9,28 +9,50 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `FuelConsumption` | [`List<FuelConsumptionData>`](../../doc/models/fuel-consumption-data.md) | Optional | - |
-| `Error` | [`ErrorStatus`](../../doc/models/error-status.md) | Optional | - |
-| `RequestId` | `string` | Optional | API Request Id |
+| `RequestId` | `string` | Optional | Unique identifier for the request. This will be played back in the response from the request. |
+| `Status` | `string` | Optional | Status of the request |
+| `Data` | [`List<FuelConsumptionData>`](../../doc/models/fuel-consumption-data.md) | Optional | - |
+| `Warnings` | [`List<Warning>`](../../doc/models/warning.md) | Optional | A list of Warning entity.<br>This entity will hold the details of the scheduled System Outages of any dependent applications of this service.<br>Note: If there is no scheduled outage information available, in the configuration in AMS, for this service, this parameter won’t be present in output. |
 
 ## Example (as JSON)
 
 ```json
 {
-  "FuelConsumption": [
+  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
+  "Status": "SUCCESS",
+  "Data": [
     {
-      "AccountName": "AccountName6",
-      "AccountNumber": "AccountNumber0",
-      "PayerName": "PayerName2",
-      "PayerNumber": "PayerNumber8",
-      "CardNumber": "CardNumber8"
+      "AccountName": "AccountName4",
+      "AccountNumber": "AccountNumber8",
+      "PayerName": "PayerName4",
+      "PayerNumber": "PayerNumber6",
+      "CardNumber": "CardNumber6"
+    },
+    {
+      "AccountName": "AccountName4",
+      "AccountNumber": "AccountNumber8",
+      "PayerName": "PayerName4",
+      "PayerNumber": "PayerNumber6",
+      "CardNumber": "CardNumber6"
+    },
+    {
+      "AccountName": "AccountName4",
+      "AccountNumber": "AccountNumber8",
+      "PayerName": "PayerName4",
+      "PayerNumber": "PayerNumber6",
+      "CardNumber": "CardNumber6"
     }
   ],
-  "Error": {
-    "Code": "Code4",
-    "Description": "Description2"
-  },
-  "RequestId": "RequestId4"
+  "Warnings": [
+    {
+      "Message": "Message0",
+      "Type": "Type4"
+    },
+    {
+      "Message": "Message0",
+      "Type": "Type4"
+    }
+  ]
 }
 ```
 

@@ -10,8 +10,6 @@
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `UsageSummary` | [`List<UsageSummary>`](../../doc/models/usage-summary.md) | Optional | - |
-| `RequestId` | `string` | Optional | API Request Id |
-| `Error` | [`ErrorStatus`](../../doc/models/error-status.md) | Optional | - |
 
 ## Example (as JSON)
 
@@ -39,12 +37,7 @@
       "ProductName": "ProductName6",
       "IsFuelProduct": false
     }
-  ],
-  "RequestId": "RequestId2",
-  "Error": {
-    "Code": "Code4",
-    "Description": "Description2"
-  }
+  ]
 }
 ```
 

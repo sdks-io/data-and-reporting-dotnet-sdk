@@ -13,12 +13,12 @@ Documentation for accessing and setting credentials for BearerToken.
 | OAuthClientSecret | `string` | OAuth 2 Client Secret | `OAuthClientSecret` | `OAuthClientSecret` |
 | OAuthToken | `Models.OAuthToken` | Object for storing information about the OAuth token | `OAuthToken` | `OAuthToken` |
 | OAuthClockSkew | `TimeSpan?` | Clock skew time in seconds applied while checking the OAuth Token expiry. | `OAuthClockSkew` | `OAuthClockSkew` |
-| OAuthTokenProvider | `Func<BearerTokenManager, OAuthToken, Task<OAuthToken>>` | Registers a callback for oAuth Token Provider used for automatic token fetching/refreshing. | `OAuthTokenProvider` | `OAuthTokenProvider` |
+| OAuthTokenProvider | `Func<ClientCredentialsAuthManager, OAuthToken, Task<OAuthToken>>` | Registers a callback for oAuth Token Provider used for automatic token fetching/refreshing. | `OAuthTokenProvider` | `OAuthTokenProvider` |
 | OAuthOnTokenUpdate | `Action<OAuthToken>` | Registers a callback for token update event. | `OAuthOnTokenUpdate` | `OAuthOnTokenUpdate` |
 
 
 
-**Note:** Auth credentials can be set using `BearerTokenCredentials` in the client builder and accessed through `BearerTokenCredentials` method in the client instance.
+**Note:** Auth credentials can be set using `ClientCredentialsAuth` in the client builder and accessed through `ClientCredentialsAuth` method in the client instance.
 
 ## Usage Example
 
@@ -27,9 +27,14 @@ Documentation for accessing and setting credentials for BearerToken.
 You must initialize the client with *OAuth 2.0 Client Credentials Grant* credentials as shown in the following code snippet. This will fetch the OAuth token automatically when any of the endpoints, requiring *OAuth 2.0 Client Credentials Grant* authentication, are called.
 
 ```csharp
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Authentication;
+
+namespace ConsoleApp;
+
 ShellDataReportingAPIsClient client = new ShellDataReportingAPIsClient.Builder()
-    .BearerTokenCredentials(
-        new BearerTokenModel.Builder(
+    .ClientCredentialsAuth(
+        new ClientCredentialsAuthModel.Builder(
             "OAuthClientId",
             "OAuthClientSecret"
         )
@@ -39,16 +44,21 @@ ShellDataReportingAPIsClient client = new ShellDataReportingAPIsClient.Builder()
 
 
 
-Your application can also manually provide an OAuthToken using the setter `oAuthToken` in `BearerTokenModel` object. This function takes in an instance of OAuthToken containing information for authorizing client requests and refreshing the token itself.
+Your application can also manually provide an OAuthToken using the setter `oAuthToken` in `ClientCredentialsAuthModel` object. This function takes in an instance of OAuthToken containing information for authorizing client requests and refreshing the token itself.
 
 ### Adding OAuth Token Update Callback
 
 Whenever the OAuth Token gets updated, the provided callback implementation will be executed. For instance, you may use it to store your access token whenever it gets updated.
 
 ```csharp
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Authentication;
+
+namespace ConsoleApp;
+
 ShellDataReportingAPIsClient client = new ShellDataReportingAPIsClient.Builder()
-    .BearerTokenCredentials(
-        new BearerTokenModel.Builder(
+    .ClientCredentialsAuth(
+        new ClientCredentialsAuthModel.Builder(
             "OAuthClientId",
             "OAuthClientSecret"
         )
@@ -63,12 +73,17 @@ ShellDataReportingAPIsClient client = new ShellDataReportingAPIsClient.Builder()
 
 ### Adding Custom OAuth Token Provider
 
-To authorize a client using a stored access token, set up the `oAuthTokenProvider` in `BearerTokenModel` builder along with the other auth parameters before creating the client:
+To authorize a client using a stored access token, set up the `oAuthTokenProvider` in `ClientCredentialsAuthModel` builder along with the other auth parameters before creating the client:
 
 ```csharp
+using ShellDataReportingAPIs.Standard;
+using ShellDataReportingAPIs.Standard.Authentication;
+
+namespace ConsoleApp;
+
 ShellDataReportingAPIsClient client = new ShellDataReportingAPIsClient.Builder()
-    .BearerTokenCredentials(
-        new BearerTokenModel.Builder(
+    .ClientCredentialsAuth(
+        new ClientCredentialsAuthModel.Builder(
             "OAuthClientId",
             "OAuthClientSecret"
         )

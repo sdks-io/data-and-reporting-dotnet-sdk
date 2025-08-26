@@ -40,6 +40,8 @@
 | `SubmittedOn` | `string` | Optional | Request submitted date.<br>Format: yyyyMMdd HH:mm: ss |
 | `SubRequestReference` | `int?` | Optional | Reference number for the individual request type. |
 | `UserDisplayName` | `string` | Optional | Display name of the user who submitted this request.<br>It will be the Display Name of the Driver in the case of “MobilePaymentRegistration” in the below format: |
+| `PANID` | `string` | Optional | PAN ID of the card.<br>This will be null when the PAN is not available in the request. |
+| `MaskedPAN` | `string` | Optional | Masked PAN of the card.<br>This will be null when the Masked PAN is not available in the request. |
 
 ## Example (as JSON)
 
@@ -75,7 +77,9 @@
   "Status": "Success",
   "SubmittedOn": "20240201 14:29:16",
   "SubRequestReference": 720061,
-  "UserDisplayName": "Supriya-ThridPartyAgent"
+  "UserDisplayName": "Supriya-ThridPartyAgent",
+  "PANID": "70020975",
+  "MaskedPAN": "70020975******0717"
 }
 ```
 
