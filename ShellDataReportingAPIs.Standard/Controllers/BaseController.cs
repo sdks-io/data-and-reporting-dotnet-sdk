@@ -33,10 +33,10 @@ namespace ShellDataReportingAPIs.Standard.Controllers
         protected ApiCall<HttpRequest, HttpResponse, HttpContext, ApiException, T, T> CreateApiCall<T>(ArraySerialization arraySerialization = ArraySerialization.Indexed)
             => new ApiCall<HttpRequest, HttpResponse, HttpContext, ApiException, T, T>(
                 globalConfiguration,
-                compatibilityFactory,
+                CompatibilityFactory,
                 serialization: arraySerialization
             );
 
-        private static readonly CompatibilityFactory compatibilityFactory = new CompatibilityFactory();
+        private static readonly CompatibilityFactory CompatibilityFactory = new CompatibilityFactory();
     }
 }

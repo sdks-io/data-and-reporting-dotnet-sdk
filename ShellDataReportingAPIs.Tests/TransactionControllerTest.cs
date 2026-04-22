@@ -9,8 +9,8 @@ using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using APIMatic.Core.Utilities;
-using Newtonsoft.Json.Converters;
 using NUnit.Framework;
+using Newtonsoft.Json.Converters;
 using ShellDataReportingAPIs.Standard;
 using ShellDataReportingAPIs.Standard.Controllers;
 using ShellDataReportingAPIs.Standard.Exceptions;
@@ -69,7 +69,7 @@ namespace ShellDataReportingAPIs.Tests
         {
             // Parameters for the API call
             string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-            Standard.Models.RecentTransactionRequest body = ApiHelper.JsonDeserialize<Standard.Models.RecentTransactionRequest>("{\"PageSize\":1,\"Page\":1,\"Filters\":{\"ColCoCode\":14,\"PayerNumber\":\"GB00001232\",\"AccountNumber\":\"GB00001233\",\"ProductCode\":\"22\",\"PurchasedInCountry\":\"GB\",\"CardPAN\":\"700205******890645\",\"FromDateTime\":\"2020-11-09 13:56:03.000\",\"ToDateTime\":\"2020-12-09 13:56:03.000\",\"TransactionStatus\":\"APPROVED\",\"FuelOnly\":\"False\",\"ProductGroupName\":\"Motor gasoline\",\"VehicleRegistrationNumber\":\"YG67OUM\",\"IncludeDeclines\":true,\"CardIssuerName\":\"Mathew\",\"ColumnList\":\"PayerNumber,AccountNumber,ProductName,FuelVolume,PAN\"}}");
+            Standard.Models.RecentTransactionRequest body = ApiHelper.JsonDeserialize<Standard.Models.RecentTransactionRequest>("{\"PageSize\":1,\"Page\":1,\"Filters\":{\"ColCoCode\":14,\"PayerNumber\":\"GB00001232\",\"AccountNumber\":\"GB00001233\",\"ProductCode\":\"22\",\"PurchasedInCountry\":\"GB\",\"CardPAN\":\"7002051006629890645\",\"FromDateTime\":\"2020-11-09 13:56:03.000\",\"ToDateTime\":\"2020-12-09 13:56:03.000\",\"TransactionStatus\":\"APPROVED\",\"FuelOnly\":\"False\",\"ProductGroupName\":\"Motor gasoline\",\"VehicleRegistrationNumber\":\"YG67OUM\",\"IncludeDeclines\":true,\"CardIssuerName\":\"Mathew\",\"ColumnList\":\"PayerNumber,AccountNumber,ProductName,FuelVolume,PAN\"}}");
 
             // Perform API call
             Standard.Models.RecentTransactionsResponse result = null;

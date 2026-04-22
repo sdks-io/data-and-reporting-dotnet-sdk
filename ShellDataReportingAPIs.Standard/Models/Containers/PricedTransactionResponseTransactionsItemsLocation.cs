@@ -14,7 +14,7 @@ namespace ShellDataReportingAPIs.Standard.Models.Containers
     /// </summary>
     [JsonConverter(
         typeof(UnionTypeConverter<PricedTransactionResponseTransactionsItemsLocation>),
-        new Type[] {
+        new[] {
             typeof(MObjectCase),
             typeof(PricedTransactionItemsLocationItemsCase)
         },
@@ -54,71 +54,79 @@ namespace ShellDataReportingAPIs.Standard.Models.Containers
         /// <typeparam name="T"></typeparam>
         public abstract T Match<T>(Func<object, T> mObject, Func<PricedTransactionItemsLocationItems, T> pricedTransactionItemsLocationItems);
 
+        /// <summary>
+        /// Method to match from the provided one-of cases. The parameters represent
+        /// optional callback functions for one-of type cases. You may provide only
+        /// the callbacks you are interested in; others can be left as <c>null</c>. All
+        /// callback functions must have the same return type T. This typeparam T
+        /// represents the type that will be returned after applying the selected
+        /// callback function, or the default value if no callback is provided for the matched case.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public T MatchSome<T>(Func<object, T> mObject = null, Func<PricedTransactionItemsLocationItems, T> pricedTransactionItemsLocationItems = null) =>
+                Match(mObject, pricedTransactionItemsLocationItems);
+
         [JsonConverter(typeof(UnionTypeCaseConverter<MObjectCase, object>))]
         private sealed class MObjectCase : PricedTransactionResponseTransactionsItemsLocation, ICaseValue<MObjectCase, object>
         {
-            public object _value;
+            public object Value;
 
-            public override T Match<T>(Func<object, T> mObject, Func<PricedTransactionItemsLocationItems, T> pricedTransactionItemsLocationItems)
-            {
-                return mObject(_value);
-            }
+            public override T Match<T>(Func<object, T> mObject, Func<PricedTransactionItemsLocationItems, T> pricedTransactionItemsLocationItems) =>
+                   mObject != null ? mObject(Value) : default;
 
             public MObjectCase Set(object value)
             {
-                _value = value;
+                Value = value;
                 return this;
             }
 
             public object Get()
             {
-                return _value;
+                return Value;
             }
 
             public override string ToString()
             {
-                return _value?.ToString();
+                return Value?.ToString();
             }
 
             public override bool Equals(object obj)
             {
                 if (!(obj is MObjectCase other)) return false;
                 if (ReferenceEquals(this, other)) return true;
-                return _value == null ? other._value == null : _value?.Equals(other._value) == true;
+                return Value == null ? other.Value == null : Value?.Equals(other.Value) == true; 
             }
         }
 
         [JsonConverter(typeof(UnionTypeCaseConverter<PricedTransactionItemsLocationItemsCase, PricedTransactionItemsLocationItems>))]
         private sealed class PricedTransactionItemsLocationItemsCase : PricedTransactionResponseTransactionsItemsLocation, ICaseValue<PricedTransactionItemsLocationItemsCase, PricedTransactionItemsLocationItems>
         {
-            public PricedTransactionItemsLocationItems _value;
+            public PricedTransactionItemsLocationItems Value;
 
-            public override T Match<T>(Func<object, T> mObject, Func<PricedTransactionItemsLocationItems, T> pricedTransactionItemsLocationItems)
-            {
-                return pricedTransactionItemsLocationItems(_value);
-            }
+            public override T Match<T>(Func<object, T> mObject, Func<PricedTransactionItemsLocationItems, T> pricedTransactionItemsLocationItems) =>
+                   pricedTransactionItemsLocationItems != null ? pricedTransactionItemsLocationItems(Value) : default;
 
             public PricedTransactionItemsLocationItemsCase Set(PricedTransactionItemsLocationItems value)
             {
-                _value = value;
+                Value = value;
                 return this;
             }
 
             public PricedTransactionItemsLocationItems Get()
             {
-                return _value;
+                return Value;
             }
 
             public override string ToString()
             {
-                return _value?.ToString();
+                return Value?.ToString();
             }
 
             public override bool Equals(object obj)
             {
                 if (!(obj is PricedTransactionItemsLocationItemsCase other)) return false;
                 if (ReferenceEquals(this, other)) return true;
-                return _value == null ? other._value == null : _value?.Equals(other._value) == true;
+                return Value == null ? other.Value == null : Value?.Equals(other.Value) == true; 
             }
         }
     }

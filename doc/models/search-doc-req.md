@@ -14,7 +14,6 @@
 | `AccountNumberList` | `List<string>` | Optional | Account Number of the customers.<br>optional.<br>This input is a search criterion, if given.<br>Example: [“GB00000123”, “GB00000225”] |
 | `InvoiceNumber` | `string` | Optional | Invoice number.<br>Optional if InvoiceNumberList is passed else Mandatory<br>This input is a search criterion, if given.<br>Example: 0123456789 |
 | `InvoiceNumberList` | `List<string>` | Optional | List of Invoice number.<br>Optional if InvoiceNumber is passed else Mandatory<br>Example: [“0123456789”, “0123459799”] |
-| `InvoiceStatus` | `string` | Optional | The status of the invoices<br>Optional<br>One of the following values:<br>•    NEW<br>•    VIEWED<br>•    DOWNLOADED<br>•    RESTORED |
 | `IssuingDateFrom` | `string` | Optional | Invoice Issuing Date Range/From<br>Optional<br>Format: yyyy/MM/dd |
 | `IssuingDateTo` | `string` | Optional | Invoice Issuing Date Range/To<br>Optional<br>Format: yyyy/MM/dd |
 | `DueDateFrom` | `string` | Optional | Invoice Due Date Range/From<br>Optional<br>Format: yyyy/MM/dd |
@@ -39,7 +38,7 @@
   "InvoiceNumberList": [
     "InvoiceNumberList5"
   ],
-  "InvoiceStatus": "InvoiceStatus4",
+  "IssuingDateFrom": "IssuingDateFrom2",
   "ColCoCode": 50
 }
 ```

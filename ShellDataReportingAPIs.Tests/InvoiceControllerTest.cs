@@ -9,8 +9,8 @@ using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using APIMatic.Core.Utilities;
-using Newtonsoft.Json.Converters;
 using NUnit.Framework;
+using Newtonsoft.Json.Converters;
 using ShellDataReportingAPIs.Standard;
 using ShellDataReportingAPIs.Standard.Controllers;
 using ShellDataReportingAPIs.Standard.Exceptions;
@@ -312,7 +312,7 @@ namespace ShellDataReportingAPIs.Tests
         {
             // Parameters for the API call
             string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-            Standard.Models.SearchDocumentsRequest body = ApiHelper.JsonDeserialize<Standard.Models.SearchDocumentsRequest>("{\"Filters\":{\"PayerNumber\":\"DE00000096\",\"AccountNumber\":\"DE00000096\",\"ColCoCode\":14,\"AccountNumberList\":[\"DE00000123\",\"DE00000225\"],\"InvoiceNumber\":\"1234567\",\"InvoiceNumberList\":[\"6400013693\",\"9421000010\"],\"InvoiceStatus\":\"NEW\",\"IssuingDateFrom\":\"2023/05/01\",\"IssuingDateTo\":\"2023/06/30\",\"DueDateFrom\":\"2023/05/04\",\"DueDateTo\":\"2023/06/30\",\"GrossAmount\":\"1000\",\"GrossAmountOperator\":\"LT\",\"DocumentType\":\"SOA\",\"VATIssuerCountry\":\"DE\",\"SortyBy\":[\"InvoiceNumber ASC\",\"InvoiceDate DESC\"]},\"Page\":\"1\",\"PageSize\":\"50\"}");
+            Standard.Models.SearchDocumentsRequest body = ApiHelper.JsonDeserialize<Standard.Models.SearchDocumentsRequest>("{\"Filters\":{\"PayerNumber\":\"DE00000096\",\"AccountNumber\":\"DE00000096\",\"ColCoCode\":14,\"AccountNumberList\":[\"DE00000123\",\"DE00000225\"],\"InvoiceNumber\":\"1234567\",\"InvoiceNumberList\":[\"6400013693\",\"9421000010\"],\"IssuingDateFrom\":\"2023/05/01\",\"IssuingDateTo\":\"2023/06/30\",\"DueDateFrom\":\"2023/05/04\",\"DueDateTo\":\"2023/06/30\",\"GrossAmount\":\"1000\",\"GrossAmountOperator\":\"LT\",\"DocumentType\":\"SOA\",\"VATIssuerCountry\":\"DE\",\"SortyBy\":[\"InvoiceNumber ASC\",\"InvoiceDate DESC\"]},\"Page\":\"1\",\"PageSize\":\"50\"}");
 
             // Perform API call
             Standard.Models.SearchDocumentsResponse result = null;
@@ -341,7 +341,7 @@ namespace ShellDataReportingAPIs.Tests
             Assert.IsNotNull(result, "Result should exist");
             Assert.IsTrue(
                     TestHelper.IsProperSubsetOf(
-                    "{\"RequestId\":\"a8b81c1d-f44a-4365-8113-8958061c0b7e\",\"Status\":\"SUCCESS\",\"Data\":[{\"DocumentReference\":311161,\"InvoiceNumber\":\"6400013693\",\"PayerName\":\"DE00000096\",\"AccountNumber\":\"DE00000096\",\"AccountName\":\"DE00000096\",\"DocumentType\":\"NAT\",\"GrossAmount\":-3141.93,\"NetAmount\":0,\"TaxAmount\":0,\"CurrencyCode\":\"EUR\",\"InvoiceStatus\":\"NEW\",\"InvoiceDate\":\"2023/01/31\",\"DueDate\":\"2023/02/07\",\"VATCountryISOCode\":\"DE\"}],\"TotalRecords\":2,\"TotalRecordsOnPage\":2,\"IsFirstPage\":true,\"IsLastPage\":true}",
+                    "{\"RequestId\":\"a8b81c1d-f44a-4365-8113-8958061c0b7e\",\"Status\":\"SUCCESS\",\"Invoices\":[{\"DocumentReference\":311161,\"InvoiceNumber\":\"6400013693\",\"PayerName\":\"DE00000096\",\"AccountNumber\":\"DE00000096\",\"AccountName\":\"DE00000096\",\"DocumentType\":\"NAT\",\"GrossAmount\":-3141.93,\"NetAmount\":0,\"TaxAmount\":0,\"CurrencyCode\":\"EUR\",\"InvoiceDate\":\"2023/01/31\",\"DueDate\":\"2023/02/07\",\"VATCountryISOCode\":\"DE\"}],\"TotalRecords\":2,\"TotalRecordsOnPage\":2,\"IsFirstPage\":true,\"IsLastPage\":true}",
                     TestHelper.ConvertStreamToString(HttpCallBack.Response.RawBody),
                     false,
                     true,
@@ -358,7 +358,7 @@ namespace ShellDataReportingAPIs.Tests
         {
             // Parameters for the API call
             string requestId = "2b0cbe11-f109-4c43-9201-49af0370df1c";
-            Standard.Models.EIDSearchRequest body = ApiHelper.JsonDeserialize<Standard.Models.EIDSearchRequest>("{\"Filters\":{\"ColCoCode\":32,\"AccountGroupCountry\":32,\"AccountGroupId\":[\"122\"],\"AccountGroupName\":null,\"FromDate\":\"2017/08/30\",\"ToDate\":\"2017/10/31\",\"InvoiceType\":\"NAT\",\"InvoiceStatus\":\"NEW\",\"SortBy\":[\"DocumentDate ASC\"]},\"Page\":1,\"PageSize\":10}");
+            Standard.Models.EIDSearchRequest body = ApiHelper.JsonDeserialize<Standard.Models.EIDSearchRequest>("{\"Filters\":{\"ColCoCode\":32,\"AccountGroupCountry\":32,\"AccountGroupId\":[\"122\"],\"AccountGroupName\":null,\"FromDate\":\"2017/08/30\",\"ToDate\":\"2017/10/31\",\"InvoiceType\":\"NAT\",\"SortBy\":[\"DocumentDate ASC\"]},\"Page\":1,\"PageSize\":10}");
 
             // Perform API call
             Standard.Models.EIDDocumentResponse result = null;
@@ -387,7 +387,7 @@ namespace ShellDataReportingAPIs.Tests
             Assert.IsNotNull(result, "Result should exist");
             Assert.IsTrue(
                     TestHelper.IsProperSubsetOf(
-                    "{\"RequestId\":\"a0a1596f-b242-4672-b513-66c5e5554195\",\"Status\":\"SUCCESS\",\"Data\":[{\"DocumentId\":15029,\"AccountGroupId\":\"122\",\"AccountGroupName\":\"EID-122\",\"DocumentType\":\"INT\",\"DocumentFormat\":\"FLAT\",\"DocumentDate\":\"2022/12/28\",\"NumberOfInvoices\":1,\"FileSize\":1624,\"DocumentStatus\":\"DOWNLOADED\",\"DocumentName\":\"032_122_INT_28122022.TXT\"}],\"PageSize\":1,\"Page\":1,\"TotalPages\":12,\"TotalRecords\":120,\"IsFirstPage\":true,\"IsLastPage\":false}",
+                    "{\"RequestId\":\"a0a1596f-b242-4672-b513-66c5e5554195\",\"Status\":\"SUCCESS\",\"Document\":[{\"DocumentId\":15029,\"AccountGroupId\":\"122\",\"AccountGroupName\":\"EID-122\",\"DocumentType\":\"INT\",\"DocumentFormat\":\"FLAT\",\"DocumentDate\":\"2022/12/28\",\"NumberOfInvoices\":1,\"FileSize\":1624,\"DocumentName\":\"032_122_INT_28122022.TXT\"}],\"PageSize\":1,\"Page\":1,\"TotalPages\":12,\"TotalRecords\":120,\"IsFirstPage\":true,\"IsLastPage\":false}",
                     TestHelper.ConvertStreamToString(HttpCallBack.Response.RawBody),
                     false,
                     true,

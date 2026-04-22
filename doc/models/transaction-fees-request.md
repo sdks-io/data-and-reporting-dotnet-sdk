@@ -17,6 +17,9 @@
 | `CardId` | `int?` | Optional | Card Id<br>Optional<br>When both Card Id and Card PAN are not present on request, the response will have all the fee items under the selected payer or account.<br>Example: 275549 |
 | `CardPAN` | `string` | Optional | Full Card PAN<br>Optional<br>When both Card Id and Card PAN are not present on request, the response will have all the fee items under the selected payer or account or card group. |
 | `InvoiceStatus` | `string` | Optional | Invoice status of the fee items<br>Mandatory<br>Possible options:<br>I - Invoiced<br>U – Un-Invoiced<br>A – All |
+| `InvoiceNumber` | `string` | Optional | Invoice Number<br>Optional |
+| `PostedDateFrom` | `string` | Optional | Fee Item Posted Date From<br>Optional<br>Format: yyyyMMdd |
+| `PostedDateTo` | `string` | Optional | Fee Item Posted Date To<br>Optional<br>Format: yyyyMMdd |
 | `FeeTypeGroup` | `string` | Optional | Fee type group in under which the Fee item is generated.<br>Optional.<br>Allowed values:<br><br>- Account Charges<br>- Card Charges<br>- Others Charges |
 | `FeeTypeId` | `int?` | Optional | Fee Type Id.<br>Optional.<br>Example:<br><br>1. Simple Fee<br>2. Card Event Fee<br>3. Customer Event Fee |
 | `FromDate` | `string` | Optional | Fee Item FromDate/Time<br>Should be with in last 24 months<br>Optional<br>Maximum of 210 days duration allowed per search, its configurable.<br>Format: yyyyMMdd |

@@ -5,12 +5,14 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| Environment | `Environment` | The API environment. <br> **Default: `Environment.SIT`** |
+| Environment | [`Environment`](../README.md#environments) | The API environment. <br> **Default: `Environment.SIT`** |
 | Timeout | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(100)` |
 | HttpClientConfiguration | [`Action<HttpClientConfiguration.Builder>`](../doc/http-client-configuration-builder.md) | Action delegate that configures the HTTP client by using the HttpClientConfiguration.Builder for customizing API call settings.<br>*Default*: `new HttpClient()` |
 | ClientCredentialsAuth | [`ClientCredentialsAuth`](auth/oauth-2-client-credentials-grant.md) | The Credentials Setter for OAuth 2 Client Credentials Grant |
 
 The API client can be initialized as follows:
+
+## Code-Based Initialization
 
 ```csharp
 using ShellDataReportingAPIs.Standard;
@@ -25,9 +27,32 @@ ShellDataReportingAPIsClient client = new ShellDataReportingAPIsClient.Builder()
             "OAuthClientSecret"
         )
         .Build())
+    .HttpClientConfig(httpClientConfig =>
+        httpClientConfig.Timeout(TimeSpan.FromSeconds(100)))
     .Environment(ShellDataReportingAPIs.Standard.Environment.SIT)
     .Build();
 ```
+
+## Configuration-Based Initialization
+
+```csharp
+using ShellDataReportingAPIs.Standard;
+using Microsoft.Extensions.Configuration;
+
+namespace ConsoleApp;
+
+// Build the IConfiguration using .NET conventions (JSON, environment, etc.)
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("config.json")
+    .AddEnvironmentVariables() // [optional] read environment variables
+    .Build();
+
+// Instantiate your SDK and configure it from IConfiguration
+var client = ShellDataReportingAPIsClient
+    .FromConfiguration(configuration.GetSection("ShellDataReportingAPIs"));
+```
+
+See the [Configuration-Based Initialization](../doc/configuration-based-initialization.md) section for details.
 
 ## Shell Data & Reporting APIsClient Class
 

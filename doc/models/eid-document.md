@@ -17,7 +17,6 @@
 | `DocumentDate` | `string` | Optional | Document date.<br>Example: 20170101 |
 | `NumberOfInvoices` | `int?` | Optional | Number of invoices |
 | `FileSize` | `int?` | Optional | Document size |
-| `DocumentStatus` | `string` | Optional | Document status.<br>Possible values:<br>•    NEW<br>•    VIEWED<br>•    DOWNLOADED<br>•    RESTORED |
 | `DocumentName` | `string` | Optional | Document file name. |
 
 ## Example (as JSON)

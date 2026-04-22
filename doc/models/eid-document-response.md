@@ -11,7 +11,7 @@
 |  --- | --- | --- | --- |
 | `RequestId` | `string` | Optional | UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
 | `Status` | `string` | Optional | Indicates overall status of the request. Allowed values: SUCCESS, FAILED |
-| `Data` | [`List<EIDDocument>`](../../doc/models/eid-document.md) | Optional | - |
+| `Document` | [`List<EIDDocument>`](../../doc/models/eid-document.md) | Optional | - |
 | `PageSize` | `int?` | Optional | Number of records returned in the response |
 | `Page` | `int?` | Optional | Current page |
 | `TotalPages` | `int?` | Optional | Total number of pages available for the requested data |
@@ -25,13 +25,13 @@
 {
   "RequestId": "RequestId8",
   "Status": "Status4",
-  "Data": [
+  "Document": [
     {
-      "DocumentId": 28,
-      "AccountGroupId": "AccountGroupId2",
-      "AccountGroupName": "AccountGroupName6",
+      "DocumentId": 66,
+      "AccountGroupId": "AccountGroupId0",
+      "AccountGroupName": "AccountGroupName8",
       "DocumentType": "DocumentType6",
-      "DocumentFormat": "DocumentFormat0"
+      "DocumentFormat": "DocumentFormat2"
     }
   ],
   "PageSize": 188,

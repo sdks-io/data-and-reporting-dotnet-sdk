@@ -62,8 +62,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is UserManagementV1Loggedinuser400ErrorException)
+    {
+       // TODO: Handle UserManagementV1Loggedinuser400ErrorException exception here
+    }
+    if (e is UserManagementV1Loggedinuser401ErrorException)
+    {
+       // TODO: Handle UserManagementV1Loggedinuser401ErrorException exception here
+    }
+    if (e is UserManagementV1Loggedinuser403ErrorException)
+    {
+       // TODO: Handle UserManagementV1Loggedinuser403ErrorException exception here
+    }
+    if (e is UserManagementV1Loggedinuser404ErrorException)
+    {
+       // TODO: Handle UserManagementV1Loggedinuser404ErrorException exception here
+    }
+    if (e is UserManagementV1Loggedinuser500ErrorException)
+    {
+       // TODO: Handle UserManagementV1Loggedinuser500ErrorException exception here
+    }
 }
 ```
 
@@ -71,11 +90,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`UserManagementV1Loggedinuser400ErrorException`](../../doc/models/user-management-v1-loggedinuser-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`UserManagementV1Loggedinuser401ErrorException`](../../doc/models/user-management-v1-loggedinuser-401-error-exception.md) |
+| 403 | Forbidden | [`UserManagementV1Loggedinuser403ErrorException`](../../doc/models/user-management-v1-loggedinuser-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`UserManagementV1Loggedinuser404ErrorException`](../../doc/models/user-management-v1-loggedinuser-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`UserManagementV1Loggedinuser500ErrorException`](../../doc/models/user-management-v1-loggedinuser-500-error-exception.md) |
 
 
 # Customerpayers
@@ -128,8 +147,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is CustomerManagementV1Payers400ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Payers400ErrorException exception here
+    }
+    if (e is CustomerManagementV1Payers401ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Payers401ErrorException exception here
+    }
+    if (e is CustomerManagementV1Payers403ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Payers403ErrorException exception here
+    }
+    if (e is CustomerManagementV1Payers404ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Payers404ErrorException exception here
+    }
+    if (e is CustomerManagementV1Payers500ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Payers500ErrorException exception here
+    }
 }
 ```
 
@@ -137,11 +175,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Payers400ErrorException`](../../doc/models/customer-management-v1-payers-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Payers401ErrorException`](../../doc/models/customer-management-v1-payers-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Payers403ErrorException`](../../doc/models/customer-management-v1-payers-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Payers404ErrorException`](../../doc/models/customer-management-v1-payers-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Payers500ErrorException`](../../doc/models/customer-management-v1-payers-500-error-exception.md) |
 
 
 # Customerdetail
@@ -182,8 +220,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is CustomerManagementV1Customer400ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Customer400ErrorException exception here
+    }
+    if (e is CustomerManagementV1Customer401ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Customer401ErrorException exception here
+    }
+    if (e is CustomerManagementV1Customer403ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Customer403ErrorException exception here
+    }
+    if (e is CustomerManagementV1Customer404ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Customer404ErrorException exception here
+    }
+    if (e is CustomerManagementV1Customer500ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Customer500ErrorException exception here
+    }
 }
 ```
 
@@ -191,11 +248,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Customer400ErrorException`](../../doc/models/customer-management-v1-customer-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Customer401ErrorException`](../../doc/models/customer-management-v1-customer-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Customer403ErrorException`](../../doc/models/customer-management-v1-customer-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Customer404ErrorException`](../../doc/models/customer-management-v1-customer-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Customer500ErrorException`](../../doc/models/customer-management-v1-customer-500-error-exception.md) |
 
 
 # Post-Card-Accounts
@@ -238,8 +295,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is CustomerManagementV1Accounts400ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Accounts400ErrorException exception here
+    }
+    if (e is CustomerManagementV1Accounts401ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Accounts401ErrorException exception here
+    }
+    if (e is CustomerManagementV1Accounts403ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Accounts403ErrorException exception here
+    }
+    if (e is CustomerManagementV1Accounts404ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Accounts404ErrorException exception here
+    }
+    if (e is CustomerManagementV1Accounts500ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Accounts500ErrorException exception here
+    }
 }
 ```
 
@@ -247,11 +323,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Accounts400ErrorException`](../../doc/models/customer-management-v1-accounts-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Accounts401ErrorException`](../../doc/models/customer-management-v1-accounts-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Accounts403ErrorException`](../../doc/models/customer-management-v1-accounts-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Accounts404ErrorException`](../../doc/models/customer-management-v1-accounts-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Accounts500ErrorException`](../../doc/models/customer-management-v1-accounts-500-error-exception.md) |
 
 
 # Customercardtypev
@@ -294,8 +370,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is CustomerManagementV2Cardtype400ErrorException)
+    {
+       // TODO: Handle CustomerManagementV2Cardtype400ErrorException exception here
+    }
+    if (e is CustomerManagementV2Cardtype401ErrorException)
+    {
+       // TODO: Handle CustomerManagementV2Cardtype401ErrorException exception here
+    }
+    if (e is CustomerManagementV2Cardtype403ErrorException)
+    {
+       // TODO: Handle CustomerManagementV2Cardtype403ErrorException exception here
+    }
+    if (e is CustomerManagementV2Cardtype404ErrorException)
+    {
+       // TODO: Handle CustomerManagementV2Cardtype404ErrorException exception here
+    }
+    if (e is CustomerManagementV2Cardtype500ErrorException)
+    {
+       // TODO: Handle CustomerManagementV2Cardtype500ErrorException exception here
+    }
 }
 ```
 
@@ -303,11 +398,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV2Cardtype400ErrorException`](../../doc/models/customer-management-v2-cardtype-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV2Cardtype401ErrorException`](../../doc/models/customer-management-v2-cardtype-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV2Cardtype403ErrorException`](../../doc/models/customer-management-v2-cardtype-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV2Cardtype404ErrorException`](../../doc/models/customer-management-v2-cardtype-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV2Cardtype500ErrorException`](../../doc/models/customer-management-v2-cardtype-500-error-exception.md) |
 
 
 # Cardgroups
@@ -359,8 +454,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is CustomerManagementV1Cardgroups400ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Cardgroups400ErrorException exception here
+    }
+    if (e is CustomerManagementV1Cardgroups401ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Cardgroups401ErrorException exception here
+    }
+    if (e is CustomerManagementV1Cardgroups403ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Cardgroups403ErrorException exception here
+    }
+    if (e is CustomerManagementV1Cardgroups404ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Cardgroups404ErrorException exception here
+    }
+    if (e is CustomerManagementV1Cardgroups500ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Cardgroups500ErrorException exception here
+    }
 }
 ```
 
@@ -368,11 +482,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Cardgroups400ErrorException`](../../doc/models/customer-management-v1-cardgroups-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Cardgroups401ErrorException`](../../doc/models/customer-management-v1-cardgroups-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Cardgroups403ErrorException`](../../doc/models/customer-management-v1-cardgroups-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Cardgroups404ErrorException`](../../doc/models/customer-management-v1-cardgroups-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Cardgroups500ErrorException`](../../doc/models/customer-management-v1-cardgroups-500-error-exception.md) |
 
 
 # Audit Report
@@ -433,8 +547,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is CustomerManagementV1Auditreport400ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Auditreport400ErrorException exception here
+    }
+    if (e is CustomerManagementV1Auditreport401ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Auditreport401ErrorException exception here
+    }
+    if (e is CustomerManagementV1Auditreport403ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Auditreport403ErrorException exception here
+    }
+    if (e is CustomerManagementV1Auditreport404ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Auditreport404ErrorException exception here
+    }
+    if (e is CustomerManagementV1Auditreport500ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Auditreport500ErrorException exception here
+    }
 }
 ```
 
@@ -442,11 +575,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Auditreport400ErrorException`](../../doc/models/customer-management-v1-auditreport-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Auditreport401ErrorException`](../../doc/models/customer-management-v1-auditreport-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Auditreport403ErrorException`](../../doc/models/customer-management-v1-auditreport-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Auditreport404ErrorException`](../../doc/models/customer-management-v1-auditreport-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Auditreport500ErrorException`](../../doc/models/customer-management-v1-auditreport-500-error-exception.md) |
 
 
 # Customer Price List
@@ -486,8 +619,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is CustomerManagementV1Pricelist400ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Pricelist400ErrorException exception here
+    }
+    if (e is CustomerManagementV1Pricelist401ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Pricelist401ErrorException exception here
+    }
+    if (e is CustomerManagementV1Pricelist403ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Pricelist403ErrorException exception here
+    }
+    if (e is CustomerManagementV1Pricelist404ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Pricelist404ErrorException exception here
+    }
+    if (e is CustomerManagementV1Pricelist500ErrorException)
+    {
+       // TODO: Handle CustomerManagementV1Pricelist500ErrorException exception here
+    }
 }
 ```
 
@@ -495,9 +647,9 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Pricelist400ErrorException`](../../doc/models/customer-management-v1-pricelist-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Pricelist401ErrorException`](../../doc/models/customer-management-v1-pricelist-401-error-exception.md) |
+| 403 | Forbidden | [`CustomerManagementV1Pricelist403ErrorException`](../../doc/models/customer-management-v1-pricelist-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Pricelist404ErrorException`](../../doc/models/customer-management-v1-pricelist-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Pricelist500ErrorException`](../../doc/models/customer-management-v1-pricelist-500-error-exception.md) |
 

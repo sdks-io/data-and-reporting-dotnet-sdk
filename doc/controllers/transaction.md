@@ -101,8 +101,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Pricedtransaction400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransaction400ErrorException exception here
+    }
+    if (e is TransactionDataV1Pricedtransaction401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransaction401ErrorException exception here
+    }
+    if (e is TransactionDataV1Pricedtransaction403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransaction403ErrorException exception here
+    }
+    if (e is TransactionDataV1Pricedtransaction404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransaction404ErrorException exception here
+    }
+    if (e is TransactionDataV1Pricedtransaction500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransaction500ErrorException exception here
+    }
 }
 ```
 
@@ -110,11 +129,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Pricedtransaction400ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Pricedtransaction401ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Pricedtransaction403ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Pricedtransaction404ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Pricedtransaction500ErrorException`](../../doc/models/transaction-data-v1-pricedtransaction-500-error-exception.md) |
 
 
 # Priced Transactions Summary
@@ -181,8 +200,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Pricedtransactionssummary400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransactionssummary400ErrorException exception here
+    }
+    if (e is TransactionDataV1Pricedtransactionssummary401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransactionssummary401ErrorException exception here
+    }
+    if (e is TransactionDataV1Pricedtransactionssummary403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransactionssummary403ErrorException exception here
+    }
+    if (e is TransactionDataV1Pricedtransactionssummary404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransactionssummary404ErrorException exception here
+    }
+    if (e is TransactionDataV1Pricedtransactionssummary500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Pricedtransactionssummary500ErrorException exception here
+    }
 }
 ```
 
@@ -190,11 +228,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Pricedtransactionssummary400ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Pricedtransactionssummary401ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Pricedtransactionssummary403ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Pricedtransactionssummary404ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Pricedtransactionssummary500ErrorException`](../../doc/models/transaction-data-v1-pricedtransactionssummary-500-error-exception.md) |
 
 
 # Multipriced Transactions
@@ -266,8 +304,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Multipayerspricedtransactions400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Multipayerspricedtransactions400ErrorException exception here
+    }
+    if (e is TransactionDataV1Multipayerspricedtransactions401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Multipayerspricedtransactions401ErrorException exception here
+    }
+    if (e is TransactionDataV1Multipayerspricedtransactions403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Multipayerspricedtransactions403ErrorException exception here
+    }
+    if (e is TransactionDataV1Multipayerspricedtransactions404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Multipayerspricedtransactions404ErrorException exception here
+    }
+    if (e is TransactionDataV1Multipayerspricedtransactions500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Multipayerspricedtransactions500ErrorException exception here
+    }
 }
 ```
 
@@ -275,11 +332,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Multipayerspricedtransactions400ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Multipayerspricedtransactions401ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Multipayerspricedtransactions403ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Multipayerspricedtransactions404ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Multipayerspricedtransactions500ErrorException`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-500-error-exception.md) |
 
 
 # Card Usage Summary
@@ -314,8 +371,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Cardusagesummary400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Cardusagesummary400ErrorException exception here
+    }
+    if (e is TransactionDataV1Cardusagesummary401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Cardusagesummary401ErrorException exception here
+    }
+    if (e is TransactionDataV1Cardusagesummary403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Cardusagesummary403ErrorException exception here
+    }
+    if (e is TransactionDataV1Cardusagesummary404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Cardusagesummary404ErrorException exception here
+    }
+    if (e is TransactionDataV1Cardusagesummary500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Cardusagesummary500ErrorException exception here
+    }
 }
 ```
 
@@ -360,11 +436,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Cardusagesummary400ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Cardusagesummary401ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Cardusagesummary403ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Cardusagesummary404ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Cardusagesummary500ErrorException`](../../doc/models/transaction-data-v1-cardusagesummary-500-error-exception.md) |
 
 
 # Volume Based Bonus
@@ -399,8 +475,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Volumebasedbonus400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedbonus400ErrorException exception here
+    }
+    if (e is TransactionDataV1Volumebasedbonus401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedbonus401ErrorException exception here
+    }
+    if (e is TransactionDataV1Volumebasedbonus403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedbonus403ErrorException exception here
+    }
+    if (e is TransactionDataV1Volumebasedbonus404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedbonus404ErrorException exception here
+    }
+    if (e is TransactionDataV1Volumebasedbonus500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedbonus500ErrorException exception here
+    }
 }
 ```
 
@@ -535,11 +630,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Volumebasedbonus400ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Volumebasedbonus401ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Volumebasedbonus403ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Volumebasedbonus404ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Volumebasedbonus500ErrorException`](../../doc/models/transaction-data-v1-volumebasedbonus-500-error-exception.md) |
 
 
 # Volume Based Pricing
@@ -574,8 +669,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Volumebasedpricing400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedpricing400ErrorException exception here
+    }
+    if (e is TransactionDataV1Volumebasedpricing401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedpricing401ErrorException exception here
+    }
+    if (e is TransactionDataV1Volumebasedpricing403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedpricing403ErrorException exception here
+    }
+    if (e is TransactionDataV1Volumebasedpricing404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedpricing404ErrorException exception here
+    }
+    if (e is TransactionDataV1Volumebasedpricing500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Volumebasedpricing500ErrorException exception here
+    }
 }
 ```
 
@@ -676,11 +790,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Volumebasedpricing400ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Volumebasedpricing401ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Volumebasedpricing403ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Volumebasedpricing404ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Volumebasedpricing500ErrorException`](../../doc/models/transaction-data-v1-volumebasedpricing-500-error-exception.md) |
 
 
 # Fees
@@ -736,8 +850,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Fees400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fees400ErrorException exception here
+    }
+    if (e is TransactionDataV1Fees401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fees401ErrorException exception here
+    }
+    if (e is TransactionDataV1Fees403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fees403ErrorException exception here
+    }
+    if (e is TransactionDataV1Fees404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fees404ErrorException exception here
+    }
+    if (e is TransactionDataV1Fees500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fees500ErrorException exception here
+    }
 }
 ```
 
@@ -745,11 +878,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Fees400ErrorException`](../../doc/models/transaction-data-v1-fees-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Fees401ErrorException`](../../doc/models/transaction-data-v1-fees-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Fees403ErrorException`](../../doc/models/transaction-data-v1-fees-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Fees404ErrorException`](../../doc/models/transaction-data-v1-fees-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Fees500ErrorException`](../../doc/models/transaction-data-v1-fees-500-error-exception.md) |
 
 
 # Fee Summary Response
@@ -796,8 +929,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Feessummary400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Feessummary400ErrorException exception here
+    }
+    if (e is TransactionDataV1Feessummary401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Feessummary401ErrorException exception here
+    }
+    if (e is TransactionDataV1Feessummary403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Feessummary403ErrorException exception here
+    }
+    if (e is TransactionDataV1Feessummary404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Feessummary404ErrorException exception here
+    }
+    if (e is TransactionDataV1Feessummary500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Feessummary500ErrorException exception here
+    }
 }
 ```
 
@@ -805,11 +957,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Feessummary400ErrorException`](../../doc/models/transaction-data-v1-feessummary-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Feessummary401ErrorException`](../../doc/models/transaction-data-v1-feessummary-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Feessummary403ErrorException`](../../doc/models/transaction-data-v1-feessummary-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Feessummary404ErrorException`](../../doc/models/transaction-data-v1-feessummary-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Feessummary500ErrorException`](../../doc/models/transaction-data-v1-feessummary-500-error-exception.md) |
 
 
 # Fuel Consumption
@@ -844,8 +996,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Fuelconsumption400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fuelconsumption400ErrorException exception here
+    }
+    if (e is TransactionDataV1Fuelconsumption401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fuelconsumption401ErrorException exception here
+    }
+    if (e is TransactionDataV1Fuelconsumption403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fuelconsumption403ErrorException exception here
+    }
+    if (e is TransactionDataV1Fuelconsumption404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fuelconsumption404ErrorException exception here
+    }
+    if (e is TransactionDataV1Fuelconsumption500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Fuelconsumption500ErrorException exception here
+    }
 }
 ```
 
@@ -853,11 +1024,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Fuelconsumption400ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Fuelconsumption401ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Fuelconsumption403ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Fuelconsumption404ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Fuelconsumption500ErrorException`](../../doc/models/transaction-data-v1-fuelconsumption-500-error-exception.md) |
 
 
 # Update Odometer
@@ -892,8 +1063,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Updateodometer400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Updateodometer400ErrorException exception here
+    }
+    if (e is TransactionDataV1Updateodometer401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Updateodometer401ErrorException exception here
+    }
+    if (e is TransactionDataV1Updateodometer403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Updateodometer403ErrorException exception here
+    }
+    if (e is TransactionDataV1Updateodometer404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Updateodometer404ErrorException exception here
+    }
+    if (e is TransactionDataV1Updateodometer500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Updateodometer500ErrorException exception here
+    }
 }
 ```
 
@@ -901,11 +1091,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Updateodometer400ErrorException`](../../doc/models/transaction-data-v1-updateodometer-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Updateodometer401ErrorException`](../../doc/models/transaction-data-v1-updateodometer-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Updateodometer403ErrorException`](../../doc/models/transaction-data-v1-updateodometer-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Updateodometer404ErrorException`](../../doc/models/transaction-data-v1-updateodometer-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Updateodometer500ErrorException`](../../doc/models/transaction-data-v1-updateodometer-500-error-exception.md) |
 
 
 # Transaction Exceptions
@@ -940,8 +1130,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Exceptions400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Exceptions400ErrorException exception here
+    }
+    if (e is TransactionDataV1Exceptions401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Exceptions401ErrorException exception here
+    }
+    if (e is TransactionDataV1Exceptions403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Exceptions403ErrorException exception here
+    }
+    if (e is TransactionDataV1Exceptions404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Exceptions404ErrorException exception here
+    }
+    if (e is TransactionDataV1Exceptions500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Exceptions500ErrorException exception here
+    }
 }
 ```
 
@@ -949,11 +1158,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Exceptions400ErrorException`](../../doc/models/transaction-data-v1-exceptions-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Exceptions401ErrorException`](../../doc/models/transaction-data-v1-exceptions-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Exceptions403ErrorException`](../../doc/models/transaction-data-v1-exceptions-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Exceptions404ErrorException`](../../doc/models/transaction-data-v1-exceptions-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Exceptions500ErrorException`](../../doc/models/transaction-data-v1-exceptions-500-error-exception.md) |
 
 
 # Recent Transactions New
@@ -1010,7 +1219,7 @@ RecentTransactionRequest body = new RecentTransactionRequest
         AccountNumber = "GB00001233",
         ProductCode = "22",
         PurchasedInCountry = "GB",
-        CardPAN = "700205******890645",
+        CardPAN = "7002051006629890645",
         FromDateTime = "2020-11-09 13:56:03.000",
         ToDateTime = "2020-12-09 13:56:03.000",
         TransactionStatus = "APPROVED",
@@ -1032,8 +1241,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Recent400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Recent400ErrorException exception here
+    }
+    if (e is TransactionDataV1Recent401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Recent401ErrorException exception here
+    }
+    if (e is TransactionDataV1Recent403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Recent403ErrorException exception here
+    }
+    if (e is TransactionDataV1Recent404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Recent404ErrorException exception here
+    }
+    if (e is TransactionDataV1Recent500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Recent500ErrorException exception here
+    }
 }
 ```
 
@@ -1129,11 +1357,11 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Recent400ErrorException`](../../doc/models/transaction-data-v1-recent-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Recent401ErrorException`](../../doc/models/transaction-data-v1-recent-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Recent403ErrorException`](../../doc/models/transaction-data-v1-recent-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Recent404ErrorException`](../../doc/models/transaction-data-v1-recent-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Recent500ErrorException`](../../doc/models/transaction-data-v1-recent-500-error-exception.md) |
 
 
 # Priced Transactions V2
@@ -1250,8 +1478,27 @@ try
 }
 catch (ApiException e)
 {
-    // TODO: Handle exception here
     Console.WriteLine(e.Message);
+    if (e is TransactionDataV1Priced400ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Priced400ErrorException exception here
+    }
+    if (e is TransactionDataV1Priced401ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Priced401ErrorException exception here
+    }
+    if (e is TransactionDataV1Priced403ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Priced403ErrorException exception here
+    }
+    if (e is TransactionDataV1Priced404ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Priced404ErrorException exception here
+    }
+    if (e is TransactionDataV1Priced500ErrorException)
+    {
+       // TODO: Handle TransactionDataV1Priced500ErrorException exception here
+    }
 }
 ```
 
@@ -1445,9 +1692,9 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Priced400ErrorException`](../../doc/models/transaction-data-v1-priced-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Priced401ErrorException`](../../doc/models/transaction-data-v1-priced-401-error-exception.md) |
+| 403 | Forbidden | [`TransactionDataV1Priced403ErrorException`](../../doc/models/transaction-data-v1-priced-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Priced404ErrorException`](../../doc/models/transaction-data-v1-priced-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Priced500ErrorException`](../../doc/models/transaction-data-v1-priced-500-error-exception.md) |
 
